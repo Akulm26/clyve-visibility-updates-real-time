@@ -1,0 +1,19 @@
+{
+  "name": "clyve-aeo-radar",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Primary-source monitor for AEO/GEO/AI-SEO updates, delivered to Telegram",
+  "scripts": {
+    "scan": "node pipeline.mjs scan",
+    "digest": "node pipeline.mjs digest",
+    "dry": "node pipeline.mjs scan --dry-run",
+    "preview": "node pipeline.mjs preview",
+    "init": "node pipeline.mjs init",
+    "test": "node test.mjs",
+    "setup": "node setup.mjs"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^4.5.0"
+  }
+}
