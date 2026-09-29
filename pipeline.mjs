@@ -77,7 +77,12 @@ async function gatherNew({ dryRun }) {
       new Date(b.published || 0) - new Date(a.published || 0),
   );
 
-  return { fresh: diversify(fresh), seen, report };
+  const onTopic = all.filter(
+    (i) => i.published && (i.isDocChange || passesPrefilter(i, SOURCE_BY_ID[i.source])),
+  );
+  const newest = onTopic.sort((a, b) => new Date(b.published) - new Date(a.published))[0] || null;
+
+  return { fresh: diversify(fresh), seen, report, newest };
 }
 
 /**
@@ -255,6 +260,61 @@ function splitByAge(items, maxDays = MAX_NEWS_AGE_DAYS) {
   return { current, stale };
 }
 
+/**
+ * The reply when a requested check turns up nothing.
+ *
+ * "Nothing new" on its own is indistinguishable from a broken radar, so this
+ * has to show its working: how many sources were actually reached, when, and
+ * what the most recent item in the feeds is. If that last line is recent, the
+ * feeds are current and the quiet is real.
+ */
+function nothingNewMessage(report, newest) {
+  const ok = report.filter((r) => r.ok).length;
+  const failed = report.filter((r) => !r.ok);
+  const when = new Date().toLocaleString('en-GB', {
+    day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit',
+  });
+
+  const lines = [
+    `*AEO radar · nothing new*`,
+    ``,
+    `Checked ${ok} of ${report.length} sources at ${when}. No new updates.`,
+    ``,
+    `———`,
+    `*Feeds are current*`,
+  ];
+
+  if (newest) {
+    const date = new Date(newest.published).toLocaleDateString('en-GB', {
+      day: 'numeric', month: 'long', year: 'numeric',
+    });
+    lines.push(
+      ``,
+      `The most recent item anywhere in your sources is from ${date}:`,
+      ``,
+      `_${newest.title}_`,
+      `${newest.sourceName}`,
+      newest.url,
+      ``,
+      `You have already had everything up to that point. Nothing has been`,
+      `published since.`,
+    );
+  } else {
+    lines.push(``, `No dated items in the current window.`);
+  }
+
+  if (failed.length) {
+    lines.push(
+      ``,
+      `———`,
+      `*Could not reach*`,
+      failed.map((f) => `· ${NAME_BY_ID[f.id] || f.id}`).join('\n'),
+    );
+  }
+
+  return lines.join('\n');
+}
+
 /** Date of the most recent thing actually sent, for the "nothing new" note. */
 async function latestSentDate() {
   const seen = await readState('seen.json', {});
@@ -274,7 +334,7 @@ function prune(seen) {
 // ---------------------------------------------------------------- commands
 
 async function cmdScan({ dryRun, manual = false }) {
-  const { fresh, seen, report } = await gatherNew({ dryRun });
+  const { fresh, seen, report, newest } = await gatherNew({ dryRun });
   const failed = report.filter((r) => !r.ok);
   if (failed.length) log(`sources failed: ${failed.map((f) => f.id).join(', ')}`);
   log(`${fresh.length} new item(s) past the free filters`);
@@ -323,8 +383,7 @@ async function cmdScan({ dryRun, manual = false }) {
 
     const text = all.length
       ? await writeUp(all.slice(0, MAX_DIGEST_ITEMS), 'requested update')
-      : `*AEO radar · nothing new*\n\nChecked all ${NAME_COUNT} sources just now. ` +
-        `Nothing new since ${await latestSentDate()}.`;
+      : nothingNewMessage(report, newest);
 
     await send(text);
     await saveSent('requested update', text);
