@@ -2,6 +2,13 @@
   {
     "at": "2026-09-29",
     "source": "Perplexity Changelog",
+    "title": "GLM 5.3 Flash support",
+    "why": "API model routing updates. No changes to crawling, citation, or content surfacing.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Perplexity Changelog",
     "title": "GPT-6 Sol, GPT-6 Luna, Claude Opus 5.5, Grok 4.7",
     "why": "Model capability update; no crawling, ranking, or citation surface changes.",
     "url": "https://docs.perplexity.ai/changelog#changelog-september-2026"
