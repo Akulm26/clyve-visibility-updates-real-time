@@ -161,6 +161,11 @@ message runs a scan and is marked read, so one email means one run. Send
 The silence rule still applies: a triggered scan that finds nothing sends
 nothing back.
 
+New trigger mail is found by tracking the highest message id already examined,
+not by the unread flag. Opening your own inbox to see whether a reply arrived
+marks the trigger mail read, and a flag-based check would then skip it — a
+trigger that fails precisely because you went looking for its result.
+
 Three conditions must all hold before anything runs: the code appears in the
 subject or body, the mail came from your own address, and it arrived in the last
 30 minutes. The code is what carries the security — a From address can be forged,
