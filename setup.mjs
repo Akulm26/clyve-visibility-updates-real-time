@@ -3,9 +3,16 @@ import { join } from 'node:path';
 import { createInterface } from 'node:readline/promises';
 import { ROOT } from './lib/util.mjs';
 
-const rl = createInterface({ input: process.stdin, output: process.stdout });
+// The token can come from an argument or the environment so this can run
+// unattended; otherwise it is asked for interactively.
+const supplied = process.argv[2] || process.env.TELEGRAM_BOT_TOKEN;
 
-console.log(`
+const rl = supplied
+  ? null
+  : createInterface({ input: process.stdin, output: process.stdout });
+
+if (!supplied) {
+  console.log(`
 Telegram setup
 ──────────────
 1. Open Telegram, message @BotFather, send /newbot
@@ -14,8 +21,9 @@ Telegram setup
 4. Open your new bot and send it any message (e.g. "hi") — this is required
    before it is allowed to message you back.
 `);
+}
 
-const token = (await rl.question('Paste the bot token: ')).trim();
+const token = (supplied || (await rl.question('Paste the bot token: '))).trim();
 if (!/^\d+:[\w-]+$/.test(token)) {
   console.error('That does not look like a bot token. Aborting.');
   process.exit(1);
@@ -45,10 +53,14 @@ let chatId;
 if (chats.size === 1) {
   [chatId] = [...chats.keys()];
   console.log(`\nFound chat: ${chats.get(chatId)} (${chatId})`);
-} else {
+} else if (rl) {
   console.log('\nSeveral chats found:');
   for (const [id, name] of chats) console.log(`  ${id}  ${name}`);
   chatId = (await rl.question('Which chat id? ')).trim();
+} else {
+  // Unattended: take the most recent conversation rather than stopping to ask.
+  chatId = [...chats.keys()].pop();
+  console.log(`\nSeveral chats found; using the most recent: ${chats.get(chatId)} (${chatId})`);
 }
 
 await writeFile(
@@ -80,4 +92,4 @@ Next:
   npm run scan     first real run
   ./install-schedule.sh   install the launchd timers
 `);
-rl.close();
+rl?.close();
