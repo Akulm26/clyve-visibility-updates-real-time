@@ -4,7 +4,7 @@ import { collect } from './collect.mjs';
 import { watch } from './watch.mjs';
 import { passesPrefilter, prefilterWeight } from './lib/filter.mjs';
 import { askClaude, askClaudeJSON } from './lib/claude.mjs';
-import { send } from './lib/telegram.mjs';
+import { send } from './lib/channel.mjs';
 import { updateHealth, formatHealthAlert } from './lib/health.mjs';
 import { TIER1, TIER2, TIER3 } from './sources.mjs';
 import { ROOT, itemKey, readState, writeState, truncate, log } from './lib/util.mjs';

@@ -54,6 +54,31 @@ check(
 );
 check('escaped quotes survive', extractJSON('[{"t":"say \\"hi\\""}]')[0].t === 'say "hi"');
 
+// --- email rendering --------------------------------------------------------
+
+const { toHtml, subjectFrom } = await import('./lib/email.mjs');
+
+const sampleDigest =
+  '*AEO radar · week of 29 Sept*\n\nOne thing moved.\n\n———\n' +
+  '*Google adds image & video reporting*\n_Google Search Central · 2026-09-24_\n\n' +
+  'See https://developers.google.com/search/blog/x';
+
+const html = toHtml(sampleDigest);
+check('subject comes from the first line', subjectFrom(sampleDigest) === 'AEO radar · week of 29 Sept');
+check('bold becomes <strong>', /<strong>AEO radar/.test(html));
+check('italic becomes <em>', /<em>Google Search Central/.test(html));
+check('urls become links', /<a href="https:\/\/developers/.test(html));
+check('item separators become rules', /<hr/.test(html));
+check('html is escaped before styling', /image &amp; video/.test(html));
+check('no chat markers survive', !/(?<![a-z-])[*_](?![a-z-])/.test(html));
+
+// A digest that arrives as raw HTML source would be unreadable, so make sure a
+// stray angle bracket in source text cannot break out.
+check(
+  'injected markup is neutralised',
+  /&lt;script&gt;/.test(toHtml('a <script>alert(1)</script> b')),
+);
+
 // --- the real thing: a second pass must find nothing ------------------------
 
 const backup = await readState('seen.json', {});

@@ -11,7 +11,7 @@ No web app, no server, no API key. A handful of scripts, a JSON ledger, and two
 
 ```bash
 npm install
-npm run setup              # connect Telegram (creates .env)
+npm run setup              # connect email (creates .env)
 npm run init               # seed the ledger so you don't get a year of backlog
 npm run scan               # first real run
 ./install-schedule.sh      # install the timers
@@ -121,7 +121,9 @@ node watch.mjs          # check the silent-change watchers
 | `prompts/gate.md` | Decides what is primary-source and what matters |
 | `prompts/writeup.md` | Turns an item into something readable on a phone |
 | `lib/health.mjs` | Source watchdog — notices when a feed breaks or goes silent |
-| `lib/telegram.mjs` | Delivery (WhatsApp adapter slots in behind the same `send()`) |
+| `lib/channel.mjs` | Picks the delivery adapter from `CHANNEL` in `.env` |
+| `lib/email.mjs` | Email delivery (default) — renders the digest as HTML |
+| `lib/telegram.mjs` | Telegram delivery |
 | `state/` | `seen.json` ledger, `hashes.json` fingerprints, `queue.json` pending digest, `health.json` source health, `rejected.json` gate audit |
 
 ## Checking the gate's judgement
@@ -148,6 +150,23 @@ system asks for, and it should come up a couple of times a year.
 **Timers not firing.** `launchctl list | grep aeoradar`, then check
 `logs/launchd.scan.log`. Force a run with
 `launchctl kickstart -k gui/$UID/com.clyve.aeoradar.scan`.
+
+## Changing where it sends
+
+Every adapter exposes the same `send(text)`, so the channel is one line in
+`.env` and nothing else moves:
+
+```
+CHANNEL=email       # default — npm run setup:email
+CHANNEL=telegram    #           npm run setup:telegram
+CHANNEL=whatsapp    #           needs an approved template, see below
+```
+
+Email needs an **app password**, not an account password — Google rejects
+ordinary passwords for SMTP. `npm run setup:email` walks through creating one.
+The write-up prompt emits phone-friendly `*bold*` and `_italic_` once; each
+adapter translates that to whatever its channel understands, so switching
+channels never means re-tuning the prompt.
 
 ## WhatsApp
 

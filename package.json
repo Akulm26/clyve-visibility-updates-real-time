@@ -11,9 +11,12 @@
     "preview": "node pipeline.mjs preview",
     "init": "node pipeline.mjs init",
     "test": "node test.mjs",
-    "setup": "node setup.mjs"
+    "setup": "node setup-email.mjs",
+    "setup:email": "node setup-email.mjs",
+    "setup:telegram": "node setup.mjs"
   },
   "dependencies": {
-    "fast-xml-parser": "^4.5.0"
+    "fast-xml-parser": "^4.5.0",
+    "nodemailer": "^10.0.12"
   }
 }
