@@ -1,15 +1,1 @@
-[
-  {
-    "source": "google-search-status",
-    "sourceName": "Google Search Status Dashboard",
-    "authority": 10,
-    "url": "https://status.search.google.com/incidents/LEubPCm2octf2uMqCFKE",
-    "title": "Google Search: August 2026 spam update",
-    "published": "2026-08-18T16:27:00.000Z",
-    "summary": "Google Search Status Dashboard Incidents August 2026 spam update Google Search Status Dashboard This page provides status information on the services that are part of Google Search. Check back here to view the current status of the services listed below. If you are experiencing an issue not listed here, please contact Support . Learn more about what's posted on the dashboard in this FAQ . For additional information on these services, please visit https://developers.google.com/search/help/status-dashboard . Available Service information Service disruption Service outage Incident affecting Ranking August 2026 spam update Incident began at 2026-08-18 09:27 and ended at 2026-08-21 01:49 (all times are US/Pacific ). Date Time Description 21 Aug 2026 01:49 PDT The rollout was complete as of August 21, 2026. 18 Aug 2026 09:28 PDT Released the August 2026 spam update , which applies globally and to all languages. The rollout may take a few days to complete. All times are US/Pacific Documentation RSS Feed JSON History | Schema JSON Product Catalog | Schema Send feedback Privacy policy",
-    "score": 3,
-    "category": "ranking",
-    "why": "August spam update completed; historical ranking change",
-    "alsoSeenIn": []
-  }
-]
+[]

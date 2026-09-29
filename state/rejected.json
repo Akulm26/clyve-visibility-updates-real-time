@@ -2,6 +2,20 @@
   {
     "at": "2026-09-29",
     "source": "Perplexity Changelog",
+    "title": "Fast Search availability",
+    "why": "Perplexity API model updates; no search surface or visibility change",
+    "url": "https://docs.perplexity.ai/changelog#september-2026-fast-search-api"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Perplexity Changelog",
+    "title": "New model support: GPT-6, Claude Opus 5.5, Grok 4.7, Gemini 3.8 Flash",
+    "why": "Perplexity API model support updates; no impact on content discovery",
+    "url": "https://docs.perplexity.ai/changelog#september-2026-new-models"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Perplexity Changelog",
     "title": "Fast Search introduced",
     "why": "API model updates; no crawling, citation, or content-surfacing changes.",
     "url": "https://docs.perplexity.ai/changelog"
