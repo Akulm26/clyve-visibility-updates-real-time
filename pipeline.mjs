@@ -237,7 +237,7 @@ function prune(seen) {
 
 // ---------------------------------------------------------------- commands
 
-async function cmdScan({ dryRun }) {
+async function cmdScan({ dryRun, manual = false }) {
   const { fresh, seen, report } = await gatherNew({ dryRun });
   const failed = report.filter((r) => !r.ok);
   if (failed.length) log(`sources failed: ${failed.map((f) => f.id).join(', ')}`);
@@ -251,46 +251,71 @@ async function cmdScan({ dryRun }) {
     log(`sent source-health notice for: ${healthAlerts.map((a) => a.id).join(', ')}`);
   }
 
-  if (!fresh.length) {
-    await writeState('seen.json', prune(seen));
-    log('nothing new — exiting silently, no model calls, no message');
-    return;
-  }
-
   if (dryRun) {
     for (const it of fresh.slice(0, 20)) console.log(`  [${it.sourceName}] ${it.title}`);
     log('dry run: stopping before any model call');
     return;
   }
 
-  const batch = await enrichThin(fresh.slice(0, MAX_ITEMS_PER_GATE));
-  const { kept, rejected } = await gate(batch);
-  await logRejections(rejected);
-  log(`gate kept ${kept.length}/${batch.length}`);
+  let kept = [];
+  if (fresh.length) {
+    const batch = await enrichThin(fresh.slice(0, MAX_ITEMS_PER_GATE));
+    const gated = await gate(batch);
+    kept = gated.kept;
+    await logRejections(gated.rejected);
+    log(`gate kept ${kept.length}/${batch.length}`);
 
-  // Everything we looked at is now permanently seen, kept or not.
-  for (const it of batch) seen[it._key] = { t: Date.now(), r: 'gated' };
+    // Everything we looked at is now permanently seen, kept or not.
+    for (const it of batch) seen[it._key] = { t: Date.now(), r: 'gated' };
+  }
 
-  const breaking = kept.filter((k) => k.score >= BREAKING_SCORE);
-  const queued = kept.filter((k) => k.score < BREAKING_SCORE);
+  const strip = ({ _key, ...rest }) => rest;
 
-  if (breaking.length) {
+  if (manual) {
+    // You asked, so you get an answer. A hand-triggered check sends everything
+    // it found plus anything already waiting, most urgent first — and says so
+    // plainly when there is nothing, rather than leaving you wondering whether
+    // it worked. The urgency threshold exists to avoid pestering you on the
+    // automatic runs; it has no business filtering a reply you requested.
+    const waiting = await readState('queue.json', []);
+    const all = [...kept.map(strip), ...waiting].sort(
+      (a, b) => b.score - a.score || (b.authority || 0) - (a.authority || 0),
+    );
+
+    const text = all.length
+      ? await writeUp(all.slice(0, MAX_DIGEST_ITEMS), 'requested update')
+      : `*AEO radar · nothing new*\n\nChecked every source just now. ` +
+        `Nothing has changed since the last update.`;
+
+    await send(text);
+    await saveSent('requested update', text);
+    await writeState('queue.json', []);
+    await writeState('seen.json', prune(seen));
+    log(`sent requested update (${all.length} item(s))`);
+    return;
+  }
+
+  const urgent = kept.filter((k) => k.score >= BREAKING_SCORE);
+  const later = kept.filter((k) => k.score < BREAKING_SCORE);
+
+  if (urgent.length) {
     // Several high-impact items landing in one scan is a backlog, not an
     // emergency — a catch-up reads better than four "breaking" alarms.
-    const kind = breaking.length > MAX_BREAKING ? 'catch-up digest' : 'breaking alert';
-    const text = await writeUp(breaking, kind);
+    const kind = urgent.length > MAX_BREAKING ? 'catch-up digest' : 'breaking alert';
+    const text = await writeUp(urgent, kind);
     await send(text);
     await saveSent(kind, text);
-    log(`sent ${breaking.length} item(s) as ${kind}`);
+    log(`sent ${urgent.length} item(s) as ${kind}`);
   }
 
-  if (queued.length) {
+  if (later.length) {
     const queue = await readState('queue.json', []);
-    queue.push(...queued.map(({ _key, ...rest }) => rest));
+    queue.push(...later.map(strip));
     await writeState('queue.json', queue);
-    log(`queued ${queued.length} item(s) for the weekly digest`);
+    log(`queued ${later.length} item(s) for the weekly digest`);
   }
 
+  if (!kept.length) log('nothing new — staying silent');
   await writeState('seen.json', prune(seen));
 }
 
@@ -374,9 +399,10 @@ async function cmdListen(opts) {
   const { checkInbox } = await import('./lib/inbox.mjs');
   const command = await checkInbox();
   if (!command) return;
-  log(`triggered by email: running ${command}`);
-  if (command === 'digest') await cmdDigest(opts);
-  else await cmdScan(opts);
+  // Any trigger word means the same thing: tell me what's new. There is no
+  // useful distinction to make the reader remember.
+  log(`triggered by email (${command}): sending a requested update`);
+  await cmdScan({ ...opts, manual: true });
 }
 
 const cmd = process.argv[2] || 'scan';

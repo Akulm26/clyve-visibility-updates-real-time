@@ -75,6 +75,10 @@ check(
 );
 // Each digest kind must be recognisable in the subject, so a hand-triggered
 // catch-up is never mistaken for the Monday digest.
+check('requested-update header is recognised',
+  subjectFrom("*AEO radar · what's new*\n\nBody.") === "AEO radar · what's new");
+check('nothing-new header is recognised',
+  subjectFrom('*AEO radar · nothing new*\n\nBody.') === 'AEO radar · nothing new');
 check('catch-up header is recognised',
   subjectFrom('*AEO radar · catch-up*\n\nBody.') === 'AEO radar · catch-up');
 check('weekly header is recognised',

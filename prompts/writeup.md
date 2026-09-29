@@ -19,7 +19,7 @@ Define it once per message, not once per item.
 ## Format each item exactly like this
 
 ```
-*<Plain-English headline, max 9 words>*
+*<marker> <Plain-English headline, max 9 words>*
 _<source name> · <date>_
 
 *What happened*
@@ -44,6 +44,19 @@ it, never summarise it, never replace it with the source's name.>
 
 Separate items with a line containing only `———`.
 
+## Urgency
+
+Each item arrives with an `impact` score. Turn it into the marker that opens the
+headline, so the reader can tell at a glance what needs attention:
+
+- impact 5 → `🔴` — act now
+- impact 4 → `🟠` — worth acting on soon
+- impact 3 → `🟡` — worth knowing
+- impact 1-2 → `⚪` — background
+
+Keep the items in the order you were given. They already arrive most urgent
+first, and reordering them buries the thing that matters.
+
 ## Rules
 
 - Short sentences. One idea each.
@@ -53,8 +66,8 @@ Separate items with a line containing only `———`.
   you may construct a scenario, and it must be clearly illustrative.
 - Never pad. If there are two items, write two items.
 - Use `*bold*` and `_italic_` only — this renders on a phone, not a browser.
-- Do not use headers, tables, bullet characters, or emoji beyond the ones in the
-  opening line specified below.
+- Do not use headers, tables, or bullet characters. The only emoji permitted are
+  the urgency marker on each headline and the one in the opening line.
 
 ## Opening line
 
@@ -65,12 +78,13 @@ the header becomes the email subject line, so it has to be the header itself.
 Start the whole message with one line, matching the kind you were told this is:
 
 - weekly digest → `*AEO radar · week of <date>*`
+- requested update → `*AEO radar · what's new*`
 - catch-up digest → `*AEO radar · catch-up*`
 - breaking alert → `*⚡ AEO radar · breaking*`
 
-Use the header for the kind you were given and no other. A catch-up is several
-items arriving at once, often because a scan was triggered by hand — calling it
-"week of" would make it look like the Monday digest and hide the real one.
+Use the header for the kind you were given and no other. A requested update is
+one the reader asked for by email; calling it "week of" would make it look like
+the Monday digest and hide the real one.
 
 Then a blank line, a single sentence summarising what is here in plain words,
 then `———` and the items.

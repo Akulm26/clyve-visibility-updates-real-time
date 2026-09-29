@@ -154,12 +154,16 @@ system asks for, and it should come up a couple of times a year.
 ## Triggering a scan from your phone
 
 Email yourself with **`scan <your code>`** in the subject. Get the code with
-`npm run trigger:code`. The inbox is checked every two minutes; a matching
-message runs a scan and is marked read, so one email means one run. Send
-`digest <code>` instead to get the weekly digest early.
+`npm run trigger:code`. The inbox is checked every two minutes.
 
-The silence rule still applies: a triggered scan that finds nothing sends
-nothing back.
+A requested check always replies. It sends everything it just found plus
+anything already waiting, most urgent first, and says plainly when there is
+nothing rather than leaving you wondering whether it worked. The urgency
+threshold exists to avoid pestering you on the automatic runs; it has no
+business filtering a reply you asked for.
+
+Silence is still the rule for *scheduled* scans — only high-impact items
+interrupt you, the rest wait for Monday.
 
 New trigger mail is found by tracking the highest message id already examined,
 not by the unread flag. Opening your own inbox to see whether a reply arrived
