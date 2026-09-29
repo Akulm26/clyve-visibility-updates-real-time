@@ -1,6 +1,27 @@
 [
   {
     "at": "2026-09-29",
+    "source": "Perplexity Changelog",
+    "title": "Fast Search introduced",
+    "why": "API model updates; no crawling, citation, or content-surfacing changes.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Perplexity Changelog",
+    "title": "New model support: GPT-6, Claude Opus 5.5, Grok 4.7",
+    "why": "Pure model capability news; no retrieval or content-discovery mechanism change.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Perplexity Changelog",
+    "title": "Remote MCP Server OAuth support",
+    "why": "Tool integration feature; no clarification on web crawling or citation impact.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-09-29",
     "source": "Google Search Central Blog",
     "title": "Search Central Live Deep Dive Europe 2026: Meet the community speakers",
     "why": "Event announcement; no content strategy impact",
