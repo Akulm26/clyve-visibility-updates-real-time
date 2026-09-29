@@ -2,6 +2,34 @@
   {
     "at": "2026-09-29",
     "source": "Perplexity Changelog",
+    "title": "GPT-6 Sol, GPT-6 Luna, Claude Opus 5.5, Grok 4.7",
+    "why": "Model capability update; no crawling, ranking, or citation surface changes.",
+    "url": "https://docs.perplexity.ai/changelog#changelog-september-2026"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Perplexity Changelog",
+    "title": "Sign in with Perplexity for remote MCP server",
+    "why": "MCP authentication feature; summary doesn't match title; unclear visibility impact.",
+    "url": "https://docs.perplexity.ai/changelog#changelog-september-2026"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Perplexity Changelog",
+    "title": "Gemini 3.8 Flash",
+    "why": "Model availability update; no AI visibility or content discovery implications.",
+    "url": "https://docs.perplexity.ai/changelog#changelog-september-2026"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Perplexity Changelog",
+    "title": "GLM 5.3 Flash",
+    "why": "Model capability addition; doesn't affect how content is found or surfaced.",
+    "url": "https://docs.perplexity.ai/changelog#changelog-september-2026"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Perplexity Changelog",
     "title": "GPT-6 Sol, GPT-6 Luna, Claude Opus 5.5, and Grok 4.7 support",
     "why": "API model swaps, no retrieval/citation/crawler changes.",
     "url": "https://docs.perplexity.ai/changelog"
