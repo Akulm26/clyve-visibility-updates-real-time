@@ -233,6 +233,21 @@ export const TIER3 = [
     authority: 7,
   },
   {
+    id: 'ms-copilot-web-access',
+    name: 'Microsoft — How Copilot accesses the public web',
+    // Bing's own webmaster help pages are a JavaScript app with no server-side
+    // text, so they cannot be fingerprinted. Microsoft Learn is server-rendered
+    // and carries the same substance: what Copilot may read, and how.
+    url: 'https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-public-web-access',
+    authority: 8,
+  },
+  {
+    id: 'ms-copilot-grounding',
+    name: 'Microsoft — Public websites in Copilot generative answers',
+    url: 'https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/generative-ai-public-websites',
+    authority: 8,
+  },
+  {
     id: 'llmstxt',
     name: 'llms.txt specification',
     url: 'https://llmstxt.org/',

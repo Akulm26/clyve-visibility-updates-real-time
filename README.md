@@ -55,10 +55,14 @@ content. So the timestamp is watched for free, and only when it moves is a singl
 search-backed call spent recovering what changed, constrained to `openai.com` and
 `help.openai.com` URLs so the primary-source rule still holds.
 
-**Known gap, deliberately left open:** Microsoft/Copilot has no reachable primary
-feed — Bing's blogs stopped publishing in February 2026 and every other Microsoft
-endpoint blocks automated access. A genuine gap rather than an oversight; there
-is no clean primary source to point at today.
+**Microsoft** is covered but thinly. Bing's webmaster blog is live and directly
+on-topic — it is simply slow, roughly six posts a year, so expect long silences
+rather than a fault. Copilot's behaviour toward the public web is watched through
+Microsoft Learn, which is server-rendered. What cannot be watched is Bing's own
+webmaster help documentation — the pages holding the `noarchive` / `nocache`
+rules that govern whether Copilot may quote a page. Those are a JavaScript app
+with no server-side text to fingerprint, so a silent edit there will only be
+caught if Bing also blogs about it.
 
 ## Cost
 
