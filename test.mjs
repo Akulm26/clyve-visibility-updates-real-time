@@ -87,6 +87,24 @@ check(
   /&lt;script&gt;/.test(toHtml('a <script>alert(1)</script> b')),
 );
 
+// --- trigger authentication -------------------------------------------------
+
+const { commandFor, hasSecret } = await import('./lib/inbox.mjs');
+
+check('subject naming a scan is recognised', commandFor('scan abc123') === 'scan');
+check('subject naming a digest is recognised', commandFor('digest abc123') === 'digest');
+check('unrelated subject is not a command', commandFor('lunch tomorrow?') === null);
+
+// The secret is what actually carries the security — a From address can be
+// forged, so these must hold regardless of who appears to have sent the mail.
+check('correct code accepted', hasSecret('scan 6df61f24', '6df61f24'));
+check('code is case-insensitive', hasSecret('scan 6DF61F24', '6df61f24'));
+check('code in the body counts', hasSecret('scan\nplease: 6df61f24', '6df61f24'));
+check('wrong code rejected', !hasSecret('scan deadbeef', '6df61f24'));
+check('missing code rejected', !hasSecret('scan', '6df61f24'));
+check('empty secret never matches', !hasSecret('scan anything', ''));
+check('partial code rejected', !hasSecret('scan 6df61f2', '6df61f24'));
+
 // --- the real thing: a second pass must find nothing ------------------------
 
 const backup = await readState('seen.json', {});

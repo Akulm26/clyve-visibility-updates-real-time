@@ -1,6 +1,7 @@
 import { writeFile, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { createInterface } from 'node:readline/promises';
+import { randomBytes } from 'node:crypto';
 import { ROOT } from './lib/util.mjs';
 
 const rl = createInterface({ input: process.stdin, output: process.stdout });
@@ -60,8 +61,11 @@ try {
 }
 const keep = existing
   .split('\n')
-  .filter((l) => l.trim() && !/^(CHANNEL|SMTP_|EMAIL_)/.test(l.trim()))
+  .filter((l) => l.trim() && !/^(CHANNEL|SMTP_|EMAIL_|TRIGGER_SECRET)/.test(l.trim()))
   .join('\n');
+
+const triggerSecret =
+  existing.match(/^TRIGGER_SECRET=(.+)$/m)?.[1]?.trim() || randomBytes(4).toString('hex');
 
 await writeFile(
   join(ROOT, '.env'),
@@ -71,6 +75,7 @@ SMTP_PORT=${port}
 SMTP_USER=${user}
 SMTP_PASS=${pass}
 EMAIL_TO=${to}
+TRIGGER_SECRET=${triggerSecret}
 `,
 );
 
@@ -95,6 +100,9 @@ try {
 Sent — check ${to} (look in spam the first time).
 
 Next:
+  Trigger a scan from your phone by emailing yourself:
+    Subject:  scan ${triggerSecret}
+
   npm run init            seed the ledger so you get one catch-up, not a year
   npm run scan            first real run
   ./install-schedule.sh   install the timers

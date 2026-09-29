@@ -153,15 +153,19 @@ system asks for, and it should come up a couple of times a year.
 
 ## Triggering a scan from your phone
 
-Email yourself with **`scan`** in the subject. The inbox is checked every two
-minutes; a matching message runs a scan and is marked read, so one email means
-one run. Send **`digest`** instead to get the weekly digest early.
+Email yourself with **`scan <your code>`** in the subject. Get the code with
+`npm run trigger:code`. The inbox is checked every two minutes; a matching
+message runs a scan and is marked read, so one email means one run. Send
+`digest <code>` instead to get the weekly digest early.
 
 The silence rule still applies: a triggered scan that finds nothing sends
 nothing back.
 
-Only mail **from your own address** counts, so nobody else can fire it. The
-radar's own digests are ignored as commands, or it would trigger itself.
+Three conditions must all hold before anything runs: the code appears in the
+subject or body, the mail came from your own address, and it arrived in the last
+30 minutes. The code is what carries the security — a From address can be forged,
+so on its own the sender check only stops accidents. Rotate the code any time
+with `npm run trigger:code -- --new`.
 
 Email was chosen over a watched iCloud folder because macOS privacy protection
 blocks background agents from reading iCloud Drive — an agent there runs but
