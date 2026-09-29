@@ -173,6 +173,24 @@ export const TIER2 = [
     filter: true,
   },
   {
+    id: 'perplexity-hub',
+    name: 'Perplexity — Publisher & product announcements',
+    url: 'https://www.perplexity.ai/hub/blog',
+    // The only source with no cheap trigger. Perplexity's robots.txt permits
+    // /hub/, but Cloudflare blocks every fetch and the hub sub-sitemap 403s too,
+    // so there is no free "did it change" signal to gate on. A search sweep is
+    // the only way in, so it runs weekly rather than every scan — one call a
+    // week, not four a day.
+    type: 'search-sweep',
+    cadence: 'weekly',
+    query:
+      'new posts on the Perplexity hub blog (perplexity.ai/hub/blog) about the ' +
+      'Publishers Program, revenue sharing, citations, or how Perplexity selects sources',
+    hosts: ['perplexity.ai'],
+    authority: 8,
+    filter: false,
+  },
+  {
     id: 'perplexity-changelog',
     name: 'Perplexity Changelog',
     url: 'https://docs.perplexity.ai/changelog',
@@ -215,6 +233,21 @@ export const TIER3 = [
     id: 'perplexity-bots',
     name: 'Perplexity — Crawlers',
     url: 'https://docs.perplexity.ai/guides/bots',
+    authority: 8,
+  },
+  {
+    id: 'anthropic-crawlers',
+    name: 'Anthropic — ClaudeBot, Claude-User & Claude-SearchBot',
+    // Three separate agents with three separate meanings: ClaudeBot for training,
+    // Claude-User for live fetches, Claude-SearchBot for what Claude cites. The
+    // last is the one that decides whether Claude can quote a page.
+    url: 'https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler',
+    authority: 9,
+  },
+  {
+    id: 'openai-web-search',
+    name: 'OpenAI — Web search & citation behaviour',
+    url: 'https://platform.openai.com/docs/guides/tools-web-search',
     authority: 8,
   },
   {

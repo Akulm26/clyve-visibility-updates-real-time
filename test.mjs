@@ -61,8 +61,23 @@ try {
   const { items, report } = await collect({ dryRun: true });
   check('collector returned items', items.length > 0, `${items.length} items`);
 
-  const ok = report.filter((r) => r.ok && r.count > 0).length;
-  check('most sources are live', ok >= report.length - 4, `${ok}/${report.length} returning items`);
+  // Only deterministic sources can be judged on item count here: the ones backed
+  // by a model call (webfetch, sitemap-search, search-sweep) deliberately return
+  // nothing under --dry-run, and the weekly sweep returns nothing most days.
+  const llmBacked = new Set(
+    [...TIER1, ...TIER2]
+      .filter((s) => ['webfetch', 'sitemap-search', 'search-sweep'].includes(s.type))
+      .map((s) => s.id),
+  );
+  const deterministic = report.filter((r) => !llmBacked.has(r.id));
+  const live = deterministic.filter((r) => r.ok && r.count > 0).length;
+
+  // Bing's two blogs publish a handful of times a year, so a zero from them is
+  // expected rather than a fault. Everything else should be returning items.
+  check('deterministic sources are live', live >= deterministic.length - 2,
+    `${live}/${deterministic.length} returning items`);
+  check('no source errored', report.every((r) => r.ok),
+    report.filter((r) => !r.ok).map((r) => `${r.id}: ${r.error}`).join(' | '));
 
   const relevant = items.filter((i) => passesPrefilter(i, SOURCE_BY_ID[i.source]));
   check('prefilter removes noise but keeps signal', relevant.length > 0 && relevant.length < items.length,

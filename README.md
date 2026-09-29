@@ -68,6 +68,29 @@ posts.
 Bing's webmaster blog is also live and on-topic — just slow, roughly six posts a
 year, so expect long silences rather than a fault.
 
+**The three AI assistants** are covered on the two axes that matter: what they
+announce, and how their crawlers behave. Anthropic runs three separate agents —
+`ClaudeBot` for training, `Claude-User` for live fetches, and `Claude-SearchBot`
+for what Claude cites — and the support article defining them is watched. OpenAI's
+crawler docs and its web-search/citation guide are watched alongside the news feed
+and release notes. Perplexity's crawler docs and API changelog are covered
+directly; its hub blog, where the Publishers' Program is announced, blocks every
+fetch and exposes no timestamp to gate on, so it gets a once-weekly search sweep
+constrained to `perplexity.ai` URLs — the only source in the system without a
+free trigger, which is why it runs weekly rather than every scan.
+
+## Credentials
+
+**None are needed, and none are used.** Every source is public: feeds, public
+JSON endpoints, sitemaps, and documentation pages. No logins, no API keys, no
+cookies. The only secret in the project is your Telegram bot token.
+
+Two things genuinely do require an account, and both are *your own site's data*
+rather than platform news — so they are deliberately out of scope here:
+Google Search Console, and Bing Webmaster Tools' AI Performance report, which
+shows which of your URLs Copilot actually cites. Worth logging into occasionally;
+not something this radar can or should do for you.
+
 ## Cost
 
 Near zero, by design. Telegram, `launchd`, and feed fetching are free. The model

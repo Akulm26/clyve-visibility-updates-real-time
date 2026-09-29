@@ -185,8 +185,43 @@ async function parseSitemapSearch(source, { dryRun }) {
   return entries.map((e) => mkItem(source, e));
 }
 
+/**
+ * Search-only source, for hosts that block every fetch and expose no timestamp
+ * to gate on. There is no free trigger here, so the call itself is the cost —
+ * which is why these are paced weekly rather than run on every scan.
+ */
+async function parseSearchSweep(source, { dryRun }) {
+  if (dryRun) return [];
+
+  const sweeps = await readState('sweeps.json', {});
+  const last = sweeps[source.id];
+  const dueAfter = source.cadence === 'weekly' ? 7 * 864e5 : 864e5;
+  if (last && Date.now() - new Date(last).getTime() < dueAfter) return [];
+
+  const since = last ? new Date(last).toISOString().slice(0, 10) : 'the last 30 days';
+  const hosts = source.hosts.join(' or ');
+  const raw = await askClaude(
+    `Search the web for ${source.query}, published since ${since}.\n` +
+      `A search result whose URL is on ${hosts} counts as first-party — you do ` +
+      `not need to open the page to use it. Exclude anything whose only URL is a ` +
+      `third-party site (news outlets, aggregators, newsletters, agency blogs).\n` +
+      `Reply with ONLY a JSON array. Each element: ` +
+      `{"title": string, "published": "YYYY-MM-DD", "summary": string (max 300 chars), "url": string}. ` +
+      `Max 10 entries. Use [] if nothing first-party is found in that window.`,
+    { tools: 'WebSearch', model: 'haiku', timeout: 240000 },
+  );
+
+  const hostRe = new RegExp(`//([a-z0-9-]+\\.)*(${source.hosts.map((h) => h.replace('.', '\\.')).join('|')})/`, 'i');
+  const entries = extractJSON(raw).filter((e) => hostRe.test(e.url || ''));
+  await writeState('sweeps.json', { ...sweeps, [source.id]: new Date().toISOString() });
+  return entries.map((e) => mkItem(source, e));
+}
+
 async function collectOne(source, opts) {
-  const needsOwnFetch = source.type === 'webfetch' || source.type === 'sitemap-search';
+  const needsOwnFetch =
+    source.type === 'webfetch' ||
+    source.type === 'sitemap-search' ||
+    source.type === 'search-sweep';
   const body = needsOwnFetch ? null : await fetchText(source.url);
   switch (source.type) {
     case 'rss':
@@ -201,6 +236,8 @@ async function collectOne(source, opts) {
       return parseWebfetch(source, opts);
     case 'sitemap-search':
       return parseSitemapSearch(source, opts);
+    case 'search-sweep':
+      return parseSearchSweep(source, opts);
     default:
       throw new Error(`unknown source type: ${source.type}`);
   }
