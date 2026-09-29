@@ -35,6 +35,22 @@ export const TIER1 = [
     filter: true,
   },
   {
+    id: 'google-gemini',
+    name: 'Google — The Keyword (Gemini)',
+    url: 'https://blog.google/products/gemini/rss/',
+    type: 'rss',
+    authority: 8,
+    filter: true,
+  },
+  {
+    id: 'schemaorg-releases',
+    name: 'Schema.org releases',
+    url: 'https://github.com/schemaorg/schemaorg/releases.atom',
+    type: 'atom',
+    authority: 7,
+    filter: false,
+  },
+  {
     id: 'google-search-status',
     name: 'Google Search Status Dashboard',
     url: 'https://status.search.google.com/incidents.json',
@@ -186,6 +202,21 @@ export const TIER3 = [
     name: 'Perplexity — Crawlers',
     url: 'https://docs.perplexity.ai/guides/bots',
     authority: 8,
+  },
+  {
+    id: 'apple-applebot',
+    name: 'Apple — Applebot & Applebot-Extended',
+    // Apple revises this page without announcing it; the AI-training opt-out
+    // control lives here and nowhere else.
+    url: 'https://support.apple.com/en-us/119829',
+    authority: 9,
+  },
+  {
+    id: 'ietf-aipref',
+    name: 'IETF — AI Preferences working group',
+    // Where the industry-wide successor to robots.txt opt-outs is being drafted.
+    url: 'https://datatracker.ietf.org/wg/aipref/documents/',
+    authority: 7,
   },
   {
     id: 'llmstxt',

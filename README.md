@@ -27,15 +27,31 @@ nothing new cleared the filters, nothing is sent** — no "quiet week" message.
 title and written to `state/seen.json`. Seen once, never sent again.
 
 **Watches pages that change silently.** Google's AI-features and crawler docs,
-OpenAI's and Perplexity's bot docs, and the llms.txt spec are fingerprinted every
-scan. When the text moves, the before/after diff is what gets explained. This
-tier catches policy shifts that never get a blog post.
+OpenAI's and Perplexity's bot docs, Apple's Applebot page, the IETF AI-preferences
+drafts, and the llms.txt spec are fingerprinted every scan. When the text moves,
+the before/after diff is what gets explained. This tier catches policy shifts
+that never get a blog post — Apple in particular revises its AI opt-out
+documentation without announcing it.
+
+**Tells you when it goes blind.** The quiet failure that matters is a feed moving
+or 404ing: the collector returns zero and everything looks healthy. `lib/health.mjs`
+tracks every source and sends one notice when a source starts failing, or when a
+source that used to publish has been silent for about ten days. It alerts once,
+then stays quiet until the source recovers. Sources that have *never* published
+never alert, so Bing's dormant blogs stay silent instead of nagging.
 
 ## Sources
 
-Platform primary sources only — Google, OpenAI, Anthropic, Perplexity, Microsoft
-/ Bing, Meta, Reddit, Cloudflare, plus arXiv for original research. SEO trade
+Platform primary sources only — Google (Search, AI, Gemini, status, docs),
+OpenAI, Anthropic, Perplexity, Apple, Meta, Reddit, Cloudflare, Schema.org, the
+IETF AI-preferences working group, plus arXiv for original research. SEO trade
 press and commentary are deliberately excluded. See `sources.mjs`.
+
+**Known gaps, deliberately left open:** Microsoft/Copilot has no reachable
+primary feed — Bing's blogs stopped publishing in February 2026 and every other
+Microsoft endpoint blocks automated access. ChatGPT's own product release notes
+are similarly blocked. Both are genuine gaps rather than oversights; neither has
+a clean primary source to point at today.
 
 ## Cost
 
@@ -66,8 +82,16 @@ node watch.mjs          # check the silent-change watchers
 | `pipeline.mjs` | Dedupe → filter → gate → score → route |
 | `prompts/gate.md` | Decides what is primary-source and what matters |
 | `prompts/writeup.md` | Turns an item into something readable on a phone |
+| `lib/health.mjs` | Source watchdog — notices when a feed breaks or goes silent |
 | `lib/telegram.mjs` | Delivery (WhatsApp adapter slots in behind the same `send()`) |
-| `state/` | `seen.json` ledger, `hashes.json` fingerprints, `queue.json` pending digest |
+| `state/` | `seen.json` ledger, `hashes.json` fingerprints, `queue.json` pending digest, `health.json` source health, `rejected.json` gate audit |
+
+## Checking the gate's judgement
+
+The gate decides what you never see. `state/rejected.json` keeps the last 300
+items it dropped, each with its one-line reason — skim it occasionally to confirm
+nothing good is being thrown away. Nothing sends it anywhere; it is there purely
+so a wrong call is catchable.
 
 ## Troubleshooting
 
@@ -75,7 +99,13 @@ node watch.mjs          # check the silent-change watchers
 prints what the free filters found without spending anything.
 
 **A source shows `⚠ 0`.** Run `node collect.mjs`. A zero means either the feed
-moved or that publication has genuinely gone quiet (Bing's blogs often have).
+moved or that publication has genuinely gone quiet (Bing's blogs have). You do
+not need to watch for this — the health watchdog will message you if a source
+that used to work stops working.
+
+**You got a source-check message.** A feed has probably moved. Find its new URL
+and update the entry in `sources.mjs`. This is the only routine maintenance the
+system asks for, and it should come up a couple of times a year.
 
 **Timers not firing.** `launchctl list | grep aeoradar`, then check
 `logs/launchd.scan.log`. Force a run with

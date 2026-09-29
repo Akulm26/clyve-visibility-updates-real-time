@@ -5,7 +5,8 @@ import { watch } from './watch.mjs';
 import { passesPrefilter, prefilterWeight } from './lib/filter.mjs';
 import { askClaude, askClaudeJSON } from './lib/claude.mjs';
 import { send } from './lib/telegram.mjs';
-import { TIER1, TIER2 } from './sources.mjs';
+import { updateHealth, formatHealthAlert } from './lib/health.mjs';
+import { TIER1, TIER2, TIER3 } from './sources.mjs';
 import { ROOT, itemKey, readState, writeState, truncate, log } from './lib/util.mjs';
 
 // Caps. Their job is to bound the worst case, not the normal one — a typical
@@ -17,6 +18,10 @@ const BACKFILL_DAYS = 14;
 const SEEN_RETENTION_DAYS = 400;
 
 const SOURCE_BY_ID = Object.fromEntries([...TIER1, ...TIER2].map((s) => [s.id, s]));
+const NAME_BY_ID = Object.fromEntries(
+  [...TIER1, ...TIER2, ...TIER3].map((s) => [s.id, s.name]),
+);
+const MAX_REJECTION_LOG = 300;
 
 async function loadEnv() {
   try {
@@ -37,11 +42,10 @@ async function prompt(name, items) {
 
 /** Everything free happens here: fetch, dedupe, keyword filter. */
 async function gatherNew({ dryRun }) {
-  const [{ items: feedItems, report }, docChanges] = await Promise.all([
-    collect({ dryRun }),
-    watch(),
-  ]);
+  const [{ items: feedItems, report: feedReport }, { items: docChanges, report: watchReport }] =
+    await Promise.all([collect({ dryRun }), watch()]);
 
+  const report = [...feedReport, ...watchReport];
   const seen = await readState('seen.json', {});
   const all = [...feedItems, ...docChanges];
 
@@ -104,7 +108,7 @@ async function gate(items) {
   const dropped = new Set();
   for (const v of verdicts) for (const d of v.duplicates || []) dropped.add(d);
 
-  return verdicts
+  const kept = verdicts
     .filter((v) => v.keep && !dropped.has(v.id) && items[v.id])
     .map((v) => ({
       ...items[v.id],
@@ -113,6 +117,30 @@ async function gate(items) {
       why: v.why || '',
       alsoSeenIn: (v.duplicates || []).map((d) => items[d]?.sourceName).filter(Boolean),
     }));
+
+  const rejected = verdicts
+    .filter((v) => !v.keep && items[v.id])
+    .map((v) => ({
+      at: new Date().toISOString().slice(0, 10),
+      source: items[v.id].sourceName,
+      title: items[v.id].title,
+      why: v.why || '',
+      url: items[v.id].url,
+    }));
+
+  return { kept, rejected };
+}
+
+/**
+ * The gate decides what you never see, so keep a skimmable record of what it
+ * threw away. Not sent anywhere — it exists so a wrong call can be caught by
+ * reading `state/rejected.json` occasionally.
+ */
+async function logRejections(rejected) {
+  if (!rejected.length) return;
+  const existing = await readState('rejected.json', []);
+  const merged = [...rejected, ...existing].slice(0, MAX_REJECTION_LOG);
+  await writeState('rejected.json', merged);
 }
 
 async function writeUp(items, kind) {
@@ -144,6 +172,14 @@ async function cmdScan({ dryRun }) {
   if (failed.length) log(`sources failed: ${failed.map((f) => f.id).join(', ')}`);
   log(`${fresh.length} new item(s) past the free filters`);
 
+  // Health is tracked on every scan, including quiet ones — a source going
+  // dark is precisely the thing a quiet scan would otherwise hide.
+  const healthAlerts = dryRun ? [] : await updateHealth(report);
+  if (healthAlerts.length) {
+    await send(formatHealthAlert(healthAlerts, NAME_BY_ID));
+    log(`sent source-health notice for: ${healthAlerts.map((a) => a.id).join(', ')}`);
+  }
+
   if (!fresh.length) {
     await writeState('seen.json', prune(seen));
     log('nothing new — exiting silently, no model calls, no message');
@@ -157,7 +193,8 @@ async function cmdScan({ dryRun }) {
   }
 
   const batch = fresh.slice(0, MAX_ITEMS_PER_GATE);
-  const kept = await gate(batch);
+  const { kept, rejected } = await gate(batch);
+  await logRejections(rejected);
   log(`gate kept ${kept.length}/${batch.length}`);
 
   // Everything we looked at is now permanently seen, kept or not.
@@ -217,8 +254,9 @@ async function cmdPreview() {
   const { fresh } = await gatherNew({ dryRun: false });
   if (!fresh.length) return log('nothing new to preview');
 
-  const kept = await gate(fresh.slice(0, MAX_ITEMS_PER_GATE));
-  log(`gate kept ${kept.length}`);
+  const { kept, rejected } = await gate(fresh.slice(0, MAX_ITEMS_PER_GATE));
+  log(`gate kept ${kept.length}, rejected ${rejected.length}`);
+  for (const r of rejected) log(`  rejected: [${r.source}] ${r.title} — ${r.why}`);
   if (!kept.length) return;
 
   const ranked = kept.sort((a, b) => b.score - a.score).slice(0, MAX_DIGEST_ITEMS);

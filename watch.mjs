@@ -41,6 +41,7 @@ export async function watch({ seed = false } = {}) {
   const prev = await readState('hashes.json', {});
   const next = { ...prev };
   const items = [];
+  const report = [];
 
   const results = await Promise.allSettled(
     TIER3.map(async (page) => {
@@ -53,9 +54,14 @@ export async function watch({ seed = false } = {}) {
   for (const [i, r] of results.entries()) {
     const page = TIER3[i];
     if (r.status === 'rejected') {
-      log(`watch failed: ${page.id}: ${r.reason?.message || r.reason}`);
+      const error = String(r.reason?.message || r.reason);
+      log(`watch failed: ${page.id}: ${error}`);
+      report.push({ id: page.id, ok: false, count: 0, error });
       continue;
     }
+    // A watcher that fetches cleanly is healthy whether or not the page moved;
+    // "no change" is the expected result, not a zero to worry about.
+    report.push({ id: page.id, ok: true, count: 1 });
     const { text, hash } = r.value;
     const before = prev[page.id];
     next[page.id] = { hash, text, checked: new Date().toISOString() };
@@ -87,10 +93,10 @@ export async function watch({ seed = false } = {}) {
   }
 
   await writeState('hashes.json', next);
-  return items;
+  return { items, report };
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
-  const items = await watch({ seed: process.argv.includes('--seed') });
+  const { items } = await watch({ seed: process.argv.includes('--seed') });
   console.log(items.length ? JSON.stringify(items, null, 2) : 'no documentation changes');
 }
