@@ -1,7 +1,7 @@
 import { XMLParser } from 'fast-xml-parser';
 import { TIER1, TIER2 } from './sources.mjs';
-import { fetchText, htmlToText, truncate, log } from './lib/util.mjs';
-import { askClaude } from './lib/claude.mjs';
+import { fetchText, htmlToText, truncate, readState, writeState, log } from './lib/util.mjs';
+import { askClaude, extractJSON } from './lib/claude.mjs';
 
 const parser = new XMLParser({
   ignoreAttributes: false,
@@ -108,9 +108,7 @@ async function parseWebfetch(source, { dryRun }) {
       `Use the entry's own anchor URL if it has one, otherwise "${source.url}". Max 15 entries.`,
     { tools: 'WebFetch', model: 'haiku' },
   );
-  const json = raw.match(/\[[\s\S]*\]/);
-  if (!json) return [];
-  return JSON.parse(json[0]).map((e) => mkItem(source, e));
+  return extractJSON(raw).map((e) => mkItem(source, e));
 }
 
 /**
@@ -126,9 +124,70 @@ function trim(items) {
     .slice(0, MAX_PER_SOURCE);
 }
 
+/**
+ * For pages that block automated fetching but are indexed by search engines.
+ *
+ * The sitemap's `lastmod` is the free trigger — verified to be a genuine
+ * per-page content timestamp rather than a site-wide build stamp. Only when it
+ * moves do we spend one search-backed call to recover what actually changed,
+ * and the result is constrained to first-party pages so the primary-source rule
+ * still holds.
+ */
+async function parseSitemapSearch(source, { dryRun }) {
+  const xml = await fetchText(source.sitemap, { timeout: 40000 });
+  const block = xml
+    .split('<url>')
+    .find((b) => b.includes(`<loc>${source.url}</loc>`));
+  const lastmod = block?.match(/<lastmod>(.*?)<\/lastmod>/)?.[1];
+  if (!lastmod) throw new Error('page not listed in sitemap — url may have moved');
+
+  const stateFile = `lastmod.json`;
+  const state = await readState(stateFile, {});
+  const previous = state[source.id];
+
+  if (previous === lastmod) return [];
+  if (dryRun) return [];
+
+  // First sight is a baseline: record it and say nothing, exactly as the
+  // documentation watchers do.
+  if (!previous) {
+    await writeState(stateFile, { ...state, [source.id]: lastmod });
+    log(`${source.id}: seeded lastmod baseline`);
+    return [];
+  }
+
+  const since = previous.slice(0, 10);
+  // Phrasing matters here. Told merely to "only report first-party entries",
+  // the model reads that as needing to open the page to verify — which it
+  // cannot, since the page blocks it — and returns nothing. Saying explicitly
+  // that a first-party URL in a search result is sufficient attribution is what
+  // makes this source work at all.
+  const raw = await askClaude(
+    `Search the web to find what is currently listed on the OpenAI ChatGPT ` +
+      `release notes page (${source.url}) and the OpenAI Help Center ChatGPT ` +
+      `release notes, for entries dated ${since} or later.\n` +
+      `A search result whose URL is on openai.com or help.openai.com counts as ` +
+      `first-party — you do not need to open the page to use it. Exclude anything ` +
+      `whose only URL is a third-party site (news outlets, aggregators, newsletters).\n` +
+      `Reply with ONLY a JSON array. Each element: ` +
+      `{"title": string, "published": "YYYY-MM-DD", "summary": string (max 300 chars), "url": string}. ` +
+      `Max 10 entries. Use [] only if searches genuinely surface no openai.com ` +
+      `entries in that date range.`,
+    { tools: 'WebSearch', model: 'haiku', timeout: 240000 },
+  );
+
+  // Parse before recording the new timestamp: a failure here must leave the
+  // window open so the next scan retries, rather than silently losing it.
+  const entries = extractJSON(raw).filter((e) =>
+    /(^|\/\/)(www\.)?(openai\.com|help\.openai\.com)/.test(e.url || ''),
+  );
+  await writeState(stateFile, { ...state, [source.id]: lastmod });
+  return entries.map((e) => mkItem(source, e));
+}
+
 async function collectOne(source, opts) {
-  const body =
-    source.type === 'webfetch' ? null : await fetchText(source.url);
+  const needsOwnFetch = source.type === 'webfetch' || source.type === 'sitemap-search';
+  const body = needsOwnFetch ? null : await fetchText(source.url);
   switch (source.type) {
     case 'rss':
       return parseRss(body, source);
@@ -140,6 +199,8 @@ async function collectOne(source, opts) {
       return parseAnchors(body, source);
     case 'webfetch':
       return parseWebfetch(source, opts);
+    case 'sitemap-search':
+      return parseSitemapSearch(source, opts);
     default:
       throw new Error(`unknown source type: ${source.type}`);
   }

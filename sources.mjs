@@ -159,6 +159,20 @@ export const TIER2 = [
     filter: true,
   },
   {
+    id: 'openai-release-notes',
+    name: 'OpenAI — ChatGPT release notes',
+    url: 'https://openai.com/products/release-notes/',
+    // The page itself 403s to every automated fetch, but OpenAI's robots.txt is
+    // `Allow: /` — this is bot detection, not a policy refusal. Two things make
+    // it reachable anyway: the sitemap exposes a real per-page `lastmod`, and
+    // search engines have indexed the content. So we watch the timestamp, and
+    // only when it moves do we spend a search call to find out what changed.
+    type: 'sitemap-search',
+    sitemap: 'https://openai.com/sitemap.xml/page/',
+    authority: 9,
+    filter: true,
+  },
+  {
     id: 'perplexity-changelog',
     name: 'Perplexity Changelog',
     url: 'https://docs.perplexity.ai/changelog',

@@ -34,6 +34,26 @@ const a = { url: 'https://example.com/post?utm_medium=rss', title: 'Hello  World
 const b = { url: 'https://www.example.com/post/', title: 'hello world' };
 check('same story from two feeds collapses to one key', itemKey(a) === itemKey(b));
 
+// --- JSON extraction --------------------------------------------------------
+
+const { extractJSON } = await import('./lib/claude.mjs');
+
+check('plain array parses', extractJSON('[{"a":1}]').length === 1);
+check('code fence tolerated', extractJSON('```json\n[{"a":1}]\n```').length === 1);
+check('leading prose tolerated', extractJSON('Here you go:\n[{"a":1}]').length === 1);
+
+// The real bug this guards: web-search replies end with a markdown source list,
+// and those links contain `]`, which a greedy match swallows.
+check(
+  'trailing markdown link list ignored',
+  extractJSON('[{"a":1}]\n\nSources:\n- [Release Notes](https://openai.com/x)').length === 1,
+);
+check(
+  'brackets inside strings ignored',
+  extractJSON('[{"t":"a ] bracket"}]')[0].t === 'a ] bracket',
+);
+check('escaped quotes survive', extractJSON('[{"t":"say \\"hi\\""}]')[0].t === 'say "hi"');
+
 // --- the real thing: a second pass must find nothing ------------------------
 
 const backup = await readState('seen.json', {});

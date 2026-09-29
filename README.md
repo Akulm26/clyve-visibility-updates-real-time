@@ -47,11 +47,18 @@ OpenAI, Anthropic, Perplexity, Apple, Meta, Reddit, Cloudflare, Schema.org, the
 IETF AI-preferences working group, plus arXiv for original research. SEO trade
 press and commentary are deliberately excluded. See `sources.mjs`.
 
-**Known gaps, deliberately left open:** Microsoft/Copilot has no reachable
-primary feed — Bing's blogs stopped publishing in February 2026 and every other
-Microsoft endpoint blocks automated access. ChatGPT's own product release notes
-are similarly blocked. Both are genuine gaps rather than oversights; neither has
-a clean primary source to point at today.
+**ChatGPT release notes** are covered by a different mechanism. The page blocks
+every automated fetch, but OpenAI's `robots.txt` is `Allow: /` — this is bot
+detection, not a policy refusal — and two things make it reachable anyway: the
+sitemap carries a genuine per-page `lastmod`, and search engines have indexed the
+content. So the timestamp is watched for free, and only when it moves is a single
+search-backed call spent recovering what changed, constrained to `openai.com` and
+`help.openai.com` URLs so the primary-source rule still holds.
+
+**Known gap, deliberately left open:** Microsoft/Copilot has no reachable primary
+feed — Bing's blogs stopped publishing in February 2026 and every other Microsoft
+endpoint blocks automated access. A genuine gap rather than an oversight; there
+is no clean primary source to point at today.
 
 ## Cost
 
