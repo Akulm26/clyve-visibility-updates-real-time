@@ -232,6 +232,46 @@ export const TIER3 = [
     url: 'https://datatracker.ietf.org/wg/aipref/documents/',
     authority: 7,
   },
+  // Bing's help pages render entirely in JavaScript, so there is no server-side
+  // text to fingerprint. The page itself loads each article from a public,
+  // unauthenticated JSON endpoint — /webmasters/api/help/htmlcontent — which we
+  // read directly. `url` stays the human-readable page so links in the digest
+  // point somewhere a person can actually open.
+  //
+  // This is where Bing documents whether Copilot may quote a page at all, so a
+  // silent edit here matters more than most blog posts.
+  {
+    id: 'bing-webmaster-guidelines',
+    name: 'Bing — Webmaster Guidelines',
+    url: 'https://www.bing.com/webmasters/help/webmaster-guidelines-30fba23a',
+    type: 'bing-help',
+    api: 'https://www.bing.com/webmasters/api/help/htmlcontent?ArticleId=30fba23a',
+    authority: 9,
+  },
+  {
+    id: 'bing-robots-meta',
+    name: 'Bing — Robots meta tags (noarchive, nocache)',
+    url: 'https://www.bing.com/webmasters/help/which-robots-metatags-does-bing-support-5198d240',
+    type: 'bing-help',
+    api: 'https://www.bing.com/webmasters/api/help/htmlcontent?ArticleId=5198d240',
+    authority: 9,
+  },
+  {
+    id: 'bing-ai-performance',
+    name: 'Bing — AI Performance reporting',
+    url: 'https://www.bing.com/webmasters/help/ai-performance-9f8e7d6c',
+    type: 'bing-help',
+    api: 'https://www.bing.com/webmasters/api/help/htmlcontent?ArticleId=9f8e7d6c',
+    authority: 9,
+  },
+  {
+    id: 'bing-crawlers',
+    name: 'Bing — Which crawlers Bing uses',
+    url: 'https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0',
+    type: 'bing-help',
+    api: 'https://www.bing.com/webmasters/api/help/htmlcontent?ArticleId=8c184ec0',
+    authority: 8,
+  },
   {
     id: 'ms-copilot-web-access',
     name: 'Microsoft — How Copilot accesses the public web',

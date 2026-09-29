@@ -55,14 +55,18 @@ content. So the timestamp is watched for free, and only when it moves is a singl
 search-backed call spent recovering what changed, constrained to `openai.com` and
 `help.openai.com` URLs so the primary-source rule still holds.
 
-**Microsoft** is covered but thinly. Bing's webmaster blog is live and directly
-on-topic — it is simply slow, roughly six posts a year, so expect long silences
-rather than a fault. Copilot's behaviour toward the public web is watched through
-Microsoft Learn, which is server-rendered. What cannot be watched is Bing's own
-webmaster help documentation — the pages holding the `noarchive` / `nocache`
-rules that govern whether Copilot may quote a page. Those are a JavaScript app
-with no server-side text to fingerprint, so a silent edit there will only be
-caught if Bing also blogs about it.
+**Bing's help centre** renders entirely in JavaScript, so there is no server-side
+text to fingerprint. Its own pages load each article from a public,
+unauthenticated JSON endpoint — `/webmasters/api/help/htmlcontent?ArticleId=` —
+which the watchers read directly; `url` stays the human-readable page so digest
+links open somewhere useful. Four articles are watched: the Webmaster Guidelines,
+the robots meta tags Bing supports (`noarchive` / `nocache`), AI Performance
+reporting, and the crawler list. This is where Bing documents whether Copilot may
+quote a page at all, which makes a silent edit there worth more than most blog
+posts.
+
+Bing's webmaster blog is also live and on-topic — just slow, roughly six posts a
+year, so expect long silences rather than a fault.
 
 ## Cost
 

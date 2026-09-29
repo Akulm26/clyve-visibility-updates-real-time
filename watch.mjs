@@ -19,6 +19,19 @@ function extract(html) {
 }
 
 /**
+ * Pull the watchable text for one page. Most are plain HTML; Bing's help centre
+ * renders in JavaScript and has to be read from the JSON endpoint its own page
+ * calls, which returns the article body under `HtmlContent`.
+ */
+async function pageText(page) {
+  if (page.type === 'bing-help') {
+    const json = JSON.parse(await fetchText(page.api, { timeout: 30000 }));
+    return scrub(htmlToText(json.HtmlContent || ''));
+  }
+  return extract(await fetchText(page.url, { timeout: 30000 }));
+}
+
+/**
  * Report the lines that appeared and disappeared, so the LLM sees the actual
  * edit rather than two walls of identical text.
  */
@@ -45,7 +58,7 @@ export async function watch({ seed = false } = {}) {
 
   const results = await Promise.allSettled(
     TIER3.map(async (page) => {
-      const text = extract(await fetchText(page.url, { timeout: 30000 }));
+      const text = await pageText(page);
       if (text.length < 200) throw new Error('extracted text too short — layout may have changed');
       return { page, text, hash: sha(text) };
     }),
