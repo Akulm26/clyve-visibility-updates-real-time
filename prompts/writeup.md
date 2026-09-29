@@ -37,7 +37,9 @@ _<source name> · <date>_
 *Do this*
 <One action, in one line. It must agree with everything above it: if your "Why it matters" or "Example" implied the reader should check, change, or stop doing something, say that here. Use "Nothing to do yet — just know it's coming." only when the item genuinely carries no implication for their work.>
 
-<link>
+<The item's url, on its own line. This is required for every single item — the
+reader must be able to open the primary source and check the claim. Never omit
+it, never summarise it, never replace it with the source's name.>
 ```
 
 Separate items with a line containing only `———`.

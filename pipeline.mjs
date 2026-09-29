@@ -188,7 +188,25 @@ async function writeUp(items, kind) {
     model: 'sonnet',
     timeout: 300000,
   });
-  return stripPreamble(raw);
+  return withSources(stripPreamble(raw), items);
+}
+
+/**
+ * Guarantee every claim is traceable to its primary source.
+ *
+ * The write-up format asks for a link under each item, but one live digest came
+ * back with four items and no links at all. Since the whole premise is that you
+ * can check the original, the links cannot depend on the model remembering —
+ * any URL missing from the body is appended as a numbered source list.
+ */
+function withSources(text, items) {
+  const missing = items.filter((it) => it.url && !text.includes(it.url));
+  if (!missing.length) return text;
+
+  const list = missing
+    .map((it, i) => `${i + 1}. ${it.title}\n${it.url}`)
+    .join('\n');
+  return `${text}\n\n———\n*Sources*\n${list}`;
 }
 
 /**
