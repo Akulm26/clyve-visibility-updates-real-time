@@ -73,6 +73,15 @@ check(
   subjectFrom('Breaking item ready below, per format spec.\n\n*⚡ AEO radar · breaking*\n\nBody.') ===
     '⚡ AEO radar · breaking',
 );
+// Each digest kind must be recognisable in the subject, so a hand-triggered
+// catch-up is never mistaken for the Monday digest.
+check('catch-up header is recognised',
+  subjectFrom('*AEO radar · catch-up*\n\nBody.') === 'AEO radar · catch-up');
+check('weekly header is recognised',
+  subjectFrom('*AEO radar · week of 29 Sept*\n\nBody.') === 'AEO radar · week of 29 Sept');
+check('breaking header is recognised',
+  subjectFrom('*⚡ AEO radar · breaking*\n\nBody.') === '⚡ AEO radar · breaking');
+
 check('bold becomes <strong>', /<strong>AEO radar/.test(html));
 check('italic becomes <em>', /<em>Google Search Central/.test(html));
 check('urls become links', /<a href="https:\/\/developers/.test(html));

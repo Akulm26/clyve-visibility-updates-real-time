@@ -62,12 +62,23 @@ Separate items with a line containing only `———`.
 No preamble, no "here is the digest", no note about the format. Anything before
 the header becomes the email subject line, so it has to be the header itself.
 
-Start the whole message with one line:
+Start the whole message with one line, matching the kind you were told this is:
 
-- For a weekly digest: `*AEO radar · week of <date>*` then a blank line.
-- For a single breaking item: `*⚡ AEO radar · breaking*` then a blank line.
+- weekly digest → `*AEO radar · week of <date>*`
+- catch-up digest → `*AEO radar · catch-up*`
+- breaking alert → `*⚡ AEO radar · breaking*`
 
-Then a single sentence summarising the week in plain words. Then `———` and the items.
+Use the header for the kind you were given and no other. A catch-up is several
+items arriving at once, often because a scan was triggered by hand — calling it
+"week of" would make it look like the Monday digest and hide the real one.
+
+Then a blank line, a single sentence summarising what is here in plain words,
+then `———` and the items.
+
+## Dates
+
+Write every date the same way, as `<Month> <D>, <YYYY>` — "September 24, 2026".
+Never leave a raw `2026-09-24` in the text.
 
 ## Items to write up
 
