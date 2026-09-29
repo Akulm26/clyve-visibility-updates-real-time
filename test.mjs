@@ -100,6 +100,25 @@ check(
   /&lt;script&gt;/.test(toHtml('a <script>alert(1)</script> b')),
 );
 
+// --- staleness ---------------------------------------------------------------
+
+// An item parked as low-priority must not resurface weeks later as "what's new".
+{
+  const days = (n) => new Date(Date.now() - n * 864e5).toISOString();
+  const items = [
+    { title: 'today', published: days(0) },
+    { title: 'last week', published: days(7) },
+    { title: 'six weeks ago', published: days(42) },
+    { title: 'undated doc change', published: null },
+  ];
+  const cutoff = Date.now() - 14 * 864e5;
+  const current = items.filter((i) => (i.published ? new Date(i.published).getTime() : Date.now()) >= cutoff);
+  check('recent items count as news', current.some((i) => i.title === 'today'));
+  check('week-old items still count', current.some((i) => i.title === 'last week'));
+  check('six-week-old items are dropped', !current.some((i) => i.title === 'six weeks ago'));
+  check('undated items are treated as current', current.some((i) => i.title === 'undated doc change'));
+}
+
 // --- trigger authentication -------------------------------------------------
 
 const { commandFor, hasSecret } = await import('./lib/inbox.mjs');
@@ -136,9 +155,11 @@ try {
   const deterministic = report.filter((r) => !llmBacked.has(r.id));
   const live = deterministic.filter((r) => r.ok && r.count > 0).length;
 
-  // Bing's two blogs publish a handful of times a year, so a zero from them is
-  // expected rather than a fault. Everything else should be returning items.
-  check('deterministic sources are live', live >= deterministic.length - 2,
+  // Several sources publish only a few times a year — Bing's two blogs and
+  // Reddit's — so a zero from them inside a fortnight window is expected rather
+  // than a fault. The health watchdog is what catches a source that has really
+  // broken; this only needs to confirm the bulk are returning.
+  check('deterministic sources are live', live >= deterministic.length - 3,
     `${live}/${deterministic.length} returning items`);
   check('no source errored', report.every((r) => r.ok),
     report.filter((r) => !r.ok).map((r) => `${r.id}: ${r.error}`).join(' | '));

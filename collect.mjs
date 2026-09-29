@@ -15,7 +15,10 @@ const parser = new XMLParser({
 // hundreds. We only ever care about the recent edge, and everything older is
 // dead weight in both the ledger and any prompt.
 const MAX_PER_SOURCE = 30;
-const MAX_AGE_DAYS = 45;
+// Ongoing, anything older than a fortnight is not news. The wider window only
+// ever made sense for the first backfill, and leaving it wide let a six-week-old
+// item enter the pipeline and eventually surface as "what's new".
+const MAX_AGE_DAYS = Number(process.env.MAX_AGE_DAYS || 14);
 
 const arr = (x) => (x == null ? [] : Array.isArray(x) ? x : [x]);
 const text = (x) => (typeof x === 'object' && x ? x['#text'] ?? '' : x ?? '');

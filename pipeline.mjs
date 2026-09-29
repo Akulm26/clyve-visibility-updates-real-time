@@ -18,6 +18,10 @@ const MAX_DIGEST_ITEMS = 8;
 const BREAKING_SCORE = 4;
 const MAX_BREAKING = 2;
 const BACKFILL_DAYS = 14;
+// How old an item may be and still count as news. Anything parked longer than
+// this was never urgent and has stopped being current — it must not resurface
+// under a "what's new" heading.
+const MAX_NEWS_AGE_DAYS = 14;
 const SEEN_RETENTION_DAYS = 400;
 
 const SOURCE_BY_ID = Object.fromEntries([...TIER1, ...TIER2].map((s) => [s.id, s]));
@@ -25,6 +29,7 @@ const NAME_BY_ID = Object.fromEntries(
   [...TIER1, ...TIER2, ...TIER3].map((s) => [s.id, s.name]),
 );
 const MAX_REJECTION_LOG = 300;
+const NAME_COUNT = new Set([...TIER1, ...TIER2, ...TIER3].map((s) => s.id)).size;
 
 async function loadEnv() {
   try {
@@ -229,6 +234,37 @@ async function saveSent(kind, text) {
   );
 }
 
+/**
+ * Separate items that are still news from ones that have gone stale.
+ *
+ * A low-priority item can sit in the queue for a while, which is fine — until
+ * it is old enough that presenting it as "what's new" is simply wrong. One
+ * August item resurfacing in late September under that heading is what this
+ * exists to prevent.
+ */
+function splitByAge(items, maxDays = MAX_NEWS_AGE_DAYS) {
+  const cutoff = Date.now() - maxDays * 864e5;
+  const current = [];
+  const stale = [];
+  for (const it of items) {
+    // Undated items are index scrapes and documentation diffs, both of which
+    // are current by construction.
+    const when = it.published ? new Date(it.published).getTime() : Date.now();
+    (when >= cutoff ? current : stale).push(it);
+  }
+  return { current, stale };
+}
+
+/** Date of the most recent thing actually sent, for the "nothing new" note. */
+async function latestSentDate() {
+  const seen = await readState('seen.json', {});
+  const times = Object.values(seen).map((v) => v.t || 0).filter(Boolean);
+  if (!times.length) return 'the last check';
+  return new Date(Math.max(...times)).toLocaleDateString('en-GB', {
+    day: 'numeric', month: 'long',
+  });
+}
+
 function prune(seen) {
   const cutoff = Date.now() - SEEN_RETENTION_DAYS * 864e5;
   for (const [k, v] of Object.entries(seen)) if ((v.t || 0) < cutoff) delete seen[k];
@@ -278,14 +314,17 @@ async function cmdScan({ dryRun, manual = false }) {
     // it worked. The urgency threshold exists to avoid pestering you on the
     // automatic runs; it has no business filtering a reply you requested.
     const waiting = await readState('queue.json', []);
-    const all = [...kept.map(strip), ...waiting].sort(
+    const { current, stale } = splitByAge([...kept.map(strip), ...waiting]);
+    if (stale.length) log(`dropped ${stale.length} stale item(s) from the queue`);
+
+    const all = current.sort(
       (a, b) => b.score - a.score || (b.authority || 0) - (a.authority || 0),
     );
 
     const text = all.length
       ? await writeUp(all.slice(0, MAX_DIGEST_ITEMS), 'requested update')
-      : `*AEO radar · nothing new*\n\nChecked every source just now. ` +
-        `Nothing has changed since the last update.`;
+      : `*AEO radar · nothing new*\n\nChecked all ${NAME_COUNT} sources just now. ` +
+        `Nothing new since ${await latestSentDate()}.`;
 
     await send(text);
     await saveSent('requested update', text);
@@ -326,7 +365,15 @@ async function cmdDigest({ dryRun }) {
     return;
   }
 
-  const ranked = [...queue].sort((a, b) => b.score - a.score || b.authority - a.authority);
+  const { current, stale } = splitByAge(queue);
+  if (stale.length) log(`dropped ${stale.length} stale item(s) from the digest`);
+  if (!current.length) {
+    await writeState('queue.json', []);
+    log('everything queued had gone stale — no digest sent');
+    return;
+  }
+
+  const ranked = [...current].sort((a, b) => b.score - a.score || b.authority - a.authority);
   const featured = ranked.slice(0, MAX_DIGEST_ITEMS);
   const rest = ranked.slice(MAX_DIGEST_ITEMS);
 
