@@ -1,0 +1,79 @@
+[
+  {
+    "at": "2026-09-29",
+    "source": "Google — The Keyword (Search)",
+    "title": "3 new ways we're improving Search profiles for publishers",
+    "why": "Summary too vague to assess AI visibility impact",
+    "url": "https://blog.google/products-and-platforms/products/search/3-new-ways-were-improving-search-profiles-for-publishers/"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Perplexity Changelog",
+    "title": "Upcoming retirement of older OpenAI models",
+    "why": "Model sunset; not Perplexity's own crawling/citation behavior",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Google Search Central Blog",
+    "title": "Search Central Live Deep Dive Europe 2026: Meet the community speakers",
+    "why": "Event announcement; no search/crawling/citation behavior change",
+    "url": "https://developers.google.com/search/blog/2026/09/scl-dd-europe-2026-community-speakers"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "OpenAI News",
+    "title": "Are you a Codex Original?",
+    "why": "Community program; no crawling/citation/content discovery impact",
+    "url": "https://openai.com/form/codex-originals"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "OpenAI News",
+    "title": "Parallel cut research time and cost in half with GPT‑6 Astra",
+    "why": "Customer case study; not OpenAI's own change",
+    "url": "https://openai.com/index/parallel-cuts-time-and-cost-with-astra"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "OpenAI News",
+    "title": "Introducing Astra for Law",
+    "why": "Product launch; no web search/crawling component",
+    "url": "https://openai.com/index/astra-for-law"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Anthropic News",
+    "title": "Claude Discovers Novel Enzyme System",
+    "why": "Enzyme discovery; pure capability news, no web surface",
+    "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Anthropic News",
+    "title": "Model Hardware Standard Research Preview",
+    "why": "Hardware standards; no web crawling/citation/discovery angle",
+    "url": "https://www.anthropic.com/news/model-hardware-standard-research-preview"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Anthropic News",
+    "title": "Wellbeing Research Grants",
+    "why": "Research grants; no visibility/crawling/citation angle",
+    "url": "https://www.anthropic.com/news/wellbeing-research-grants"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Google — The Keyword (AI)",
+    "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
+    "why": "Award/competition; no search behavior impact",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "See what 4 builders are making with Gemini 3.8 Flash",
+    "why": "Developer showcase; no web search component",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-flash-developers/"
+  }
+]

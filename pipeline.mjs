@@ -1,4 +1,4 @@
-import { readFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { collect } from './collect.mjs';
 import { watch } from './watch.mjs';
@@ -7,13 +7,16 @@ import { askClaude, askClaudeJSON } from './lib/claude.mjs';
 import { send } from './lib/channel.mjs';
 import { updateHealth, formatHealthAlert } from './lib/health.mjs';
 import { TIER1, TIER2, TIER3 } from './sources.mjs';
-import { ROOT, itemKey, readState, writeState, truncate, log } from './lib/util.mjs';
+import {
+  ROOT, itemKey, readState, writeState, truncate, fetchText, htmlToText, log,
+} from './lib/util.mjs';
 
 // Caps. Their job is to bound the worst case, not the normal one — a typical
 // scan sends nothing to the model at all.
 const MAX_ITEMS_PER_GATE = 15;
 const MAX_DIGEST_ITEMS = 8;
 const BREAKING_SCORE = 4;
+const MAX_BREAKING = 2;
 const BACKFILL_DAYS = 14;
 const SEEN_RETENTION_DAYS = 400;
 
@@ -89,6 +92,32 @@ function diversify(items, perSource = 4) {
   return [...primary, ...overflow];
 }
 
+/**
+ * Some feeds ship a headline and nothing else. The gate then has to judge on a
+ * title alone and reasonably refuses — which is how a real Google item about
+ * publisher Search profiles got dropped as "too vague to assess".
+ *
+ * Fetching the page first is free (no model call), so do it for any thin item
+ * from a source worth listening to, and let the gate judge on actual content.
+ */
+async function enrichThin(items, minLength = 200, minAuthority = 7) {
+  await Promise.all(
+    items.map(async (item) => {
+      if (item.isDocChange || item.summary?.length >= minLength) return;
+      if ((item.authority || 0) < minAuthority) return;
+      try {
+        const html = await fetchText(item.url, { timeout: 15000 });
+        const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i);
+        const body = htmlToText(main ? main[1] : html);
+        if (body.length > (item.summary?.length || 0)) item.summary = truncate(body, 1500);
+      } catch {
+        /* leave the thin summary alone; the gate will judge what it has */
+      }
+    }),
+  );
+  return items;
+}
+
 /** The only expensive step, and it runs once per scan for all items together. */
 async function gate(items) {
   const payload = items.map((it, i) => ({
@@ -158,6 +187,15 @@ async function writeUp(items, kind) {
   return askClaude(`${tpl}\n\nThis is a ${kind}.`, { model: 'sonnet', timeout: 300000 });
 }
 
+/** Keep a copy of what went out, so a digest can be re-read without a mailbox. */
+async function saveSent(kind, text) {
+  const stamp = new Date().toISOString();
+  await writeFile(
+    join(ROOT, 'state', 'last-sent.md'),
+    `<!-- ${kind} · ${stamp} -->\n\n${text}\n`,
+  );
+}
+
 function prune(seen) {
   const cutoff = Date.now() - SEEN_RETENTION_DAYS * 864e5;
   for (const [k, v] of Object.entries(seen)) if ((v.t || 0) < cutoff) delete seen[k];
@@ -192,7 +230,7 @@ async function cmdScan({ dryRun }) {
     return;
   }
 
-  const batch = fresh.slice(0, MAX_ITEMS_PER_GATE);
+  const batch = await enrichThin(fresh.slice(0, MAX_ITEMS_PER_GATE));
   const { kept, rejected } = await gate(batch);
   await logRejections(rejected);
   log(`gate kept ${kept.length}/${batch.length}`);
@@ -204,8 +242,13 @@ async function cmdScan({ dryRun }) {
   const queued = kept.filter((k) => k.score < BREAKING_SCORE);
 
   if (breaking.length) {
-    await send(await writeUp(breaking, 'breaking alert'));
-    log(`sent ${breaking.length} breaking item(s)`);
+    // Several high-impact items landing in one scan is a backlog, not an
+    // emergency — a catch-up reads better than four "breaking" alarms.
+    const kind = breaking.length > MAX_BREAKING ? 'catch-up digest' : 'breaking alert';
+    const text = await writeUp(breaking, kind);
+    await send(text);
+    await saveSent(kind, text);
+    log(`sent ${breaking.length} item(s) as ${kind}`);
   }
 
   if (queued.length) {
@@ -242,6 +285,7 @@ async function cmdDigest({ dryRun }) {
   }
 
   await send(text);
+  await saveSent('weekly digest', text);
   await writeState('queue.json', []);
   log(`digest sent (${featured.length} featured, ${rest.length} listed)`);
 }
@@ -254,7 +298,7 @@ async function cmdPreview() {
   const { fresh } = await gatherNew({ dryRun: false });
   if (!fresh.length) return log('nothing new to preview');
 
-  const { kept, rejected } = await gate(fresh.slice(0, MAX_ITEMS_PER_GATE));
+  const { kept, rejected } = await gate(await enrichThin(fresh.slice(0, MAX_ITEMS_PER_GATE)));
   log(`gate kept ${kept.length}, rejected ${rejected.length}`);
   for (const r of rejected) log(`  rejected: [${r.source}] ${r.title} — ${r.why}`);
   if (!kept.length) return;
