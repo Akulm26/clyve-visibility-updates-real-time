@@ -153,6 +153,18 @@ system asks for, and it should come up a couple of times a year.
 
 ## Triggering a scan from your phone
 
+Two things you can ask for, both by emailing yourself:
+
+| Subject | What you get |
+|---|---|
+| `scan <code>` | Anything new since the last update, or a note saying there is nothing |
+| `review <code>` | Everything on-topic from the last 14 days, sent regardless of what went out before |
+| `review 30 <code>` | Same, over any window up to 90 days |
+
+A review reads past the ledger without editing it, so it never causes a
+duplicate later. Use it to check the radar is healthy, or to catch up after time
+away.
+
 Email yourself with **`scan <your code>`** in the subject. Get the code with
 `npm run trigger:code`. The inbox is checked every two minutes.
 

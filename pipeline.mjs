@@ -15,6 +15,8 @@ import {
 // scan sends nothing to the model at all.
 const MAX_ITEMS_PER_GATE = 15;
 const MAX_DIGEST_ITEMS = 8;
+// A look-back covers a whole window rather than one scan, so it carries more.
+const REPORT_ITEMS = 12;
 const BREAKING_SCORE = 4;
 const MAX_BREAKING = 2;
 const BACKFILL_DAYS = 14;
@@ -473,6 +475,57 @@ async function cmdPreview() {
 }
 
 /**
+ * A deliberate look back over a fixed window, regardless of what has already
+ * been sent. Use it to sanity-check coverage, or to catch up after a break.
+ *
+ * Deliberately does not touch the ledger or the queue. An earlier attempt at
+ * this deleted entries from `seen.json` so items would be rediscovered, which
+ * worked but re-sent things that had already gone out — exactly the duplication
+ * the ledger exists to prevent. Reading past it is safe; editing it is not.
+ */
+async function cmdReport({ dryRun, days: requested }) {
+  const days =
+    requested || Number(process.argv.find((a) => a.startsWith('--days='))?.split('=')[1]) || 14;
+  const cutoff = Date.now() - days * 864e5;
+
+  const [{ items }, { items: docChanges }] = await Promise.all([
+    collect({ dryRun: false }),
+    watch(),
+  ]);
+
+  const inWindow = [...items, ...docChanges]
+    .filter((i) => i.isDocChange || passesPrefilter(i, SOURCE_BY_ID[i.source]))
+    .filter((i) => !i.published || new Date(i.published).getTime() >= cutoff)
+    .sort((a, b) => new Date(b.published || 0) - new Date(a.published || 0));
+
+  log(`${inWindow.length} on-topic item(s) in the last ${days} days`);
+  if (dryRun) {
+    for (const i of inWindow) console.log(`  ${(i.published || '').slice(0, 10)}  ${i.sourceName} — ${i.title}`);
+    return;
+  }
+  if (!inWindow.length) return log('nothing in the window');
+
+  // Gate in batches so a two-week window is not truncated to a single call.
+  const enriched = await enrichThin(inWindow.slice(0, 45));
+  const kept = [];
+  for (let i = 0; i < enriched.length; i += MAX_ITEMS_PER_GATE) {
+    const { kept: k } = await gate(enriched.slice(i, i + MAX_ITEMS_PER_GATE));
+    kept.push(...k);
+  }
+  log(`gate kept ${kept.length}/${enriched.length}`);
+  if (!kept.length) return log('nothing survived the gate');
+
+  const ranked = kept.sort(
+    (a, b) => b.score - a.score || new Date(b.published || 0) - new Date(a.published || 0),
+  );
+
+  const text = await writeUp(ranked.slice(0, REPORT_ITEMS), `${days}-day review`);
+  await send(text);
+  await saveSent(`${days}-day review`, text);
+  log(`sent ${Math.min(ranked.length, REPORT_ITEMS)}-item review of the last ${days} days`);
+}
+
+/**
  * Cold start. Fingerprint the watched pages, then mark everything older than
  * BACKFILL_DAYS as already seen so the first real scan produces one catch-up
  * digest instead of a year of history.
@@ -503,11 +556,16 @@ async function cmdInit() {
  */
 async function cmdListen(opts) {
   const { checkInbox } = await import('./lib/inbox.mjs');
-  const command = await checkInbox();
-  if (!command) return;
-  // Any trigger word means the same thing: tell me what's new. There is no
-  // useful distinction to make the reader remember.
-  log(`triggered by email (${command}): sending a requested update`);
+  const trigger = await checkInbox();
+  if (!trigger) return;
+  const { cmd, days } = trigger;
+
+  if (cmd === 'review') {
+    log(`triggered by email: ${days}-day review`);
+    await cmdReport({ ...opts, days });
+    return;
+  }
+  log('triggered by email: sending a requested update');
   await cmdScan({ ...opts, manual: true });
 }
 
@@ -521,8 +579,11 @@ try {
   else if (cmd === 'init') await cmdInit();
   else if (cmd === 'preview') await cmdPreview();
   else if (cmd === 'listen') await cmdListen(opts);
+  else if (cmd === 'report') await cmdReport(opts);
   else {
-    console.error(`usage: node pipeline.mjs [scan|digest|init|preview|listen] [--dry-run]`);
+    console.error(
+      `usage: node pipeline.mjs [scan|digest|init|preview|listen|report] [--dry-run] [--days=N]`,
+    );
     process.exit(2);
   }
 } catch (e) {

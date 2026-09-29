@@ -121,11 +121,16 @@ check(
 
 // --- trigger authentication -------------------------------------------------
 
-const { commandFor, hasSecret } = await import('./lib/inbox.mjs');
+const { commandFor, daysFor, hasSecret } = await import('./lib/inbox.mjs');
 
 check('subject naming a scan is recognised', commandFor('scan abc123') === 'scan');
-check('subject naming a digest is recognised', commandFor('digest abc123') === 'digest');
+check('a review is a different command', commandFor('review abc123') === 'review');
+check('"catch up" also means review', commandFor('catch up abc123') === 'review');
 check('unrelated subject is not a command', commandFor('lunch tomorrow?') === null);
+check('review window defaults to a fortnight', daysFor('review abc123') === 14);
+check('review window can be named', daysFor('review 30 abc123') === 30);
+check('"last 7 days" is understood', daysFor('last 7 days abc123') === 7);
+check('an absurd window falls back to the default', daysFor('review 999 abc123') === 14);
 
 // The secret is what actually carries the security — a From address can be
 // forged, so these must hold regardless of who appears to have sent the mail.

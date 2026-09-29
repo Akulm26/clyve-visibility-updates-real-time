@@ -78,6 +78,7 @@ the header becomes the email subject line, so it has to be the header itself.
 Start the whole message with one line, matching the kind you were told this is:
 
 - weekly digest → `*AEO radar · week of <date>*`
+- an `N-day review` → `*AEO radar · last <N> days*`
 - requested update → `*AEO radar · what's new*`
 - catch-up digest → `*AEO radar · catch-up*`
 - breaking alert → `*⚡ AEO radar · breaking*`
