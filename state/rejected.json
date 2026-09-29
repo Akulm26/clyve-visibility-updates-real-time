@@ -1,6 +1,13 @@
 [
   {
     "at": "2026-09-29",
+    "source": "Perplexity Changelog",
+    "title": "GPT-6 Sol, GPT-6 Luna, Claude Opus 5.5, and Grok 4.7 support",
+    "why": "API model swaps, no retrieval/citation/crawler changes.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-09-29",
     "source": "Google — The Keyword (Gemini)",
     "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
     "why": "Model capability release. No search, crawl, or content-strategy impact.",
