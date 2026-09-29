@@ -56,6 +56,10 @@ Separate items with a line containing only `———`.
 
 ## Opening line
 
+**The very first character of your reply must be the `*` of the header below.**
+No preamble, no "here is the digest", no note about the format. Anything before
+the header becomes the email subject line, so it has to be the header itself.
+
 Start the whole message with one line:
 
 - For a weekly digest: `*AEO radar · week of <date>*` then a blank line.

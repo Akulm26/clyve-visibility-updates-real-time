@@ -64,7 +64,15 @@ const sampleDigest =
   'See https://developers.google.com/search/blog/x';
 
 const html = toHtml(sampleDigest);
-check('subject comes from the first line', subjectFrom(sampleDigest) === 'AEO radar · week of 29 Sept');
+check('subject comes from the header', subjectFrom(sampleDigest) === 'AEO radar · week of 29 Sept');
+
+// A live run once opened with "Breaking item ready below..." and that became
+// the subject line. The header must win regardless of what precedes it.
+check(
+  'model preamble never becomes the subject',
+  subjectFrom('Breaking item ready below, per format spec.\n\n*⚡ AEO radar · breaking*\n\nBody.') ===
+    '⚡ AEO radar · breaking',
+);
 check('bold becomes <strong>', /<strong>AEO radar/.test(html));
 check('italic becomes <em>', /<em>Google Search Central/.test(html));
 check('urls become links', /<a href="https:\/\/developers/.test(html));

@@ -184,7 +184,22 @@ async function writeUp(items, kind) {
     alsoSeenIn: it.alsoSeenIn,
   }));
   const tpl = await prompt('writeup.md', payload);
-  return askClaude(`${tpl}\n\nThis is a ${kind}.`, { model: 'sonnet', timeout: 300000 });
+  const raw = await askClaude(`${tpl}\n\nThis is a ${kind}.`, {
+    model: 'sonnet',
+    timeout: 300000,
+  });
+  return stripPreamble(raw);
+}
+
+/**
+ * Models occasionally announce themselves before doing the work — one live run
+ * opened with "Breaking item ready below, plain English per format spec.",
+ * which then became the email subject. The header line is unmistakable, so cut
+ * everything above it rather than trusting the instruction to hold every time.
+ */
+function stripPreamble(text) {
+  const headerAt = text.search(/^\s*\*[⚡📌]?\s*AEO radar/m);
+  return (headerAt > 0 ? text.slice(headerAt) : text).trim();
 }
 
 /** Keep a copy of what went out, so a digest can be re-read without a mailbox. */

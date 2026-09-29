@@ -1,6 +1,195 @@
 [
   {
     "at": "2026-09-29",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
+    "why": "Model capability release. No search, crawl, or content-strategy impact.",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Google — The Keyword (AI)",
+    "title": "AI for Societal Impact",
+    "why": "Impact story collection. No search or crawl surface involved.",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-societal-impact/"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Google — The Keyword (AI)",
+    "title": "Building AI to accelerate science and improve lives",
+    "why": "AI application showcase. No visibility or content-strategy change.",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/ai-applications-science-people/"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Google — The Keyword (AI)",
+    "title": "AI for everyone in every language",
+    "why": "Model language capability. No search, ranking, or crawl impact.",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language/"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "4 ways to tackle household chores with Gemini",
+    "why": "Product usage tips. No content-strategy or discovery impact.",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/household-chores-tips/"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Google — The Keyword (AI)",
+    "title": "New insights from Google’s AI & Economy ATLAS",
+    "why": "Research data dashboard. No search or citation behavior change.",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/ai-economy-atlas-september-2026/"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Perplexity Changelog",
+    "title": "GPT-6 Sol, Luna, Claude Opus 5.5, and Grok 4.7 support",
+    "why": "API model updates. No search, crawl, or ranking impact.",
+    "url": "https://docs.perplexity.ai/changelog#september-2026"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Perplexity Changelog",
+    "title": "Custom connectors: Bring your own MCP server",
+    "why": "MCP integration feature. No search or content-surfacing change.",
+    "url": "https://docs.perplexity.ai/changelog#september-2026"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Perplexity Changelog",
+    "title": "Sign in with Perplexity for the remote MCP server",
+    "why": "MCP authentication feature. No crawl or visibility impact.",
+    "url": "https://docs.perplexity.ai/changelog#september-2026"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Perplexity Changelog",
+    "title": "Gemini 3.8 Flash support",
+    "why": "Model support in API. No search or crawl behavior change.",
+    "url": "https://docs.perplexity.ai/changelog#september-2026"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "OpenAI Status",
+    "title": "Mobile users unable to see Work Mode and the Model Picker",
+    "why": "Mobile UI incident resolved. No search or crawl surface affected.",
+    "url": "https://status.openai.com//incidents/01M389CDQ97B11QPMSRAAYSE5S"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Perplexity Changelog",
+    "title": "GLM 5.3 Flash model support",
+    "why": "API model support. No search, ranking, or crawl impact.",
+    "url": "https://docs.perplexity.ai/changelog#september-2026"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "3 ways this grocer cooks for 200 guests with Gemini",
+    "why": "Customer use case story; no visibility or strategy impact.",
+    "url": "https://blog.google/products-and-platforms/products/gemini/edys-grocer-gemini/"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Introducing Gemini 3.8 Live with Live Avatar",
+    "why": "Model capability update; no retrieval or citation change.",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Google — The Keyword (AI)",
+    "title": "Google Beam expands with new regions, partners, and customers",
+    "why": "Service expansion; no visibility behavior change.",
+    "url": "https://blog.google/innovation-and-ai/technology/research/google-beam-expansion/"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "A new wave of Connected Apps is rolling out to Gemini.",
+    "why": "Local app integrations; no web content visibility impact.",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Gemini 3.8 text-to-speech says hello",
+    "why": "TTS model update; no crawler or citation change.",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Google — The Keyword (AI)",
+    "title": "New experts join Google’s AI & Economy team",
+    "why": "Team hiring announcement; not visibility related.",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench/"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Google — The Keyword (AI)",
+    "title": "Co-creating the future of fashion with Google",
+    "why": "Partnership story; no visibility mechanism change.",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/google-flow-fashion-week/"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Google — The Keyword (AI)",
+    "title": "Making global data easier to explore",
+    "why": "Data platform launch; not crawler or citation change.",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/google-un-data-commons-platform/"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Perplexity Changelog",
+    "title": "xhigh preset uses Claude Opus 5.5",
+    "why": "LLM backend preset swap; no search or crawl behavior change.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Perplexity Changelog",
+    "title": "Low, medium, and high presets use GPT-6",
+    "why": "LLM backend preset swap; no search or crawl behavior change.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Perplexity Changelog",
+    "title": "Fast preset uses Fast Search",
+    "why": "Preset configuration; no material visibility change.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Perplexity Changelog",
+    "title": "Fast Search",
+    "why": "Preset configuration; no material visibility change.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Cloudflare Blog (AI)",
+    "title": "Cloudflare’s 2026 Annual Founders’ Letter",
+    "why": "Strategic reflection; no actual behavior change announced.",
+    "url": "https://blog.cloudflare.com/cloudflares-2026-annual-founders-letter/"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Meta Newsroom",
+    "title": "Meta Takes Action on 3.7 Million Accounts, Pages and Content In Partnership With Singapore Police Force",
+    "why": "Content moderation partnership; not visibility strategy.",
+    "url": "https://about.fb.com/news/2026/09/meta-spf-scam-efforts/"
+  },
+  {
+    "at": "2026-09-29",
+    "source": "Schema.org releases",
+    "title": "Release v30.1",
+    "why": "Schema.org release tag; summary lacks actual changelog details.",
+    "url": "https://github.com/schemaorg/schemaorg/releases/tag/v30.1"
+  },
+  {
+    "at": "2026-09-29",
     "source": "Google — The Keyword (Search)",
     "title": "3 new ways we're improving Search profiles for publishers",
     "why": "Summary too vague to assess AI visibility impact",
