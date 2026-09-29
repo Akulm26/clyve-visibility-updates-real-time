@@ -151,6 +151,25 @@ system asks for, and it should come up a couple of times a year.
 `logs/launchd.scan.log`. Force a run with
 `launchctl kickstart -k gui/$UID/com.clyve.aeoradar.scan`.
 
+## Triggering a scan from your phone
+
+Email yourself with **`scan`** in the subject. The inbox is checked every two
+minutes; a matching message runs a scan and is marked read, so one email means
+one run. Send **`digest`** instead to get the weekly digest early.
+
+The silence rule still applies: a triggered scan that finds nothing sends
+nothing back.
+
+Only mail **from your own address** counts, so nobody else can fire it. The
+radar's own digests are ignored as commands, or it would trigger itself.
+
+Email was chosen over a watched iCloud folder because macOS privacy protection
+blocks background agents from reading iCloud Drive — an agent there runs but
+sees `Operation not permitted`, and the only fix is granting Full Disk Access to
+`/bin/bash`, which is far too broad for a convenience feature. Email needs no
+new permission, no token, and no open port: the app password already set up for
+sending also reads.
+
 ## Changing where it sends
 
 Every adapter exposes the same `send(text)`, so the channel is one line in

@@ -365,6 +365,20 @@ async function cmdInit() {
   log(`run \`npm run scan\` to produce the first catch-up batch`);
 }
 
+/**
+ * Check for an emailed trigger and run whatever it asks for. Runs every couple
+ * of minutes; almost always finds nothing and exits having done one small IMAP
+ * round-trip, so it costs nothing in model usage.
+ */
+async function cmdListen(opts) {
+  const { checkInbox } = await import('./lib/inbox.mjs');
+  const command = await checkInbox();
+  if (!command) return;
+  log(`triggered by email: running ${command}`);
+  if (command === 'digest') await cmdDigest(opts);
+  else await cmdScan(opts);
+}
+
 const cmd = process.argv[2] || 'scan';
 const opts = { dryRun: process.argv.includes('--dry-run') };
 await loadEnv();
@@ -374,8 +388,9 @@ try {
   else if (cmd === 'digest') await cmdDigest(opts);
   else if (cmd === 'init') await cmdInit();
   else if (cmd === 'preview') await cmdPreview();
+  else if (cmd === 'listen') await cmdListen(opts);
   else {
-    console.error(`usage: node pipeline.mjs [scan|digest|init|preview] [--dry-run]`);
+    console.error(`usage: node pipeline.mjs [scan|digest|init|preview|listen] [--dry-run]`);
     process.exit(2);
   }
 } catch (e) {
