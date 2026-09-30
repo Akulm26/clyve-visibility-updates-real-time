@@ -1,0 +1,102 @@
+name: radar
+
+# Runs the radar in the cloud, so it keeps working while the Mac is asleep.
+#
+# One five-minute tick does everything: answer requests (email and Shortcut
+# issues), then run the scan or the Monday digest if either has fallen due.
+# GitHub's cron is late and occasionally skips, so nothing here depends on a
+# particular tick arriving — the next one catches up. See `cmdAuto`.
+#
+# RADAR_MODE (a repository variable) decides what a run may do:
+#   test  (default) — prints instead of emailing, works on a throwaway copy of
+#                     state/ and commits nothing. The schedule is off.
+#   live            — emails, commits state/, and the schedule is on. Turn the
+#                     Mac timers off first (./uninstall-schedule.sh), or both
+#                     will answer every request.
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  issues:
+    types: [opened]
+  workflow_dispatch:
+    inputs:
+      command:
+        description: What to run
+        type: choice
+        options: [auto, listen, scan, report, digest]
+        default: auto
+      days:
+        description: Review window in days (report only)
+        default: '14'
+
+permissions:
+  contents: write
+  issues: write
+
+# One run at a time: every run reads and rewrites state/.
+concurrency:
+  group: radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    # The schedule only runs live. Issues count only when the owner opened
+    # them — anyone can open an issue on a public repository.
+    if: >-
+      (github.event_name != 'schedule' || vars.RADAR_MODE == 'live') &&
+      (github.event_name != 'issues' || github.event.issue.user.login == github.repository_owner)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      TZ: America/Los_Angeles
+      CHANNEL: ${{ vars.RADAR_MODE == 'live' && 'email' || 'console' }}
+      SMTP_USER: ${{ secrets.SMTP_USER }}
+      SMTP_PASS: ${{ secrets.SMTP_PASS }}
+      EMAIL_TO: ${{ secrets.EMAIL_TO }}
+      TRIGGER_SECRET: ${{ secrets.TRIGGER_SECRET }}
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci --no-audit --no-fund
+
+      # Pinned: the pipeline depends on `claude -p` behaving exactly as it does
+      # on the Mac. Upgrade deliberately, not by surprise.
+      - run: npm install -g @anthropic-ai/claude-code@2.1.201 --no-audit --no-fund
+
+      - name: Use a throwaway copy of state in test mode
+        if: vars.RADAR_MODE != 'live'
+        run: |
+          cp -R state "$RUNNER_TEMP/state"
+          echo "AEO_STATE_DIR=$RUNNER_TEMP/state" >> "$GITHUB_ENV"
+
+      - name: Run
+        run: |
+          case "${{ github.event_name }}" in
+            workflow_dispatch) CMD="${{ inputs.command }}" ;;
+            issues)            CMD=listen ;;
+            *)                 CMD=auto ;;
+          esac
+          echo "mode=${{ vars.RADAR_MODE || 'test' }} command=$CMD channel=$CHANNEL"
+          node pipeline.mjs "$CMD" --days="${{ inputs.days || 14 }}"
+
+      - name: Save state
+        if: always() && vars.RADAR_MODE == 'live'
+        run: |
+          git config user.name "aeo-radar"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state/
+          git diff --cached --quiet && exit 0
+          git commit -q -m "state: ${{ github.event_name }} $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do
+            git push -q && exit 0
+            git pull -q --rebase
+          done
+          exit 1
