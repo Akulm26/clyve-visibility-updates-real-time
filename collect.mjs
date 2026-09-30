@@ -261,9 +261,16 @@ export async function collect(opts = {}) {
   results.forEach((r, i) => {
     const s = sources[i];
     if (r.status === 'fulfilled') {
-      const kept = trim(r.value);
+      // A firehose source is narrowed before the per-source cap, or the cap
+      // keeps thirty unrelated papers and drops the one that matters. Health
+      // counts the whole feed: a feed that is alive but had nothing on-topic
+      // today is working, not quiet.
+      const relevant = s.match
+        ? r.value.filter((it) => s.match.test(`${it.title} ${it.summary || ''}`))
+        : r.value;
+      const kept = trim(relevant);
       items.push(...kept);
-      report.push({ id: s.id, count: kept.length, ok: true });
+      report.push({ id: s.id, count: s.match ? r.value.length : kept.length, ok: true });
     } else {
       report.push({ id: s.id, count: 0, ok: false, error: String(r.reason?.message || r.reason) });
       log(`source failed: ${s.id}: ${r.reason?.message || r.reason}`);

@@ -109,19 +109,27 @@ export const TIER1 = [
   {
     id: 'arxiv-geo',
     name: 'arXiv — AI search & citation research',
-    url:
-      'https://export.arxiv.org/api/query?search_query=' +
-      encodeURIComponent(
-        'all:"generative engine optimization" OR all:"answer engine optimization" ' +
-          'OR all:"LLM citation" OR all:"search engine optimization for LLMs"',
-      ) +
-      '&sortBy=submittedDate&sortOrder=descending&max_results=15',
-    type: 'atom',
-    // arXiv's search API is slow and throttles shared cloud addresses; a
-    // cloud run needs well over the default 20 seconds.
-    timeout: 60000,
+    // The daily listings, not the search API: the API rate-limits cloud
+    // addresses (HTTP 429 from GitHub's runners every time), while the RSS
+    // feeds answer anywhere. The feeds carry only the latest announcements, so
+    // every scan must see them — which a six-hourly scan does.
+    url: 'https://rss.arxiv.org/rss/cs.IR+cs.CL+cs.AI+cs.SI+cs.CY',
+    type: 'rss',
     authority: 6,
-    filter: false,
+    filter: true,
+    match: new RegExp(
+      [
+        '(generative|answer) engine',
+        '\\b(geo|aeo)\\b',
+        'ai (search|overview|answer|citation|visibility)',
+        'llm (citation|search|visibility|referral)',
+        'citation.{0,60}(llm|language model|chatgpt|generative|ai search|answer engine)',
+        '(llm|language model|chatgpt|generative|ai search).{0,60}citation',
+        'search engine optimi[sz]ation',
+        'llms\\.txt',
+      ].join('|'),
+      'i',
+    ),
   },
   {
     id: 'claude-release-notes',
