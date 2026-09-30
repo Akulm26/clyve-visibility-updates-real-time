@@ -24,11 +24,14 @@ on:
       command:
         description: What to run
         type: choice
-        options: [auto, listen, scan, report, digest]
+        options: [auto, listen, scan, report, digest, probe]
         default: auto
       days:
         description: Review window in days (report only)
         default: '14'
+      urls:
+        description: URLs to test (probe only; blank = every source)
+        default: ''
 
 permissions:
   contents: write
@@ -78,6 +81,9 @@ jobs:
           echo "AEO_STATE_DIR=$RUNNER_TEMP/state" >> "$GITHUB_ENV"
 
       - name: Run
+        env:
+          # Passed through the environment, never pasted into the script.
+          PROBE_URLS: ${{ inputs.urls }}
         run: |
           case "${{ github.event_name }}" in
             workflow_dispatch) CMD="${{ inputs.command }}" ;;
@@ -85,6 +91,7 @@ jobs:
             *)                 CMD=auto ;;
           esac
           echo "mode=${{ vars.RADAR_MODE || 'test' }} command=$CMD channel=$CHANNEL"
+          if [ "$CMD" = probe ]; then node probe.mjs $PROBE_URLS; exit 0; fi
           node pipeline.mjs "$CMD" --days="${{ inputs.days || 14 }}"
 
       - name: Save state
