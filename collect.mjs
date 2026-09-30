@@ -225,7 +225,7 @@ async function collectOne(source, opts) {
     source.type === 'webfetch' ||
     source.type === 'sitemap-search' ||
     source.type === 'search-sweep';
-  const body = needsOwnFetch ? null : await fetchText(source.url);
+  const body = needsOwnFetch ? null : await fetchText(source.url, { timeout: source.timeout || 20000 });
   switch (source.type) {
     case 'rss':
       return parseRss(body, source);

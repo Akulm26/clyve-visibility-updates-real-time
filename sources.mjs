@@ -110,13 +110,16 @@ export const TIER1 = [
     id: 'arxiv-geo',
     name: 'arXiv — AI search & citation research',
     url:
-      'http://export.arxiv.org/api/query?search_query=' +
+      'https://export.arxiv.org/api/query?search_query=' +
       encodeURIComponent(
         'all:"generative engine optimization" OR all:"answer engine optimization" ' +
           'OR all:"LLM citation" OR all:"search engine optimization for LLMs"',
       ) +
       '&sortBy=submittedDate&sortOrder=descending&max_results=15',
     type: 'atom',
+    // arXiv's search API is slow and throttles shared cloud addresses; a
+    // cloud run needs well over the default 20 seconds.
+    timeout: 60000,
     authority: 6,
     filter: false,
   },
