@@ -108,6 +108,7 @@ npm run digest          # send the queued weekly digest
 npm run dry             # full pipeline with zero model calls — free to run
 node collect.mjs        # per-source item counts, for checking feeds still work
 node watch.mjs          # check the silent-change watchers
+node probe.mjs          # which sources answer, and how fast
 ```
 
 ## Layout
