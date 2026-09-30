@@ -1,5 +1,26 @@
 [
   {
+    "at": "2026-09-30",
+    "source": "Cloudflare Blog (AI)",
+    "title": "We tested our own WAF with frontier AI models. Here’s what we found",
+    "why": "Internal WAF testing; no AI visibility impact",
+    "url": "https://blog.cloudflare.com/adaptive-ai-waf-testing/"
+  },
+  {
+    "at": "2026-09-30",
+    "source": "Cloudflare Blog (AI)",
+    "title": "Using AI to chart a course for our post-quantum migration",
+    "why": "Internal crypto migration tool; no content discovery impact",
+    "url": "https://blog.cloudflare.com/ai-driven-cryptography-discovery/"
+  },
+  {
+    "at": "2026-09-30",
+    "source": "OpenAI Status",
+    "title": "Elevated errors across ChatGPT, Codex, and the API including the Agents API",
+    "why": "Resolved incident; no ongoing content surfacing change",
+    "url": "https://status.openai.com//incidents/01M3Q4RK1SM4EMK445GGPG7C0N"
+  },
+  {
     "at": "2026-09-29",
     "source": "Perplexity Changelog",
     "title": "Fast Search availability",
