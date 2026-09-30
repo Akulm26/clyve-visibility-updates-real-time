@@ -4,8 +4,7 @@ import { collect } from './collect.mjs';
 import { watch } from './watch.mjs';
 import { passesPrefilter, prefilterWeight } from './lib/filter.mjs';
 import { askClaude, askClaudeJSON } from './lib/claude.mjs';
-import { send as channelSend } from './lib/channel.mjs';
-import { checkIssues, closeIssue, issuesEnabled } from './lib/issues.mjs';
+import { send } from './lib/channel.mjs';
 import { updateHealth, formatHealthAlert } from './lib/health.mjs';
 import { headerFor, withHeader, statusHeader, requestLabel, stamp } from './lib/headers.mjs';
 import { subjectFrom } from './lib/email.mjs';
@@ -422,13 +421,6 @@ function prune(seen) {
   return seen;
 }
 
-/** Every outgoing message goes through here, so a request can say what answered it. */
-let lastSubject = '';
-async function send(text) {
-  await channelSend(text);
-  lastSubject = subjectFrom(text);
-}
-
 const byUrgency = (a, b) => b.score - a.score || (b.authority || 0) - (a.authority || 0);
 
 // ---------------------------------------------------------------- commands
@@ -689,13 +681,6 @@ async function cmdInit() {
 /** Reply to a request that could not run as written. No model, no sources. */
 function noticeMessage(req) {
   const asked = `_${req.subject || '(no subject)'}_`;
-  if (req.issue) {
-    return [
-      statusHeader('Request', 'not understood'),
-      ``,
-      `Your Shortcut request ${asked} is not one I recognise. Use "scan", "review" or "review 30" as the title.`,
-    ].join('\n');
-  }
   if (req.reason === 'no-code') {
     return [
       statusHeader('Request', 'not run'),
@@ -791,15 +776,6 @@ async function runPending(opts) {
       }
     }
 
-    // Close the issues behind anything answered. A test run prints instead of
-    // mailing, and says so on the issue.
-    for (const p of pending.filter((x) => done.has(x.uid) && x.issue)) {
-      const where = (process.env.CHANNEL || '').toLowerCase() === 'console'
-        ? 'Test run: the reply was printed in the Actions log, not emailed.'
-        : `Answered by email: **${lastSubject}**`;
-      await closeIssue(p.issue, where);
-    }
-
     // Save progress after every request, so a crash on the next one cannot
     // re-send a reply that has already gone out.
     pending = pending.filter((p) => !done.has(p.uid));
@@ -826,14 +802,6 @@ async function cmdListen(opts) {
     inboxError = e;
     log(`inbox check failed: ${e.message}`);
   }
-  if (issuesEnabled()) {
-    try {
-      await checkIssues();
-    } catch (e) {
-      inboxError ||= e;
-      log(`issue check failed: ${e.message}`);
-    }
-  }
 
   const pending = await readState('pending.json', []);
   if (pending.length) {
@@ -854,17 +822,11 @@ async function trackScheduled(name, run) {
   const record = await readState('failures.json', {});
   try {
     await run();
-    const schedule = await readState('schedule.json', {});
-    schedule[name] = new Date().toISOString();
-    await writeState('schedule.json', schedule);
     if (record[name]) {
       delete record[name];
       await writeState('failures.json', record);
     }
   } catch (e) {
-    const schedule = await readState('schedule.json', {});
-    schedule[`${name}Attempt`] = new Date().toISOString();
-    await writeState('schedule.json', schedule).catch(() => {});
     const r = record[name] || { count: 0, notified: false };
     r.count++;
     r.last = e.message;
@@ -890,67 +852,6 @@ async function trackScheduled(name, run) {
   }
 }
 
-// ---------------------------------------------------------------- cloud
-
-const SCAN_EVERY_HOURS = 6;
-// A failed scheduled run is retried this long after the last attempt, not on
-// every five-minute tick.
-const RETRY_AFTER_MINUTES = 30;
-const DIGEST_WEEKDAY = 1; // Monday
-const DIGEST_HOUR = 9;
-
-const hoursSince = (iso) => (iso ? (Date.now() - new Date(iso).getTime()) / 3600e3 : Infinity);
-
-/** "2026-09-28" — the local date of this week's digest day. */
-function digestWeek(now = new Date()) {
-  const d = new Date(now);
-  d.setDate(d.getDate() - ((d.getDay() - DIGEST_WEEKDAY + 7) % 7));
-  return d.toLocaleDateString('en-CA');
-}
-
-/**
- * One command for a scheduler that ticks often and unreliably. GitHub's cron
- * runs late, skips runs under load, and cancels queued ones — so rather than a
- * schedule per job, every tick answers requests and then does whatever has
- * fallen due. A skipped tick is made up by the next.
- */
-async function cmdAuto(opts) {
-  let firstError = null;
-  const attempt = async (label, fn) => {
-    try {
-      await fn();
-    } catch (e) {
-      log(`${label} failed: ${e.message}`);
-      firstError ||= e;
-    }
-  };
-
-  await attempt('requests', () => cmdListen(opts));
-
-  const s = await readState('schedule.json', {});
-  const retryOk = (name) => hoursSince(s[`${name}Attempt`]) * 60 >= RETRY_AFTER_MINUTES;
-
-  if (hoursSince(s.scan) >= SCAN_EVERY_HOURS - 0.1 && retryOk('scan')) {
-    log(`auto: scan due (last ${s.scan || 'never'})`);
-    await attempt('scan', () => trackScheduled('scan', () => withLock('scan', () => cmdScan(opts))));
-  }
-
-  const now = new Date();
-  const week = digestWeek(now);
-  const digestTime = now.getDay() !== DIGEST_WEEKDAY || now.getHours() >= DIGEST_HOUR;
-  if (digestTime && (s.digestWeek || '') < week && retryOk('digest')) {
-    log(`auto: digest due for the week of ${week}`);
-    await attempt('digest', async () => {
-      await trackScheduled('digest', () => withLock('digest', () => cmdDigest(opts)));
-      const after = await readState('schedule.json', {});
-      after.digestWeek = week;
-      await writeState('schedule.json', after);
-    });
-  }
-
-  if (firstError) throw firstError;
-}
-
 const cmd = process.argv[2] || 'scan';
 const opts = { dryRun: process.argv.includes('--dry-run') };
 await loadEnv();
@@ -961,11 +862,10 @@ try {
   else if (cmd === 'init') await withLock('init', () => cmdInit());
   else if (cmd === 'preview') await cmdPreview();
   else if (cmd === 'listen') await cmdListen(opts);
-  else if (cmd === 'auto') await cmdAuto(opts);
   else if (cmd === 'report') await withLock('report', () => cmdReport(opts));
   else {
     console.error(
-      `usage: node pipeline.mjs [scan|digest|init|preview|listen|report|auto] [--dry-run] [--days=N]`,
+      `usage: node pipeline.mjs [scan|digest|init|preview|listen|report] [--dry-run] [--days=N]`,
     );
     process.exit(2);
   }
