@@ -1,6 +1,27 @@
 [
   {
     "at": "2026-09-30",
+    "source": "arXiv — AI search & citation research",
+    "title": "The Rashomon Wikipedia: A Data-Perspectivist Analysis of Divergent Historical Narratives",
+    "why": "Wikipedia bias analysis; not actionable for content strategy",
+    "url": "https://arxiv.org/abs/2609.37498"
+  },
+  {
+    "at": "2026-09-30",
+    "source": "arXiv — AI search & citation research",
+    "title": "MAPLE: Medical Aspect-Based Summarization with Phrase-Level Evidence",
+    "why": "LLM citation capability study; no content strategy change",
+    "url": "https://arxiv.org/abs/2601.03418"
+  },
+  {
+    "at": "2026-09-30",
+    "source": "arXiv — AI search & citation research",
+    "title": "Training-Free Global Geometric Association for 4D LiDAR Panoptic Segmentation",
+    "why": "LiDAR segmentation; unrelated to AI content visibility",
+    "url": "https://arxiv.org/abs/2512.18991"
+  },
+  {
+    "at": "2026-09-30",
     "source": "Cloudflare Blog (AI)",
     "title": "We tested our own WAF with frontier AI models. Here’s what we found",
     "why": "Internal WAF testing; no AI visibility impact",
