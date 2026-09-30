@@ -1,0 +1,26 @@
+{
+  "items": {},
+  "urls": {
+    "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
+    "developers.google.com/search/blog/2026/09/web-multimodal-in-sc": 1790683636693,
+    "status.search.google.com/incidents/xhudxp7a67ihcd2kmbvu": 1790683636693,
+    "developers.google.com/search/blog/2026/08/update-site-reputation-policy": 1790679581856,
+    "status.search.google.com/incidents/leubpcm2octf2umqcfke": 1790680889870,
+    "arxiv.org/abs/2609.35077v1": 1790683636693,
+    "arxiv.org/abs/2609.34951v1": 1790683636693,
+    "blog.google/products-and-platforms/products/search/3-new-ways-were-improving-search-profiles-for-publishers": 1790683636693
+  },
+  "last": {
+    "subject": "AEO radar · last 14 days",
+    "at": "2026-09-29T12:07:16.693Z",
+    "kind": "14-day review",
+    "headlines": [
+      "Google launches global spam update",
+      "AI agents now judge your site, not just your buzz",
+      "Search Console now reports on visual search results",
+      "Cloudflare separates AI training access from search access",
+      "Old SEO checklist doesn't predict AI citations",
+      "Google improves publisher profiles in Search"
+    ]
+  }
+}
