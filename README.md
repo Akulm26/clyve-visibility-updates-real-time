@@ -124,7 +124,10 @@ node watch.mjs          # check the silent-change watchers
 | `lib/channel.mjs` | Picks the delivery adapter from `CHANNEL` in `.env` |
 | `lib/email.mjs` | Email delivery (default) — renders the digest as HTML |
 | `lib/telegram.mjs` | Telegram delivery |
-| `state/` | `seen.json` ledger, `hashes.json` fingerprints, `queue.json` pending digest, `health.json` source health, `rejected.json` gate audit |
+| `lib/inbox.mjs` | Finds emailed requests and queues them in `pending.json` |
+| `lib/lock.mjs` | One run at a time |
+| `lib/headers.mjs` | Builds every message's opening line, which is also the email subject |
+| `state/` | `seen.json` ledger, `delivered.json` what reached you, `pending.json` unanswered requests, `hashes.json` fingerprints, `queue.json` pending digest, `health.json` source health, `rejected.json` gate audit |
 
 ## Checking the gate's judgement
 
@@ -153,40 +156,90 @@ system asks for, and it should come up a couple of times a year.
 
 ## Triggering a scan from your phone
 
-Two things you can ask for, both by emailing yourself:
+Two things you can ask for, both by emailing yourself. Get the code with
+`npm run trigger:code`; the inbox is checked every two minutes.
 
-| Subject | What you get |
+| Subject | What it does |
 |---|---|
-| `scan <code>` | Anything new since the last update, or a note saying there is nothing |
-| `review <code>` | Everything on-topic from the last 14 days, sent regardless of what went out before |
+| `scan <code>` | Checks every source now for anything you have not been sent |
+| `review <code>` | Looks back over the last 14 days |
 | `review 30 <code>` | Same, over any window up to 90 days |
 
-A review reads past the ledger without editing it, so it never causes a
-duplicate later. Use it to check the radar is healthy, or to catch up after time
-away.
+**Every request gets exactly one reply, and the reply only carries content
+when there is a legitimate update** — something you have not already been
+sent, by any email. Otherwise it is a short note pointing at your latest
+update, so the newest content email is always the one place to look:
 
-Email yourself with **`scan <your code>`** in the subject. Get the code with
-`npm run trigger:code`. The inbox is checked every two minutes.
+| Outcome | Reply subject |
+|---|---|
+| scan, something new | `AEO radar · Scan · 3 new · Sep 29, 7:21 PM` |
+| review, something new | `AEO radar · Review · last 14 days · 6 items · Sep 29, 7:21 PM` |
+| either, nothing new | `AEO radar · Scan · no update · …` / `AEO radar · Review · last 14 days · no update · …` |
+| request failed 3 times | `AEO radar · Scan · failed · …`, with the reason |
+| code missing | `AEO radar · Request · not run · …` |
+| code present, request unclear | `AEO radar · Request · not understood · …` |
 
-A requested check always replies. It sends everything it just found plus
-anything already waiting, most urgent first, and says plainly when there is
-nothing rather than leaving you wondering whether it worked. The urgency
-threshold exists to avoid pestering you on the automatic runs; it has no
-business filtering a reply you asked for.
+A "no update" reply still does the full check. It says how many sources it
+reached, names the email holding your latest update, and shows the newest item
+anywhere in your sources, so a quiet radar can be told apart from a broken one.
+A review that does have news sends the whole window and says how many of its
+items are new.
+
+What counts as "already sent" is `state/delivered.json`: every item that has
+reached you, by scan, review, breaking alert or Monday digest. The same record
+stops the scheduled scan and the digest repeating something a review already
+showed you.
+
+Subjects are built in code, not by the write-up model, and carry the time, so
+no two replies share one and Gmail never folds them into a single thread.
 
 Silence is still the rule for *scheduled* scans — only high-impact items
 interrupt you, the rest wait for Monday.
 
-New trigger mail is found by tracking the highest message id already examined,
+### Why a request never goes unanswered
+
+- **Several at once.** A `review` and then a `scan` each get a reply, in the
+  order sent. Two identical requests are answered once.
+- **Crashes and outages.** A request is written to `state/pending.json` before
+  the inbox marker moves past it, and removed only once its reply is out. A run
+  that fails is retried on the next checks; after three failures you get a
+  message saying why instead.
+- **A sleeping Mac.** Requests up to 12 hours old are still answered, with a
+  note saying when you sent it and when it was picked up.
+- **Typos.** A mail from you that looks like a request but lacks the code, or
+  has the code but no recognisable request, gets a reply saying so.
+- **Replying to a radar email.** Works: the radar's own mail is recognised by an
+  `X-AEO-Radar` header, not by its subject, and only the text you typed above
+  the quote is read.
+- **Overlapping runs.** Scans, digests and requests take turns through a lock,
+  so they cannot overwrite each other's state.
+- **A scheduled scan that keeps failing** sends one notice after two failures
+  in a row, then stays quiet until it recovers.
+
+The one thing it cannot do is answer while the Mac is off or asleep: requests
+wait until it wakes (up to 12 hours), and anything older is logged and skipped.
+
+New trigger mail is found by tracking the highest message UID already examined,
 not by the unread flag. Opening your own inbox to see whether a reply arrived
 marks the trigger mail read, and a flag-based check would then skip it — a
 trigger that fails precisely because you went looking for its result.
 
 Three conditions must all hold before anything runs: the code appears in the
-subject or body, the mail came from your own address, and it arrived in the last
-30 minutes. The code is what carries the security — a From address can be forged,
-so on its own the sender check only stops accidents. Rotate the code any time
-with `npm run trigger:code -- --new`.
+subject or body, the mail came from your own address (or `EMAIL_TO`, or an
+address listed in `TRIGGER_FROM`), and it arrived in the last 12 hours. The code
+is what carries the security — a From address can be forged, so on its own the
+sender check only stops accidents. Replays are impossible because the UID marker
+never examines a message twice. The code is never written to `state/`, which is
+pushed to a public repository. Rotate it any time with
+`npm run trigger:code -- --new`.
+
+To rehearse a change without mailing yourself, point the pipeline at a copy of
+the state and print instead of sending:
+
+```bash
+cp -R state /tmp/radar-state
+AEO_STATE_DIR=/tmp/radar-state CHANNEL=console node pipeline.mjs listen
+```
 
 Email was chosen over a watched iCloud folder because macOS privacy protection
 blocks background agents from reading iCloud Drive — an agent there runs but

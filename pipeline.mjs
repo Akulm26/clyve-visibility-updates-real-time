@@ -6,9 +6,12 @@ import { passesPrefilter, prefilterWeight } from './lib/filter.mjs';
 import { askClaude, askClaudeJSON } from './lib/claude.mjs';
 import { send } from './lib/channel.mjs';
 import { updateHealth, formatHealthAlert } from './lib/health.mjs';
+import { headerFor, withHeader, statusHeader, requestLabel, stamp } from './lib/headers.mjs';
+import { subjectFrom } from './lib/email.mjs';
+import { withLock } from './lib/lock.mjs';
 import { TIER1, TIER2, TIER3 } from './sources.mjs';
 import {
-  ROOT, itemKey, readState, writeState, truncate, fetchText, htmlToText, log,
+  ROOT, STATE_DIR, itemKey, canonical, readState, writeState, truncate, fetchText, htmlToText, log,
 } from './lib/util.mjs';
 
 // Caps. Their job is to bound the worst case, not the normal one — a typical
@@ -25,13 +28,17 @@ const BACKFILL_DAYS = 14;
 // under a "what's new" heading.
 const MAX_NEWS_AGE_DAYS = 14;
 const SEEN_RETENTION_DAYS = 400;
+// A triggered request that fails is retried on the next inbox checks; after
+// this many attempts you get a message saying what went wrong instead.
+const MAX_ATTEMPTS = 3;
+// A request answered later than this gets a note saying when it was sent.
+const LATE_MINUTES = 10;
 
 const SOURCE_BY_ID = Object.fromEntries([...TIER1, ...TIER2].map((s) => [s.id, s]));
 const NAME_BY_ID = Object.fromEntries(
   [...TIER1, ...TIER2, ...TIER3].map((s) => [s.id, s.name]),
 );
 const MAX_REJECTION_LOG = 300;
-const NAME_COUNT = new Set([...TIER1, ...TIER2, ...TIER3].map((s) => s.id)).size;
 
 async function loadEnv() {
   try {
@@ -52,7 +59,7 @@ async function prompt(name, items) {
 
 /** Everything free happens here: fetch, dedupe, keyword filter. */
 async function gatherNew({ dryRun }) {
-  const [{ items: feedItems, report: feedReport }, { items: docChanges, report: watchReport }] =
+  const [{ items: feedItems, report: feedReport }, { items: docChanges, report: watchReport, commit }] =
     await Promise.all([collect({ dryRun }), watch()]);
 
   const report = [...feedReport, ...watchReport];
@@ -84,7 +91,10 @@ async function gatherNew({ dryRun }) {
   );
   const newest = onTopic.sort((a, b) => new Date(b.published) - new Date(a.published))[0] || null;
 
-  return { fresh: diversify(fresh), seen, report, newest };
+  // Doc-change fingerprints are saved only on a real run, and only once the
+  // caller has recorded what it found — see `watch()`.
+  const commitWatch = dryRun ? async () => {} : commit;
+  return { fresh: diversify(fresh), seen, report, newest, commitWatch };
 }
 
 /**
@@ -195,12 +205,38 @@ async function writeUp(items, kind) {
     category: it.category,
     alsoSeenIn: it.alsoSeenIn,
   }));
-  const tpl = await prompt('writeup.md', payload);
-  const raw = await askClaude(`${tpl}\n\nThis is a ${kind}.`, {
-    model: 'sonnet',
-    timeout: 300000,
-  });
-  return withSources(stripPreamble(raw), items);
+  const header = headerFor(kind, items.length);
+  try {
+    const tpl = await prompt('writeup.md', payload);
+    const raw = await askClaude(`${tpl}\n\nThis is a ${kind}.`, {
+      model: 'sonnet',
+      timeout: 300000,
+    });
+    return withSources(withHeader(stripPreamble(raw), header), items);
+  } catch (e) {
+    // The items were already judged worth sending; only the prose failed. A
+    // plain list that arrives beats a polished one that never does.
+    log(`write-up failed, sending a plain list instead: ${e.message}`);
+    return plainList(header, items, e.message);
+  }
+}
+
+function plainList(header, items, reason) {
+  const marker = (s) => (s >= 5 ? '🔴' : s >= 4 ? '🟠' : s >= 3 ? '🟡' : '⚪');
+  const body = items
+    .map((it) => {
+      const date = it.published
+        ? new Date(it.published).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+        : '';
+      return [
+        `*${marker(it.score)} ${it.title}*`,
+        `_${it.sourceName}${date ? ` · ${date}` : ''}_`,
+        it.why || '',
+        it.url,
+      ].filter(Boolean).join('\n');
+    })
+    .join('\n———\n');
+  return `${header}\n\nThe usual write-up could not be produced (${reason}), so here are the items as they are.\n———\n${body}`;
 }
 
 /**
@@ -232,13 +268,130 @@ function stripPreamble(text) {
   return (headerAt > 0 ? text.slice(headerAt) : text).trim();
 }
 
+/** Put a line directly under the header. */
+function withNote(text, note) {
+  if (!note) return text;
+  const [first, ...rest] = text.split('\n');
+  return [first, '', note, ...rest].join('\n');
+}
+
 /** Keep a copy of what went out, so a digest can be re-read without a mailbox. */
 async function saveSent(kind, text) {
   const stamp = new Date().toISOString();
   await writeFile(
-    join(ROOT, 'state', 'last-sent.md'),
+    join(STATE_DIR, 'last-sent.md'),
     `<!-- ${kind} · ${stamp} -->\n\n${text}\n`,
   );
+}
+
+// ---------------------------------------------------------------- delivery
+
+/**
+ * What has actually reached you, as opposed to what has merely been looked at.
+ *
+ * `seen.json` records everything the gate judged, kept or not; it cannot say
+ * whether you have already read about something. This can — and it is what
+ * makes "is there a legitimate update?" answerable for both a scan and a
+ * review, whichever of the two (or a breaking alert, or the Monday digest)
+ * delivered the item first.
+ */
+async function readDelivered() {
+  return { items: {}, urls: {}, last: null, ...(await readState('delivered.json', {})) };
+}
+
+/**
+ * Matched on the item key or on its link. The link catches a publisher that
+ * retitles a post after you have read it. Documentation changes are keyed per
+ * edit and share one link across edits, so they match on the key alone.
+ */
+const isDelivered = (delivered, item) =>
+  Boolean(delivered.items[itemKey(item)]) ||
+  (!item.dedupeKey && Boolean(item.url && delivered.urls[canonical(item.url)]));
+
+/** Send a message that carries items, then record the items and the message. */
+async function deliver(kind, text, items) {
+  await send(text);
+  await saveSent(kind, text);
+
+  const d = await readDelivered();
+  const now = Date.now();
+  for (const it of items) {
+    d.items[itemKey(it)] = now;
+    if (it.url && !it.dedupeKey) d.urls[canonical(it.url)] = now;
+  }
+  const cutoff = now - SEEN_RETENTION_DAYS * 864e5;
+  for (const map of [d.items, d.urls]) {
+    for (const [k, t] of Object.entries(map)) if (t < cutoff) delete map[k];
+  }
+  d.last = {
+    subject: subjectFrom(text),
+    at: new Date(now).toISOString(),
+    kind,
+    headlines: items.slice(0, 8).map((i) => i.title),
+  };
+  await writeState('delivered.json', d);
+}
+
+/**
+ * The reply when a requested scan or review finds nothing you have not already
+ * been sent. It does not repeat old content; it points at the email that holds
+ * it, so the newest content email is always the one place to look. It still
+ * shows its working — sources reached, and the newest item anywhere — because
+ * "no update" on its own is indistinguishable from a broken radar.
+ */
+function noUpdateMessage({ label, summary, report, newest, last, note }) {
+  const ok = report.filter((r) => r.ok).length;
+  const failed = report.filter((r) => !r.ok);
+
+  const lines = [
+    statusHeader(label, 'no update'),
+    ``,
+    ...(note ? [note, ``] : []),
+    `Checked ${ok} of ${report.length} sources just now. ${summary}`,
+    ``,
+    `———`,
+    `*Your latest update*`,
+    ``,
+  ];
+
+  if (last) {
+    // New subjects carry their own time; older ones do not, so add it.
+    const when = /\d:\d\d/.test(last.subject) ? '' : `, sent ${stamp(new Date(last.at))}`;
+    lines.push(
+      `Open the email _${last.subject}_${when}. It is still the current picture.`,
+    );
+    if (last.headlines?.length) {
+      lines.push(``, ...last.headlines.map((h) => `· ${h}`));
+    }
+  } else {
+    lines.push(`Nothing has been sent to you yet — the radar has found nothing worth sending.`);
+  }
+
+  if (newest) {
+    const date = new Date(newest.published).toLocaleDateString('en-US', {
+      month: 'long', day: 'numeric', year: 'numeric',
+    });
+    lines.push(
+      ``,
+      `———`,
+      `*Feeds are current*`,
+      ``,
+      `The most recent item anywhere in your sources is from ${date}:`,
+      `_${newest.title}_ — ${newest.sourceName}`,
+      newest.url,
+    );
+  }
+
+  if (failed.length) {
+    lines.push(
+      ``,
+      `———`,
+      `*Could not reach*`,
+      failed.map((f) => `· ${NAME_BY_ID[f.id] || f.id}`).join('\n'),
+    );
+  }
+
+  return lines.join('\n');
 }
 
 /**
@@ -262,81 +415,18 @@ function splitByAge(items, maxDays = MAX_NEWS_AGE_DAYS) {
   return { current, stale };
 }
 
-/**
- * The reply when a requested check turns up nothing.
- *
- * "Nothing new" on its own is indistinguishable from a broken radar, so this
- * has to show its working: how many sources were actually reached, when, and
- * what the most recent item in the feeds is. If that last line is recent, the
- * feeds are current and the quiet is real.
- */
-function nothingNewMessage(report, newest) {
-  const ok = report.filter((r) => r.ok).length;
-  const failed = report.filter((r) => !r.ok);
-  const when = new Date().toLocaleString('en-GB', {
-    day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit',
-  });
-
-  const lines = [
-    `*AEO radar · nothing new*`,
-    ``,
-    `Checked ${ok} of ${report.length} sources at ${when}. No new updates.`,
-    ``,
-    `———`,
-    `*Feeds are current*`,
-  ];
-
-  if (newest) {
-    const date = new Date(newest.published).toLocaleDateString('en-GB', {
-      day: 'numeric', month: 'long', year: 'numeric',
-    });
-    lines.push(
-      ``,
-      `The most recent item anywhere in your sources is from ${date}:`,
-      ``,
-      `_${newest.title}_`,
-      `${newest.sourceName}`,
-      newest.url,
-      ``,
-      `You have already had everything up to that point. Nothing has been`,
-      `published since.`,
-    );
-  } else {
-    lines.push(``, `No dated items in the current window.`);
-  }
-
-  if (failed.length) {
-    lines.push(
-      ``,
-      `———`,
-      `*Could not reach*`,
-      failed.map((f) => `· ${NAME_BY_ID[f.id] || f.id}`).join('\n'),
-    );
-  }
-
-  return lines.join('\n');
-}
-
-/** Date of the most recent thing actually sent, for the "nothing new" note. */
-async function latestSentDate() {
-  const seen = await readState('seen.json', {});
-  const times = Object.values(seen).map((v) => v.t || 0).filter(Boolean);
-  if (!times.length) return 'the last check';
-  return new Date(Math.max(...times)).toLocaleDateString('en-GB', {
-    day: 'numeric', month: 'long',
-  });
-}
-
 function prune(seen) {
   const cutoff = Date.now() - SEEN_RETENTION_DAYS * 864e5;
   for (const [k, v] of Object.entries(seen)) if ((v.t || 0) < cutoff) delete seen[k];
   return seen;
 }
 
+const byUrgency = (a, b) => b.score - a.score || (b.authority || 0) - (a.authority || 0);
+
 // ---------------------------------------------------------------- commands
 
-async function cmdScan({ dryRun, manual = false }) {
-  const { fresh, seen, report, newest } = await gatherNew({ dryRun });
+async function cmdScan({ dryRun, manual = false, note = '' }) {
+  const { fresh, seen, report, newest, commitWatch } = await gatherNew({ dryRun });
   const failed = report.filter((r) => !r.ok);
   if (failed.length) log(`sources failed: ${failed.map((f) => f.id).join(', ')}`);
   log(`${fresh.length} new item(s) past the free filters`);
@@ -355,11 +445,14 @@ async function cmdScan({ dryRun, manual = false }) {
     return;
   }
 
+  const delivered = await readDelivered();
   let kept = [];
   if (fresh.length) {
     const batch = await enrichThin(fresh.slice(0, MAX_ITEMS_PER_GATE));
     const gated = await gate(batch);
-    kept = gated.kept;
+    // A look-back review can reach an item before the scan does. It is not
+    // news a second time.
+    kept = gated.kept.filter((k) => !isDelivered(delivered, k));
     await logRejections(gated.rejected);
     log(`gate kept ${kept.length}/${batch.length}`);
 
@@ -370,28 +463,33 @@ async function cmdScan({ dryRun, manual = false }) {
   const strip = ({ _key, ...rest }) => rest;
 
   if (manual) {
-    // You asked, so you get an answer. A hand-triggered check sends everything
-    // it found plus anything already waiting, most urgent first — and says so
-    // plainly when there is nothing, rather than leaving you wondering whether
-    // it worked. The urgency threshold exists to avoid pestering you on the
-    // automatic runs; it has no business filtering a reply you requested.
+    // You asked, so you always get an answer — the content when there is a
+    // legitimate update, otherwise a pointer to the email that already has it.
+    // Everything found plus anything already waiting goes out, most urgent
+    // first: the urgency threshold exists to avoid pestering you on automatic
+    // runs and has no business filtering a reply you requested.
     const waiting = await readState('queue.json', []);
     const { current, stale } = splitByAge([...kept.map(strip), ...waiting]);
     if (stale.length) log(`dropped ${stale.length} stale item(s) from the queue`);
 
-    const all = current.sort(
-      (a, b) => b.score - a.score || (b.authority || 0) - (a.authority || 0),
-    );
+    const updates = current.filter((i) => !isDelivered(delivered, i)).sort(byUrgency);
 
-    const text = all.length
-      ? await writeUp(all.slice(0, MAX_DIGEST_ITEMS), 'requested update')
-      : nothingNewMessage(report, newest);
-
-    await send(text);
-    await saveSent('requested update', text);
-    await writeState('queue.json', []);
+    if (updates.length) {
+      const shown = updates.slice(0, MAX_DIGEST_ITEMS);
+      await deliver('requested update', withNote(await writeUp(shown, 'requested update'), note), shown);
+    } else {
+      await send(noUpdateMessage({
+        label: 'Scan',
+        summary: 'Nothing new since your last update.',
+        report, newest, last: delivered.last, note,
+      }));
+    }
+    // Recorded only after the reply is out: if sending fails, the request is
+    // retried and must find the same items again.
+    await writeState('queue.json', updates.slice(MAX_DIGEST_ITEMS));
     await writeState('seen.json', prune(seen));
-    log(`sent requested update (${all.length} item(s))`);
+    await commitWatch();
+    log(updates.length ? `sent requested update (${Math.min(updates.length, MAX_DIGEST_ITEMS)} item(s))` : 'sent requested update: no update');
     return;
   }
 
@@ -402,9 +500,7 @@ async function cmdScan({ dryRun, manual = false }) {
     // Several high-impact items landing in one scan is a backlog, not an
     // emergency — a catch-up reads better than four "breaking" alarms.
     const kind = urgent.length > MAX_BREAKING ? 'catch-up digest' : 'breaking alert';
-    const text = await writeUp(urgent, kind);
-    await send(text);
-    await saveSent(kind, text);
+    await deliver(kind, await writeUp(urgent, kind), urgent);
     log(`sent ${urgent.length} item(s) as ${kind}`);
   }
 
@@ -417,16 +513,21 @@ async function cmdScan({ dryRun, manual = false }) {
 
   if (!kept.length) log('nothing new — staying silent');
   await writeState('seen.json', prune(seen));
+  await commitWatch();
 }
 
 async function cmdDigest({ dryRun }) {
   const queue = await readState('queue.json', []);
-  if (!queue.length) {
+  const delivered = await readDelivered();
+  // A requested scan or a review may already have sent some of these.
+  const pending = queue.filter((i) => !isDelivered(delivered, i));
+  if (!pending.length) {
+    if (queue.length) await writeState('queue.json', []);
     log('queue empty — no digest sent');
     return;
   }
 
-  const { current, stale } = splitByAge(queue);
+  const { current, stale } = splitByAge(pending);
   if (stale.length) log(`dropped ${stale.length} stale item(s) from the digest`);
   if (!current.length) {
     await writeState('queue.json', []);
@@ -434,7 +535,7 @@ async function cmdDigest({ dryRun }) {
     return;
   }
 
-  const ranked = [...current].sort((a, b) => b.score - a.score || b.authority - a.authority);
+  const ranked = [...current].sort(byUrgency);
   const featured = ranked.slice(0, MAX_DIGEST_ITEMS);
   const rest = ranked.slice(MAX_DIGEST_ITEMS);
 
@@ -450,8 +551,7 @@ async function cmdDigest({ dryRun }) {
       rest.map((r) => `· ${r.title} — ${r.sourceName}\n${r.url}`).join('\n');
   }
 
-  await send(text);
-  await saveSent('weekly digest', text);
+  await deliver('weekly digest', text, ranked);
   await writeState('queue.json', []);
   log(`digest sent (${featured.length} featured, ${rest.length} listed)`);
 }
@@ -478,20 +578,26 @@ async function cmdPreview() {
  * A deliberate look back over a fixed window, regardless of what has already
  * been sent. Use it to sanity-check coverage, or to catch up after a break.
  *
- * Deliberately does not touch the ledger or the queue. An earlier attempt at
- * this deleted entries from `seen.json` so items would be rediscovered, which
- * worked but re-sent things that had already gone out — exactly the duplication
- * the ledger exists to prevent. Reading past it is safe; editing it is not.
+ * Deliberately does not touch the ledger, the queue or the doc fingerprints.
+ * An earlier attempt at this deleted entries from `seen.json` so items would be
+ * rediscovered, which re-sent things that had already gone out — exactly the
+ * duplication the ledger exists to prevent. Reading past it is safe; editing
+ * it is not.
+ *
+ * It always replies. When the window holds at least one item you have not
+ * been sent, the whole window goes out with the new ones guaranteed a place;
+ * otherwise the reply points at your latest update.
  */
-async function cmdReport({ dryRun, days: requested }) {
+async function cmdReport({ dryRun, days: requested, note = '' }) {
   const days =
     requested || Number(process.argv.find((a) => a.startsWith('--days='))?.split('=')[1]) || 14;
   const cutoff = Date.now() - days * 864e5;
 
-  const [{ items }, { items: docChanges }] = await Promise.all([
+  const [{ items, report: feedReport }, { items: docChanges, report: watchReport }] = await Promise.all([
     collect({ dryRun: false }),
     watch(),
   ]);
+  const report = [...feedReport, ...watchReport];
 
   const inWindow = [...items, ...docChanges]
     .filter((i) => i.isDocChange || passesPrefilter(i, SOURCE_BY_ID[i.source]))
@@ -503,26 +609,47 @@ async function cmdReport({ dryRun, days: requested }) {
     for (const i of inWindow) console.log(`  ${(i.published || '').slice(0, 10)}  ${i.sourceName} — ${i.title}`);
     return;
   }
-  if (!inWindow.length) return log('nothing in the window');
 
-  // Gate in batches so a two-week window is not truncated to a single call.
-  const enriched = await enrichThin(inWindow.slice(0, 45));
+  // Gate in batches so a long window is not truncated to a single call.
   const kept = [];
-  for (let i = 0; i < enriched.length; i += MAX_ITEMS_PER_GATE) {
-    const { kept: k } = await gate(enriched.slice(i, i + MAX_ITEMS_PER_GATE));
-    kept.push(...k);
+  if (inWindow.length) {
+    const enriched = await enrichThin(inWindow.slice(0, 45));
+    for (let i = 0; i < enriched.length; i += MAX_ITEMS_PER_GATE) {
+      const { kept: k } = await gate(enriched.slice(i, i + MAX_ITEMS_PER_GATE));
+      kept.push(...k);
+    }
+    log(`gate kept ${kept.length}/${enriched.length}`);
   }
-  log(`gate kept ${kept.length}/${enriched.length}`);
-  if (!kept.length) return log('nothing survived the gate');
 
-  const ranked = kept.sort(
-    (a, b) => b.score - a.score || new Date(b.published || 0) - new Date(a.published || 0),
-  );
+  const delivered = await readDelivered();
+  const fresh = kept.filter((i) => !isDelivered(delivered, i));
+  const label = requestLabel('review', days);
 
-  const text = await writeUp(ranked.slice(0, REPORT_ITEMS), `${days}-day review`);
-  await send(text);
-  await saveSent(`${days}-day review`, text);
-  log(`sent ${Math.min(ranked.length, REPORT_ITEMS)}-item review of the last ${days} days`);
+  if (!fresh.length) {
+    const summary = kept.length
+      ? `Looked back ${days} days: ${kept.length} relevant item(s), every one already sent to you.`
+      : `Looked back ${days} days: nothing relevant was published.`;
+    const newest = inWindow.find((i) => i.published) || null;
+    await send(noUpdateMessage({ label, summary, report, newest, last: delivered.last, note }));
+    log(`sent ${days}-day review: no update (${kept.length} relevant, all already sent)`);
+    return;
+  }
+
+  // New items first so none is cut by the cap, then fill with the rest of the
+  // window, and present the lot most urgent first.
+  const already = kept.filter((i) => isDelivered(delivered, i));
+  const shown = [...fresh.sort(byUrgency), ...already.sort(byUrgency)]
+    .slice(0, REPORT_ITEMS)
+    .sort((a, b) => b.score - a.score || new Date(b.published || 0) - new Date(a.published || 0));
+
+  // Say which part is new, so a review can be read against the last one.
+  const newCount = shown.filter((i) => !isDelivered(delivered, i)).length;
+  const whatsNew = newCount === shown.length
+    ? ''
+    : `_${newCount} of these ${shown.length} ${newCount === 1 ? 'is' : 'are'} new since your last update; the rest you have seen before._`;
+  const text = withNote(await writeUp(shown, `${days}-day review`), [note, whatsNew].filter(Boolean).join('\n'));
+  await deliver(`${days}-day review`, text, shown);
+  log(`sent ${shown.length}-item review of the last ${days} days (${fresh.length} new)`);
 }
 
 /**
@@ -549,24 +676,180 @@ async function cmdInit() {
   log(`run \`npm run scan\` to produce the first catch-up batch`);
 }
 
+// ---------------------------------------------------------------- requests
+
+/** Reply to a request that could not run as written. No model, no sources. */
+function noticeMessage(req) {
+  const asked = `_${req.subject || '(no subject)'}_`;
+  if (req.reason === 'no-code') {
+    return [
+      statusHeader('Request', 'not run'),
+      ``,
+      `Your email ${asked} looked like a request, but it did not include your code, so nothing ran.`,
+      ``,
+      `Send it again with the code in the subject — for example "scan <code>" or "review <code>". To see the code, run \`npm run trigger:code\` on the Mac.`,
+    ].join('\n');
+  }
+  return [
+    statusHeader('Request', 'not understood'),
+    ``,
+    `Your email ${asked} had the right code, but no request I recognise.`,
+    ``,
+    `"scan <code>" — anything new since your last update`,
+    `"review <code>" — a look back over the last 14 days`,
+    `"review 30 <code>" — the same over any window up to 90 days`,
+  ].join('\n');
+}
+
+/** Errors in words you can act on; the raw message stays in the log. */
+function plainReason(message = '') {
+  if (/spawn claude ENOENT|claude.*not found/i.test(message)) return 'the Claude command-line tool could not be found on the Mac';
+  if (/claude exited|not logged in|authenticat/i.test(message)) return 'the Claude command-line tool refused to run — it may need logging in again';
+  if (/claude timed out/i.test(message)) return 'the AI step took too long to answer';
+  if (/ENOTFOUND|ECONNRESET|ETIMEDOUT|ETIMEOUT|EAI_AGAIN|fetch failed|network/i.test(message)) return 'the Mac had no working internet connection';
+  if (/Invalid login|535|EAUTH/i.test(message)) return 'the email account rejected the app password';
+  if (/another run is still going/i.test(message)) return 'another scan was still running';
+  return message;
+}
+
+function failureMessage(req, error) {
+  return [
+    statusHeader(requestLabel(req.kind, req.days), 'failed'),
+    ``,
+    `Your request, sent ${stamp(new Date(req.arrived))}, could not be completed after ${MAX_ATTEMPTS} attempts.`,
+    ``,
+    `Reason: ${plainReason(error)}.`,
+    ``,
+    `Send it again in a few minutes. If this keeps happening, the details are in logs/ on the Mac.`,
+  ].join('\n');
+}
+
+function lateNote(req) {
+  const arrived = new Date(req.arrived);
+  if (Date.now() - arrived.getTime() < LATE_MINUTES * 60000) return '';
+  return `_You sent this request at ${stamp(arrived)}; it was picked up at ${stamp()} — the Mac was asleep or offline in between._`;
+}
+
 /**
- * Check for an emailed trigger and run whatever it asks for. Runs every couple
- * of minutes; almost always finds nothing and exits having done one small IMAP
- * round-trip, so it costs nothing in model usage.
+ * Answer every pending request. Each is removed only once its reply has gone
+ * out; a failure leaves it for the next check, and the last failure sends a
+ * message saying what went wrong. Repeats of the same request are answered
+ * once.
+ */
+async function runPending(opts) {
+  let pending = await readState('pending.json', []);
+  const done = new Set();
+  let firstError = null;
+
+  for (const req of pending) {
+    if (done.has(req.uid)) continue;
+    const same = pending.filter(
+      (p) => p.kind === req.kind && (p.kind !== 'review' || p.days === req.days) && p.kind !== 'notice',
+    );
+    const group = req.kind === 'notice' ? [req] : same;
+
+    try {
+      if (req.kind === 'notice') {
+        await send(noticeMessage(req));
+      } else if (req.kind === 'review') {
+        log(`triggered by email: ${req.days}-day review`);
+        await cmdReport({ ...opts, days: req.days, note: lateNote(req) });
+      } else {
+        log('triggered by email: scan');
+        await cmdScan({ ...opts, manual: true, note: lateNote(req) });
+      }
+      for (const g of group) done.add(g.uid);
+    } catch (err) {
+      const attempts = (req.attempts || 0) + 1;
+      log(`request ${req.kind} (uid ${req.uid}) failed, attempt ${attempts}/${MAX_ATTEMPTS}: ${err.message}`);
+      firstError ||= err;
+      for (const g of group) g.attempts = attempts;
+      if (attempts >= MAX_ATTEMPTS) {
+        try {
+          await send(failureMessage(req, err.message));
+          for (const g of group) done.add(g.uid);
+        } catch (sendErr) {
+          // Could not even send the failure notice — the network or the mail
+          // account is down. Keep the request; the next check tries again.
+          log(`could not send the failure notice either: ${sendErr.message}`);
+        }
+      }
+    }
+
+    // Save progress after every request, so a crash on the next one cannot
+    // re-send a reply that has already gone out.
+    pending = pending.filter((p) => !done.has(p.uid));
+    await writeState('pending.json', pending);
+  }
+
+  if (firstError) throw firstError;
+}
+
+/**
+ * Check for emailed requests and answer them. Runs every couple of minutes;
+ * almost always finds nothing and exits having done one small IMAP round-trip,
+ * so it costs nothing in model usage.
+ *
+ * Pending requests are answered even when the inbox check itself fails, so a
+ * flaky connection delays new requests but never strands ones already found.
  */
 async function cmdListen(opts) {
   const { checkInbox } = await import('./lib/inbox.mjs');
-  const trigger = await checkInbox();
-  if (!trigger) return;
-  const { cmd, days } = trigger;
-
-  if (cmd === 'review') {
-    log(`triggered by email: ${days}-day review`);
-    await cmdReport({ ...opts, days });
-    return;
+  let inboxError = null;
+  try {
+    await checkInbox();
+  } catch (e) {
+    inboxError = e;
+    log(`inbox check failed: ${e.message}`);
   }
-  log('triggered by email: sending a requested update');
-  await cmdScan({ ...opts, manual: true });
+
+  const pending = await readState('pending.json', []);
+  if (pending.length) {
+    // Waits for a scheduled scan to finish rather than racing it. If it is
+    // still going, the requests stay pending for the next check.
+    await withLock('listen', () => runPending(opts), { wait: 10 * 60000 });
+  }
+  if (inboxError) throw inboxError;
+}
+
+/**
+ * A scheduled run that fails only says so in the log — and a radar whose normal
+ * state is silence gives you no other reason to look. Two failures in a row
+ * (twelve hours of scans) sends one notice; it stays quiet until a run
+ * succeeds, then can warn again.
+ */
+async function trackScheduled(name, run) {
+  const record = await readState('failures.json', {});
+  try {
+    await run();
+    if (record[name]) {
+      delete record[name];
+      await writeState('failures.json', record);
+    }
+  } catch (e) {
+    const r = record[name] || { count: 0, notified: false };
+    r.count++;
+    r.last = e.message;
+    if (r.count >= 2 && !r.notified) {
+      try {
+        await send([
+          statusHeader(name === 'scan' ? 'Scheduled scan' : 'Weekly digest', 'failing'),
+          ``,
+          `The last ${r.count} scheduled runs failed, so the radar is not currently watching your sources.`,
+          ``,
+          `Reason: ${plainReason(e.message)}.`,
+          ``,
+          `You will not be told again until it recovers. Details are in logs/ on the Mac.`,
+        ].join('\n'));
+        r.notified = true;
+      } catch (sendErr) {
+        log(`could not send the failure notice: ${sendErr.message}`);
+      }
+    }
+    record[name] = r;
+    await writeState('failures.json', record).catch(() => {});
+    throw e;
+  }
 }
 
 const cmd = process.argv[2] || 'scan';
@@ -574,12 +857,12 @@ const opts = { dryRun: process.argv.includes('--dry-run') };
 await loadEnv();
 
 try {
-  if (cmd === 'scan') await cmdScan(opts);
-  else if (cmd === 'digest') await cmdDigest(opts);
-  else if (cmd === 'init') await cmdInit();
+  if (cmd === 'scan') await trackScheduled('scan', () => withLock('scan', () => cmdScan(opts)));
+  else if (cmd === 'digest') await trackScheduled('digest', () => withLock('digest', () => cmdDigest(opts)));
+  else if (cmd === 'init') await withLock('init', () => cmdInit());
   else if (cmd === 'preview') await cmdPreview();
   else if (cmd === 'listen') await cmdListen(opts);
-  else if (cmd === 'report') await cmdReport(opts);
+  else if (cmd === 'report') await withLock('report', () => cmdReport(opts));
   else {
     console.error(
       `usage: node pipeline.mjs [scan|digest|init|preview|listen|report] [--dry-run] [--days=N]`,

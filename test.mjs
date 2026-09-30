@@ -86,6 +86,25 @@ check('weekly header is recognised',
 check('breaking header is recognised',
   subjectFrom('*⚡ AEO radar · breaking*\n\nBody.') === '⚡ AEO radar · breaking');
 
+// Headers are built in code, not by the model. A scan reply and a review must
+// be told apart from the subject alone, and no two replies may share a subject
+// or Gmail threads them together.
+const { headerFor, withHeader } = await import('./lib/headers.mjs');
+const at = new Date(2026, 8, 29, 19, 21);
+const scanSubject = subjectFrom(withHeader('*AEO radar*\n\nBody.', headerFor('requested update', 3, at)));
+const reviewSubject = subjectFrom(withHeader('*AEO radar*\n\nBody.', headerFor('14-day review', 6, at)));
+check('scan subject says Scan', scanSubject === 'AEO radar · Scan · 3 new · Sep 29, 7:21 PM', scanSubject);
+check('review subject says Review and its window',
+  reviewSubject === 'AEO radar · Review · last 14 days · 6 items · Sep 29, 7:21 PM', reviewSubject);
+check('nothing-new subject says Scan',
+  subjectFrom(headerFor('nothing new', 0, at)).startsWith('AEO radar · Scan · nothing new'));
+check('two scans a minute apart get different subjects',
+  headerFor('requested update', 1, at) !== headerFor('requested update', 1, new Date(+at + 60e3)));
+check('a header the model got wrong is replaced',
+  subjectFrom(withHeader("*AEO radar · week of Sept 29*\n\nBody.", headerFor('30-day review', 2, at)))
+    .startsWith('AEO radar · Review · last 30 days'));
+check('a missing header is added', withHeader('Body.', '*AEO radar · X*').startsWith('*AEO radar · X*\n\nBody.'));
+
 check('bold becomes <strong>', /<strong>AEO radar/.test(html));
 check('italic becomes <em>', /<em>Google Search Central/.test(html));
 check('urls become links', /<a href="https:\/\/developers/.test(html));
@@ -121,7 +140,7 @@ check(
 
 // --- trigger authentication -------------------------------------------------
 
-const { commandFor, daysFor, hasSecret } = await import('./lib/inbox.mjs');
+const { commandFor, daysFor, hasSecret, parseRequest, typedText, isRadarMail } = await import('./lib/inbox.mjs');
 
 check('subject naming a scan is recognised', commandFor('scan abc123') === 'scan');
 check('a review is a different command', commandFor('review abc123') === 'review');
@@ -130,7 +149,20 @@ check('unrelated subject is not a command', commandFor('lunch tomorrow?') === nu
 check('review window defaults to a fortnight', daysFor('review abc123') === 14);
 check('review window can be named', daysFor('review 30 abc123') === 30);
 check('"last 7 days" is understood', daysFor('last 7 days abc123') === 7);
-check('an absurd window falls back to the default', daysFor('review 999 abc123') === 14);
+check('a window past the limit is capped, not ignored', daysFor('review 999 abc123') === 90);
+
+// Replying to a radar email quotes it, and the quote is full of command words.
+// Only what you typed — and a subject of your own — may count.
+check('reply body is read above the quote',
+  typedText('scan abc\n\nOn Tue, Sep 29, 2026 at 5:07 AM Me <me@x.com> wrote:\n> review') === 'scan abc');
+check('a reply to a review email that says scan is a scan',
+  parseRequest('Re: AEO radar · Review · last 14 days', 'scan abc\n> Looked back 14 days').cmd === 'scan');
+check('the subject wins over the body',
+  parseRequest('review 30 abc', 'please check this').cmd === 'review');
+check('window comes from the subject', parseRequest('review 30 abc', '').days === 30);
+check('the radar\'s own mail is recognised by its header', isRadarMail('anything', 'X-AEO-Radar: 1'));
+check('the radar\'s own mail is recognised by its subject', isRadarMail('AEO radar · Scan · no update', ''));
+check('your reply to radar mail is not radar mail', !isRadarMail('Re: AEO radar · Scan', ''));
 
 // The secret is what actually carries the security — a From address can be
 // forged, so these must hold regardless of who appears to have sent the mail.
@@ -243,6 +275,33 @@ try {
   check('a long quiet spell does alert', alerts.length === 1 && alerts[0].kind === 'quiet');
 } finally {
   await writeState('health.json', healthBackup);
+}
+
+// --- state safety -----------------------------------------------------------
+
+{
+  const { writeFile, rm } = await import('node:fs/promises');
+  const { join } = await import('node:path');
+  const { STATE_DIR } = await import('./lib/util.mjs');
+  await writeFile(join(STATE_DIR, 'zz-test-corrupt.json'), '{"half":');
+  let threw = false;
+  try { await readState('zz-test-corrupt.json', {}); } catch { threw = true; }
+  check('a corrupt state file is an error, not an empty ledger', threw);
+  check('a missing state file is a fresh start', (await readState('zz-test-missing.json', 'fresh')) === 'fresh');
+  await rm(join(STATE_DIR, 'zz-test-corrupt.json'), { force: true });
+
+  // Two edits to one documentation page are two different changes.
+  const edit = (hash) => ({ url: 'https://example.com/doc', title: 'Documentation changed: X', dedupeKey: `doc|x|${hash}` });
+  check('each documentation edit gets its own key', itemKey(edit('a')) !== itemKey(edit('b')));
+
+  // The lock serialises runs and is released afterwards.
+  const { withLock } = await import('./lib/lock.mjs');
+  const order = [];
+  await Promise.all([
+    withLock('t1', async () => { order.push('a1'); await new Promise((r) => setTimeout(r, 300)); order.push('a2'); }),
+    new Promise((r) => setTimeout(r, 50)).then(() => withLock('t2', async () => order.push('b'), { wait: 20000 })),
+  ]);
+  check('runs never overlap', order.join() === 'a1,a2,b', order.join());
 }
 
 console.log(failures ? `\n${failures} check(s) failed` : '\nall checks passed');

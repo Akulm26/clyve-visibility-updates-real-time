@@ -75,17 +75,12 @@ first, and reordering them buries the thing that matters.
 No preamble, no "here is the digest", no note about the format. Anything before
 the header becomes the email subject line, so it has to be the header itself.
 
-Start the whole message with one line, matching the kind you were told this is:
+Start the whole message with exactly this line:
 
-- weekly digest → `*AEO radar · week of <date>*`
-- an `N-day review` → `*AEO radar · last <N> days*`
-- requested update → `*AEO radar · what's new*`
-- catch-up digest → `*AEO radar · catch-up*`
-- breaking alert → `*⚡ AEO radar · breaking*`
+`*AEO radar*`
 
-Use the header for the kind you were given and no other. A requested update is
-one the reader asked for by email; calling it "week of" would make it look like
-the Monday digest and hide the real one.
+The program replaces it with the full header — what kind of message this is,
+how many items, and when — so do not add to it.
 
 Then a blank line, a single sentence summarising what is here in plain words,
 then `———` and the items.

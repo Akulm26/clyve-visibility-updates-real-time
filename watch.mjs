@@ -50,6 +50,13 @@ function diff(before, after) {
  * Fingerprint each watched page; emit an item only where the text actually
  * moved. Costs nothing until something changes — the hash comparison is local.
  */
+/**
+ * Returns the items plus a `commit` that saves the new fingerprints. Saving is
+ * left to the caller: once saved, a change is gone for good, so it must only
+ * happen after the change has safely been recorded. Saving here meant a scan
+ * that crashed at the gate, a dry run, or a look-back review each swallowed a
+ * documentation change without it ever being reported.
+ */
 export async function watch({ seed = false } = {}) {
   const prev = await readState('hashes.json', {});
   const next = { ...prev };
@@ -97,6 +104,7 @@ export async function watch({ seed = false } = {}) {
         title: `Documentation changed: ${page.name}`,
         published: new Date().toISOString(),
         isDocChange: true,
+        dedupeKey: `doc|${page.id}|${hash}`,
         summary:
           `This documentation page was edited with no announcement.\n` +
           `ADDED:\n${added.slice(0, 12).join('\n') || '(nothing)'}\n` +
@@ -105,11 +113,13 @@ export async function watch({ seed = false } = {}) {
     }
   }
 
-  await writeState('hashes.json', next);
-  return { items, report };
+  const commit = () => writeState('hashes.json', next);
+  if (seed) await commit();
+  return { items, report, commit };
 }
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   const { items } = await watch({ seed: process.argv.includes('--seed') });
+  // Inspecting from the command line never consumes a change.
   console.log(items.length ? JSON.stringify(items, null, 2) : 'no documentation changes');
 }
