@@ -1,26 +1,32 @@
 {
-  "items": {},
+  "items": {
+    "5f4d8ffefb6bdcdc43aad4e7dd205fa606fde46939aa0bff7904a43cbf633893": 1790737759918,
+    "6474ff2c55d98e50894b3eeafdbfa74e8096eaf1faa42b5e86a011f05a558af5": 1790737759918,
+    "d868a293ad6abfb80187ce5528ca84ec4acde82ef3cc7c5768702d6905467c2a": 1790737759918,
+    "7d29a424cf5962eca4b641890ca49b750c6ced7341da4e8c0ef540e10ea38ca9": 1790737759918,
+    "9e1de5e41992ff241995012ec14cd589f00f923945d2e2c055a548a9f502de19": 1790737759918
+  },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
-    "developers.google.com/search/blog/2026/09/web-multimodal-in-sc": 1790683636693,
-    "status.search.google.com/incidents/xhudxp7a67ihcd2kmbvu": 1790683636693,
+    "developers.google.com/search/blog/2026/09/web-multimodal-in-sc": 1790737759918,
+    "status.search.google.com/incidents/xhudxp7a67ihcd2kmbvu": 1790737759918,
     "developers.google.com/search/blog/2026/08/update-site-reputation-policy": 1790679581856,
     "status.search.google.com/incidents/leubpcm2octf2umqcfke": 1790680889870,
-    "arxiv.org/abs/2609.35077v1": 1790683636693,
+    "arxiv.org/abs/2609.35077v1": 1790737759918,
     "arxiv.org/abs/2609.34951v1": 1790683636693,
-    "blog.google/products-and-platforms/products/search/3-new-ways-were-improving-search-profiles-for-publishers": 1790683636693
+    "blog.google/products-and-platforms/products/search/3-new-ways-were-improving-search-profiles-for-publishers": 1790737759918,
+    "arxiv.org/abs/2609.34951v2": 1790737759918
   },
   "last": {
-    "subject": "AEO radar · last 14 days",
-    "at": "2026-09-29T12:07:16.693Z",
+    "subject": "AEO radar · Review · last 14 days · 5 items · Sep 29, 8:08 PM",
+    "at": "2026-09-30T03:09:19.918Z",
     "kind": "14-day review",
     "headlines": [
-      "Google launches global spam update",
-      "AI agents now judge your site, not just your buzz",
-      "Search Console now reports on visual search results",
-      "Cloudflare separates AI training access from search access",
-      "Old SEO checklist doesn't predict AI citations",
-      "Google improves publisher profiles in Search"
+      "What Drives Citations in Production Large Language Models? An Observational Multi-Method Study of Two Million AI Citations Across Ten Thousand Web Pages",
+      "AX is the New AEO",
+      "Google Search: September 2026 spam update",
+      "Announcing web multimodal Search performance reporting in Search Console",
+      "3 new ways we're improving Search profiles for publishers"
     ]
   }
 }
