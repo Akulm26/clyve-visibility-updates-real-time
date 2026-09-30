@@ -122,7 +122,7 @@ function diversify(items, perSource = 4) {
  * Fetching the page first is free (no model call), so do it for any thin item
  * from a source worth listening to, and let the gate judge on actual content.
  */
-async function enrichThin(items, minLength = 200, minAuthority = 7) {
+async function enrichThin(items, minLength = 200, minAuthority = 7, maxLength = 1500) {
   await Promise.all(
     items.map(async (item) => {
       if (item.isDocChange || item.summary?.length >= minLength) return;
@@ -131,7 +131,7 @@ async function enrichThin(items, minLength = 200, minAuthority = 7) {
         const html = await fetchText(item.url, { timeout: 15000 });
         const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i);
         const body = htmlToText(main ? main[1] : html);
-        if (body.length > (item.summary?.length || 0)) item.summary = truncate(body, 1500);
+        if (body.length > (item.summary?.length || 0)) item.summary = truncate(body, maxLength);
       } catch {
         /* leave the thin summary alone; the gate will judge what it has */
       }
@@ -194,13 +194,20 @@ async function logRejections(rejected) {
   await writeState('rejected.json', merged);
 }
 
+// How much of each source the write-up sees. The Synopsis is only as good as
+// what it is given: many feeds carry a two-line blurb, so anything short gets
+// its page fetched first. Free, and only for the handful of items being sent.
+const WRITEUP_DETAIL = 3000;
+const WRITEUP_MIN_DETAIL = 800;
+
 async function writeUp(items, kind) {
+  await enrichThin(items, WRITEUP_MIN_DETAIL, 0, WRITEUP_DETAIL);
   const payload = items.map((it) => ({
     headline: it.title,
     source: it.sourceName,
     date: it.published?.slice(0, 10) || null,
     url: it.url,
-    detail: truncate(it.summary, 1500),
+    detail: truncate(it.summary, WRITEUP_DETAIL),
     impact: it.score,
     category: it.category,
     alsoSeenIn: it.alsoSeenIn,
