@@ -1,5 +1,96 @@
 [
   {
+    "at": "2026-10-03",
+    "source": "OpenAI — Crawlers (GPTBot, OAI-SearchBot, ChatGPT-User)",
+    "title": "Documentation changed: OpenAI — Crawlers (GPTBot, OAI-SearchBot, ChatGPT-User)",
+    "why": "Documentation styling update, no content change",
+    "url": "https://platform.openai.com/docs/bots"
+  },
+  {
+    "at": "2026-10-03",
+    "source": "OpenAI — Web search & citation behaviour",
+    "title": "Documentation changed: OpenAI — Web search & citation behaviour",
+    "why": "Documentation styling update, no content change",
+    "url": "https://platform.openai.com/docs/guides/tools-web-search"
+  },
+  {
+    "at": "2026-10-03",
+    "source": "Cloudflare Blog (AI)",
+    "title": "Identify AI model overuse with User Insights",
+    "why": "Developer tooling for model analytics",
+    "url": "https://blog.cloudflare.com/ai-model-overuse-user-insights/"
+  },
+  {
+    "at": "2026-10-03",
+    "source": "OpenAI News",
+    "title": "How Albertsons Companies is reimagining retail from the inside out",
+    "why": "Albertsons case study, not visibility change announcement",
+    "url": "https://openai.com/index/albertsons-reimagining-retail"
+  },
+  {
+    "at": "2026-10-03",
+    "source": "Google — The Keyword (Search)",
+    "title": "5 ways Search can help you perfect your at-home coffee routine",
+    "why": "Search usage tips, not product behavior change",
+    "url": "https://blog.google/products-and-platforms/products/search/coffee-tips-google-search/"
+  },
+  {
+    "at": "2026-10-03",
+    "source": "OpenAI — ChatGPT release notes",
+    "title": "ChatGPT Shopping and Document Scanning Features",
+    "why": "ChatGPT shopping feature, indexing mechanism unclear",
+    "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+  },
+  {
+    "at": "2026-10-03",
+    "source": "Google — The Keyword (Search)",
+    "title": "Celebrating International Translation Day: Meet 3 linguistic experts behind Google Translate",
+    "why": "Brand/cultural content, no behavioral change",
+    "url": "https://blog.google/products-and-platforms/products/translate/international-translation-day-2026/"
+  },
+  {
+    "at": "2026-10-03",
+    "source": "Google — The Keyword (AI)",
+    "title": "The latest AI news we announced in September 2026",
+    "why": "Roundup of announcements, secondary source",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/"
+  },
+  {
+    "at": "2026-10-03",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "The latest AI news we announced in September 2026",
+    "why": "Duplicate recap, secondary source",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/"
+  },
+  {
+    "at": "2026-10-03",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Guided Vision in Gemini Live: built for accessibility",
+    "why": "Accessibility feature, no discovery impact",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/guided-vision-gemini-live/"
+  },
+  {
+    "at": "2026-10-03",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Gemini 4 Argon: our next era of frontier intelligence",
+    "why": "Model capability, no retrieval/crawling component",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
+  },
+  {
+    "at": "2026-10-03",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Let skills in Gemini tackle your most repetitive tasks",
+    "why": "Gemini automation feature, no discovery impact",
+    "url": "https://blog.google/products-and-platforms/products/gemini/automate-tasks-with-skills/"
+  },
+  {
+    "at": "2026-10-03",
+    "source": "Cloudflare Blog (AI)",
+    "title": "AI Search is now generally available",
+    "why": "Document search API, not web discovery platform",
+    "url": "https://blog.cloudflare.com/ai-search-ga/"
+  },
+  {
     "at": "2026-09-30",
     "source": "arXiv — AI search & citation research",
     "title": "The Rashomon Wikipedia: A Data-Perspectivist Analysis of Divergent Historical Narratives",

@@ -4,7 +4,9 @@
     "6474ff2c55d98e50894b3eeafdbfa74e8096eaf1faa42b5e86a011f05a558af5": 1790737759918,
     "d868a293ad6abfb80187ce5528ca84ec4acde82ef3cc7c5768702d6905467c2a": 1790737759918,
     "7d29a424cf5962eca4b641890ca49b750c6ced7341da4e8c0ef540e10ea38ca9": 1790737759918,
-    "9e1de5e41992ff241995012ec14cd589f00f923945d2e2c055a548a9f502de19": 1790737759918
+    "9e1de5e41992ff241995012ec14cd589f00f923945d2e2c055a548a9f502de19": 1790737759918,
+    "b585d2d48eccc05c5423a0dc62ee034739894b5981230d2d3b930edf53f34785": 1791011893380,
+    "88affe80b2d96c133d7d1a9f63f0b33d462856d7f9e361b92eec24a9363ea439": 1791011893380
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
@@ -14,18 +16,17 @@
     "status.search.google.com/incidents/leubpcm2octf2umqcfke": 1790680889870,
     "arxiv.org/abs/2609.35077": 1790737759918,
     "arxiv.org/abs/2609.34951": 1790737759918,
-    "blog.google/products-and-platforms/products/search/3-new-ways-were-improving-search-profiles-for-publishers": 1790737759918
+    "blog.google/products-and-platforms/products/search/3-new-ways-were-improving-search-profiles-for-publishers": 1790737759918,
+    "blog.cloudflare.com/pay-per-use": 1791011893380,
+    "blog.cloudflare.com/introducing-web-search-api": 1791011893380
   },
   "last": {
-    "subject": "AEO radar · Review · last 14 days · 5 items · Sep 29, 8:08 PM",
-    "at": "2026-09-30T03:09:19.918Z",
-    "kind": "14-day review",
+    "subject": "⚡ AEO radar · Breaking · 2 items · Oct 3, 12:17 AM",
+    "at": "2026-10-03T07:18:13.380Z",
+    "kind": "breaking alert",
     "headlines": [
-      "What Drives Citations in Production Large Language Models? An Observational Multi-Method Study of Two Million AI Citations Across Ten Thousand Web Pages",
-      "AX is the New AEO",
-      "Google Search: September 2026 spam update",
-      "Announcing web multimodal Search performance reporting in Search Console",
-      "3 new ways we're improving Search profiles for publishers"
+      "Pay Per Use: when AI uses your work, you should get paid",
+      "Introducing Web Search API via AI Gateway"
     ]
   }
 }
