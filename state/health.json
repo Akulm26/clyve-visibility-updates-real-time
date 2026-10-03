@@ -1,132 +1,132 @@
 {
   "google-search-central": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "google-search-product": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "google-ai": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "google-gemini": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "schemaorg-releases": {
-    "zeroStreak": 16,
-    "errorStreak": 1,
+    "zeroStreak": 17,
+    "errorStreak": 0,
     "lastItemAt": "2026-09-29T19:19:14.596Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "google-search-status": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "openai-news": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "bing-webmaster": {
-    "zeroStreak": 28,
-    "errorStreak": 1,
+    "zeroStreak": 29,
+    "errorStreak": 0,
     "lastItemAt": null,
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "bing-search-quality": {
-    "zeroStreak": 28,
-    "errorStreak": 1,
+    "zeroStreak": 29,
+    "errorStreak": 0,
     "lastItemAt": null,
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "meta-newsroom": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "reddit-inc": {
-    "zeroStreak": 18,
-    "errorStreak": 1,
+    "zeroStreak": 19,
+    "errorStreak": 0,
     "lastItemAt": "2026-09-29T11:20:49.382Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "cloudflare-ai": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "arxiv-geo": {
-    "zeroStreak": 1,
-    "errorStreak": 1,
+    "zeroStreak": 2,
+    "errorStreak": 0,
     "lastItemAt": "2026-10-03T01:43:37.357Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "claude-release-notes": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "openai-status": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "anthropic-status": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "anthropic-news": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "openai-release-notes": {
     "zeroStreak": 0,
-    "errorStreak": 1,
+    "errorStreak": 2,
     "lastItemAt": "2026-10-03T07:15:48.174Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": "claude timed out after 240000ms"
   },
   "perplexity-hub": {
-    "zeroStreak": 30,
+    "zeroStreak": 31,
     "errorStreak": 0,
     "lastItemAt": null,
     "notified": false,
@@ -134,121 +134,121 @@
   },
   "perplexity-changelog": {
     "zeroStreak": 11,
-    "errorStreak": 1,
+    "errorStreak": 2,
     "lastItemAt": "2026-09-29T11:20:49.382Z",
     "notified": false,
     "lastError": "claude timed out after 240000ms"
   },
   "google-ai-features": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "google-crawlers": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "google-ranking-updates": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "openai-bots": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "perplexity-bots": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "anthropic-crawlers": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "openai-web-search": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "apple-applebot": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "ietf-aipref": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "bing-webmaster-guidelines": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "bing-robots-meta": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "bing-ai-performance": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "bing-crawlers": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "ms-copilot-web-access": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "ms-copilot-grounding": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   },
   "llmstxt": {
     "zeroStreak": 0,
-    "errorStreak": 1,
-    "lastItemAt": "2026-10-03T07:15:48.174Z",
+    "errorStreak": 0,
+    "lastItemAt": "2026-10-03T19:37:03.190Z",
     "notified": false,
-    "lastError": "fetch failed"
+    "lastError": null
   }
 }
