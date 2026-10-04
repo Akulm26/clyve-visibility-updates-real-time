@@ -6,7 +6,8 @@
     "7d29a424cf5962eca4b641890ca49b750c6ced7341da4e8c0ef540e10ea38ca9": 1790737759918,
     "9e1de5e41992ff241995012ec14cd589f00f923945d2e2c055a548a9f502de19": 1790737759918,
     "b585d2d48eccc05c5423a0dc62ee034739894b5981230d2d3b930edf53f34785": 1791011893380,
-    "88affe80b2d96c133d7d1a9f63f0b33d462856d7f9e361b92eec24a9363ea439": 1791011893380
+    "88affe80b2d96c133d7d1a9f63f0b33d462856d7f9e361b92eec24a9363ea439": 1791011893380,
+    "6128bc58301308b0a06cd207dbe5690ba5792dc8b69c9b2cc890027a4524421d": 1791082820094
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
@@ -18,15 +19,15 @@
     "arxiv.org/abs/2609.34951": 1790737759918,
     "blog.google/products-and-platforms/products/search/3-new-ways-were-improving-search-profiles-for-publishers": 1790737759918,
     "blog.cloudflare.com/pay-per-use": 1791011893380,
-    "blog.cloudflare.com/introducing-web-search-api": 1791011893380
+    "blog.cloudflare.com/introducing-web-search-api": 1791011893380,
+    "blog.cloudflare.com/agentic-web": 1791082820094
   },
   "last": {
-    "subject": "⚡ AEO radar · Breaking · 2 items · Oct 3, 12:17 AM",
-    "at": "2026-10-03T07:18:13.380Z",
+    "subject": "⚡ AEO radar · Breaking · 1 item · Oct 3, 7:59 PM",
+    "at": "2026-10-04T03:00:20.094Z",
     "kind": "breaking alert",
     "headlines": [
-      "Pay Per Use: when AI uses your work, you should get paid",
-      "Introducing Web Search API via AI Gateway"
+      "The Internet has a second audience"
     ]
   }
 }

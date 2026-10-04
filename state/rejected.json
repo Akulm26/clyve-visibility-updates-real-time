@@ -1,5 +1,12 @@
 [
   {
+    "at": "2026-10-04",
+    "source": "Cloudflare Blog (AI)",
+    "title": "Simplifying domains for people and agents",
+    "why": "Agent domain registration infrastructure; doesn't affect content visibility or AI access.",
+    "url": "https://blog.cloudflare.com/simplifying-domains/"
+  },
+  {
     "at": "2026-10-03",
     "source": "OpenAI — Crawlers (GPTBot, OAI-SearchBot, ChatGPT-User)",
     "title": "Documentation changed: OpenAI — Crawlers (GPTBot, OAI-SearchBot, ChatGPT-User)",

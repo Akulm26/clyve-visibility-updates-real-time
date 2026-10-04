@@ -1,50 +1,34 @@
-<!-- breaking alert · 2026-10-03T07:18:13.377Z -->
+<!-- breaking alert · 2026-10-04T03:00:20.091Z -->
 
-*⚡ AEO radar · Breaking · 2 items · Oct 3, 12:17 AM*
+*⚡ AEO radar · Breaking · 1 item · Oct 3, 7:59 PM*
 
-Two Cloudflare moves this week touch who gets paid for AI's use of your content, and how AI tools find content in real time.
+One update today: Cloudflare says AI bots now outnumber human visitors on the web, and it's rolling out tools to see, control, and charge them.
 ———
-*🟠 Cloudflare argues AI firms should pay to use your content*
+*🟠 AI bots are now majority of web traffic*
 _Cloudflare Blog (AI) · September 30, 2026_
 
 *Synopsis*
-A Cloudflare blog post arguing that when AI systems use your content, you should get paid for it.
-· Cloudflare frames AI's use of web content as a payment problem, not just a "can they crawl it" problem.
-· Filed under "policy" — this is about rules and business models, not a product launch.
+Cloudflare (runs infrastructure behind roughly a fifth of the web) says automated traffic has overtaken humans, and is launching tools so site owners can manage it instead of just blocking it.
+· Automated (non-human) requests now make up over 50% of all internet traffic, Cloudflare says.
+· Requests from AI agents grew 1,700% year-over-year.
+· 52% of crawler requests are now for AI training, up from 22% in Spring 2025.
+· Some sectors saw human traffic drop 40% in under a year.
+· Cloudflare launched separate controls for search crawling, agent access, and AI training — plus ways to charge bots per request.
 
 *What the terms mean*
-Cloudflare — a company that sits in front of a huge share of websites, handling their traffic and security; it already controls a lot of the switches that let AI crawlers (the automated programs AI companies use to read pages) in or out.
+Crawler — automatic program that visits and reads web pages; search engines and AI tools both run them.
+AI agent — software that acts on its own to complete a task, e.g. browsing sites to answer a user's question.
+AI training — using scraped content to build or improve an AI model, different from citing it in a one-off answer.
+Web Bot Auth — cryptographic signing that lets a site verify a bot is genuinely who it claims to be.
+Pay Per Use / Monetization Gateway — new Cloudflare tools letting a site charge an AI company each time its bot requests the site's content.
 
 *Why it matters for your content*
-If this becomes real, publishers could get a new lever: charge AI companies for access instead of giving it away free. It also hints at new ways to block AI crawlers that don't pay, which affects whether your content shows up in AI answers at all.
+As AI answers pull content straight into chat instead of sending a click, visibility stops being about traffic and starts being about whether you're crawled, cited, and paid for it. These new controls let you split the decision three ways: allow AI search citation, block AI training, or charge for it. That's a licensing choice brands now have to make on purpose, not by default.
 
 *Example*
-Your product pages sit behind Cloudflare. Today, bots like GPTBot read them for free. Under a "pay per use" model, you could set a price per crawl, or block access until paid — similar to how sites already block scrapers.
+A recipe site sees organic search visits down sharply this year. Checking Cloudflare's crawler dashboard, the team finds heavy AI-training-bot traffic with zero citations back. They block training with "Disallow AI Training" while still letting ChatGPT and Google crawlers cite the site in answers, and turn on Pay Per Use so any bot that still wants full-text access pays for it. (Illustrative scenario, not a reported case.)
 
 *Do this*
-Check if your site runs on Cloudflare, and watch for a "get paid for AI crawler access" option as this rolls out.
+If your site sits behind Cloudflare (many do), check your bot/crawler settings this quarter and decide, per AI company, whether you allow citation, block training, or charge for it.
 
-https://blog.cloudflare.com/pay-per-use/
-———
-*🟠 Cloudflare lets AI apps pull live web search results*
-_Cloudflare Blog (AI) · October 2, 2026_
-
-*Synopsis*
-Cloudflare launched a tool letting developers plug live web search results into AI apps through its AI Gateway.
-· Lets AI apps and agents fetch real-time web search results through Cloudflare's AI Gateway.
-· Filed under "crawling" — tied to how content gets found and surfaced by AI systems.
-
-*What the terms mean*
-AI Gateway — a Cloudflare service that sits between an app and an AI model, routing and managing requests.
-Web Search API — a tool that lets developers add live web search results into their AI products automatically.
-
-*Why it matters for your content*
-This is a new pipe AI products can use to surface content, separate from Google or ChatGPT's own search. More apps pulling live search results means more places your pages can get picked up — or passed over in favor of competitors.
-
-*Example*
-A travel brand builds an AI shopping assistant. Before this API, the assistant only knew its own stale catalog. Using this API, it can pull in live search results — which could include a competitor's page answering the same question better than yours.
-
-*Do this*
-If your team builds or buys AI agent / assistant features, flag this API as a new channel to check your content's visibility in.
-
-https://blog.cloudflare.com/introducing-web-search-api/
+https://blog.cloudflare.com/agentic-web/
