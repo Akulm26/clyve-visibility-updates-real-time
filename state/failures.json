@@ -1,7 +1,7 @@
 {
   "scan": {
-    "count": 1,
-    "notified": false,
+    "count": 2,
+    "notified": true,
     "last": "claude timed out after 180000ms"
   }
 }
