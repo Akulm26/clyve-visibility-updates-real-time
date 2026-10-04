@@ -2,32 +2,38 @@
   "items": {
     "5f4d8ffefb6bdcdc43aad4e7dd205fa606fde46939aa0bff7904a43cbf633893": 1790737759918,
     "6474ff2c55d98e50894b3eeafdbfa74e8096eaf1faa42b5e86a011f05a558af5": 1790737759918,
-    "d868a293ad6abfb80187ce5528ca84ec4acde82ef3cc7c5768702d6905467c2a": 1790737759918,
-    "7d29a424cf5962eca4b641890ca49b750c6ced7341da4e8c0ef540e10ea38ca9": 1790737759918,
+    "d868a293ad6abfb80187ce5528ca84ec4acde82ef3cc7c5768702d6905467c2a": 1791083900524,
+    "7d29a424cf5962eca4b641890ca49b750c6ced7341da4e8c0ef540e10ea38ca9": 1791083900524,
     "9e1de5e41992ff241995012ec14cd589f00f923945d2e2c055a548a9f502de19": 1790737759918,
     "b585d2d48eccc05c5423a0dc62ee034739894b5981230d2d3b930edf53f34785": 1791011893380,
-    "88affe80b2d96c133d7d1a9f63f0b33d462856d7f9e361b92eec24a9363ea439": 1791011893380,
-    "6128bc58301308b0a06cd207dbe5690ba5792dc8b69c9b2cc890027a4524421d": 1791082820094
+    "88affe80b2d96c133d7d1a9f63f0b33d462856d7f9e361b92eec24a9363ea439": 1791083900524,
+    "6128bc58301308b0a06cd207dbe5690ba5792dc8b69c9b2cc890027a4524421d": 1791083900524,
+    "901123ec9eff3bd02b4c05cddbdb46697ad47263d12a9df3ec4af2c0911ef64b": 1791083900524
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
-    "developers.google.com/search/blog/2026/09/web-multimodal-in-sc": 1790737759918,
-    "status.search.google.com/incidents/xhudxp7a67ihcd2kmbvu": 1790737759918,
+    "developers.google.com/search/blog/2026/09/web-multimodal-in-sc": 1791083900524,
+    "status.search.google.com/incidents/xhudxp7a67ihcd2kmbvu": 1791083900524,
     "developers.google.com/search/blog/2026/08/update-site-reputation-policy": 1790679581856,
     "status.search.google.com/incidents/leubpcm2octf2umqcfke": 1790680889870,
     "arxiv.org/abs/2609.35077": 1790737759918,
     "arxiv.org/abs/2609.34951": 1790737759918,
     "blog.google/products-and-platforms/products/search/3-new-ways-were-improving-search-profiles-for-publishers": 1790737759918,
     "blog.cloudflare.com/pay-per-use": 1791011893380,
-    "blog.cloudflare.com/introducing-web-search-api": 1791011893380,
-    "blog.cloudflare.com/agentic-web": 1791082820094
+    "blog.cloudflare.com/introducing-web-search-api": 1791083900524,
+    "blog.cloudflare.com/agentic-web": 1791083900524,
+    "blog.cloudflare.com/ai-search-ga": 1791083900524
   },
   "last": {
-    "subject": "⚡ AEO radar · Breaking · 1 item · Oct 3, 7:59 PM",
-    "at": "2026-10-04T03:00:20.094Z",
-    "kind": "breaking alert",
+    "subject": "AEO radar · Review · last 14 days · 5 items · Oct 3, 8:16 PM",
+    "at": "2026-10-04T03:18:20.524Z",
+    "kind": "14-day review",
     "headlines": [
-      "The Internet has a second audience"
+      "The Internet has a second audience",
+      "Google Search: September 2026 spam update",
+      "Introducing Web Search API via AI Gateway",
+      "AI Search is now generally available",
+      "Announcing web multimodal Search performance reporting in Search Console"
     ]
   }
 }
