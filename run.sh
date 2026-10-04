@@ -35,7 +35,11 @@ CMD="${1:-scan}"
   fi
 
   echo "node $(node -v) at $(command -v node)"
-  node pipeline.mjs "$CMD"
+  # A scan takes minutes; without this the Mac can idle-sleep halfway through
+  # and every remaining fetch and model call stalls until it wakes. -i holds
+  # off idle sleep, -s system sleep on mains power. Neither can keep a closed
+  # lid on battery awake — pipeline.mjs refuses to start in that state.
+  caffeinate -i -s node pipeline.mjs "$CMD"
   echo "--- exit $? ---"
 } >>"$LOG" 2>&1
 

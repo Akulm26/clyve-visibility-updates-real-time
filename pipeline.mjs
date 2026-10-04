@@ -9,6 +9,10 @@ import { updateHealth, formatHealthAlert } from './lib/health.mjs';
 import { headerFor, withHeader, statusHeader, requestLabel, stamp } from './lib/headers.mjs';
 import { subjectFrom } from './lib/email.mjs';
 import { withLock } from './lib/lock.mjs';
+import { preflight } from './lib/preflight.mjs';
+import {
+  blindRun, catchUpDue, digestDue, staleHours, noteAttempt, noteSuccess, noteProblem, STALE_HOURS,
+} from './lib/schedule.mjs';
 import { TIER1, TIER2, TIER3 } from './sources.mjs';
 import {
   ROOT, STATE_DIR, itemKey, canonical, readState, writeState, truncate, fetchText, htmlToText, log,
@@ -438,6 +442,13 @@ async function cmdScan({ dryRun, manual = false, note = '' }) {
   if (failed.length) log(`sources failed: ${failed.map((f) => f.id).join(', ')}`);
   log(`${fresh.length} new item(s) past the free filters`);
 
+  // A scan that reached almost nothing has not found "nothing new" — it has
+  // seen nothing. That once ran on a sleeping Mac with no network and reported
+  // a clean, silent success. It is a failure, and it says nothing about any
+  // single source, so it must not count against their health either.
+  const blind = blindRun(report);
+  if (blind) throw new Error(blind);
+
   // Health is tracked on every scan, including quiet ones — a source going
   // dark is precisely the thing a quiet scan would otherwise hide.
   const healthAlerts = dryRun ? [] : await updateHealth(report);
@@ -710,6 +721,9 @@ function noticeMessage(req) {
 
 /** Errors in words you can act on; the raw message stays in the log. */
 function plainReason(message = '') {
+  const blind = message.match(/^blind run: (\d+) of (\d+)/);
+  if (blind) return `${blind[1]} of ${blind[2]} sources could not be reached at once, so the scan saw nothing — almost always the Mac's internet connection, not the sources`;
+  if (/^the Mac /.test(message)) return message; // already plain — a skipped run's reason
   if (/spawn claude ENOENT|claude.*not found/i.test(message)) return 'the Claude command-line tool could not be found on the Mac';
   if (/claude exited|not logged in|authenticat/i.test(message)) return 'the Claude command-line tool refused to run — it may need logging in again';
   if (/claude timed out/i.test(message)) return 'the AI step took too long to answer';
@@ -799,6 +813,10 @@ async function runPending(opts) {
  *
  * Pending requests are answered even when the inbox check itself fails, so a
  * flaky connection delays new requests but never strands ones already found.
+ *
+ * It is also the one job that runs as soon as the Mac is properly awake, so it
+ * catches up on any scheduled scan or digest that was skipped or failed while
+ * the Mac slept — but only once the inbox check proved the network works.
  */
 async function cmdListen(opts) {
   const { checkInbox } = await import('./lib/inbox.mjs');
@@ -817,13 +835,94 @@ async function cmdListen(opts) {
     await withLock('listen', () => runPending(opts), { wait: 10 * 60000 });
   }
   if (inboxError) throw inboxError;
+
+  const schedule = await readState('schedule.json', {});
+  if (catchUpDue(schedule.scan)) {
+    log(`catch-up: no good scan since ${schedule.scan?.lastSuccess || 'records began'} — running one now`);
+    await scheduledScan(opts);
+  }
+  if (digestDue(schedule.digest)) {
+    log('catch-up: the weekly digest was missed — running it now');
+    await scheduledDigest(opts);
+  }
+}
+
+async function updateSchedule(key, change) {
+  const schedule = await readState('schedule.json', {});
+  schedule[key] = change(schedule[key] || {});
+  await writeState('schedule.json', schedule);
+  return schedule[key];
 }
 
 /**
- * A scheduled run that fails only says so in the log — and a radar whose normal
- * state is silence gives you no other reason to look. Two failures in a row
- * (twelve hours of scans) sends one notice; it stays quiet until a run
- * succeeds, then can warn again.
+ * A scheduled (or catch-up) scan, with its outcome recorded. Replaces "the last
+ * N runs failed": a run can also be skipped or blind, and all three leave the
+ * radar equally unwatched, so the one notice is about time since a good scan.
+ */
+async function scheduledScan(opts) {
+  if (opts.dryRun) return withLock('scan', () => cmdScan(opts));
+  // Recorded up front, so a listener checking for a catch-up mid-scan sees
+  // this one and does not start a second.
+  await updateSchedule('scan', (s) => noteAttempt(s));
+  try {
+    await withLock('scan', () => cmdScan(opts));
+    await updateSchedule('scan', (s) => noteSuccess(s));
+  } catch (e) {
+    const scan = await updateSchedule('scan', (s) => noteProblem(s, e.message));
+    await warnIfStale(scan);
+    throw e;
+  }
+}
+
+/** One notice once a day passes without a good scan; quiet until one succeeds. */
+async function warnIfStale(scan) {
+  const hours = staleHours(scan);
+  if (hours === null) return;
+  const since = scan.lastSuccess
+    ? `since ${stamp(new Date(scan.lastSuccess))} (${hours} hours)`
+    : `in the last ${hours} hours`;
+  try {
+    await send([
+      statusHeader('Scheduled scan', 'failing'),
+      ``,
+      `No scan has succeeded ${since}, so the radar is not currently watching your sources.`,
+      ``,
+      `Most recent problem: ${plainReason(scan.lastProblem || 'unknown')}.`,
+      ``,
+      `It keeps retrying whenever the Mac is awake. You will not be told again until a scan succeeds. Details are in logs/ on the Mac.`,
+    ].join('\n'));
+    await updateSchedule('scan', (s) => ({ ...s, staleNotified: true }));
+    log(`sent stale-radar notice (${hours}h without a good scan, threshold ${STALE_HOURS}h)`);
+  } catch (err) {
+    log(`could not send the stale-radar notice: ${err.message}`);
+  }
+}
+
+/** The weekly digest; owed until it succeeds, so the listener can catch up. */
+async function scheduledDigest(opts) {
+  if (opts.dryRun) return withLock('digest', () => cmdDigest(opts));
+  await updateSchedule('digest', (d) => ({ ...d, owed: true, lastAttempt: new Date().toISOString() }));
+  await trackScheduled('digest', () => withLock('digest', () => cmdDigest(opts)));
+  await updateSchedule('digest', (d) => ({ ...d, owed: false }));
+}
+
+/**
+ * Nothing starts on a Mac that cannot finish it. A skipped scan is not a
+ * failure — the listener catches it up — but it is recorded, so a long run of
+ * skips still ends in the stale-radar notice.
+ */
+async function skipped(cmd, reason, opts) {
+  log(`skipped: ${reason}`);
+  if (opts.dryRun) return;
+  if (cmd === 'scan') await updateSchedule('scan', (s) => noteProblem(s, reason));
+  if (cmd === 'digest') await updateSchedule('digest', (d) => ({ ...d, owed: true }));
+}
+
+/**
+ * A scheduled digest that fails only says so in the log — and a radar whose
+ * normal state is silence gives you no other reason to look. Two failures in a
+ * row sends one notice; it stays quiet until a run succeeds, then can warn
+ * again. (Scans use the stale-radar notice in `scheduledScan` instead.)
  */
 async function trackScheduled(name, run) {
   const record = await readState('failures.json', {});
@@ -864,8 +963,10 @@ const opts = { dryRun: process.argv.includes('--dry-run') };
 await loadEnv();
 
 try {
-  if (cmd === 'scan') await trackScheduled('scan', () => withLock('scan', () => cmdScan(opts)));
-  else if (cmd === 'digest') await trackScheduled('digest', () => withLock('digest', () => cmdDigest(opts)));
+  const ready = ['scan', 'digest', 'listen'].includes(cmd) ? await preflight() : { ok: true };
+  if (!ready.ok) await skipped(cmd, ready.reason, opts);
+  else if (cmd === 'scan') await scheduledScan(opts);
+  else if (cmd === 'digest') await scheduledDigest(opts);
   else if (cmd === 'init') await withLock('init', () => cmdInit());
   else if (cmd === 'preview') await cmdPreview();
   else if (cmd === 'listen') await cmdListen(opts);

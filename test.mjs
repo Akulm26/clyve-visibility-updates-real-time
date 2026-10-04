@@ -189,15 +189,21 @@ try {
       .filter((s) => ['webfetch', 'sitemap-search', 'search-sweep'].includes(s.type))
       .map((s) => s.id),
   );
-  const deterministic = report.filter((r) => !llmBacked.has(r.id));
+  // Several sources publish only a few times a year — Bing's two blogs,
+  // Reddit's and schema.org's releases — so a zero from them inside a fortnight
+  // window is expected rather than a fault. arXiv's feed carries only the
+  // latest announcement, and there is none on a weekend, so it is empty every
+  // Saturday and Sunday. A fixed allowance for "a few zeros" failed on any
+  // weekend those overlapped; naming them keeps the check strict for the rest.
+  // The health watchdog is what catches a source that has really broken.
+  const sparse = new Set(['bing-webmaster', 'bing-search-quality', 'reddit-inc', 'schemaorg-releases']);
+  const weekend = [0, 6].includes(new Date().getUTCDay());
+  if (weekend) sparse.add('arxiv-geo');
+  const deterministic = report.filter((r) => !llmBacked.has(r.id) && !sparse.has(r.id));
   const live = deterministic.filter((r) => r.ok && r.count > 0).length;
 
-  // Several sources publish only a few times a year — Bing's two blogs and
-  // Reddit's — so a zero from them inside a fortnight window is expected rather
-  // than a fault. The health watchdog is what catches a source that has really
-  // broken; this only needs to confirm the bulk are returning.
-  check('deterministic sources are live', live >= deterministic.length - 3,
-    `${live}/${deterministic.length} returning items`);
+  check('deterministic sources are live', live >= deterministic.length - 1,
+    `${live}/${deterministic.length} returning items (excluding ${sparse.size} sparse publishers)`);
   check('no source errored', report.every((r) => r.ok),
     report.filter((r) => !r.ok).map((r) => `${r.id}: ${r.error}`).join(' | '));
 
@@ -302,6 +308,86 @@ try {
     new Promise((r) => setTimeout(r, 50)).then(() => withLock('t2', async () => order.push('b'), { wait: 20000 })),
   ]);
   check('runs never overlap', order.join() === 'a1,a2,b', order.join());
+}
+
+// --- sleeping Mac -----------------------------------------------------------
+
+// A scan launched in a dark wake once ran for hours in five-second slices and
+// either "timed out" or read nothing and reported "nothing new". These pin down
+// the decision of whether a run may start at all.
+{
+  const { preflight, parseSystemState, parseLidOnBattery } = await import('./lib/preflight.mjs');
+  const FULL = 'Current System Capabilities are: CPU Graphics Audio Network \nCurrent Power State: 4';
+  const DARK = 'Current System Capabilities are: CPU Network \nCurrent Power State: 4';
+  const DARK_OFFLINE = 'Current System Capabilities are: CPU \nCurrent Power State: 4';
+  const LID_CLOSED = '"AppleClamshellState" = Yes';
+  const ON_BATTERY = "Now drawing from 'Battery Power'";
+  const probes = (state, { lid = '', batt = '', dns = true } = {}) => ({
+    systemState: async () => state, lid: async () => lid, battery: async () => batt, dns: async () => dns,
+  });
+
+  check('full wake is awake', parseSystemState(FULL).awake);
+  check('dark wake is not awake', !parseSystemState(DARK).awake);
+  check('unreadable system state never blocks a run', parseSystemState('').awake);
+  check('lid closed on battery is recognised', parseLidOnBattery(LID_CLOSED, ON_BATTERY));
+  check('lid closed on mains power is not', !parseLidOnBattery(LID_CLOSED, "Now drawing from 'AC Power'"));
+
+  check('an awake, online Mac may run', (await preflight(probes(FULL))).ok);
+  const dark = await preflight(probes(DARK, { lid: LID_CLOSED, batt: ON_BATTERY }));
+  check('a dark wake is skipped, naming the closed lid', !dark.ok && /lid closed, on battery/.test(dark.reason), dark.reason);
+  check('a dark wake with the lid open is still skipped', !(await preflight(probes(DARK))).ok);
+  check('no network capability is skipped', !(await preflight(probes(DARK_OFFLINE))).ok);
+  const offline = await preflight(probes(FULL, { dns: false }));
+  check('awake but no DNS is skipped', !offline.ok && /internet/.test(offline.reason), offline.reason);
+}
+
+// --- blind runs, catch-up and the stale notice ------------------------------
+
+{
+  const S = await import('./lib/schedule.mjs');
+  const src = (n, ok) => Array.from({ length: n }, (_, i) => ({ id: `s${i}`, ok, error: ok ? undefined : 'fetch failed: ENOTFOUND' }));
+
+  // The Oct 3 run: 35 of 35 unreachable, reported as "nothing new".
+  const blind = S.blindRun(src(35, false));
+  check('every source failing is a blind run', /^blind run: 35 of 35/.test(blind || ''), blind);
+  check('a blind run names the shared error', /ENOTFOUND/.test(blind || ''));
+  check('half failing is a blind run', S.blindRun([...src(5, false), ...src(5, true)]) !== null);
+  check('two flaky sources are not a blind run', S.blindRun([...src(2, false), ...src(33, true)]) === null);
+  check('an empty report is not a blind run', S.blindRun([]) === null);
+
+  const now = Date.parse('2026-10-04T12:00:00Z');
+  const ago = (h) => new Date(now - h * 3600e3).toISOString();
+  check('no record at all means a catch-up is owed', S.catchUpDue({}, now));
+  check('a recent good scan owes nothing', !S.catchUpDue({ lastSuccess: ago(3) }, now));
+  check('a good scan 8h ago owes a catch-up', S.catchUpDue({ lastSuccess: ago(8) }, now));
+  check('a catch-up tried 10 minutes ago is not retried yet',
+    !S.catchUpDue({ lastSuccess: ago(8), lastAttempt: ago(10 / 60) }, now));
+  check('a catch-up tried 40 minutes ago is retried',
+    S.catchUpDue({ lastSuccess: ago(8), lastAttempt: ago(40 / 60) }, now));
+
+  check('a missed digest is owed', S.digestDue({ owed: true }, now));
+  check('a digest that is not owed is not run', !S.digestDue({ owed: false }, now));
+  check('a digest retried moments ago waits', !S.digestDue({ owed: true, lastAttempt: ago(0.1) }, now));
+
+  check('23 hours without a good scan is not yet stale', S.staleHours({ lastSuccess: ago(23) }, now) === null);
+  check('25 hours without a good scan is stale', S.staleHours({ lastSuccess: ago(25) }, now) === 25);
+  check('stale is reported once', S.staleHours({ lastSuccess: ago(30), staleNotified: true }, now) === null);
+  check('a fresh install does not alarm', S.staleHours({}, now) === null);
+  check('with no success ever, the clock starts when first noticed', S.staleHours({ since: ago(26) }, now) === 26);
+
+  const rec = S.noteProblem(S.noteAttempt({ staleNotified: true }), 'blind run: 35 of 35');
+  check('a problem is recorded', rec.lastProblem === 'blind run: 35 of 35' && rec.since);
+  S.noteSuccess(rec);
+  check('a good scan clears the problem and re-arms the notice', rec.lastProblem === null && rec.staleNotified === false && rec.lastSuccess);
+}
+
+// --- network errors say what actually failed --------------------------------
+
+{
+  const { fetchText } = await import('./lib/util.mjs');
+  let message = '';
+  try { await fetchText('http://radar-test.invalid/', { attempts: 1, timeout: 5000 }); } catch (e) { message = e.message; }
+  check('a failed fetch names its cause', /^fetch failed: (ENOTFOUND|EAI_AGAIN)/.test(message), message);
 }
 
 console.log(failures ? `\n${failures} check(s) failed` : '\nall checks passed');
