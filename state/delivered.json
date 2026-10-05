@@ -8,7 +8,8 @@
     "b585d2d48eccc05c5423a0dc62ee034739894b5981230d2d3b930edf53f34785": 1791011893380,
     "88affe80b2d96c133d7d1a9f63f0b33d462856d7f9e361b92eec24a9363ea439": 1791083900524,
     "6128bc58301308b0a06cd207dbe5690ba5792dc8b69c9b2cc890027a4524421d": 1791083900524,
-    "901123ec9eff3bd02b4c05cddbdb46697ad47263d12a9df3ec4af2c0911ef64b": 1791083900524
+    "901123ec9eff3bd02b4c05cddbdb46697ad47263d12a9df3ec4af2c0911ef64b": 1791083900524,
+    "dd87c02ea1052cabdeeaa653072b9fae17f634bf93ad137d4d371936f8c0c4ea": 1791199478833
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
@@ -22,18 +23,15 @@
     "blog.cloudflare.com/pay-per-use": 1791011893380,
     "blog.cloudflare.com/introducing-web-search-api": 1791083900524,
     "blog.cloudflare.com/agentic-web": 1791083900524,
-    "blog.cloudflare.com/ai-search-ga": 1791083900524
+    "blog.cloudflare.com/ai-search-ga": 1791083900524,
+    "arxiv.org/abs/2605.14021": 1791199478833
   },
   "last": {
-    "subject": "AEO radar · Review · last 14 days · 5 items · Oct 3, 8:16 PM",
-    "at": "2026-10-04T03:18:20.524Z",
-    "kind": "14-day review",
+    "subject": "⚡ AEO radar · Breaking · 1 item · Oct 5, 4:24 AM",
+    "at": "2026-10-05T11:24:38.833Z",
+    "kind": "breaking alert",
     "headlines": [
-      "The Internet has a second audience",
-      "Google Search: September 2026 spam update",
-      "Introducing Web Search API via AI Gateway",
-      "AI Search is now generally available",
-      "Announcing web multimodal Search performance reporting in Search Console"
+      "Measuring Google AI Overviews: Activation, Source Quality, Claim Fidelity, and Publisher Impact"
     ]
   }
 }

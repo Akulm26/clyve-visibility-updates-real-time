@@ -1,5 +1,19 @@
 [
   {
+    "at": "2026-10-05",
+    "source": "arXiv — AI search & citation research",
+    "title": "DataWeave: Deploying Human-LLM Analytics for Exploratory Structured Data Analysis",
+    "why": "LLM tooling for data journalists; unrelated to content discovery or AI citation",
+    "url": "https://arxiv.org/abs/2610.02679"
+  },
+  {
+    "at": "2026-10-05",
+    "source": "OpenAI News",
+    "title": "Building advertising for the way people use AI",
+    "why": "Paid advertising product announcement; not organic content surfacing or citation",
+    "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement"
+  },
+  {
     "at": "2026-10-04",
     "source": "Cloudflare Blog (AI)",
     "title": "Simplifying domains for people and agents",

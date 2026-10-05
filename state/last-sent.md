@@ -1,127 +1,31 @@
-<!-- 14-day review · 2026-10-04T03:18:20.520Z -->
+<!-- breaking alert · 2026-10-05T11:24:38.831Z -->
 
-*AEO radar · Review · last 14 days · 5 items · Oct 3, 8:16 PM*
+*⚡ AEO radar · Breaking · 1 item · Oct 5, 4:24 AM*
 
-_1 of these 5 is new since your last update; the rest you have seen before._
-
-Last 14 days: a Google ranking update rolled out, Cloudflare shipped three AI/bot-related products, and Search Console added image-search reporting.
+New research measures how often Google's AI Overviews show up, where they pull their sources from, and how often they get facts wrong.
 ———
-*🔴 Internet now has two audiences: people and AI bots*
-_Cloudflare Blog (AI) · September 30, 2026_
+*🔴 AI Overviews cite unranked pages, misstate facts*
+_arXiv (AI search & citation research) · October 5, 2026_
 
 *Synopsis*
-Cloudflare, the network company many sites run through, argues every page now has a second reader: AI bots, not just humans.
-· Filed under Cloudflare's own tags for Agents, AI Bots, AI Search, and "Agent Readiness."
-· No performance numbers in the source — this is a framing piece, not a data study.
+A 40-day study of 55,393 Google searches checked how AI Overviews (the AI-written answer Google puts above the blue links) pick sources and handle facts.
+· AI Overviews' activation rate (how often they appear at all) was 13.7% of all searches, but 64.7% for question-style searches.
+· Nearly 30% of pages AI Overviews cited weren't even on Google's normal first results page — a separate selection process from regular ranking.
+· 11% of individual facts in AI Overview answers weren't backed by the source cited, mostly from leaving things out, not inventing them.
+· Over half of cited pages carry display ads, so publishers lose click-through (visits that would've landed on their page) when the AI answers instead of linking out.
 
 *What the terms mean*
-AI bots — automated programs (not people) that visit your site to read content for an AI system.
-Agent readiness — how well a site is set up to be read and used correctly by AI bots/agents.
+AI Overviews — the AI-written answer Google puts above the blue links
+Activation rate — how often AI Overviews show up for a given type of search
+Click-through — a visit a page gets when someone clicks a link to it
 
 *Why it matters for your content*
-If bots are a second "audience," pages need to work for machine readers too — clear structure, clean text, nothing that only makes sense to a human eye. Expect more guidance soon on what "agent-ready" actually requires.
+Ranking #1 no longer guarantees your page gets cited — AI Overviews pull from a separate pool nearly a third of the time. It also means your content can get misrepresented by omission even when it's the source, which is a brand risk, not just a traffic risk.
 
 *Example*
-A product page has a flashy hero banner and a specs table that only loads after a click. A human sees the specs fine. An AI bot visiting the raw page never sees them — so it never learns the price or size, and the product never gets recommended.
+Your comparison page ranks #1 for "best noise cancelling headphones under $100." The AI Overview instead cites a lower-ranked review site — your page gets zero visibility despite the ranking. Separately, for a query where your page IS cited, the AI Overview drops your caveat about weak bass, making the product look better than your own page says.
 
 *Do this*
-Check that your key pages' content loads without JavaScript or clicks — that's what AI bots often can't do.
+Spot-check AI Overviews for your top head-term queries — see if your #1-ranked pages actually get cited, and if cited, cited accurately.
 
-https://blog.cloudflare.com/agentic-web/
-———
-*🔴 Google rolls out global anti-spam ranking update*
-_Google Search Status Dashboard · September 24, 2026_
-
-*Synopsis*
-Google released its September 2026 spam update, a ranking change that pushes down low-quality or spammy pages.
-· Applies globally, to all languages, at once.
-· Started September 24, 2026; Google says full rollout can take up to two weeks.
-· No specific target named (e.g. AI-generated spam) in Google's own notice.
-
-*What the terms mean*
-Spam update — a periodic Google change that pushes low-quality or manipulative pages down in search results.
-
-*Why it matters for your content*
-Rankings can move during this two-week window for reasons unrelated to anything you changed. If content was mass-produced without real editing, this is the kind of update that can catch it.
-
-*Example*
-A blog that published 200 AI-written FAQ pages last month with no human editing may see rankings drop this week. A site with fewer but carefully edited guides may hold steady or rise.
-
-*Do this*
-Watch organic traffic for swings through mid-October before changing anything.
-
-https://status.search.google.com/incidents/XhUDXP7A67iHCD2kmbVu
-———
-*🟠 Cloudflare launches Web Search API for AI apps*
-_Cloudflare Blog (AI) · October 2, 2026_
-
-*Synopsis*
-Cloudflare added a Web Search API inside AI Gateway, letting any developer's app fetch live web search results to feed into an AI answer.
-· Sits inside AI Gateway, Cloudflare's control layer for AI traffic.
-· Lets software query the live web programmatically, not just a person typing into a search box.
-· Part of Cloudflare's "Birthday Week" batch of product launches.
-
-*What the terms mean*
-AI Gateway — Cloudflare's middle layer between an app and AI models/search, used to control, log and cache those calls.
-Web Search API — a tool that lets software ask a search engine a question directly, instead of a person typing it.
-
-*Why it matters for your content*
-More companies can now cheaply bolt live web search onto their own AI tools and chatbots. That means more AI products beyond ChatGPT, Claude and Gemini may start citing — or skipping — your pages. Worth tracking as a new discovery surface.
-
-*Example*
-A SaaS company builds an internal AI assistant using this API. Asked "best CRM for small teams," it searches the live web and can surface your comparison page — if that page is crawlable and clearly written. If not, it's skipped.
-
-*Do this*
-No change needed now — just add "Cloudflare-powered AI tools" to what you watch in referral/citation tracking.
-
-https://blog.cloudflare.com/introducing-web-search-api/
-———
-*🟠 Cloudflare's AI Search tool exits beta*
-_Cloudflare Blog (AI) · October 1, 2026_
-
-*Synopsis*
-Cloudflare made AI Search generally available — a tool for indexing content and querying it with AI, built on its storage and vector-database products.
-· Built on Cloudflare R2 (storage), Vectorize (vector database) and Workers AI.
-· Moves from beta to general availability (GA) — stable, production-ready.
-· Released as part of the same "Birthday Week" announcements.
-
-*What the terms mean*
-Vector database — a database that stores content by meaning, so AI can find "related" results, not just exact keyword matches.
-General availability (GA) — official stable release, safe for production use, no longer a beta test.
-
-*Why it matters for your content*
-Any business can now build its own "AI search" over its content library in production. If a competitor does this well, their site becomes its own mini answer-engine for its content — a new form of differentiation to watch for.
-
-*Example*
-An e-commerce company indexes its full catalog and help docs, then adds an on-site AI search box that answers "what's the warranty on X" directly — instead of linking to a page. Fewer clicks reach the actual content page.
-
-*Do this*
-Nothing to do yet — just know it's coming. Watch whether on-site AI search tools start answering instead of linking to your pages.
-
-https://blog.cloudflare.com/ai-search-ga/
-———
-*🟠 Search Console now reports image-search performance*
-_Google Search Central Blog · September 24, 2026_
-
-*Synopsis*
-Google added multimodal search reporting to Search Console, its free tool for site owners, covering searches done with a camera or image instead of typed words.
-· New "multimodal search type" filter in Search Console's Performance report.
-· Covers Google Lens, Android's Circle to Search, image uploads to Google Search, and Chrome's right-click "Search this image."
-· Same data also appears in the Generative AI features report.
-· Rolling out globally starting September 24, 2026.
-
-*What the terms mean*
-Search Console — Google's free dashboard showing how your site performs in Search (clicks, impressions, queries).
-Multimodal search — search done with an image or camera instead of typed words.
-Generative AI features report — the Search Console report showing how your pages perform inside Google's AI-written answers.
-
-*Why it matters for your content*
-You can now see, for the first time, whether people find you by photographing or screenshotting something rather than typing a query. If a meaningful share of traffic comes through image search, your product photos and alt text become a ranking lever, not just decoration.
-
-*Example*
-A furniture retailer checks the new filter and finds a slice of impressions on its sofa page come from Lens photo searches — someone pointed a camera at a sofa in a showroom and got matched to a similar listing. Sharper, well-lit, well-tagged photos could lift that.
-
-*Do this*
-Open Search Console's Performance report, add the multimodal filter, and check how much traffic comes from image search.
-
-https://developers.google.com/search/blog/2026/09/web-multimodal-in-sc
+https://arxiv.org/abs/2605.14021
