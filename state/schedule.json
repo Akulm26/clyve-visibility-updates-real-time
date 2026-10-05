@@ -5,5 +5,8 @@
     "lastSuccess": "2026-10-05T11:24:38.849Z",
     "lastProblem": "the Mac was asleep (background wake only)",
     "staleNotified": false
+  },
+  "digest": {
+    "owed": true
   }
 }
