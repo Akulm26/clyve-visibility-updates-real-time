@@ -1,31 +1,31 @@
-<!-- breaking alert · 2026-10-05T11:24:38.831Z -->
+<!-- weekly digest · 2026-10-05T17:14:49.530Z -->
 
-*⚡ AEO radar · Breaking · 1 item · Oct 5, 4:24 AM*
+*AEO radar · Weekly digest · week of October 5, 2026*
 
-New research measures how often Google's AI Overviews show up, where they pull their sources from, and how often they get facts wrong.
+New research: thin topic coverage lets AI answer engines invent facts — and makes them easy to manipulate.
 ———
-*🔴 AI Overviews cite unranked pages, misstate facts*
-_arXiv (AI search & citation research) · October 5, 2026_
+*🟡 Thin coverage makes AI answer engines invent facts*
+_arXiv — AI search & citation research · October 5, 2026_
 
 *Synopsis*
-A 40-day study of 55,393 Google searches checked how AI Overviews (the AI-written answer Google puts above the blue links) pick sources and handle facts.
-· AI Overviews' activation rate (how often they appear at all) was 13.7% of all searches, but 64.7% for question-style searches.
-· Nearly 30% of pages AI Overviews cited weren't even on Google's normal first results page — a separate selection process from regular ranking.
-· 11% of individual facts in AI Overview answers weren't backed by the source cited, mostly from leaving things out, not inventing them.
-· Over half of cited pages carry display ads, so publishers lose click-through (visits that would've landed on their page) when the AI answers instead of linking out.
+A study tested 5 AI answer engines on 28 real-world conflicts, scoring 5,460 answers against documented evidence, plus checked 1,048 source websites the AI pulled from.
+· Thinner the documented record on a topic, more the AI invents, misattributes, and miscounts facts.
+· Thin-coverage topics are also easiest to manipulate so AI engines repeat a biased version.
+· Checked 1,048 websites AI engines cited as sources and found this manipulation already happening.
+· State-backed partisan manipulation of sources is still early-stage but growing fast.
 
 *What the terms mean*
-AI Overviews — the AI-written answer Google puts above the blue links
-Activation rate — how often AI Overviews show up for a given type of search
-Click-through — a visit a page gets when someone clicks a link to it
+AI answer engines — tools like ChatGPT, Claude, Gemini that answer questions directly instead of listing links.
+Hallucinate — when an AI confidently states something false or made up.
+GEO (Generative Engine Optimization) — the AI-era version of SEO: shaping content so AI engines cite or repeat it.
 
 *Why it matters for your content*
-Ranking #1 no longer guarantees your page gets cited — AI Overviews pull from a separate pool nearly a third of the time. It also means your content can get misrepresented by omission even when it's the source, which is a brand risk, not just a traffic risk.
+If your brand covers a niche or under-documented topic, AI engines are more likely to misstate facts about it — and more vulnerable to someone else's GEO push tilting what the AI says. Thin topics are where you have the most to lose and, if you publish clearly, the most to gain by becoming the source AI cites.
 
 *Example*
-Your comparison page ranks #1 for "best noise cancelling headphones under $100." The AI Overview instead cites a lower-ranked review site — your page gets zero visibility despite the ranking. Separately, for a query where your page IS cited, the AI Overview drops your caveat about weak bass, making the product look better than your own page says.
+A fintech company has one of the only detailed pages on a new, obscure compliance rule. Few other sites cover it well. Without strong, clear content from the company, an AI engine might answer the question wrong — or a competitor's GEO-optimized content could become the version the AI repeats instead.
 
 *Do this*
-Spot-check AI Overviews for your top head-term queries — see if your #1-ranked pages actually get cited, and if cited, cited accurately.
+Check which of your niche or low-coverage topics AI engines answer questions on, and make sure your own clear, well-sourced page is in the mix.
 
-https://arxiv.org/abs/2605.14021
+https://arxiv.org/abs/2607.14197
