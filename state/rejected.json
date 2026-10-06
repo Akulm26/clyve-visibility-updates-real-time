@@ -1,5 +1,54 @@
 [
   {
+    "at": "2026-10-06",
+    "source": "OpenAI News",
+    "title": "Wayfair boosts catalog accuracy and support speed with OpenAI",
+    "why": "Case study of internal efficiency, not visibility change",
+    "url": "https://openai.com/index/wayfair"
+  },
+  {
+    "at": "2026-10-06",
+    "source": "OpenAI News",
+    "title": "Our approach to EU text provenance rules",
+    "why": "Compliance watermarking, not visibility or ranking change",
+    "url": "https://openai.com/index/eu-text-provenance"
+  },
+  {
+    "at": "2026-10-06",
+    "source": "Google — The Keyword (Search)",
+    "title": "Wheels up: Trends and tips for 2026 holiday travel",
+    "why": "Editorial content, not primary behavior announcement",
+    "url": "https://blog.google/products-and-platforms/products/search/holiday-travel-trends-2026/"
+  },
+  {
+    "at": "2026-10-06",
+    "source": "Perplexity Changelog",
+    "title": "New: Decisions API",
+    "why": "API type for decisions, not web-search surface",
+    "url": "https://docs.perplexity.ai/docs/decisions/quickstart"
+  },
+  {
+    "at": "2026-10-06",
+    "source": "Perplexity Changelog",
+    "title": "Native document input",
+    "why": "API input feature, does not affect content discovery",
+    "url": "https://docs.perplexity.ai/docs/agent-api/working-with-files"
+  },
+  {
+    "at": "2026-10-06",
+    "source": "Perplexity Changelog",
+    "title": "Accurate sandbox extraction usage and costs",
+    "why": "Changelog summary duplicates specific announcements",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-10-06",
+    "source": "Perplexity Changelog",
+    "title": "Low, medium, and high presets use Fast Search",
+    "why": "Search tool documentation, unclear feature announcement",
+    "url": "https://docs.perplexity.ai/docs/agent-api/tools/web-search#search-type"
+  },
+  {
     "at": "2026-10-05",
     "source": "arXiv — AI search & citation research",
     "title": "DataWeave: Deploying Human-LLM Analytics for Exploratory Structured Data Analysis",
