@@ -1,6 +1,41 @@
 [
   {
     "at": "2026-10-06",
+    "source": "Perplexity Changelog",
+    "title": "New: Decisions API",
+    "why": "Developer API feature; no impact on content discovery or surfacing.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-10-06",
+    "source": "Perplexity Changelog",
+    "title": "Native document input",
+    "why": "Developer API feature; no impact on content discovery or surfacing.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-10-06",
+    "source": "Perplexity Changelog",
+    "title": "Image Search",
+    "why": "Developer API feature; no impact on content discovery or surfacing.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-10-06",
+    "source": "Perplexity Changelog",
+    "title": "Low, medium, and high presets use Fast Search",
+    "why": "Internal performance optimization; no change to visibility or search behavior.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-10-06",
+    "source": "arXiv — AI search & citation research",
+    "title": "MCA: Modality Composition Awareness for Robust Composed Multimodal Retrieval",
+    "why": "Multimodal retrieval robustness; ML research with no direct content strategy impact.",
+    "url": "https://arxiv.org/abs/2510.15543"
+  },
+  {
+    "at": "2026-10-06",
     "source": "OpenAI News",
     "title": "Wayfair boosts catalog accuracy and support speed with OpenAI",
     "why": "Case study of internal efficiency, not visibility change",
