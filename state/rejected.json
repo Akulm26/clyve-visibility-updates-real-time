@@ -1,6 +1,41 @@
 [
   {
     "at": "2026-10-06",
+    "source": "Reddit Inc. Blog",
+    "title": "Reddit Launches Enhanced Capabilities for Lead Generation",
+    "why": "Reddit lead generation product news, not AI visibility impact.",
+    "url": "https://redditinc.com/news/reddit-launches-enhanced-capabilities-for-lead-generation"
+  },
+  {
+    "at": "2026-10-06",
+    "source": "Perplexity Changelog",
+    "title": "Decisions API",
+    "why": "API capability updates; no change to crawling, citation, or discovery.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-10-06",
+    "source": "Perplexity Changelog",
+    "title": "Native document input for Agent API",
+    "why": "Duplicate of Perplexity changelog; document input API feature.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-10-06",
+    "source": "Perplexity Changelog",
+    "title": "Image Search tool",
+    "why": "Duplicate of Perplexity changelog; image search tool capability.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-10-06",
+    "source": "Perplexity Changelog",
+    "title": "Fast Search for multiple presets",
+    "why": "Duplicate of Perplexity changelog; preset/performance feature.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-10-06",
     "source": "Perplexity Changelog",
     "title": "New: Decisions API",
     "why": "Developer API feature; no impact on content discovery or surfacing.",
