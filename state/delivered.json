@@ -10,7 +10,8 @@
     "6128bc58301308b0a06cd207dbe5690ba5792dc8b69c9b2cc890027a4524421d": 1791083900524,
     "901123ec9eff3bd02b4c05cddbdb46697ad47263d12a9df3ec4af2c0911ef64b": 1791083900524,
     "dd87c02ea1052cabdeeaa653072b9fae17f634bf93ad137d4d371936f8c0c4ea": 1791199478833,
-    "50d200aee96a15d2384696435bd269dd460310283a47df50a59d9b245be67a38": 1791220489533
+    "50d200aee96a15d2384696435bd269dd460310283a47df50a59d9b245be67a38": 1791220489533,
+    "1f5e48f6699bd222a8f15c8ba5631c0df8582f0aec6ad89c6e650941cce3e639": 1791389518442
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
@@ -29,11 +30,11 @@
     "arxiv.org/abs/2607.14197": 1791220489533
   },
   "last": {
-    "subject": "AEO radar · Weekly digest · week of October 5, 2026",
-    "at": "2026-10-05T17:14:49.533Z",
-    "kind": "weekly digest",
+    "subject": "⚡ AEO radar · Breaking · 1 item · Oct 7, 9:11 AM",
+    "at": "2026-10-07T16:11:58.442Z",
+    "kind": "breaking alert",
     "headlines": [
-      "How Artificial Intelligence LLM Engines Shape the Global Conflict Information Environment"
+      "Documentation changed: Anthropic — ClaudeBot, Claude-User & Claude-SearchBot"
     ]
   }
 }

@@ -1,31 +1,32 @@
-<!-- weekly digest · 2026-10-05T17:14:49.530Z -->
+<!-- breaking alert · 2026-10-07T16:11:58.438Z -->
 
-*AEO radar · Weekly digest · week of October 5, 2026*
+*⚡ AEO radar · Breaking · 1 item · Oct 7, 9:11 AM*
 
-New research: thin topic coverage lets AI answer engines invent facts — and makes them easy to manipulate.
+One update: Anthropic quietly edited a support page about its AI crawlers.
 ———
-*🟡 Thin coverage makes AI answer engines invent facts*
-_arXiv — AI search & citation research · October 5, 2026_
+*🟠 Anthropic quietly edits its crawler support page*
+_Anthropic — ClaudeBot, Claude-User & Claude-SearchBot · October 7, 2026_
 
 *Synopsis*
-A study tested 5 AI answer engines on 28 real-world conflicts, scoring 5,460 answers against documented evidence, plus checked 1,048 source websites the AI pulled from.
-· Thinner the documented record on a topic, more the AI invents, misattributes, and miscounts facts.
-· Thin-coverage topics are also easiest to manipulate so AI engines repeat a biased version.
-· Checked 1,048 websites AI engines cited as sources and found this manipulation already happening.
-· State-backed partisan manipulation of sources is still early-stage but growing fast.
+Anthropic's support article explaining its ClaudeBot, Claude-User, and Claude-SearchBot crawlers was edited with no public announcement.
+· Change was limited to the "Related Articles" sidebar — links swapped, not the crawler rules themselves.
+· Removed link: "Does Anthropic Act as a Data Processor or Controller?"
+· Added links: "Business Associate Agreements (BAA) for Commercial Customers" and a general "How to get support" page.
+· Nothing in the actual crawler-blocking instructions was shown as changed.
 
 *What the terms mean*
-AI answer engines — tools like ChatGPT, Claude, Gemini that answer questions directly instead of listing links.
-Hallucinate — when an AI confidently states something false or made up.
-GEO (Generative Engine Optimization) — the AI-era version of SEO: shaping content so AI engines cite or repeat it.
+ClaudeBot — Anthropic's crawler that visits pages to gather data for training Claude.
+Claude-User — the bot Claude sends out live, mid-chat, when someone asks it to look at a specific page.
+Claude-SearchBot — the crawler Anthropic uses to fetch pages for search and answer features.
+BAA (Business Associate Agreement) — legal contract letting regulated industries (e.g. healthcare) use a vendor's AI under privacy rules.
 
 *Why it matters for your content*
-If your brand covers a niche or under-documented topic, AI engines are more likely to misstate facts about it — and more vulnerable to someone else's GEO push tilting what the AI says. Thin topics are where you have the most to lose and, if you publish clearly, the most to gain by becoming the source AI cites.
+This edit itself didn't touch crawling or blocking rules. But it shows Anthropic is actively maintaining the one page that tells you how to allow or block its AI bots — the page you'd need if you ever want to control whether your content trains Claude or gets cited by it.
 
 *Example*
-A fintech company has one of the only detailed pages on a new, obscure compliance rule. Few other sites cover it well. Without strong, clear content from the company, an AI engine might answer the question wrong — or a competitor's GEO-optimized content could become the version the AI repeats instead.
+Say your robots.txt blocks ClaudeBot (no training) but allows Claude-User (so Claude can still fetch and cite your pages live in chat). If a future edit to this page renames or redefines a bot, a rule written by bot name could silently stop working.
 
 *Do this*
-Check which of your niche or low-coverage topics AI engines answer questions on, and make sure your own clear, well-sourced page is in the mix.
+Check your robots.txt now to confirm it still correctly names ClaudeBot, Claude-User and Claude-SearchBot.
 
-https://arxiv.org/abs/2607.14197
+https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler
