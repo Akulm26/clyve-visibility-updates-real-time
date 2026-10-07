@@ -1,5 +1,40 @@
 [
   {
+    "at": "2026-10-07",
+    "source": "Google Search Central Blog",
+    "title": "New learning paths: curated YouTube playlists for Search fundamentals and Technical SEO",
+    "why": "Educational content about SEO learning; no visibility or crawler changes.",
+    "url": "https://developers.google.com/search/blog/2026/10/seo-learning-paths"
+  },
+  {
+    "at": "2026-10-07",
+    "source": "Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
+    "title": "Documentation changed: Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
+    "why": "Documentation edit shows link reorganization; no substantive policy change evident.",
+    "url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+  },
+  {
+    "at": "2026-10-07",
+    "source": "arXiv — AI search & citation research",
+    "title": "The Failure Is in the Readout: Fine-Grained Emotion Recognition Benchmarks Measure Elicitation, Not Perception",
+    "why": "Vision-language benchmark research; unrelated to web crawling or content surfacing.",
+    "url": "https://arxiv.org/abs/2610.08162"
+  },
+  {
+    "at": "2026-10-07",
+    "source": "OpenAI News",
+    "title": "How Jump Trading is scaling quant research with ChatGPT",
+    "why": "Customer use case for ChatGPT; no search, citation, or crawler surface change.",
+    "url": "https://openai.com/index/jump-trading"
+  },
+  {
+    "at": "2026-10-07",
+    "source": "OpenAI News",
+    "title": "Sharing AI progress in mathematics",
+    "why": "Research publication methodology for math papers; not a web-search citation policy change.",
+    "url": "https://openai.com/index/sharing-ai-progress-in-mathematics"
+  },
+  {
     "at": "2026-10-06",
     "source": "Reddit Inc. Blog",
     "title": "Reddit Launches Enhanced Capabilities for Lead Generation",
