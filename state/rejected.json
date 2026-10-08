@@ -1,5 +1,33 @@
 [
   {
+    "at": "2026-10-08",
+    "source": "Perplexity Changelog",
+    "title": "Sandbox extraction usage and costs tracking",
+    "why": "API developer tooling and cost tracking, not content visibility",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-10-08",
+    "source": "Perplexity Changelog",
+    "title": "Fast Search for presets",
+    "why": "UI preset feature, unclear relevance to content surfacing",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-10-08",
+    "source": "Claude Release Notes",
+    "title": "Claude Platform release notes — October 8, 2026",
+    "why": "Compliance API internal tooling, not content visibility",
+    "url": "https://platform.claude.com/docs/en/release-notes/overview#october-8-2026"
+  },
+  {
+    "at": "2026-10-08",
+    "source": "Claude Release Notes",
+    "title": "Claude Platform release notes — October 6, 2026",
+    "why": "API capability reporting metadata, not content visibility",
+    "url": "https://platform.claude.com/docs/en/release-notes/overview#october-6-2026"
+  },
+  {
     "at": "2026-10-07",
     "source": "Google — The Keyword (AI)",
     "title": "Introducing Playground: Create and play custom games",

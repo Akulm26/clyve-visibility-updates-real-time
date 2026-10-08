@@ -1,32 +1,31 @@
-<!-- breaking alert · 2026-10-07T16:11:58.438Z -->
+<!-- breaking alert · 2026-10-08T03:03:07.574Z -->
 
-*⚡ AEO radar · Breaking · 1 item · Oct 7, 9:11 AM*
+*⚡ AEO radar · Breaking · 1 item · Oct 7, 8:02 PM*
 
-One update: Anthropic quietly edited a support page about its AI crawlers.
+Radisson wired hotel booking straight into ChatGPT — one item below.
 ———
-*🟠 Anthropic quietly edits its crawler support page*
-_Anthropic — ClaudeBot, Claude-User & Claude-SearchBot · October 7, 2026_
+*🟠 Radisson puts hotel booking inside ChatGPT*
+_OpenAI News · October 7, 2026_
 
 *Synopsis*
-Anthropic's support article explaining its ClaudeBot, Claude-User, and Claude-SearchBot crawlers was edited with no public announcement.
-· Change was limited to the "Related Articles" sidebar — links swapped, not the crawler rules themselves.
-· Removed link: "Does Anthropic Act as a Data Processor or Controller?"
-· Added links: "Business Associate Agreements (BAA) for Commercial Customers" and a general "How to get support" page.
-· Nothing in the actual crawler-blocking instructions was shown as changed.
+OpenAI case study on Radisson Hotel Group's new ChatGPT plugin (an app that runs inside a ChatGPT chat, letting you browse and book without leaving it), built with Accenture.
+· Bookings via the plugin converted ~1.5x better than Radisson's organic search (unpaid Google results) traffic, Jul–Aug 2026.
+· 54% of recorded checkout/booking events came from people who'd seen a sponsored ad inside ChatGPT.
+· Plugin took 6 weeks to build and launch.
 
 *What the terms mean*
-ClaudeBot — Anthropic's crawler that visits pages to gather data for training Claude.
-Claude-User — the bot Claude sends out live, mid-chat, when someone asks it to look at a specific page.
-Claude-SearchBot — the crawler Anthropic uses to fetch pages for search and answer features.
-BAA (Business Associate Agreement) — legal contract letting regulated industries (e.g. healthcare) use a vendor's AI under privacy rules.
+ChatGPT plugin — an app embedded inside a ChatGPT conversation, so users compare/book without leaving the chat.
+Booking conversion — share of visitors/viewers who actually complete a booking.
+Organic search — unpaid search results, as opposed to paid ads.
+Sponsored ads in ChatGPT — paid placements OpenAI now sells inside chat answers, like Google Ads but for chat.
 
 *Why it matters for your content*
-This edit itself didn't touch crawling or blocking rules. But it shows Anthropic is actively maintaining the one page that tells you how to allow or block its AI bots — the page you'd need if you ever want to control whether your content trains Claude or gets cited by it.
+ChatGPT is becoming a booking surface, not just an answer engine — brands that build a presence there get checkout, not just a mention. Early data shows chat-native conversion beats organic search, which should shift budget conversations from "rank on Google" to "be bookable inside AI." Paid placement already drives over half of tracked bookings, so organic/content alone won't carry AI discovery in travel.
 
 *Example*
-Say your robots.txt blocks ClaudeBot (no training) but allows Claude-User (so Claude can still fetch and cite your pages live in chat). If a future edit to this page renames or redefines a bot, a rule written by bot name could silently stop working.
+Someone asks ChatGPT "best business hotel near Paris Gare du Nord, under €200." Before: ChatGPT cites a travel blog, user leaves to Google and books via a hotel's website. After: a Radisson-style plugin lets them compare rooms and book right there, no site visit, no SEO click.
 
 *Do this*
-Check your robots.txt now to confirm it still correctly names ClaudeBot, Claude-User and Claude-SearchBot.
+If you sell bookable inventory, scope a pilot ChatGPT plugin or sponsored placement for your highest-intent queries this quarter.
 
-https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler
+https://openai.com/index/radisson
