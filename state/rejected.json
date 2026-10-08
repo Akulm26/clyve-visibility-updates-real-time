@@ -1,6 +1,41 @@
 [
   {
     "at": "2026-10-08",
+    "source": "Google — Ranking updates log",
+    "title": "Documentation changed: Google — Ranking updates log",
+    "why": "Documentation update of past incidents, not new update announcement",
+    "url": "https://developers.google.com/search/updates/ranking?hl=en"
+  },
+  {
+    "at": "2026-10-08",
+    "source": "arXiv — AI search & citation research",
+    "title": "LLM4Impact: Integrating Heterogeneous Information for Scientific Impact Prediction",
+    "why": "Citation prediction research; no crawling or attribution changes",
+    "url": "https://arxiv.org/abs/2610.10138"
+  },
+  {
+    "at": "2026-10-08",
+    "source": "arXiv — AI search & citation research",
+    "title": "Attention at Rest Stays at Rest: Breaking Visual Inertia to Mitigate Relation Hallucinations",
+    "why": "Multimodal hallucination fix; pure model capability",
+    "url": "https://arxiv.org/abs/2604.01989"
+  },
+  {
+    "at": "2026-10-08",
+    "source": "Perplexity Changelog",
+    "title": "Fast Search adoption across presets",
+    "why": "API features; no documented crawling or attribution changes",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-10-08",
+    "source": "arXiv — AI search & citation research",
+    "title": "PersonaMem-v3: Toward Omni-Platform Personal Intelligence for Holistic User Understanding, Recommendation, and Agentic Tasks",
+    "why": "Personalization benchmark; no crawling or surfacing changes",
+    "url": "https://arxiv.org/abs/2608.21381"
+  },
+  {
+    "at": "2026-10-08",
     "source": "Perplexity Changelog",
     "title": "Sandbox extraction usage and costs tracking",
     "why": "API developer tooling and cost tracking, not content visibility",
