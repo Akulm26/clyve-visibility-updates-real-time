@@ -1,5 +1,12 @@
 [
   {
+    "at": "2026-10-10",
+    "source": "OpenAI Status",
+    "title": "Some ChatGPT content may be unavailable on Android",
+    "why": "Temporary service outage, resolved. No content visibility impact.",
+    "url": "https://status.openai.com//incidents/01M4H7FKXDA425TDNP2CRGEYA3"
+  },
+  {
     "at": "2026-10-09",
     "source": "Perplexity Changelog",
     "title": "OpenAI model retirements",

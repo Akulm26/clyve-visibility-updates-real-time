@@ -2,40 +2,40 @@
   "google-search-central": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "google-search-product": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "google-ai": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "google-gemini": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "schemaorg-releases": {
-    "zeroStreak": 31,
+    "zeroStreak": 32,
     "errorStreak": 0,
     "lastItemAt": "2026-09-29T19:19:14.596Z",
     "notified": false,
     "lastError": null
   },
   "google-search-status": {
-    "zeroStreak": 1,
+    "zeroStreak": 2,
     "errorStreak": 0,
     "lastItemAt": "2026-10-08T10:18:31.866Z",
     "notified": false,
@@ -44,19 +44,19 @@
   "openai-news": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "bing-webmaster": {
-    "zeroStreak": 43,
+    "zeroStreak": 44,
     "errorStreak": 0,
     "lastItemAt": null,
     "notified": false,
     "lastError": null
   },
   "bing-search-quality": {
-    "zeroStreak": 43,
+    "zeroStreak": 44,
     "errorStreak": 0,
     "lastItemAt": null,
     "notified": false,
@@ -65,68 +65,68 @@
   "meta-newsroom": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "reddit-inc": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "cloudflare-ai": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "arxiv-geo": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "claude-release-notes": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "openai-status": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "anthropic-status": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "anthropic-news": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "openai-release-notes": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "perplexity-hub": {
-    "zeroStreak": 45,
+    "zeroStreak": 46,
     "errorStreak": 0,
     "lastItemAt": null,
     "notified": false,
@@ -135,119 +135,119 @@
   "perplexity-changelog": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "google-ai-features": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "google-crawlers": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "google-ranking-updates": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "openai-bots": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "perplexity-bots": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "anthropic-crawlers": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "openai-web-search": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "apple-applebot": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "ietf-aipref": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "bing-webmaster-guidelines": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "bing-robots-meta": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "bing-ai-performance": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "bing-crawlers": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "ms-copilot-web-access": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "ms-copilot-grounding": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   },
   "llmstxt": {
     "zeroStreak": 0,
     "errorStreak": 0,
-    "lastItemAt": "2026-10-09T10:46:33.565Z",
+    "lastItemAt": "2026-10-10T03:36:19.832Z",
     "notified": false,
     "lastError": null
   }
