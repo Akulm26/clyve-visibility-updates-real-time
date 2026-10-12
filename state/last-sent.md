@@ -1,31 +1,34 @@
-<!-- breaking alert · 2026-10-08T03:03:07.574Z -->
+<!-- breaking alert · 2026-10-12T11:48:25.171Z -->
 
-*⚡ AEO radar · Breaking · 1 item · Oct 7, 8:02 PM*
+*⚡ AEO radar · Breaking · 1 item · Oct 12, 4:47 AM*
 
-Radisson wired hotel booking straight into ChatGPT — one item below.
+One update: Perplexity's Agent API can now pull and cite live web images inside AI-generated answers.
 ———
-*🟠 Radisson puts hotel booking inside ChatGPT*
-_OpenAI News · October 7, 2026_
+*🟠 Perplexity Agents Can Now Search Images*
+_Perplexity Changelog · October 1, 2026_
 
 *Synopsis*
-OpenAI case study on Radisson Hotel Group's new ChatGPT plugin (an app that runs inside a ChatGPT chat, letting you browse and book without leaving it), built with Accenture.
-· Bookings via the plugin converted ~1.5x better than Radisson's organic search (unpaid Google results) traffic, Jul–Aug 2026.
-· 54% of recorded checkout/booking events came from people who'd seen a sponsored ad inside ChatGPT.
-· Plugin took 6 weeks to build and launch.
+Perplexity added an `image_search` tool to its Agent API — the developer toolkit used to build AI agents that browse the web and answer questions, not just chat.
+· Agents can search for web images mid-answer, returned separately from the text as structured `image_search_results` items.
+· Results can be filtered by domain (specific websites) and by image format.
+· Each image result includes both the image's direct URL and its origin URL — the page it came from.
+· Results stream back live, and each search call is billed individually.
 
 *What the terms mean*
-ChatGPT plugin — an app embedded inside a ChatGPT conversation, so users compare/book without leaving the chat.
-Booking conversion — share of visitors/viewers who actually complete a booking.
-Organic search — unpaid search results, as opposed to paid ads.
-Sponsored ads in ChatGPT — paid placements OpenAI now sells inside chat answers, like Google Ads but for chat.
+Agent API — Perplexity's developer platform for building AI agents that browse the web and take actions, not just answer chat messages.
+image_search tool — a built-in action that lets an AI agent fetch real images from the web while building its answer.
+Structured output items — data returned in a fixed, labeled format an app can read automatically, instead of plain text.
+Domain filter — limits image results to specific websites you choose.
+Origin URL — the webpage an image was originally found on, as opposed to the raw image file's own link.
+Streaming — results sent back piece by piece as they're found, rather than all at once at the end.
 
 *Why it matters for your content*
-ChatGPT is becoming a booking surface, not just an answer engine — brands that build a presence there get checkout, not just a mention. Early data shows chat-native conversion beats organic search, which should shift budget conversations from "rank on Google" to "be bookable inside AI." Paid placement already drives over half of tracked bookings, so organic/content alone won't carry AI discovery in travel.
+Perplexity agents can now reach into the web, grab your images, and trace them back to your page via the origin URL. That's a new discovery path for image-heavy content — recipe steps, product shots, diagrams — outside of Google Images. Image SEO basics (alt text, filenames, clean public URLs) now double as AI-visibility signals for agent-built answers.
 
 *Example*
-Someone asks ChatGPT "best business hotel near Paris Gare du Nord, under €200." Before: ChatGPT cites a travel blog, user leaves to Google and books via a hotel's website. After: a Radisson-style plugin lets them compare rooms and book right there, no site visit, no SEO click.
+A Perplexity agent answering "how to fold dumplings" could pull a step-by-step photo from a recipe site and cite it with the origin URL pointing straight to that recipe page — something that wasn't possible when agents only returned text citations.
 
 *Do this*
-If you sell bookable inventory, scope a pilot ChatGPT plugin or sponsored placement for your highest-intent queries this quarter.
+Check that your highest-traffic images have clear alt text, descriptive filenames, and stable public URLs — this is what makes them findable and citable by agents like this one.
 
-https://openai.com/index/radisson
+https://docs.perplexity.ai/docs/agent-api/tools/image-search

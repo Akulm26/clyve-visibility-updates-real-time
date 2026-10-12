@@ -1,5 +1,47 @@
 [
   {
+    "at": "2026-10-12",
+    "source": "arXiv — AI search & citation research",
+    "title": "GeoFitBench-LLM: A Benchmark for Assessing Large Language Models' Capabilities in Geospatial Data Requirements Elicitation for Geo-Analytic Tasks",
+    "why": "Pure LLM capability benchmark; no content visibility impact",
+    "url": "https://arxiv.org/abs/2610.12669"
+  },
+  {
+    "at": "2026-10-12",
+    "source": "Perplexity Changelog",
+    "title": "Decisions API: pplx-decider-v1.1-27b Model Release",
+    "why": "API classifier, not content discovery or surfacing",
+    "url": "https://docs.perplexity.ai/docs/decisions/quickstart"
+  },
+  {
+    "at": "2026-10-12",
+    "source": "Perplexity Changelog",
+    "title": "Decisions API Launch",
+    "why": "API classifier, not content discovery or surfacing",
+    "url": "https://docs.perplexity.ai/docs/decisions/quickstart"
+  },
+  {
+    "at": "2026-10-12",
+    "source": "Perplexity Changelog",
+    "title": "Native Document Input Support",
+    "why": "API input format feature, not content discovery",
+    "url": "https://docs.perplexity.ai/docs/agent-api/working-with-files"
+  },
+  {
+    "at": "2026-10-12",
+    "source": "Perplexity Changelog",
+    "title": "Sandbox Extraction Usage Reporting",
+    "why": "API pricing and model documentation only",
+    "url": "https://docs.perplexity.ai/docs/agent-api/models"
+  },
+  {
+    "at": "2026-10-12",
+    "source": "Perplexity Changelog",
+    "title": "Fast Search for Standard Presets",
+    "why": "Web search tool documentation, existing functionality",
+    "url": "https://docs.perplexity.ai/docs/agent-api/tools/web-search"
+  },
+  {
     "at": "2026-10-10",
     "source": "OpenAI Status",
     "title": "Some ChatGPT content may be unavailable on Android",

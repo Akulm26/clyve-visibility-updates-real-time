@@ -12,7 +12,8 @@
     "dd87c02ea1052cabdeeaa653072b9fae17f634bf93ad137d4d371936f8c0c4ea": 1791199478833,
     "50d200aee96a15d2384696435bd269dd460310283a47df50a59d9b245be67a38": 1791220489533,
     "1f5e48f6699bd222a8f15c8ba5631c0df8582f0aec6ad89c6e650941cce3e639": 1791389518442,
-    "06d9d5c7adb5a8b1f967fb8e115eccc12dd987734714459faa0eb23a5178993b": 1791428587578
+    "06d9d5c7adb5a8b1f967fb8e115eccc12dd987734714459faa0eb23a5178993b": 1791428587578,
+    "3ce98c1a37283706161b3cbc755e104cbd5a7265fe78c721a35e0ec85eab0706": 1791805705175
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
@@ -29,14 +30,15 @@
     "blog.cloudflare.com/ai-search-ga": 1791083900524,
     "arxiv.org/abs/2605.14021": 1791199478833,
     "arxiv.org/abs/2607.14197": 1791220489533,
-    "openai.com/index/radisson": 1791428587578
+    "openai.com/index/radisson": 1791428587578,
+    "docs.perplexity.ai/docs/agent-api/tools/image-search": 1791805705175
   },
   "last": {
-    "subject": "⚡ AEO radar · Breaking · 1 item · Oct 7, 8:02 PM",
-    "at": "2026-10-08T03:03:07.578Z",
+    "subject": "⚡ AEO radar · Breaking · 1 item · Oct 12, 4:47 AM",
+    "at": "2026-10-12T11:48:25.175Z",
     "kind": "breaking alert",
     "headlines": [
-      "Radisson Hotel Group brings hotel discovery into ChatGPT"
+      "Image Search Tool"
     ]
   }
 }
