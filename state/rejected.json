@@ -1,5 +1,19 @@
 [
   {
+    "at": "2026-10-13",
+    "source": "Perplexity Changelog",
+    "title": "Claude Haiku 5.5",
+    "why": "Model capability news, no AI visibility impact",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-10-13",
+    "source": "Perplexity Changelog",
+    "title": "Decisions API: pplx-decider-v1.1-27b replaces v1",
+    "why": "API pricing/model versioning, not search/citation/crawling",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
     "at": "2026-10-12",
     "source": "arXiv — AI search & citation research",
     "title": "GeoFitBench-LLM: A Benchmark for Assessing Large Language Models' Capabilities in Geospatial Data Requirements Elicitation for Geo-Analytic Tasks",

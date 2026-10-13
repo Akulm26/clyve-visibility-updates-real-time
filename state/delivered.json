@@ -13,7 +13,9 @@
     "50d200aee96a15d2384696435bd269dd460310283a47df50a59d9b245be67a38": 1791220489533,
     "1f5e48f6699bd222a8f15c8ba5631c0df8582f0aec6ad89c6e650941cce3e639": 1791389518442,
     "06d9d5c7adb5a8b1f967fb8e115eccc12dd987734714459faa0eb23a5178993b": 1791428587578,
-    "3ce98c1a37283706161b3cbc755e104cbd5a7265fe78c721a35e0ec85eab0706": 1791805705175
+    "3ce98c1a37283706161b3cbc755e104cbd5a7265fe78c721a35e0ec85eab0706": 1791805705175,
+    "4f3bfce54a660e1e400a02de881a6f51aef80b7a238e8ad06a90764c66a2c49a": 1791852642451,
+    "08030ba89ee5d0a13bc965dd9713ebd36288297b14e834e95b84c0c60bde76b9": 1791852642451
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
@@ -31,14 +33,16 @@
     "arxiv.org/abs/2605.14021": 1791199478833,
     "arxiv.org/abs/2607.14197": 1791220489533,
     "openai.com/index/radisson": 1791428587578,
-    "docs.perplexity.ai/docs/agent-api/tools/image-search": 1791805705175
+    "docs.perplexity.ai/docs/agent-api/tools/image-search": 1791805705175,
+    "arxiv.org/abs/2605.27700": 1791852642451
   },
   "last": {
-    "subject": "⚡ AEO radar · Breaking · 1 item · Oct 12, 4:47 AM",
-    "at": "2026-10-12T11:48:25.175Z",
-    "kind": "breaking alert",
+    "subject": "AEO radar · Weekly digest · week of October 12, 2026",
+    "at": "2026-10-13T00:50:42.451Z",
+    "kind": "weekly digest",
     "headlines": [
-      "Image Search Tool"
+      "Documentation changed: IETF — AI Preferences working group",
+      "CiteCheck: Retrieval-Grounded Detection of LLM Citation Hallucinations in Scientific Text"
     ]
   }
 }

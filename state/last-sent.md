@@ -1,34 +1,55 @@
-<!-- breaking alert · 2026-10-12T11:48:25.171Z -->
+<!-- weekly digest · 2026-10-13T00:50:42.448Z -->
 
-*⚡ AEO radar · Breaking · 1 item · Oct 12, 4:47 AM*
+*AEO radar · Weekly digest · week of October 12, 2026*
 
-One update: Perplexity's Agent API can now pull and cite live web images inside AI-generated answers.
+Two updates this week — a quiet edit to an internet-standards drafts page, and a new tool for catching AI's fake citations.
 ———
-*🟠 Perplexity Agents Can Now Search Images*
-_Perplexity Changelog · October 1, 2026_
+*🟡 IETF quietly edits its AI rules drafts page*
+_IETF — AI Preferences working group · October 12, 2026_
 
 *Synopsis*
-Perplexity added an `image_search` tool to its Agent API — the developer toolkit used to build AI agents that browse the web and answer questions, not just chat.
-· Agents can search for web images mid-answer, returned separately from the text as structured `image_search_results` items.
-· Results can be filtered by domain (specific websites) and by image format.
-· Each image result includes both the image's direct URL and its origin URL — the page it came from.
-· Results stream back live, and each search call is billed individually.
+The IETF's AI Preferences group edited its drafts listing page with no announcement, and one draft disappeared.
+· Listed related drafts dropped from 7 to 6.
+· "Crawler best practices," a draft co-authored by Google's Gary Illyes, dropped off the page.
+· Five other drafts — on usage grants, compliance records, attribution marks, and vocabulary — stayed listed.
 
 *What the terms mean*
-Agent API — Perplexity's developer platform for building AI agents that browse the web and take actions, not just answer chat messages.
-image_search tool — a built-in action that lets an AI agent fetch real images from the web while building its answer.
-Structured output items — data returned in a fixed, labeled format an app can read automatically, instead of plain text.
-Domain filter — limits image results to specific websites you choose.
-Origin URL — the webpage an image was originally found on, as opposed to the raw image file's own link.
-Streaming — results sent back piece by piece as they're found, rather than all at once at the end.
+IETF — the global body that writes core internet standards (same group behind HTTP).
+AI Preferences (AIPREF) — the IETF's in-progress standard letting sites tell AI crawlers what they can and can't do with their content, a successor to robots.txt.
+Internet-Draft (I-D) — a proposal on the path to becoming an official standard, not yet final.
 
 *Why it matters for your content*
-Perplexity agents can now reach into the web, grab your images, and trace them back to your page via the origin URL. That's a new discovery path for image-heavy content — recipe steps, product shots, diagrams — outside of Google Images. Image SEO basics (alt text, filenames, clean public URLs) now double as AI-visibility signals for agent-built answers.
+AIPREF is the group that will likely define how sites control AI crawling, training, and "grounding" (letting an AI quote your page in an answer) separately, instead of one blunt robots.txt block. Nothing final yet, but worth knowing the vocabulary before it ships.
 
 *Example*
-A Perplexity agent answering "how to fold dumplings" could pull a step-by-step photo from a recipe site and cite it with the origin URL pointing straight to that recipe page — something that wasn't possible when agents only returned text citations.
+Say your site blocks GPTBot outright today. Once AIPREF is final, you could instead allow AI engines to quote your pages in answers while still refusing to let them train on your content — two separate switches instead of one.
 
 *Do this*
-Check that your highest-traffic images have clear alt text, descriptive filenames, and stable public URLs — this is what makes them findable and citable by agents like this one.
+Nothing to do yet — just know AIPREF is coming as robots.txt's more granular successor.
 
-https://docs.perplexity.ai/docs/agent-api/tools/image-search
+https://datatracker.ietf.org/wg/aipref/documents/
+———
+*🟡 New tool catches AI's fake science citations*
+_arXiv — AI search & citation research · October 6, 2026_
+
+*Synopsis*
+A new tool called CiteCheck catches fake or garbled citations that AI models invent in scientific writing.
+· Built and tested on a 982-citation physics set with deliberately planted citation errors.
+· CiteCheck scored 88.7 macro-F1 and 88.9% accuracy at spotting bad citations.
+· Beat GPT, Claude, and Gemini at the same task, including versions that used web search.
+
+*What the terms mean*
+LLM — a large language model, the AI behind chatbots like ChatGPT, Claude, and Gemini.
+Citation hallucination — when an AI invents a fake source, or scrambles a real source's details, while making it look correct.
+Macro-F1 — a single score blending how often a detector is right and how often it actually catches real errors.
+
+*Why it matters for your content*
+Tools that cross-check AI-generated citations against real sources are getting good — 88.9% accuracy here. Any AI-assisted content with invented or garbled references can now get caught, so verified sourcing becomes a trust and differentiation signal as scrutiny of AI content rises.
+
+*Example*
+A content team drafts a blog with AI claiming "a 2025 Gartner survey found 73% of buyers prefer X" — but no such study exists in that form. A CiteCheck-style check flags the mismatch before it goes live and damages credibility.
+
+*Do this*
+Add a citation-verification step, manual or tool-assisted, before publishing any AI-drafted content that cites stats or studies.
+
+https://arxiv.org/abs/2605.27700
