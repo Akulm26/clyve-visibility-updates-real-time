@@ -16,7 +16,12 @@
     "3ce98c1a37283706161b3cbc755e104cbd5a7265fe78c721a35e0ec85eab0706": 1791805705175,
     "4f3bfce54a660e1e400a02de881a6f51aef80b7a238e8ad06a90764c66a2c49a": 1791852642451,
     "08030ba89ee5d0a13bc965dd9713ebd36288297b14e834e95b84c0c60bde76b9": 1791852642451,
-    "0b6643e766698e9299d5b41a9adaa647b66e7ebdbde5dd4c01de8dd42e231a44": 1791940136572
+    "0b6643e766698e9299d5b41a9adaa647b66e7ebdbde5dd4c01de8dd42e231a44": 1791940136572,
+    "60fddfe0fc8ff65f659308a41cd1f893322fc5afe58d343589465ef852009fd4": 1791969857293,
+    "00d9ab0a464f76de0777bc22e62c4bba372d508578739422f4859951399a03b7": 1791969857293,
+    "c411a2afe4d146544ef198aca781538370b6440548aac8d0543f42256fb5bf8a": 1791969857293,
+    "ae5c50e6959fe2e8e13a22b7096750b87d7aa0f42c5e99d73af3b22b5b97be82": 1791969857293,
+    "0b0d7cfddaf00d9df66b71b08e8705ae958b9983f9fb450d8c1d0b4b702ae2dd": 1791969857293
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
@@ -36,14 +41,23 @@
     "openai.com/index/radisson": 1791428587578,
     "docs.perplexity.ai/docs/agent-api/tools/image-search": 1791805705175,
     "arxiv.org/abs/2605.27700": 1791852642451,
-    "blogs.bing.com/webmaster/2026/10/introducing-topics-portfolio-beta-in-ai-performance": 1791940136572
+    "blogs.bing.com/webmaster/2026/10/introducing-topics-portfolio-beta-in-ai-performance": 1791940136572,
+    "arxiv.org/abs/2610.15033": 1791969857293,
+    "arxiv.org/abs/2605.16428": 1791969857293,
+    "arxiv.org/abs/2610.15382": 1791969857293,
+    "arxiv.org/abs/2606.17443": 1791969857293,
+    "arxiv.org/abs/2605.29107": 1791969857293
   },
   "last": {
-    "subject": "⚡ AEO radar · Breaking · 1 item · Oct 13, 6:08 PM",
-    "at": "2026-10-14T01:08:56.572Z",
-    "kind": "breaking alert",
+    "subject": "AEO radar · Catch-up · 5 items · Oct 14, 2:22 AM",
+    "at": "2026-10-14T09:24:17.293Z",
+    "kind": "catch-up digest",
     "headlines": [
-      "Introducing Topics Portfolio (Beta) in AI Performance"
+      "What Drives AI Citations? Content, Retrieval and Model Knowledge in Generative Engine Optimization (GEO)",
+      "The Impact of AI Search on the Online Content Ecosystem: Evidence from Google and Reddit",
+      "Understanding ChatGPT Citations: Evidence from Production Web Search Across Model Generations",
+      "Incumbent Advantage: Brand Bias and Cognitive Manipulation Dynamics in LLM Recommendation Systems",
+      "GEO-Bench: Benchmarking Ranking Manipulation in Generative Engine Optimization"
     ]
   }
 }

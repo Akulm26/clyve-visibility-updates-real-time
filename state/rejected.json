@@ -1,6 +1,76 @@
 [
   {
     "at": "2026-10-14",
+    "source": "Perplexity Changelog",
+    "title": "OpenAI Model Retirement",
+    "why": "API model support; no visibility impact shown",
+    "url": "https://docs.perplexity.ai/docs/agent-api/models"
+  },
+  {
+    "at": "2026-10-14",
+    "source": "arXiv — AI search & citation research",
+    "title": "Encoding Context into LLM Weights: What Makes It Context?",
+    "why": "LLM context encoding; not visibility-relevant",
+    "url": "https://arxiv.org/abs/2610.17686"
+  },
+  {
+    "at": "2026-10-14",
+    "source": "Perplexity Changelog",
+    "title": "Decisions API Model Update",
+    "why": "Internal API feature; no visibility impact",
+    "url": "https://docs.perplexity.ai/docs/decisions/quickstart"
+  },
+  {
+    "at": "2026-10-14",
+    "source": "Perplexity Changelog",
+    "title": "Sandbox Extraction Usage",
+    "why": "Unclear summary; no visibility impact shown",
+    "url": "https://docs.perplexity.ai/docs/agent-api/models"
+  },
+  {
+    "at": "2026-10-14",
+    "source": "Perplexity Changelog",
+    "title": "GPT-6.1 Sol Support",
+    "why": "Model support; no visibility impact",
+    "url": "https://docs.perplexity.ai/docs/agent-api/models"
+  },
+  {
+    "at": "2026-10-14",
+    "source": "arXiv — AI search & citation research",
+    "title": "Auditing a KB Elicitation of Frontier LLM Knowledge: A Multi-dimensional Analysis of GPTKB v1.5",
+    "why": "LLM knowledge audit; not visibility-relevant",
+    "url": "https://arxiv.org/abs/2510.07024"
+  },
+  {
+    "at": "2026-10-14",
+    "source": "arXiv — AI search & citation research",
+    "title": "Structure Liberates: How Constrained Sensemaking Produces More Novel Research Output",
+    "why": "LLM research agent behavior; not visibility-relevant",
+    "url": "https://arxiv.org/abs/2605.00557"
+  },
+  {
+    "at": "2026-10-14",
+    "source": "arXiv — AI search & citation research",
+    "title": "Source or It Didn't Happen: A Multi-Agent Framework for Citation Hallucination Detection",
+    "why": "Citation hallucination detection; quality tool, not strategy",
+    "url": "https://arxiv.org/abs/2605.08583"
+  },
+  {
+    "at": "2026-10-14",
+    "source": "arXiv — AI search & citation research",
+    "title": "HALLMARK: How to Diagnose LLM Citation Verifiers and When to Deploy Them",
+    "why": "Citation verification tool; quality control, not visibility strategy",
+    "url": "https://arxiv.org/abs/2607.18360"
+  },
+  {
+    "at": "2026-10-14",
+    "source": "Perplexity Changelog",
+    "title": "Claude Sonnet 5.5 Support",
+    "why": "Model support; no visibility impact",
+    "url": "https://docs.perplexity.ai/docs/agent-api/models"
+  },
+  {
+    "at": "2026-10-14",
     "source": "Apple — Applebot & Applebot-Extended",
     "title": "Documentation changed: Apple — Applebot & Applebot-Extended",
     "why": "Documentation edit; no substantive crawler behavior change evident",
