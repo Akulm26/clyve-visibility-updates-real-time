@@ -1,5 +1,68 @@
 [
   {
+    "at": "2026-10-14",
+    "source": "Apple — Applebot & Applebot-Extended",
+    "title": "Documentation changed: Apple — Applebot & Applebot-Extended",
+    "why": "Documentation edit; no substantive crawler behavior change evident",
+    "url": "https://support.apple.com/en-us/119829"
+  },
+  {
+    "at": "2026-10-14",
+    "source": "Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
+    "title": "Documentation changed: Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
+    "why": "Page edits shown are navigation only; blocking/policy mechanics unclear",
+    "url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+  },
+  {
+    "at": "2026-10-14",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Developing Gemini 4 Argon responsibly and safely",
+    "why": "Model safety work; no impact on crawling, citation, or content surfacing",
+    "url": "https://blog.google/innovation-and-ai/technology/safety-security/gemini-4-model-safety-security/"
+  },
+  {
+    "at": "2026-10-14",
+    "source": "Google — The Keyword (AI)",
+    "title": "Gemini 4 Argon: Built to solve your hardest problems",
+    "why": "Model capability release; no change to how content gets surfaced or cited",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/"
+  },
+  {
+    "at": "2026-10-14",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Gemini 4 Argon comes to the Gemini app.",
+    "why": "Model availability in app; no documented change to search or citation behavior",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/"
+  },
+  {
+    "at": "2026-10-14",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Gemini 4 Argon is now available for developers.",
+    "why": "API capability release; no visibility or crawling implications disclosed",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-argon/"
+  },
+  {
+    "at": "2026-10-14",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Gemini 4 Argon: Built to solve your hardest problems",
+    "why": "Duplicate of ID 3",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/"
+  },
+  {
+    "at": "2026-10-14",
+    "source": "Reddit Inc. Blog",
+    "title": "Supporting Civic Knowledge and Participation for the 2026 US Elections",
+    "why": "Civic engagement; no AI crawling, citation, or licensing policy change",
+    "url": "https://redditinc.com/news/supporting-civic-knowledge-and-participation-for-the-2026-us-elections"
+  },
+  {
+    "at": "2026-10-14",
+    "source": "Perplexity Changelog",
+    "title": "Decisions API: pplx-decider-v1.1-27b Model",
+    "why": "API pricing/model update; no crawling, citation, or search surface changes",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
     "at": "2026-10-13",
     "source": "Perplexity Changelog",
     "title": "Claude Haiku 5.5",

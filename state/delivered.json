@@ -15,7 +15,8 @@
     "06d9d5c7adb5a8b1f967fb8e115eccc12dd987734714459faa0eb23a5178993b": 1791428587578,
     "3ce98c1a37283706161b3cbc755e104cbd5a7265fe78c721a35e0ec85eab0706": 1791805705175,
     "4f3bfce54a660e1e400a02de881a6f51aef80b7a238e8ad06a90764c66a2c49a": 1791852642451,
-    "08030ba89ee5d0a13bc965dd9713ebd36288297b14e834e95b84c0c60bde76b9": 1791852642451
+    "08030ba89ee5d0a13bc965dd9713ebd36288297b14e834e95b84c0c60bde76b9": 1791852642451,
+    "0b6643e766698e9299d5b41a9adaa647b66e7ebdbde5dd4c01de8dd42e231a44": 1791940136572
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
@@ -34,15 +35,15 @@
     "arxiv.org/abs/2607.14197": 1791220489533,
     "openai.com/index/radisson": 1791428587578,
     "docs.perplexity.ai/docs/agent-api/tools/image-search": 1791805705175,
-    "arxiv.org/abs/2605.27700": 1791852642451
+    "arxiv.org/abs/2605.27700": 1791852642451,
+    "blogs.bing.com/webmaster/2026/10/introducing-topics-portfolio-beta-in-ai-performance": 1791940136572
   },
   "last": {
-    "subject": "AEO radar · Weekly digest · week of October 12, 2026",
-    "at": "2026-10-13T00:50:42.451Z",
-    "kind": "weekly digest",
+    "subject": "⚡ AEO radar · Breaking · 1 item · Oct 13, 6:08 PM",
+    "at": "2026-10-14T01:08:56.572Z",
+    "kind": "breaking alert",
     "headlines": [
-      "Documentation changed: IETF — AI Preferences working group",
-      "CiteCheck: Retrieval-Grounded Detection of LLM Citation Hallucinations in Scientific Text"
+      "Introducing Topics Portfolio (Beta) in AI Performance"
     ]
   }
 }
