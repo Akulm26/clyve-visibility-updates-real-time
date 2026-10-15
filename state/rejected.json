@@ -1,6 +1,13 @@
 [
   {
     "at": "2026-10-15",
+    "source": "arXiv — AI search & citation research",
+    "title": "Gap Detection: Mitigating Homogenization through Demand and Defensibility",
+    "why": "Model output diversity, not content visibility or retrieval strategy",
+    "url": "https://arxiv.org/abs/2610.20162"
+  },
+  {
+    "at": "2026-10-15",
     "source": "OpenAI News",
     "title": "Amp puts AI agents to work beyond code with OpenAI models",
     "why": "Model capability and API usage case study; no crawling or citation changes.",
