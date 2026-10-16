@@ -21,7 +21,9 @@
     "00d9ab0a464f76de0777bc22e62c4bba372d508578739422f4859951399a03b7": 1791969857293,
     "c411a2afe4d146544ef198aca781538370b6440548aac8d0543f42256fb5bf8a": 1791969857293,
     "ae5c50e6959fe2e8e13a22b7096750b87d7aa0f42c5e99d73af3b22b5b97be82": 1791969857293,
-    "0b0d7cfddaf00d9df66b71b08e8705ae958b9983f9fb450d8c1d0b4b702ae2dd": 1791969857293
+    "0b0d7cfddaf00d9df66b71b08e8705ae958b9983f9fb450d8c1d0b4b702ae2dd": 1791969857293,
+    "a0b07c87ec6d1f23458cb662cc27cb07652e23b34fa58f36c2543f31d8dad4ea": 1792120628563,
+    "b55e8d6c58e75bbdb77e659b8dd234f8c936955679cd2c083e8fbf0088d789da": 1792120628563
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
@@ -46,18 +48,17 @@
     "arxiv.org/abs/2605.16428": 1791969857293,
     "arxiv.org/abs/2610.15382": 1791969857293,
     "arxiv.org/abs/2606.17443": 1791969857293,
-    "arxiv.org/abs/2605.29107": 1791969857293
+    "arxiv.org/abs/2605.29107": 1791969857293,
+    "blog.google/products-and-platforms/products/search/updates-ai-mode-overviews-explore-web": 1792120628563,
+    "blog.google/products-and-platforms/products/news/news-ai-pilot-update-publishers": 1792120628563
   },
   "last": {
-    "subject": "AEO radar · Catch-up · 5 items · Oct 14, 2:22 AM",
-    "at": "2026-10-14T09:24:17.293Z",
-    "kind": "catch-up digest",
+    "subject": "⚡ AEO radar · Breaking · 2 items · Oct 15, 8:16 PM",
+    "at": "2026-10-16T03:17:08.563Z",
+    "kind": "breaking alert",
     "headlines": [
-      "What Drives AI Citations? Content, Retrieval and Model Knowledge in Generative Engine Optimization (GEO)",
-      "The Impact of AI Search on the Online Content Ecosystem: Evidence from Google and Reddit",
-      "Understanding ChatGPT Citations: Evidence from Production Web Search Across Model Generations",
-      "Incumbent Advantage: Brand Bias and Cognitive Manipulation Dynamics in LLM Recommendation Systems",
-      "GEO-Bench: Benchmarking Ranking Manipulation in Generative Engine Optimization"
+      "More ways to connect with the web from Search",
+      "400 publications are now partnering with us on our News AI pilot program."
     ]
   }
 }

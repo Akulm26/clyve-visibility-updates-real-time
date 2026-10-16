@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "source": "google-crawlers",
+    "sourceName": "Google — Common crawlers (Google-Extended etc.)",
+    "authority": 10,
+    "url": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers?hl=en",
+    "title": "Documentation changed: Google — Common crawlers (Google-Extended etc.)",
+    "published": "2026-10-16T03:14:25.109Z",
+    "isDocChange": true,
+    "dedupeKey": "doc|google-crawlers|8aae604d8c97f54dac55cda20a19f217330d8905c27d4c1eadb0f9e9082570f4",
+    "summary": "This documentation page was edited with no announcement.\nADDED:\n/archive Affected products Crawling preferences addressed to the Googlebot user agent affect Google Search (including Discover and all Google Search features), as well as other products such as Google Images, Video mode, Google News, and Discover.\n/archive/moons.jpg Affected products Crawling preferences addressed to the Googlebot-Image user agent affect Google Images, Discover, Video mode, and all features in Google Search where images, logos, and favicons are presented.\nLast updated 2026-10-15 UTC.\n[[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-10-15 UTC.\"],[],[]]\nREMOVED:\n/archive Affected products Crawling preferences addressed to the Googlebot user agent affect Google Search (including Discover and all Google Search features), as well as other products such as Google Images, Google Video, Google News, and Discover.\n/archive/moons.jpg Affected products Crawling preferences addressed to the Googlebot-Image user agent affect Google Images, Discover, Google Video, and all features in Google Search where images, logos, and favicons are presented.\nLast updated 2026-07-14 UTC.\n[[[\"Easy to understand\",\"easyToUnderstand\",\"thumb-up\"],[\"Solved my problem\",\"solvedMyProblem\",\"thumb-up\"],[\"Other\",\"otherUp\",\"thumb-up\"]],[[\"Missing the information I need\",\"missingTheInformationINeed\",\"thumb-down\"],[\"Too complicated / too many steps\",\"tooComplicatedTooManySteps\",\"thumb-down\"],[\"Out of date\",\"outOfDate\",\"thumb-down\"],[\"Samples / code issue\",\"samplesCodeIssue\",\"thumb-down\"],[\"Other\",\"otherDown\",\"thumb-down\"]],[\"Last updated 2026-07-14 UTC.\"],[],[]]",
+    "score": 2,
+    "category": "crawling",
+    "why": "Documentation clarification on which products Googlebot crawling affects",
+    "alsoSeenIn": []
+  },
+  {
+    "source": "cloudflare-ai",
+    "sourceName": "Cloudflare Blog (AI)",
+    "authority": 7,
+    "url": "https://blog.cloudflare.com/cloudflare-openai-discovery-agentic-web/",
+    "title": "Cloudflare and OpenAI: Making AI discovery better for everyone",
+    "published": "2026-10-15T13:00:00.000Z",
+    "summary": "Blog AI AI Search Bots +1 Show 1 more tags 4 Tags Show 4 tags Post Tags AI AI Search Bots Crawlers All tags Matching tags No tags found 1.1.1.1 2FA Abuse Access Access Control Lists (ACLs) Accessibility Account Takeover Acquisitions Addressing Advanced Certificate Manager Advanced DDoS Advertising Aegis AEO Africa Afroflare Agent Cloud Agent Development Lifecycle Agent Readiness Agents Agents Week Agents Week 2026 AI AI Bots AI Gateway AI Search AI WAF AI Week AI-SPM Alertmanager Always Online AMD AMP Analytics Anonymous Anti Malware Anycast API API Gateway API Security API Shield APJC Apple Application Security Application Services Area 1 Security Argo Smart Routing ASCII Asia Athenian Project Atlassian Attacks Audit Logs Austin Australia Authentication Authy Auto Rag Automatic HTTPS Automatic Platform Optimization Automation AutoMinify Awards AWS Baidu Bandwidth Alliance Bandwidth Costs Best Practices Beta Better Internet BGP Billing Birthday Week Black Friday Blackbird Bot Fight Mode Bot Management Botnet Bots BPF Brand Brand Protection Brazil Browser Insights Browser Rendering Browser Run Bug Bounty Bugs BYOIP Cache Cache Purge Cache Reserve Cache Rules California Canada Cap'n Proto CAPTCHA Careers CASB Categories CDN CDNJS Certificate Authority Certificate Pinning Certificate Transparency Certification CFSSL Challenge Page ChatGPT China China Network Christmas Chrome CIO Week CISA Claire CLI ClickHouse Clientless Clientless Web Isolation Cloud Connector Cloud Email Secur…",
+    "score": 3,
+    "category": "ai-surface",
+    "why": "Cloudflare-OpenAI AI discovery partnership announced",
+    "alsoSeenIn": []
+  }
+]
