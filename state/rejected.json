@@ -1,6 +1,27 @@
 [
   {
     "at": "2026-10-16",
+    "source": "arXiv — AI search & citation research",
+    "title": "Feature Elicitation for SAE Steering of Deceptive Behaviour in Small LLMs",
+    "why": "Safety/alignment research, not retrieval or content surfacing.",
+    "url": "https://arxiv.org/abs/2610.20638"
+  },
+  {
+    "at": "2026-10-16",
+    "source": "arXiv — AI search & citation research",
+    "title": "Agentic-Priors: Using Large Language Models to Address the Cold Start Problem in Preference Elicitation",
+    "why": "LLM preference learning, no AI visibility or search surface involved.",
+    "url": "https://arxiv.org/abs/2610.21938"
+  },
+  {
+    "at": "2026-10-16",
+    "source": "arXiv — AI search & citation research",
+    "title": "BLOOM-WILT: Logit Tilting for Behaviour Elicitation in Automated LLM Auditing",
+    "why": "LLM behavior auditing, not content discovery or citation.",
+    "url": "https://arxiv.org/abs/2608.31105"
+  },
+  {
+    "at": "2026-10-16",
     "source": "OpenAI News",
     "title": "Bringing GPT-Rosalind to academic research labs",
     "why": "",
