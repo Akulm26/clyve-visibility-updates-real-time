@@ -39,5 +39,18 @@
     "category": "research",
     "why": "Measures how content rewrites affect LLM visibility and citation across engines.",
     "alsoSeenIn": []
+  },
+  {
+    "source": "cloudflare-ai",
+    "sourceName": "Cloudflare Blog (AI)",
+    "authority": 7,
+    "url": "https://blog.cloudflare.com/verified-bots-accountability/",
+    "title": "Continuous accountability for Verified bots",
+    "published": "2026-10-16T13:00:00.000Z",
+    "summary": "Identity alone doesn't guarantee a bot will behave responsibly. We are introducing a system to continuously evaluate whether Verified bots honor site preferences, like robots.txt and HTTP 429s, ensuring they remain accountable over time.",
+    "score": 3,
+    "category": "crawling",
+    "why": "Cloudflare enforces bot compliance with robots.txt, rate limits",
+    "alsoSeenIn": []
   }
 ]
