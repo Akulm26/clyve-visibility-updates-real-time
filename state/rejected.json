@@ -1,5 +1,12 @@
 [
   {
+    "at": "2026-10-17",
+    "source": "OpenAI — ChatGPT release notes",
+    "title": "Rosalind Academic Plan launch",
+    "why": "Pricing plan for academic access. No crawling, citation, or surfacing impact.",
+    "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+  },
+  {
     "at": "2026-10-16",
     "source": "arXiv — AI search & citation research",
     "title": "Feature Elicitation for SAE Steering of Deceptive Behaviour in Small LLMs",
