@@ -1,6 +1,13 @@
 [
   {
     "at": "2026-10-21",
+    "source": "OpenAI News",
+    "title": "OpenAI models are coming to Google Cloud",
+    "why": "Infrastructure partnership. No web search, crawling, citation, or content-surfacing change.",
+    "url": "https://openai.com/index/openai-models-google-cloud"
+  },
+  {
+    "at": "2026-10-21",
     "source": "arXiv — AI search & citation research",
     "title": "Hearsay or Fact? How Framing and Elicitation Shape LLM Probability Updates",
     "why": "LLM probability updating mechanics; no content visibility surface involved",
