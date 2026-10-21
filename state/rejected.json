@@ -2,6 +2,41 @@
   {
     "at": "2026-10-21",
     "source": "arXiv — AI search & citation research",
+    "title": "Hearsay or Fact? How Framing and Elicitation Shape LLM Probability Updates",
+    "why": "LLM probability updating mechanics; no content visibility surface involved",
+    "url": "https://arxiv.org/abs/2610.27745"
+  },
+  {
+    "at": "2026-10-21",
+    "source": "OpenAI — ChatGPT release notes",
+    "title": "Locked Chats",
+    "why": "User privacy feature; no content discovery or visibility impact",
+    "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+  },
+  {
+    "at": "2026-10-21",
+    "source": "Google — The Keyword (AI)",
+    "title": "Southeast Asia’s digital economy to hit $368 billion",
+    "why": "Market commentary on Southeast Asia digital economy; no behavior change",
+    "url": "https://blog.google/company-news/inside-google/around-the-globe/google-asia/e-conomy-sea-report-2026/"
+  },
+  {
+    "at": "2026-10-21",
+    "source": "arXiv — AI search & citation research",
+    "title": "GRaSP: Latency-Aware Optimization for Geo-Distributed Retrieval-Augmented Generation",
+    "why": "RAG infrastructure optimization; no content discovery or crawling change",
+    "url": "https://arxiv.org/abs/2610.26938"
+  },
+  {
+    "at": "2026-10-21",
+    "source": "OpenAI Status",
+    "title": "Degraded performance in ChatGPT, Codex, and APIs",
+    "why": "Resolved service incident; no search or crawling surface affected",
+    "url": "https://status.openai.com//incidents/01M5E4G39TD1BW1QWHZG6RFA5H"
+  },
+  {
+    "at": "2026-10-21",
+    "source": "arXiv — AI search & citation research",
     "title": "Opening Knowledge Gaps Drives Scientific Progress",
     "why": "Scientific paper impact patterns, not AI content visibility or surfacing",
     "url": "https://arxiv.org/abs/2509.21899"
