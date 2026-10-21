@@ -1,5 +1,47 @@
 [
   {
+    "at": "2026-10-21",
+    "source": "arXiv — AI search & citation research",
+    "title": "Opening Knowledge Gaps Drives Scientific Progress",
+    "why": "Scientific paper impact patterns, not AI content visibility or surfacing",
+    "url": "https://arxiv.org/abs/2509.21899"
+  },
+  {
+    "at": "2026-10-21",
+    "source": "Google — The Keyword (Search)",
+    "title": "See the top style searches from people in big fashion capitals.",
+    "why": "Search trend reporting, no change to visibility mechanisms",
+    "url": "https://blog.google/products-and-platforms/products/search/fashion-capital-style-searches/"
+  },
+  {
+    "at": "2026-10-21",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "New Gemini tools for small business owners",
+    "why": "Generic feature announcement lacks specifics on content discovery implications",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/new-tools-small-business-owners/"
+  },
+  {
+    "at": "2026-10-21",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "4 tips for styling outfits with Gemini",
+    "why": "How-to article, not a product change affecting visibility",
+    "url": "https://blog.google/products-and-platforms/products/gemini/stylist-outfit-tips-gemini/"
+  },
+  {
+    "at": "2026-10-21",
+    "source": "arXiv — AI search & citation research",
+    "title": "Can LLM User-Proxies Stand In for Humans in Reliance Measurement? Replicating Rel-A.I. with Simulated Users",
+    "why": "Measurement methodology study, not about actual visibility mechanisms",
+    "url": "https://arxiv.org/abs/2610.25788"
+  },
+  {
+    "at": "2026-10-21",
+    "source": "arXiv — AI search & citation research",
+    "title": "GeoEdit: Adversarial De-Evidencing for Silent Geoprivacy Protection via Image Editing",
+    "why": "Geoprivacy research, not about content discovery or surfacing",
+    "url": "https://arxiv.org/abs/2610.26194"
+  },
+  {
     "at": "2026-10-17",
     "source": "OpenAI — ChatGPT release notes",
     "title": "Rosalind Academic Plan launch",

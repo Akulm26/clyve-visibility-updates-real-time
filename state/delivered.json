@@ -23,7 +23,13 @@
     "ae5c50e6959fe2e8e13a22b7096750b87d7aa0f42c5e99d73af3b22b5b97be82": 1791969857293,
     "0b0d7cfddaf00d9df66b71b08e8705ae958b9983f9fb450d8c1d0b4b702ae2dd": 1791969857293,
     "a0b07c87ec6d1f23458cb662cc27cb07652e23b34fa58f36c2543f31d8dad4ea": 1792120628563,
-    "b55e8d6c58e75bbdb77e659b8dd234f8c936955679cd2c083e8fbf0088d789da": 1792120628563
+    "b55e8d6c58e75bbdb77e659b8dd234f8c936955679cd2c083e8fbf0088d789da": 1792120628563,
+    "d3089c266225cf834c6316f3213185d87b7bdd335089bfba28143d1c447b0acb": 1792542985789,
+    "c6c54b404a8d8ac85867a15af585faecfa85f22341a263d9b117daf970ad49a5": 1792543106331,
+    "da55823430e974139d0688afeaf26e20e15a69da252085e4c8ec24b952327c81": 1792543106331,
+    "8aae8f3bf1a776564bef88379ffd8e2e5a22f9ff19855aeb48a578f1305cd146": 1792543106331,
+    "56a091a28ed289aeb16e84a90a2bcd50fe90f480e4d05cdd3b9daf39b4071dbe": 1792543106331,
+    "878959f080252ec86588bbd8c9f466ba5a69e2e5ad8e6e83e816ad8bce583e9a": 1792543106331
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
@@ -50,15 +56,23 @@
     "arxiv.org/abs/2606.17443": 1791969857293,
     "arxiv.org/abs/2605.29107": 1791969857293,
     "blog.google/products-and-platforms/products/search/updates-ai-mode-overviews-explore-web": 1792120628563,
-    "blog.google/products-and-platforms/products/news/news-ai-pilot-update-publishers": 1792120628563
+    "blog.google/products-and-platforms/products/news/news-ai-pilot-update-publishers": 1792120628563,
+    "arxiv.org/abs/2610.24081": 1792542985789,
+    "blog.cloudflare.com/cloudflare-openai-discovery-agentic-web": 1792543106331,
+    "blog.cloudflare.com/verified-bots-accountability": 1792543106331,
+    "arxiv.org/abs/2610.21330": 1792543106331,
+    "arxiv.org/abs/2610.25843": 1792543106331
   },
   "last": {
-    "subject": "⚡ AEO radar · Breaking · 2 items · Oct 15, 8:16 PM",
-    "at": "2026-10-16T03:17:08.563Z",
-    "kind": "breaking alert",
+    "subject": "AEO radar · Weekly digest · week of October 20, 2026",
+    "at": "2026-10-21T00:38:26.331Z",
+    "kind": "weekly digest",
     "headlines": [
-      "More ways to connect with the web from Search",
-      "400 publications are now partnering with us on our News AI pilot program."
+      "Cloudflare and OpenAI: Making AI discovery better for everyone",
+      "Continuous accountability for Verified bots",
+      "VoteGEO-Bench: Measuring the Impact of Generative Engine Optimization on Electoral Visibility",
+      "A Cue's Hidden Price: Auditing Seller Influence on AI Shoppers",
+      "Documentation changed: Google — Common crawlers (Google-Extended etc.)"
     ]
   }
 }
