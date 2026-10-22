@@ -2,6 +2,13 @@
   {
     "at": "2026-10-22",
     "source": "OpenAI News",
+    "title": "Cloudflare links vulnerability discovery to defense with OpenAI",
+    "why": "Security partnership, not content visibility or crawler behavior",
+    "url": "https://openai.com/index/cloudflare-cyber"
+  },
+  {
+    "at": "2026-10-22",
+    "source": "OpenAI News",
     "title": "Patch the Planet: global response coordination as agents uncover critical vulnerabilities",
     "why": "Security vulnerability disclosure. No impact on content visibility strategy.",
     "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities"
