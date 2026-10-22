@@ -29,7 +29,9 @@
     "da55823430e974139d0688afeaf26e20e15a69da252085e4c8ec24b952327c81": 1792543106331,
     "8aae8f3bf1a776564bef88379ffd8e2e5a22f9ff19855aeb48a578f1305cd146": 1792543106331,
     "56a091a28ed289aeb16e84a90a2bcd50fe90f480e4d05cdd3b9daf39b4071dbe": 1792543106331,
-    "878959f080252ec86588bbd8c9f466ba5a69e2e5ad8e6e83e816ad8bce583e9a": 1792543106331
+    "878959f080252ec86588bbd8c9f466ba5a69e2e5ad8e6e83e816ad8bce583e9a": 1792543106331,
+    "ab51c93158b0db7cf916da98fd6bdc0808642908166938db431ed40a12498e23": 1792657154676,
+    "f2c4988529ff0373a9c8caa3502a6b795babe68bfc80ab7b98f8ef617156c480": 1792657154676
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
@@ -61,18 +63,17 @@
     "blog.cloudflare.com/cloudflare-openai-discovery-agentic-web": 1792543106331,
     "blog.cloudflare.com/verified-bots-accountability": 1792543106331,
     "arxiv.org/abs/2610.21330": 1792543106331,
-    "arxiv.org/abs/2610.25843": 1792543106331
+    "arxiv.org/abs/2610.25843": 1792543106331,
+    "arxiv.org/abs/2610.29812": 1792657154676,
+    "arxiv.org/abs/2602.03608": 1792657154676
   },
   "last": {
-    "subject": "AEO radar · Weekly digest · week of October 20, 2026",
-    "at": "2026-10-21T00:38:26.331Z",
-    "kind": "weekly digest",
+    "subject": "⚡ AEO radar · Breaking · 2 items · Oct 22, 1:18 AM",
+    "at": "2026-10-22T08:19:14.676Z",
+    "kind": "breaking alert",
     "headlines": [
-      "Cloudflare and OpenAI: Making AI discovery better for everyone",
-      "Continuous accountability for Verified bots",
-      "VoteGEO-Bench: Measuring the Impact of Generative Engine Optimization on Electoral Visibility",
-      "A Cue's Hidden Price: Auditing Seller Influence on AI Shoppers",
-      "Documentation changed: Google — Common crawlers (Google-Extended etc.)"
+      "Real PMIDs, Wrong Papers: Harness Design for Biomedical Claim-Verification Agents",
+      "Controlling Output Rankings in LLM-Based Search via Generative Engine Optimization"
     ]
   }
 }

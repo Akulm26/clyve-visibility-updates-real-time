@@ -1,126 +1,60 @@
-<!-- weekly digest · 2026-10-21T00:38:26.329Z -->
+<!-- breaking alert · 2026-10-22T08:19:14.673Z -->
 
-*AEO radar · Weekly digest · week of October 20, 2026*
+*⚡ AEO radar · Breaking · 2 items · Oct 22, 1:18 AM*
 
-Five updates this week: two Cloudflare posts on AI crawling and bot trust, two research papers on how AI answers can be manipulated, and one quiet edit to Google's crawler docs.
+Two studies today: one shows AI research agents mostly cite the wrong papers unless they search harder, the other shows how on-page content tricks can manipulate AI shopping rankings.
 ———
-*🟡 Cloudflare and OpenAI team up on AI discovery*
-_Cloudflare Blog (AI) · October 15, 2026_
+*🟠 AI research agents mostly find the wrong source papers*
+_arXiv — AI search & citation research · October 22, 2026_
 
 *Synopsis*
-A Cloudflare blog post describing new work between Cloudflare and OpenAI on how AI systems discover and read web content.
-· Cloudflare tagged the post under AI, AI Search, Bots and Crawlers.
-· Framed around the "agentic web" — AI agents browsing and acting on sites on people's behalf.
+A controlled study testing AI "claim-checking" agents that verify medical claims by searching PubMed, the US government's free database of medical research papers.
+· Without search, AI answers from memory alone still cite real PubMed IDs 327 out of 335 times — but only 3 of those citations are actually relevant.
+· A single search using the claim as the query finds the real paper just 6% of the time.
+· Letting the AI write and refine its own searches (like a researcher would) triples that recall and gives the most accurate verdicts.
+· Handing the AI the correct paper directly pushes accuracy from 49-59% up to 79-86% — the gap is in finding sources, not reasoning.
+· Citations found via real search were rated relevant 67% of the time, versus almost never for memory-only citations.
 
 *What the terms mean*
-Agentic web — the idea of AI agents (not humans) browsing and acting on the web for you.
-Crawler — an automated bot that reads web pages, used by search engines and AI tools.
+PubMed — the free database of medical research papers AI tools search.
+PMID — the ID number for a paper in that database; a real ID doesn't mean the paper actually backs the claim.
+Closed-book — AI answering from memory only, no search.
+Gold paper — the actual correct source a claim should be checked against.
+Recall — how often the AI actually finds the right source.
 
 *Why it matters for your content*
-Cloudflare sits in front of a huge share of the web, so any deal it strikes with an AI company like OpenAI can change how easily AI tools reach, read and cite your site. The post itself doesn't give mechanics, but this relationship is worth tracking.
+AI assistants that cite sources can produce citations that look legitimate (real ID, real link) but aren't actually about the topic. If your content gets name-checked by an AI answer, the AI may be pairing it with the wrong claim rather than giving you real credit. The fix on the AI's side is better search, not better writing — but it means your page's real discoverability depends on surviving multi-step search, not a single lucky match.
 
 *Example*
-If your site runs behind Cloudflare, a Cloudflare–OpenAI arrangement could change whether ChatGPT can crawl and quote your product pages at all, and on what terms.
+A health brand's blog post on "magnesium and sleep": if an AI chatbot searches only once with the literal user question, it misses the brand's page most of the time and cites something unrelated instead. If the AI runs several follow-up searches ("magnesium glycinate sleep study randomized"), it's three times more likely to surface and correctly cite the real page.
 
 *Do this*
-Nothing to do yet — just know it's coming; we'll flag specifics once more detail is published.
+Nothing to do yet — just know AI citation accuracy depends on search depth, not just your content's existence.
 
-https://blog.cloudflare.com/cloudflare-openai-discovery-agentic-web/
+https://arxiv.org/abs/2610.29812
 ———
-*🟡 Cloudflare adds ongoing checks for verified bots*
-_Cloudflare Blog (AI) · October 16, 2026_
+*🔴 New method lets brands rig AI shopping rankings*
+_arXiv — AI search & citation research · October 22, 2026_
 
 *Synopsis*
-A Cloudflare blog post on adding continuous accountability checks to its Verified Bots program.
-· Tagged under AI, Bots, Radar and Security — Cloudflare's own bot-tracking teams.
-· Builds on Cloudflare's existing Verified Bots list, which sites use to decide which bots to trust.
+Researchers built CORE, a method that edits the content search engines feed into AI shopping assistants, to push specific products higher in AI-generated recommendation lists.
+· CORE works by appending engineered text to product content — crafted strings, reasoning-style text, or fake-review-style text — to steer AI rankings.
+· Tested on GPT-4o, Gemini, and two other LLMs with search, on a new benchmark of 15 product categories, 200 products each, from real Amazon search results.
+· Since the AI's internal reasoning is a black box, CORE targets the retrieved content itself — the part it can actually influence.
+· All three content types (string, reasoning-style, review-style) were shown effective at moving a product's rank.
 
 *What the terms mean*
-Verified bots — Cloudflare's program where bots (including AI crawlers) prove their identity, so site owners know who's really visiting.
+Generative engine / LLM-based search — AI tools (like ChatGPT shopping or Gemini) that recommend products directly instead of showing a list of links to click through.
+Black-box — can't see or steer how the AI "thinks" inside, only what goes in and what comes out.
+Benchmark — a standard test set researchers built so methods can be compared fairly.
 
 *Why it matters for your content*
-If AI crawlers must keep proving they're legitimate, sites get a more trustworthy signal of which AI tools are actually reading their content — useful for deciding who to let in, and for measuring real AI traffic to your pages.
+This is Generative Engine Optimization (GEO) in action — a documented way to move products up in AI shopping answers through on-page text, not ad spend or domain authority. That's an opportunity if you do it first, but it's also a risk: a competitor doing this to their listings could out-rank you in AI recommendations even if your product is better and your site is stronger.
 
 *Example*
-Your analytics show visits from "GPTBot" — this kind of ongoing check makes it more likely that label is genuine, not a bot spoofing GPTBot's name.
+An independent skincare brand's vitamin C serum is currently buried deep in ChatGPT's shopping answer for "best vitamin C serum for sensitive skin." Per this study's method, adding review-style content tweaks to the product page could measurably move it into the top-10 list AI shows shoppers.
 
 *Do this*
-Nothing to do yet — just know it's coming.
+Check how your top product pages are worded and reviewed — this proves AI shopping rank can be directly engineered through on-page content.
 
-https://blog.cloudflare.com/verified-bots-accountability/
-———
-*🟡 Study tests AI-rewritten pages in election searches*
-_arXiv — AI search & citation research · October 16, 2026_
-
-*Synopsis*
-A study introducing VoteGEO-Bench, testing whether rewriting web pages to rank better in AI answers changes what AI tools say about elections.
-· Covers the 2024 US presidential election and the 2026 Japanese election, using voter personas.
-· Many AI citations on election topics came from cheap, "owned" or open-platform pages, and some stayed visible for days.
-· Rewriting a page without naming a target rarely boosted its exposure; rewriting aimed at a specific target often did.
-· Improving page structure or strengthening an argument worked better than just adding more evidence or changing wording.
-· Gains held across most voter types tested, but strong partisan identity created bigger exposure gaps than any rewrite.
-
-*What the terms mean*
-Generative Engine Optimization (GEO) — editing content so AI chatbots pick it more often in their generated answers (the AI version of SEO).
-Persona — a stand-in profile (e.g. "undecided swing voter") given to the AI, to see if its answer changes for different people.
-
-*Why it matters for your content*
-This confirms GEO tactics work beyond product pages — even on sensitive topics. For your content, the signal is that clear structure and a clear stance beat padding a page with extra facts.
-
-*Example*
-A "voting guide" page rewritten with clear headers and a direct stance on an issue could get cited by an AI assistant more often than a denser, evidence-heavy version of the same page.
-
-*Do this*
-Review your highest-stakes informational pages — rewrite for clear structure and a clear point of view, not just more facts.
-
-https://arxiv.org/abs/2610.21330
-———
-*🟡 Study prices how much seller tricks sway AI shoppers*
-_arXiv — AI search & citation research · October 20, 2026_
-
-*Synopsis*
-A study measuring, in dollars, how much seller tricks like badges, endorsements and framing sway AI shopping assistants.
-· Ran 113,472 trials across seven AI models and two product categories.
-· Priced each "cue" (badge, endorsement, wording) by finding the price hike needed to make the AI pick it only half the time.
-· Cues that looked equally strong by simple win-rate turned out very different once priced this way.
-· One model, "Jev," built to output a choice directly instead of writing text, resisted most cues — unlike every other model tested.
-
-*What the terms mean*
-Large language models (LLMs) — the AI systems behind tools like ChatGPT, Claude and Gemini.
-Price-equivalent (PE) auditing — measuring how strong a sales trick is by finding the price increase needed to cancel out its effect.
-Decision-native model — an AI built to directly output a choice or probability, rather than writing an answer in text.
-
-*Why it matters for your content*
-If AI shopping assistants can be swayed by badges and framing — not just real product quality — then how you present trust signals (reviews, certifications, comparison copy) on product pages may matter for AI-driven purchase recommendations, separately from classic SEO ranking.
-
-*Example*
-Two near-identical kettles, one with a "best seller" badge and confident copy — an AI shopping agent may recommend the badged one even if it costs more, because the badge is doing real persuasive work.
-
-*Do this*
-Audit your product pages' trust signals (badges, reviews, certifications) — they may now sway AI shopping recommendations, not just human buyers.
-
-https://arxiv.org/abs/2610.25843
-———
-*⚪ Google quietly renames a product in crawler docs*
-_Google — Common crawlers (Google-Extended etc.) · October 16, 2026_
-
-*Synopsis*
-Google edited, without announcement, the documentation page listing which products its Googlebot and Googlebot-Image crawlers affect.
-· Renamed "Google Video" to "Video mode" in the list of affected products, for both crawlers.
-· Change covers Googlebot (Search, Discover) and Googlebot-Image (Images, Discover, Video mode).
-· No change to crawling rules or to Google-Extended permissions themselves — just a naming update.
-
-*What the terms mean*
-Googlebot — Google's main crawler bot that reads your pages for Search and Discover.
-Google-Extended — the switch that controls whether Google may use your pages to train and ground its AI.
-
-*Why it matters for your content*
-This is cosmetic — no real change to what's crawled or how your opt-outs work. It's a reminder that Google edits these docs silently, so the same page is worth a periodic glance for actual Google-Extended policy changes.
-
-*Example*
-If you track crawler permissions in a compliance doc, update "Google Video" to "Video mode" — the setting itself hasn't changed.
-
-*Do this*
-Nothing to do yet — no real crawling or Google-Extended change, just a rename.
-
-https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers?hl=en
+https://arxiv.org/abs/2602.03608

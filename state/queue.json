@@ -11,5 +11,18 @@
     "category": "research",
     "why": "Shows sellers gaming descriptions for AI agent selection; emerging visibility frontier",
     "alsoSeenIn": []
+  },
+  {
+    "source": "arxiv-geo",
+    "sourceName": "arXiv — AI search & citation research",
+    "authority": 6,
+    "url": "https://arxiv.org/abs/2608.21376",
+    "title": "On the Role of Citations in Preference Data",
+    "published": "2026-10-22T04:00:00.000Z",
+    "summary": "arXiv:2608.21376v2 Announce Type: replace Abstract: Many NLP tasks require systems to provide attribution in their outputs--i.e. citations to grounding sources. Attribution serves as a bulwark against model hallucination and as a means for users to verify the credibility of model outputs. Yet, it is unclear how humans and LLMs evaluate citations when comparing outputs, a process central to reward modeling and modern LLM post-training. This paper studies the role of citations in the preferences of human judges and four open-source LLMs within the context of scientific question answering, leveraging mixed effects models to investigate the influence of citations on pairwise judgments. Among our key findings are (1) that humans prefer more diverse citations but fewer overall, and (2) that LLMs show some citation-related preferences compared to humans, despite lacking access to the sources, but these preferences depend on the data and specific models. We further discuss the implications of our findings for preference data collection.",
+    "score": 3,
+    "category": "citation",
+    "why": "Citation preferences in human and LLM judges; humans prefer fewer diverse citations",
+    "alsoSeenIn": []
   }
 ]

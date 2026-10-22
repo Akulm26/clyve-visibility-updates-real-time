@@ -1,6 +1,27 @@
 [
   {
     "at": "2026-10-22",
+    "source": "arXiv — AI search & citation research",
+    "title": "Zero-Cost Detection of Fabricated Citations: A Staged Heuristic Approach for Computing Dissertation Assessment",
+    "why": "Dissertation fabrication detection; unrelated to AI content surfacing or visibility",
+    "url": "https://arxiv.org/abs/2610.28649"
+  },
+  {
+    "at": "2026-10-22",
+    "source": "arXiv — AI search & citation research",
+    "title": "TAGR: Task-Adaptive Geo-Semantic Retrieval across Heterogeneous Urban Delivery Tasks",
+    "why": "Urban delivery optimization with LLM retrieval; unrelated to content visibility or ranking",
+    "url": "https://arxiv.org/abs/2610.28638"
+  },
+  {
+    "at": "2026-10-22",
+    "source": "arXiv — AI search & citation research",
+    "title": "The End of Consensus Research?",
+    "why": "AI-discovered consensus protocol for distributed systems; unrelated to search or content surfacing",
+    "url": "https://arxiv.org/abs/2610.30114"
+  },
+  {
+    "at": "2026-10-22",
     "source": "OpenAI News",
     "title": "Cloudflare links vulnerability discovery to defense with OpenAI",
     "why": "Security partnership, not content visibility or crawler behavior",
