@@ -1,5 +1,26 @@
 [
   {
+    "at": "2026-10-22",
+    "source": "OpenAI News",
+    "title": "Patch the Planet: global response coordination as agents uncover critical vulnerabilities",
+    "why": "Security vulnerability disclosure. No impact on content visibility strategy.",
+    "url": "https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities"
+  },
+  {
+    "at": "2026-10-22",
+    "source": "OpenAI News",
+    "title": "Using thousands of AI agents to uncover new leads in biological data",
+    "why": "Model capability and research application. Not content visibility or strategy.",
+    "url": "https://openai.com/index/scaling-ai-research-for-complex-biological-data"
+  },
+  {
+    "at": "2026-10-22",
+    "source": "Cloudflare Blog (AI)",
+    "title": "How Commerce.com and Cloudflare are getting storefronts ready for AI agents",
+    "why": "Title suggests WebMCP enablement for AI agents, but summary too thin to confirm.",
+    "url": "https://blog.cloudflare.com/webmcp-commerce/"
+  },
+  {
     "at": "2026-10-21",
     "source": "OpenAI News",
     "title": "OpenAI models are coming to Google Cloud",
