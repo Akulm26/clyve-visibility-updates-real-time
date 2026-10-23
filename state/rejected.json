@@ -1,5 +1,26 @@
 [
   {
+    "at": "2026-10-23",
+    "source": "OpenAI News",
+    "title": "OpenAI and Poland’s NASK partner to advance AI safety and security",
+    "why": "AI safety research partnership. No content surfacing impact.",
+    "url": "https://openai.com/index/openai-nask-ai-safety-security-partnership"
+  },
+  {
+    "at": "2026-10-23",
+    "source": "OpenAI News",
+    "title": "Uber brings ChatGPT Work to all employees with OpenAI",
+    "why": "Enterprise adoption announcement. No crawler, ranking, or citation change.",
+    "url": "https://openai.com/index/uber-chatgpt-work-rollout"
+  },
+  {
+    "at": "2026-10-23",
+    "source": "OpenAI — ChatGPT release notes",
+    "title": "Decisions API general availability",
+    "why": "ChatGPT product features. No impact on crawling or content discovery.",
+    "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+  },
+  {
     "at": "2026-10-22",
     "source": "arXiv — AI search & citation research",
     "title": "Zero-Cost Detection of Fabricated Citations: A Staged Heuristic Approach for Computing Dissertation Assessment",
