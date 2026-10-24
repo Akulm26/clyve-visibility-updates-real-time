@@ -24,5 +24,20 @@
     "category": "citation",
     "why": "Citation preferences in human and LLM judges; humans prefer fewer diverse citations",
     "alsoSeenIn": []
+  },
+  {
+    "source": "openai-web-search",
+    "sourceName": "OpenAI — Web search & citation behaviour",
+    "authority": 8,
+    "url": "https://platform.openai.com/docs/guides/tools-web-search",
+    "title": "Documentation changed: OpenAI — Web search & citation behaviour",
+    "published": "2026-10-24T01:27:22.971Z",
+    "isDocChange": true,
+    "dedupeKey": "doc|openai-web-search|ad83300fe7a38016594b1dc5f242d092e7a27efa8d0e0e28037c5a7ce095797d",
+    "summary": "This documentation page was edited with no announcement.\nADDED:\nResponses Copy Page Web search Copy Page Allow models to search the web for the latest information before generating a response.\nResponses Web search allows models to access up-to-date information from the internet and provide answers with sourced citations.\nREMOVED:\nResponses Copy Page Web search Allow models to search the web for the latest information before generating a response.\nResponses Copy Page Web search allows models to access up-to-date information from the internet and provide answers with sourced citations.",
+    "score": 3,
+    "category": "citation",
+    "why": "ChatGPT web search documents sourced citations behavior",
+    "alsoSeenIn": []
   }
 ]

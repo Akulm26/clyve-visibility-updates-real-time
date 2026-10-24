@@ -1,5 +1,19 @@
 [
   {
+    "at": "2026-10-24",
+    "source": "OpenAI News",
+    "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
+    "why": "Infrastructure scaling. No retrieval, citation, or search-surface impact",
+    "url": "https://openai.com/index/scaling-storage-one-billion-users-part-two"
+  },
+  {
+    "at": "2026-10-24",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "See what 5 builders are making with Gemini 4 Argon",
+    "why": "Promotional showcase. No documented change to Gemini visibility behavior",
+    "url": "https://blog.google/products-and-platforms/products/gemini/gemini-4-argon-builders/"
+  },
+  {
     "at": "2026-10-23",
     "source": "OpenAI News",
     "title": "OpenAI and Poland’s NASK partner to advance AI safety and security",
