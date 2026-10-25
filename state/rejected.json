@@ -1,5 +1,12 @@
 [
   {
+    "at": "2026-10-25",
+    "source": "IETF — AI Preferences working group",
+    "title": "Documentation changed: IETF — AI Preferences working group",
+    "why": "IETF draft standards reorganized; no AI system implements or announces support.",
+    "url": "https://datatracker.ietf.org/wg/aipref/documents/"
+  },
+  {
     "at": "2026-10-24",
     "source": "OpenAI News",
     "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users (Part II)",
