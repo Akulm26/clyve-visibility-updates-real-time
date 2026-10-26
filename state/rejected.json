@@ -1,5 +1,26 @@
 [
   {
+    "at": "2026-10-26",
+    "source": "Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
+    "title": "Documentation changed: Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
+    "why": "Documentation nav only, no crawler behavior change evident.",
+    "url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+  },
+  {
+    "at": "2026-10-26",
+    "source": "Perplexity — Crawlers",
+    "title": "Documentation changed: Perplexity — Crawlers",
+    "why": "Documentation restructuring, changes unclear, no new crawler features.",
+    "url": "https://docs.perplexity.ai/guides/bots"
+  },
+  {
+    "at": "2026-10-26",
+    "source": "arXiv — AI search & citation research",
+    "title": "An Agentic Approach with Evidence-Grounded Verification for Multimodal Emotion Reasoning in Conversation",
+    "why": "Emotion reasoning system, not external content visibility or citation.",
+    "url": "https://arxiv.org/abs/2610.31685"
+  },
+  {
     "at": "2026-10-25",
     "source": "IETF — AI Preferences working group",
     "title": "Documentation changed: IETF — AI Preferences working group",
