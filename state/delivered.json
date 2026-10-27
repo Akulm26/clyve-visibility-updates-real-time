@@ -31,7 +31,11 @@
     "56a091a28ed289aeb16e84a90a2bcd50fe90f480e4d05cdd3b9daf39b4071dbe": 1792543106331,
     "878959f080252ec86588bbd8c9f466ba5a69e2e5ad8e6e83e816ad8bce583e9a": 1792543106331,
     "ab51c93158b0db7cf916da98fd6bdc0808642908166938db431ed40a12498e23": 1792657154676,
-    "f2c4988529ff0373a9c8caa3502a6b795babe68bfc80ab7b98f8ef617156c480": 1792657154676
+    "f2c4988529ff0373a9c8caa3502a6b795babe68bfc80ab7b98f8ef617156c480": 1792657154676,
+    "f9e526a740ef7c785d10de797e141bcc576571920a300c95e5a0c000ebe59984": 1793064559704,
+    "9f5be81a779c363f6746482e26cfb132543f45c73a748b7657cf62d64be96d79": 1793064615153,
+    "76ffdcb1b21fbee49cd5f3f12bfa8f14cf17dd31ffc25c21296369b1b3abf489": 1793064615153,
+    "6d7b37ba6ac30b7c8322d0010df0a221ccfe8e1e890e8cae580de9654c8e4166": 1793064615153
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
@@ -65,15 +69,18 @@
     "arxiv.org/abs/2610.21330": 1792543106331,
     "arxiv.org/abs/2610.25843": 1792543106331,
     "arxiv.org/abs/2610.29812": 1792657154676,
-    "arxiv.org/abs/2602.03608": 1792657154676
+    "arxiv.org/abs/2602.03608": 1792657154676,
+    "arxiv.org/abs/2610.28454": 1793064615153,
+    "arxiv.org/abs/2608.21376": 1793064615153
   },
   "last": {
-    "subject": "⚡ AEO radar · Breaking · 2 items · Oct 22, 1:18 AM",
-    "at": "2026-10-22T08:19:14.676Z",
-    "kind": "breaking alert",
+    "subject": "AEO radar · Weekly digest · week of October 26, 2026",
+    "at": "2026-10-27T01:30:15.153Z",
+    "kind": "weekly digest",
     "headlines": [
-      "Real PMIDs, Wrong Papers: Harness Design for Biomedical Claim-Verification Agents",
-      "Controlling Output Rankings in LLM-Based Search via Generative Engine Optimization"
+      "Documentation changed: OpenAI — Web search & citation behaviour",
+      "Toolflation: Seller Agents Distort Tool Markets Through Spontaneous Generative Engine Optimization",
+      "On the Role of Citations in Preference Data"
     ]
   }
 }
