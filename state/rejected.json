@@ -1,6 +1,34 @@
 [
   {
     "at": "2026-10-27",
+    "source": "arXiv — AI search & citation research",
+    "title": "Jointly Modeling Preferences and Imperfect Decision-Making in Large Language Models",
+    "why": "LLM decision-making behavior; no content visibility, crawling, or citation impact",
+    "url": "https://arxiv.org/abs/2610.33651"
+  },
+  {
+    "at": "2026-10-27",
+    "source": "arXiv — AI search & citation research",
+    "title": "Strategic Calibration in LLM Multi-Agent Systems: Audited Pivot Scoring for Truthful Elicitation",
+    "why": "Multi-agent system calibration; internal model behavior, no search surface involved",
+    "url": "https://arxiv.org/abs/2610.33728"
+  },
+  {
+    "at": "2026-10-27",
+    "source": "arXiv — AI search & citation research",
+    "title": "Context Is Not Free: Carbon-Aware LLM Routing for Multi-Turn LLM Web Services across Geo-Distributed Data Centers",
+    "why": "Infrastructure optimization; no impact on crawling, citation, or content discoverability",
+    "url": "https://arxiv.org/abs/2610.35230"
+  },
+  {
+    "at": "2026-10-27",
+    "source": "arXiv — AI search & citation research",
+    "title": "OmicsLM: A Multimodal Large Language Model for Multi-Sample Omics Reasoning",
+    "why": "Specialized domain model capability; no search surface, crawling, or citation policy change",
+    "url": "https://arxiv.org/abs/2605.06728"
+  },
+  {
+    "at": "2026-10-27",
     "source": "OpenAI News",
     "title": "Working with academic communities to build scientific understanding",
     "why": "Academic research release strategy. No crawling, ranking, or citation surface changes.",
