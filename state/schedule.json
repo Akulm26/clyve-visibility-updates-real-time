@@ -1,9 +1,9 @@
 {
   "scan": {
     "since": "2026-10-04T02:58:13.528Z",
-    "lastAttempt": "2026-10-28T02:15:53.940Z",
-    "lastSuccess": "2026-10-27T11:02:40.864Z",
-    "lastProblem": "claude exited 1: ",
+    "lastAttempt": "2026-10-28T02:47:49.249Z",
+    "lastSuccess": "2026-10-28T02:48:39.206Z",
+    "lastProblem": null,
     "staleNotified": false
   },
   "digest": {

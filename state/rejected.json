@@ -1,5 +1,82 @@
 [
   {
+    "at": "2026-10-28",
+    "source": "OpenAI News",
+    "title": "Retell uses OpenAI models to help power 100M monthly calls",
+    "why": "Customer story about voice agent models; no retrieval or citation surface.",
+    "url": "https://openai.com/index/retell-ai"
+  },
+  {
+    "at": "2026-10-28",
+    "source": "OpenAI News",
+    "title": "Anima helps clinics cut call waits by 75% with GPT-6 and GPT-Live",
+    "why": "Healthcare customer story; no search, crawling, or citation impact.",
+    "url": "https://openai.com/index/anima"
+  },
+  {
+    "at": "2026-10-28",
+    "source": "Perplexity Changelog",
+    "title": "Older models removed from model docs; GPT-6 Astra and DeepSeek V4 Pro added",
+    "why": "API model docs changelog; no search or retrieval surface.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-10-28",
+    "source": "OpenAI News",
+    "title": "How Check Point accelerates vulnerability research with Daybreak",
+    "why": "Security vulnerability research customer story; not AI visibility.",
+    "url": "https://openai.com/index/check-point-daybreak"
+  },
+  {
+    "at": "2026-10-28",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "8 examples of Gemini 4 Argon in action",
+    "why": "Model capability showcase; no search, citation, or crawling change.",
+    "url": "https://blog.google/products-and-platforms/products/gemini/gemini-4-argon-in-action/"
+  },
+  {
+    "at": "2026-10-28",
+    "source": "Perplexity Changelog",
+    "title": "Agent API: preset renamed to effort",
+    "why": "Agent API parameter rename; no search or citation surface.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-10-28",
+    "source": "Perplexity Changelog",
+    "title": "Tool approvals for MCP and connector calls",
+    "why": "MCP and connector tool approvals; not a web search or citation surface.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-10-28",
+    "source": "Perplexity Changelog",
+    "title": "Gemini 4 Argon",
+    "why": "API model addition in changelog; no search or citation surface.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-10-28",
+    "source": "Perplexity Changelog",
+    "title": "NVIDIA Nemotron 3.5 Super",
+    "why": "Third-party model addition in API changelog; no search surface.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-10-28",
+    "source": "Perplexity Changelog",
+    "title": "xhigh preset output budget raised to 512,000 tokens",
+    "why": "Output token budget change in API; no retrieval or citation impact.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-10-28",
+    "source": "Perplexity Changelog",
+    "title": "Decisions API: pplx-decider-v1.2 and pplx-decider-flash-v1.2",
+    "why": "Decisions API model versions; no search, crawling, or citation surface.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
     "at": "2026-10-27",
     "source": "arXiv — AI search & citation research",
     "title": "Jointly Modeling Preferences and Imperfect Decision-Making in Large Language Models",

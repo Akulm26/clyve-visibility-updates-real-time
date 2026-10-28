@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "source": "ietf-aipref",
+    "sourceName": "IETF — AI Preferences working group",
+    "authority": 7,
+    "url": "https://datatracker.ietf.org/wg/aipref/documents/",
+    "title": "Documentation changed: IETF — AI Preferences working group",
+    "published": "2026-10-28T02:47:51.924Z",
+    "isDocChange": true,
+    "dedupeKey": "doc|ietf-aipref|26d2bbb39370ca2f1365189cdd4dddfaa83a899a72535b7969ab242260d4f5c9",
+    "summary": "This documentation page was edited with no announcement.\nADDED:\nEmbedded Attribution and Rights Marks for AI Usage Preferences 2026-08-12 I-D Exists 19 pages draft-reilly-aipref-compliance-00 Verifiable Compliance Records for AI Usage Preferences 2026-08-01 I-D Exists 15 pages draft-wallace-aipref-grant-binding-03 A Verifiable-Credential Binding for AI Usage Preferences:\nExpressing Grants that Lift AIPREF Preferences 2026-10-27 New I-D Exists 4 pages draft-zehta-aipref-parameters-00 AIPREF Vocabulary Parameters 2026-08-06 I-D Exists Atom feed:\nREMOVED:\nEmbedded Attribution and Rights Marks for AI Usage Preferences 2026-08-12 I-D Exists 19 pages draft-reilly-aipref-compliance-00 Verifiable Compliance Records for AI Usage Preferences 2026-08-01 I-D Exists 10 pages draft-wallace-aipref-grant-binding-02 A Verifiable-Credential Binding for AI Usage Preferences:\nExpressing Grants that Lift AIPREF Preferences 2026-08-18 I-D Exists 4 pages draft-zehta-aipref-parameters-00 AIPREF Vocabulary Parameters 2026-08-06 I-D Exists Atom feed:",
+    "score": 3,
+    "category": "crawling",
+    "why": "IETF AI-preferences drafts changed; opt-out vocabulary direction, not yet adopted.",
+    "alsoSeenIn": []
+  }
+]
