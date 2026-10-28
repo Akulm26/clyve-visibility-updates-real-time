@@ -13,5 +13,31 @@
     "category": "crawling",
     "why": "IETF AI-preferences drafts changed; opt-out vocabulary direction, not yet adopted.",
     "alsoSeenIn": []
+  },
+  {
+    "source": "perplexity-changelog",
+    "sourceName": "Perplexity Changelog",
+    "authority": 8,
+    "url": "https://docs.perplexity.ai/changelog",
+    "title": "Low, medium, high, and xhigh presets use Fast Search",
+    "published": null,
+    "summary": "Filters Clear Agent API Models Search Presets Deprecation Features Orchestrator API MCP Pricing Filters Tools Decisions API Security Multimodal Connectors Cost Tracking Usage SDK Effort Files Search API Finance Integrations AWS Billing Embeddings Docs Pro Search Playground File Attachments API Keys Financial Academic Reasoning Async Breaking Change Organization Portal Images Access Structured Outputs Citations Rate Limits Resources Changelog Copy page Copy page Updates to the Perplexity API platform. Copy page Copy page Have a feature request? Post it in the Feature Requests category on our community forum. ​ October 2026 Agent API Effort Agent API: preset renamed to effort This is a naming change only. Effort levels keep the same models, prompts, tools, limits, and pricing. Version pinning and frozen configurations continue to work as before. preset is still accepted as a deprecated alias, and responses return both fields. See Effort . The Python SDK 0.46.0 and TypeScript SDK 0.41.0 add the effort parameter. ​ October 2026 Agent API Tools MCP Connectors Tool approvals for MCP and connector calls Set require_approval on an mcp or connector tool to review calls before they run. A call that needs approval returns an mcp_approval_request item and does not run. To approve or deny it, send an mcp_approval_response with previous_response_id . Use \"always\" to review every call, or a filter object to skip approval for selected tools or for read-only tools. Calls still run without app…",
+    "score": 2,
+    "category": "ai-surface",
+    "why": "Perplexity Agent API presets switch to Fast Search; narrow search-surface change.",
+    "alsoSeenIn": []
+  },
+  {
+    "source": "arxiv-geo",
+    "sourceName": "arXiv — AI search & citation research",
+    "authority": 6,
+    "url": "https://arxiv.org/abs/2508.11158",
+    "title": "Role-Augmented Intent-Driven Generative Search Engine Optimization",
+    "published": "2026-10-28T04:00:00.000Z",
+    "summary": "arXiv:2508.11158v3 Announce Type: replace Abstract: Generative search engines (GSEs), which combine large language models (LLMs) with retrieval-augmented generation (RAG), are reshaping how users access Web information and making source visibility and influence in generated responses new optimization objectives. Existing generative search engine optimization (G-SEO) methods seek to improve content visibility, but many rely on direct access to target queries or GSE feedback elicited by those queries. However, Web content is typically optimized and published before future user queries are known, making G-SEO without access to target queries or their associated feedback an important yet underexplored problem. To address this, we propose RAID, a Role-Augmented Intent-Driven G-SEO method that operates without access to target queries or query-dependent GSE feedback. RAID infers a primary retrieval intent from source content, refines it through 4W multi-role deep reflection on prospective searchers' information needs, and uses both the primary and refined intents to jointly plan and rewrite source content. We further extend GEO-BENCH with diverse topic-related query variants, using both the original queries and their variants exclusively for evaluation to assess generalization to queries unseen during optimization. Across 100 samples and 500 evaluation queries, RAID achieves Relative Improvement Scores (RIS) of 3.00\\% for Objective Overall and 1.32\\% for Subjective Average, exceedi…",
+    "score": 3,
+    "category": "research",
+    "why": "Preprint measuring generative search source visibility; method-level finding.",
+    "alsoSeenIn": []
   }
 ]
