@@ -1,6 +1,20 @@
 [
   {
     "at": "2026-10-28",
+    "source": "OpenAI News",
+    "title": "Legora is building the agentic operating system for legal work",
+    "why": "Customer story about Legora's own use of OpenAI models; no search, crawling, or citation surface.",
+    "url": "https://openai.com/index/legora-agentic-operating-system-for-legal-work"
+  },
+  {
+    "at": "2026-10-28",
+    "source": "Perplexity Changelog",
+    "title": "Older models removed from docs; GPT-6 Astra and DeepSeek V4 Pro added",
+    "why": "API model list and pricing changes only; no retrieval, citation, or search surface.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-10-28",
     "source": "Perplexity Changelog",
     "title": "Older models removed from the model docs; GPT-6 Astra and DeepSeek V4 Pro added",
     "why": "Perplexity API model and effort-preset changes; no search or citation impact.",
