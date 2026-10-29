@@ -1,5 +1,82 @@
 [
   {
+    "at": "2026-10-29",
+    "source": "OpenAI News",
+    "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+    "why": "Enterprise partnership announcement; no search, crawl, or citation surface.",
+    "url": "https://openai.com/index/openai-servicenow-partnership-expansion"
+  },
+  {
+    "at": "2026-10-29",
+    "source": "OpenAI News",
+    "title": "Legora is building the agentic operating system for legal work",
+    "why": "Customer case study; no AI visibility impact.",
+    "url": "https://openai.com/index/legora"
+  },
+  {
+    "at": "2026-10-29",
+    "source": "Google — The Keyword (Search)",
+    "title": "Build and manage Connected Apps in one place",
+    "why": "Developer connected-apps platform; no search or crawl change.",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/connected-apps-one-place/"
+  },
+  {
+    "at": "2026-10-29",
+    "source": "Anthropic News",
+    "title": "Ai For Science Expands Foundations Research Institutions",
+    "why": "Free research credits program; no content surfacing change.",
+    "url": "https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions"
+  },
+  {
+    "at": "2026-10-29",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Dive into new topics with immersive explorations in the Gemini app.",
+    "why": "Gemini student-hub feature; no web-search or citation change.",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/immersive-explorations-student-hub/"
+  },
+  {
+    "at": "2026-10-29",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Gemini 4 Carbon: our next frontier model",
+    "why": "Model capability launch; no retrieval or citation surface.",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+  },
+  {
+    "at": "2026-10-29",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "XREAL AURA: Wired XR glasses to watch, work, and play",
+    "why": "Hardware product launch; no search or crawl relevance.",
+    "url": "https://blog.google/products-and-platforms/platforms/android/xreal-aura/"
+  },
+  {
+    "at": "2026-10-29",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Build and manage Connected Apps in one place",
+    "why": "Duplicate of id 2; rejected.",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/connected-apps-one-place/"
+  },
+  {
+    "at": "2026-10-29",
+    "source": "Reddit Inc. Blog",
+    "title": "Explore More Communities with Reddit’s New Feed Updates",
+    "why": "Reddit feed UX change; not AI search or crawling.",
+    "url": "https://redditinc.com/news/explore-more-communities-with-reddits-new-feed-updates"
+  },
+  {
+    "at": "2026-10-29",
+    "source": "Meta Newsroom",
+    "title": "Meta Partners With Five US Universities to Accelerate Medical and Scientific Breakthroughs",
+    "why": "University partnership and funding; no content surfacing change.",
+    "url": "https://about.fb.com/news/2026/10/meta-partners-with-five-us-universities-to-accelerate-medical-and-scientific-breakthroughs/"
+  },
+  {
+    "at": "2026-10-29",
+    "source": "Anthropic Status",
+    "title": "Elevated errors affecting the Google Calendar connector",
+    "why": "Connector outage; routine status incident, no search surface.",
+    "url": "https://status.claude.com/incidents/phg1y2yh07n2"
+  },
+  {
     "at": "2026-10-28",
     "source": "OpenAI News",
     "title": "Legora is building the agentic operating system for legal work",
