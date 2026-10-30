@@ -1,5 +1,33 @@
 [
   {
+    "at": "2026-10-30",
+    "source": "Microsoft — How Copilot accesses the public web",
+    "title": "Documentation changed: Microsoft — How Copilot accesses the public web",
+    "why": "Copilot web-search data-handling doc covers privacy of query data, not content surfacing.",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-public-web-access"
+  },
+  {
+    "at": "2026-10-30",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "You can now generate, preview, and edit documents, PDFs, presentations, spreadsheets, and more directly in Gemini.",
+    "why": "Gemini file generation and editing feature; no search or crawl surface.",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/edit-files-directly/"
+  },
+  {
+    "at": "2026-10-30",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "How to use Gemini to update your resume",
+    "why": "Gemini resume-writing tip; no search or citation relevance.",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/update-resume-with-gemini/"
+  },
+  {
+    "at": "2026-10-30",
+    "source": "Meta Newsroom",
+    "title": "The Future Is for Everyone: Meta and CNIB Partner to Support Canadians Who Are Blind, Deafblind or Have Low Vision",
+    "why": "Meta accessibility partnership with CNIB; not AI visibility.",
+    "url": "https://about.fb.com/news/2026/10/the-future-is-for-everyone-meta-and-cnib-partner-to-support-canadians-who-are-blind-deafblind-or-have-low-vision/"
+  },
+  {
     "at": "2026-10-29",
     "source": "OpenAI News",
     "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",

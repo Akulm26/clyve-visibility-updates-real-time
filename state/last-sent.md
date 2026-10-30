@@ -1,32 +1,37 @@
-<!-- breaking alert · 2026-10-27T11:02:40.838Z -->
+<!-- breaking alert · 2026-10-30T02:58:32.580Z -->
 
-*⚡ AEO radar · Breaking · 1 item · Oct 27, 4:02 AM*
+*⚡ AEO radar · Breaking · 1 item · Oct 29, 7:58 PM*
 
-One study, on AI legal citations, that matters for anything your content gets cited in by AI.
+One Perplexity page changed without an announcement. It explains how to let its crawlers into your site.
+
 ———
-*🟠 AI models still miss wrong-page legal citations*
-_arXiv — AI search & citation research · October 27, 2026_
+
+*🟠 Perplexity quietly rewrites its crawler setup guide*
+_Perplexity — Crawlers · October 30, 2026_
 
 *Synopsis*
-A study tested 14 AI model setups on real legal citations, swapping in wrong cases or wrong pages to see which errors the models catch.
-· Models catch 93-100% of cases where the citation points to the wrong case entirely.
-· They only catch 37-61% of cases where the case is right but the page number is wrong, in court opinions.
-· On legal briefs, catching wrong-page errors is better but still shaky: 52-83%.
-· Even GPT-5.4 using high reasoning effort misses 40% of wrong-page errors in opinions, 18% in briefs.
-· When fooled, models accept the citation because the topic matches — not because the exact page actually supports the claim.
+Perplexity edited its public crawler documentation page and did not announce the change.
+· The Cloudflare firewall steps were rewritten. Each bot is now matched against its own list of IP addresses.
+· The links to the official IP address lists now point to perplexity.ai instead of perplexity.com.
+· The example user-agent strings changed. The old "AppleWebKit/537.36 (KHTML, like Gecko)" wording is gone.
+· Perplexity-User still generally ignores robots.txt, because a person asked for the page.
 
 *What the terms mean*
-LLM — the AI model behind tools like ChatGPT, Claude, Gemini.
-Pinpoint citation — the exact page inside a legal case a citation points to.
-Hallucinated citation — a citation the AI made up that doesn't really exist.
+PerplexityBot — Perplexity's crawler. It visits pages so they can show up in Perplexity's answers.
+Perplexity-User — A separate Perplexity visitor. It fetches a page when a person asks Perplexity to.
+User-agent string — The name tag a bot shows your site when it visits.
+robots.txt — A file on your site that tells bots which pages they may visit.
+WAF (Web Application Firewall) — Security software that blocks suspicious traffic before it reaches your site.
+IP ranges — The published numeric addresses a bot's traffic comes from. They let you check a visitor is who it claims to be.
+Cloudflare — A popular service that hosts a WAF in front of websites.
 
 *Why it matters for your content*
-AI tools (and AI Overviews) don't just check if a source exists — they're bad at checking if the exact passage actually backs up the claim being made. If your content gets cited by AI, a wrong-but-plausible page reference can misrepresent what you actually said, and most reviewers won't catch it by just checking the source name.
+If your firewall blocks Perplexity's bots, your pages can't be read or cited in Perplexity answers. You would lose discovery there and never see an error. A firewall rule built from the old instructions may now be out of date or set up wrongly. That is a quiet way to disappear from one AI answer engine.
 
 *Example*
-A law firm's blog post gets picked up by an AI research tool. The AI cites the firm's correct article but the wrong paragraph — attaching a claim to text that doesn't actually say that. Case name checks out, so nobody flags it. Reader walks away with a wrong idea, credited to your brand.
+A skincare brand's security team set up a Cloudflare rule last year, using the old steps and the old perplexity.com IP lists. Someone asks Perplexity, "best vitamin C serum for sensitive skin". The brand's product guide is never cited, because the firewall turned the crawler away. After the team rebuilds the rule from the new page, the crawler can read the guide again.
 
 *Do this*
-If AI tools or AI Overviews cite your content for specific facts or stats, spot-check that the exact passage they point to actually supports the claim — not just that the page/article is right.
+Ask whoever manages your website security to compare your Perplexity firewall rule with the new page and reload the IP lists from the perplexity.ai links.
 
-https://arxiv.org/abs/2608.12571
+https://docs.perplexity.ai/guides/bots

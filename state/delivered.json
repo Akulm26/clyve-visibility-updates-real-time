@@ -36,7 +36,8 @@
     "9f5be81a779c363f6746482e26cfb132543f45c73a748b7657cf62d64be96d79": 1793064615153,
     "76ffdcb1b21fbee49cd5f3f12bfa8f14cf17dd31ffc25c21296369b1b3abf489": 1793064615153,
     "6d7b37ba6ac30b7c8322d0010df0a221ccfe8e1e890e8cae580de9654c8e4166": 1793064615153,
-    "eab924cbc958f6fae544d579bf363e1221f2642565ac390d19317badff6e535c": 1793098960840
+    "eab924cbc958f6fae544d579bf363e1221f2642565ac390d19317badff6e535c": 1793098960840,
+    "e65ea7a0e8dd94432efc77507f3e6b0691f298c4b145717f8bee99350345ceb5": 1793329112583
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
@@ -76,11 +77,11 @@
     "arxiv.org/abs/2608.12571": 1793098960840
   },
   "last": {
-    "subject": "⚡ AEO radar · Breaking · 1 item · Oct 27, 4:02 AM",
-    "at": "2026-10-27T11:02:40.840Z",
+    "subject": "⚡ AEO radar · Breaking · 1 item · Oct 29, 7:58 PM",
+    "at": "2026-10-30T02:58:32.583Z",
     "kind": "breaking alert",
     "headlines": [
-      "Is this Citation on Point?"
+      "Documentation changed: Perplexity — Crawlers"
     ]
   }
 }

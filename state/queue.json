@@ -39,5 +39,18 @@
     "category": "research",
     "why": "Preprint measuring generative search source visibility; method-level finding.",
     "alsoSeenIn": []
+  },
+  {
+    "source": "perplexity-changelog",
+    "sourceName": "Perplexity Changelog",
+    "authority": 8,
+    "url": "https://docs.perplexity.ai/changelog",
+    "title": "Agent API: effort level updates and the `ultra-preview` effort level",
+    "published": null,
+    "summary": "Filters Clear Agent API Models Search Presets Deprecation Features Orchestrator API MCP Pricing Filters Tools Decisions API Security Multimodal Effort Connectors Cost Tracking Usage SDK Files Search API Finance Integrations AWS Billing Embeddings Docs Pro Search Playground File Attachments API Keys Financial Academic Reasoning Async Breaking Change Organization Portal Images Access Structured Outputs Citations Rate Limits Resources Changelog Copy page Copy page Updates to the Perplexity API platform. Copy page Copy page Have a feature request? Post it in the Feature Requests category on our community forum. ​ October 2026 Agent API Effort Agent API: effort level updates and the ultra-preview effort level These effort level changes were not listed in earlier changelog entries. Each line names the current version. Earlier versions stay available as pinned versions . fast ( fast@2026-10-16.0 ): falls back to openai/gpt-5.6-luna when openai/gpt-6-luna is unavailable. low ( low@2026-10-24.0 ): max output tokens rise from 32,768 to 128,000. web_search max_tokens and max_tokens_per_page rise from 2,000 to 4,000. fetch_url content extraction uses openai/gpt-6-luna . medium ( medium@2026-10-22.1 ): web_search max_tokens and max_tokens_per_page rise from 2,000 to 4,000. fetch_url content extraction uses openai/gpt-6-luna . high ( high@2026-10-28.0 ): uses openai/gpt-6.1-terra instead of openai/gpt-6-sol . Max steps rise from 15 to 40, and a run makes at most 40 tool calls. web_search m…",
+    "score": 2,
+    "category": "ai-surface",
+    "why": "Perplexity API web_search and fetch_url page-token limits change; narrow developer-facing retrieval detail.",
+    "alsoSeenIn": []
   }
 ]
