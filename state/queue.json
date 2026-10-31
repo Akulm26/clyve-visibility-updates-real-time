@@ -52,5 +52,57 @@
     "category": "ai-surface",
     "why": "Perplexity API web_search and fetch_url page-token limits change; narrow developer-facing retrieval detail.",
     "alsoSeenIn": []
+  },
+  {
+    "source": "arxiv-geo",
+    "sourceName": "arXiv — AI search & citation research",
+    "authority": 6,
+    "url": "https://arxiv.org/abs/2610.38090",
+    "title": "Predicting What Answer Engines Cite: Open Decision Models, Rerankers and a Distilled 4B Student on Ten Engines under Controlled Retrieval",
+    "published": "2026-10-30T04:00:00.000Z",
+    "summary": "arXiv:2610.38090v1 Announce Type: new Abstract: Generative engine optimization needs a scorer that ranks candidate pages by the share of an answer they will receive as citations. We measure pretrained rerankers, a hosted typed decision model (Jev), eight open decision models and distilled students on GEO-Bench queries answered by ten engines that receive the same candidate sources in their prompt. Where several engines answer the same query, they agree with one another at a within-group Spearman correlation of 0.704. Jev and two open 27B decision models, used without training, are the strongest scorers at 0.575 to 0.578. A Qwen3-Reranker-4B fine-tuned with low-rank adapters on teacher labels for other GEO-Bench queries, released as GEO Citation Ranker 4B, reaches 0.542 to 0.549 across three seeds, and its differences with the 27B models and with Jev are not distinguishable from zero on 229 queries. Most of the remaining distance between the student and Jev disappears when Jev scores one passage at a time, as the student does. Students trained on teacher labels and on observed engine citations reach the same level, and labels from Jev alone match the two-teacher target at 0.6B. We release the model, the benchmark, the predictions of every reported scorer and the code.",
+    "score": 3,
+    "category": "research",
+    "why": "Original measurement of which sources answer engines cite; preprint, not yet a standard",
+    "alsoSeenIn": []
+  },
+  {
+    "source": "arxiv-geo",
+    "sourceName": "arXiv — AI search & citation research",
+    "authority": 6,
+    "url": "https://arxiv.org/abs/2610.39339",
+    "title": "Does the Citation Matter? Quality, Grounding, and Physician-Rubric Accuracy of Google's AI Overviews for Medical Information",
+    "published": "2026-10-30T04:00:00.000Z",
+    "summary": "arXiv:2610.39339v1 Announce Type: new Abstract: Google's AI Overviews (AIOs) are the first result users encounter when searching the web, shifting the work of selecting and evaluating sources from the user to Gemini. This may be especially consequential for health information, given that Google's traditional algorithm was designed to prioritize quality sources, and inaccurate information carries health risks. We evaluated 3,611 benchmark health questions, comparing each AIO against that question's top five traditional results on source selection and quality. We also evaluated the AIOs' statement grounding in their cited sources and how accurate AIOs were against physician-written rubrics. Overviews appeared for 96.4% of questions but drew on substantially different evidence than traditional search: only 44.4% of the top five results were cited by the corresponding AIO, which instead overrepresented commercial health publishers (e.g., WebMD, Healthline) at the expense of academic and government sources (e.g., Cleveland Clinic, National Health Service). AIO-cited pages scored lower than traditional results on four of six well-established credibility criteria. The grounding of AIO statements to their sources was poor: after correcting for classifier error, an estimated 56.7% of cited statements were supported by their cited page, and a further 20.8% of all statements were factual claims with no citation at all. When AIOs were graded against physicians' rubrics, they earned 38.2%…",
+    "score": 3,
+    "category": "citation",
+    "why": "Measures AI Overview source selection and citation grounding; favors commercial health publishers",
+    "alsoSeenIn": []
+  },
+  {
+    "source": "arxiv-geo",
+    "sourceName": "arXiv — AI search & citation research",
+    "authority": 6,
+    "url": "https://arxiv.org/abs/2610.40164",
+    "title": "Who Owns Digital News, and Who Gets Cited: Measuring Media Concentration Across 77 Countries and Seven AI Systems",
+    "published": "2026-10-30T04:00:00.000Z",
+    "summary": "arXiv:2610.40164v1 Announce Type: new Abstract: Digital news outlets compete for audience attention. Search engines equipped with generative AI systems such as Google's AI overviews increasingly decide where that attention goes, as well as the revenue it represents. Yet, the lack of a consistent data collection infrastructure between national-level regulatory bodies has hindered between-country comparative analysis of media concentration, and with it any assessment of how these intermediaries reshape digital news markets. To address this issue, we compile an ownership dataset for 9,761 digital news outlets drawn from Wikipedia and Wikidata, achieving high agreement with independently compiled US and UK news directories. Using this dataset, we derive traffic-weighted concentration indices for 77 countries. We find that journalists report more owner pressure in countries with higher concentration, and that outlet-level measures understate concentration, with owner-level indices a median 1.30x higher. Applying concentration measures to AI-mediated news discovery, we find that citation distributions from major AI systems are up to 2.08x more concentrated than traffic, and that if Google AI Overviews mediated all organic search, the resulting rise in US concentration would be several times that associated with highly regulated media mergers and acquisitions. Finally, our analyses indicate that AI systems preferentially cite state-controlled media outlets when prompted in that coun…",
+    "score": 3,
+    "category": "research",
+    "why": "Measures AI systems' citation concentration versus traffic across 77 countries",
+    "alsoSeenIn": []
+  },
+  {
+    "source": "arxiv-geo",
+    "sourceName": "arXiv — AI search & citation research",
+    "authority": 6,
+    "url": "https://arxiv.org/abs/2610.38361",
+    "title": "Manifest-Assisted Retrieval in Artificial Intelligence Search: Evidence Gaps and a Security Evaluation",
+    "published": "2026-10-30T04:00:00.000Z",
+    "summary": "arXiv:2610.38361v1 Announce Type: cross Abstract: The external sources retained in our non-systematic audit did not isolate the incremental security or utility effect of consuming /llms.txt while ordinary retrieval remained fixed. The initial audit covered 39 sources through August 16, 2026, with later targeted updates through October 14. A purposive 15-tool study observed no automatic requests in 45 trials at one endpoint; a non-probability log study found that 97% of domains with detected files received no recorded requests in May 2026. We separate publication, fetch, model use, and action; define five operational threat paths and paired security-utility estimands; and exercise deterministic pre-model controls with 30 author-defined parser fixtures. We also execute a reduced pilot: 24 tasks across eight sites, five conditions, and 120 real model responses, with ordinary evidence held fixed. Frozen automatic scoring identifies attacker-target adoption in $21/24$ raw adversarial responses, with one further response unresolved; the adversarial URLs-only condition has no known adoptions and one unresolved response. The pilot measures output changes conditional on supplied evidence, without live retrieval or external actions. Together, the framework and pilot distinguish manifest-content effects from publication, discovery, and downstream execution, while leaving full retrieval and agent evaluation open.",
+    "score": 3,
+    "category": "measurement",
+    "why": "Measures whether AI search systems fetch llms.txt; mostly no recorded requests",
+    "alsoSeenIn": []
   }
 ]

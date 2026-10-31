@@ -37,7 +37,10 @@
     "76ffdcb1b21fbee49cd5f3f12bfa8f14cf17dd31ffc25c21296369b1b3abf489": 1793064615153,
     "6d7b37ba6ac30b7c8322d0010df0a221ccfe8e1e890e8cae580de9654c8e4166": 1793064615153,
     "eab924cbc958f6fae544d579bf363e1221f2642565ac390d19317badff6e535c": 1793098960840,
-    "e65ea7a0e8dd94432efc77507f3e6b0691f298c4b145717f8bee99350345ceb5": 1793329112583
+    "e65ea7a0e8dd94432efc77507f3e6b0691f298c4b145717f8bee99350345ceb5": 1793329112583,
+    "1c6ee6f207b01fd119d99f70eb2963dbfe84de5409cfdab0eed995baf62c094b": 1793415601057,
+    "ddffa6ec53bcc660dc2bfaf7cdf247339c6230a7add9a0c3e1aa7530ff2e7c76": 1793415601057,
+    "5b6889659166ef80604f730b172e58c2c2d02935316e0c228c3a832922112f94": 1793415601057
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
@@ -74,14 +77,18 @@
     "arxiv.org/abs/2602.03608": 1792657154676,
     "arxiv.org/abs/2610.28454": 1793064615153,
     "arxiv.org/abs/2608.21376": 1793064615153,
-    "arxiv.org/abs/2608.12571": 1793098960840
+    "arxiv.org/abs/2608.12571": 1793098960840,
+    "developers.google.com/search/blog/2026/10/ai-training-control": 1793415601057,
+    "openai.com/index/helping-websites-express-ai-training-preferences": 1793415601057
   },
   "last": {
-    "subject": "⚡ AEO radar · Breaking · 1 item · Oct 29, 7:58 PM",
-    "at": "2026-10-30T02:58:32.583Z",
-    "kind": "breaking alert",
+    "subject": "AEO radar · Catch-up · 3 items · Oct 30, 7:59 PM",
+    "at": "2026-10-31T03:00:01.057Z",
+    "kind": "catch-up digest",
     "headlines": [
-      "Documentation changed: Perplexity — Crawlers"
+      "Supporting a shared AI training control for websites",
+      "Making it easier for websites to express AI training preferences",
+      "Documentation changed: Bing — Robots meta tags (noarchive, nocache)"
     ]
   }
 }

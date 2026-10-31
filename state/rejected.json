@@ -1,5 +1,40 @@
 [
   {
+    "at": "2026-10-31",
+    "source": "Google — Common crawlers (Google-Extended etc.)",
+    "title": "Documentation changed: Google — Common crawlers (Google-Extended etc.)",
+    "why": "Same AIPREF training-control event as id 4; covered by primary blog",
+    "url": "https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers?hl=en"
+  },
+  {
+    "at": "2026-10-31",
+    "source": "arXiv — AI search & citation research",
+    "title": "Attribution Gradients: Incrementally Unfolding Citations for Critical Examination of Attributed AI Answers",
+    "why": "HCI interface study on citation reading; no change to AI retrieval or citation behavior",
+    "url": "https://arxiv.org/abs/2510.00361"
+  },
+  {
+    "at": "2026-10-31",
+    "source": "IETF — AI Preferences working group",
+    "title": "Documentation changed: IETF — AI Preferences working group",
+    "why": "Only lists IETF drafts; no product behavior or site-facing change",
+    "url": "https://datatracker.ietf.org/wg/aipref/documents/"
+  },
+  {
+    "at": "2026-10-31",
+    "source": "OpenAI Status",
+    "title": "Elevated errors with search in Dots, ChatGPT Work, and certain ChatGPT thinking experiences",
+    "why": "Resolved routine incident; no crawl or search degradation site owners would notice",
+    "url": "https://status.openai.com//incidents/01M6754SR14HCQ3E9FX426E2N7"
+  },
+  {
+    "at": "2026-10-31",
+    "source": "arXiv — AI search & citation research",
+    "title": "Executable Schema Contracts: From Automatic Ingestion to Multi-Source Retrieval",
+    "why": "Enterprise knowledge-graph and schema system; no web visibility or citation surface",
+    "url": "https://arxiv.org/abs/2606.05415"
+  },
+  {
     "at": "2026-10-30",
     "source": "Microsoft — How Copilot accesses the public web",
     "title": "Documentation changed: Microsoft — How Copilot accesses the public web",
