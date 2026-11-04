@@ -40,7 +40,18 @@
     "e65ea7a0e8dd94432efc77507f3e6b0691f298c4b145717f8bee99350345ceb5": 1793329112583,
     "1c6ee6f207b01fd119d99f70eb2963dbfe84de5409cfdab0eed995baf62c094b": 1793415601057,
     "ddffa6ec53bcc660dc2bfaf7cdf247339c6230a7add9a0c3e1aa7530ff2e7c76": 1793415601057,
-    "5b6889659166ef80604f730b172e58c2c2d02935316e0c228c3a832922112f94": 1793415601057
+    "5b6889659166ef80604f730b172e58c2c2d02935316e0c228c3a832922112f94": 1793415601057,
+    "8a37e7d6a106d4fefbee0e9fa0e18f8a748dc6c9ad61fba9997fec8e2ddbcdbb": 1793788261448,
+    "2784908fd7f8c7c5a057284b2af4577aa53d12348725504578ce9ffb687e237f": 1793788261448,
+    "eee49995fb901b96328e6ae16aca59ead3e3c35070e4251b91e0fc9669963341": 1793788261448,
+    "45e5349ea6f9507d512a8d5de9556b96d7ed87da6e68edc25e1ae1a999302f03": 1793788261448,
+    "2fb2a655499d5dcf6881a6fa910245b3402d3158387f2fe2334925004fd59590": 1793788261448,
+    "069e0827355dedcfbe56a7482f808c00c41c0d08ddae9ae10be260b03ecf1ddc": 1793788261448,
+    "7eafd5482bb35bd4828d224df57c5d8c61cafedc36a8a414b416df2abd6c008c": 1793788261448,
+    "090496dc89971d34c7b674eeb7ddff9d3f86dda1576479ef3b108e008719bb44": 1793788261448,
+    "d184ee34a57b0d391234dfc312ce36213aa0948e30c1db623076f60f92e80211": 1793788261448,
+    "99e9bd96643eba9c4909ec1be17edf0594f8c37e452e864af3fb33f5a971402e": 1793788261448,
+    "a02c3f83c7389b5a925e944e93e41cf38e9cb2aa5b895d51b123947efb02d65a": 1793788261448
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
@@ -79,16 +90,29 @@
     "arxiv.org/abs/2608.21376": 1793064615153,
     "arxiv.org/abs/2608.12571": 1793098960840,
     "developers.google.com/search/blog/2026/10/ai-training-control": 1793415601057,
-    "openai.com/index/helping-websites-express-ai-training-preferences": 1793415601057
+    "openai.com/index/helping-websites-express-ai-training-preferences": 1793415601057,
+    "arxiv.org/abs/2508.11158": 1793788261448,
+    "arxiv.org/abs/2610.38090": 1793788261448,
+    "arxiv.org/abs/2610.39339": 1793788261448,
+    "arxiv.org/abs/2610.40164": 1793788261448,
+    "arxiv.org/abs/2610.38361": 1793788261448,
+    "arxiv.org/abs/2611.04225": 1793788261448,
+    "arxiv.org/abs/2611.04005": 1793788261448,
+    "docs.perplexity.ai/changelog": 1793788261448
   },
   "last": {
-    "subject": "AEO radar · Catch-up · 3 items · Oct 30, 7:59 PM",
-    "at": "2026-10-31T03:00:01.057Z",
-    "kind": "catch-up digest",
+    "subject": "AEO radar · Weekly digest · week of November 4, 2026",
+    "at": "2026-11-04T10:31:01.448Z",
+    "kind": "weekly digest",
     "headlines": [
-      "Supporting a shared AI training control for websites",
-      "Making it easier for websites to express AI training preferences",
-      "Documentation changed: Bing — Robots meta tags (noarchive, nocache)"
+      "Documentation changed: OpenAI — Web search & citation behaviour",
+      "Documentation changed: IETF — AI Preferences working group",
+      "Role-Augmented Intent-Driven Generative Search Engine Optimization",
+      "Predicting What Answer Engines Cite: Open Decision Models, Rerankers and a Distilled 4B Student on Ten Engines under Controlled Retrieval",
+      "Does the Citation Matter? Quality, Grounding, and Physician-Rubric Accuracy of Google's AI Overviews for Medical Information",
+      "Who Owns Digital News, and Who Gets Cited: Measuring Media Concentration Across 77 Countries and Seven AI Systems",
+      "Manifest-Assisted Retrieval in Artificial Intelligence Search: Evidence Gaps and a Security Evaluation",
+      "IntentGEO: Intent-aware Generative Engine Optimization for Recommendation"
     ]
   }
 }

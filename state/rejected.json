@@ -1,5 +1,89 @@
 [
   {
+    "at": "2026-11-04",
+    "source": "Google — Ranking updates log",
+    "title": "Documentation changed: Google — Ranking updates log",
+    "why": "Ranking log edited, but diff shows only historical entries; no new update visible.",
+    "url": "https://developers.google.com/search/updates/ranking?hl=en"
+  },
+  {
+    "at": "2026-11-04",
+    "source": "OpenAI News",
+    "title": "How Cisco defends at machine speed with OpenAI",
+    "why": "Customer case study on security; no search or crawling surface.",
+    "url": "https://openai.com/index/cisco-cyber"
+  },
+  {
+    "at": "2026-11-04",
+    "source": "arXiv — AI search & citation research",
+    "title": "Behavioral Prior Elicitation via LLM for Heterogeneous-Agent Bitcoin Flash-Crash Simulation",
+    "why": "Bitcoin flash-crash simulation; unrelated to AI search visibility.",
+    "url": "https://arxiv.org/abs/2611.03660"
+  },
+  {
+    "at": "2026-11-04",
+    "source": "OpenAI News",
+    "title": "Accelerating engineering for the physical world",
+    "why": "OpenAI engineering-design capabilities; no retrieval or search surface.",
+    "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world"
+  },
+  {
+    "at": "2026-11-04",
+    "source": "OpenAI News",
+    "title": "Heimstaden is changing residential real estate management with AI",
+    "why": "Customer story on property management; no search or citation relevance.",
+    "url": "https://openai.com/index/heimstaden"
+  },
+  {
+    "at": "2026-11-04",
+    "source": "OpenAI News",
+    "title": "Rewarding defenders with bigger bug bounties",
+    "why": "Security bug bounty payouts; no search or crawling impact.",
+    "url": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties"
+  },
+  {
+    "at": "2026-11-04",
+    "source": "OpenAI — ChatGPT release notes",
+    "title": "GPT-6 Rosalind Research for life sciences",
+    "why": "Enterprise life-sciences model access; no web search or citation surface.",
+    "url": "https://help.openai.com/en/articles/20001193-gpt-rosalind-for-life-sciences-research"
+  },
+  {
+    "at": "2026-11-04",
+    "source": "Microsoft — How Copilot accesses the public web",
+    "title": "Documentation changed: Microsoft — How Copilot accesses the public web",
+    "why": "Copilot web-access page changed only in last-updated date; no substance.",
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/manage-public-web-access"
+  },
+  {
+    "at": "2026-11-04",
+    "source": "Reddit Inc. Blog",
+    "title": "We Are Testing Ad Placements in Reddit Search Pages",
+    "why": "Reddit ad testing in search; advertising, not AI content surfacing.",
+    "url": "https://redditinc.com/news/we-are-testing-ad-placements-in-reddit-search-pages"
+  },
+  {
+    "at": "2026-11-04",
+    "source": "Google — The Keyword (AI)",
+    "title": "The latest AI news we announced in October 2026",
+    "why": "Monthly Google AI news recap; roundup, not a primary change announcement.",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/"
+  },
+  {
+    "at": "2026-11-04",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "The latest AI news we announced in October 2026",
+    "why": "Duplicate of the Google October AI recap; roundup only.",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/"
+  },
+  {
+    "at": "2026-11-04",
+    "source": "Perplexity Changelog",
+    "title": "Analytics API: credit-usage response update",
+    "why": "Perplexity analytics API credit-usage change; no search or citation impact.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
     "at": "2026-10-31",
     "source": "Google — Common crawlers (Google-Extended etc.)",
     "title": "Documentation changed: Google — Common crawlers (Google-Extended etc.)",
