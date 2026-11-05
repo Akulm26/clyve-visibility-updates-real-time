@@ -51,7 +51,9 @@
     "090496dc89971d34c7b674eeb7ddff9d3f86dda1576479ef3b108e008719bb44": 1793788261448,
     "d184ee34a57b0d391234dfc312ce36213aa0948e30c1db623076f60f92e80211": 1793788261448,
     "99e9bd96643eba9c4909ec1be17edf0594f8c37e452e864af3fb33f5a971402e": 1793788261448,
-    "a02c3f83c7389b5a925e944e93e41cf38e9cb2aa5b895d51b123947efb02d65a": 1793788261448
+    "a02c3f83c7389b5a925e944e93e41cf38e9cb2aa5b895d51b123947efb02d65a": 1793788261448,
+    "736baf80208d9c842d3dc436f6b9f872e3ac0a29d6e9e249ccf8a167936035db": 1793840224270,
+    "4121fe0aaf72d3922bc0dd1c744019a6ae91a9660e45a7ebc3b93639d560b2fa": 1793840224270
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
@@ -98,21 +100,16 @@
     "arxiv.org/abs/2610.38361": 1793788261448,
     "arxiv.org/abs/2611.04225": 1793788261448,
     "arxiv.org/abs/2611.04005": 1793788261448,
-    "docs.perplexity.ai/changelog": 1793788261448
+    "docs.perplexity.ai/changelog": 1793788261448,
+    "blog.cloudflare.com/personal-agents-visibility-control": 1793840224270
   },
   "last": {
-    "subject": "AEO radar · Weekly digest · week of November 4, 2026",
-    "at": "2026-11-04T10:31:01.448Z",
-    "kind": "weekly digest",
+    "subject": "⚡ AEO radar · Breaking · 2 items · Nov 4, 4:56 PM",
+    "at": "2026-11-05T00:57:04.270Z",
+    "kind": "breaking alert",
     "headlines": [
-      "Documentation changed: OpenAI — Web search & citation behaviour",
-      "Documentation changed: IETF — AI Preferences working group",
-      "Role-Augmented Intent-Driven Generative Search Engine Optimization",
-      "Predicting What Answer Engines Cite: Open Decision Models, Rerankers and a Distilled 4B Student on Ten Engines under Controlled Retrieval",
-      "Does the Citation Matter? Quality, Grounding, and Physician-Rubric Accuracy of Google's AI Overviews for Medical Information",
-      "Who Owns Digital News, and Who Gets Cited: Measuring Media Concentration Across 77 Countries and Seven AI Systems",
-      "Manifest-Assisted Retrieval in Artificial Intelligence Search: Evidence Gaps and a Security Evaluation",
-      "IntentGEO: Intent-aware Generative Engine Optimization for Recommendation"
+      "Documentation changed: Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
+      "See the agents, set the terms: new visibility and control for personal agents"
     ]
   }
 }
