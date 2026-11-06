@@ -1,5 +1,75 @@
 [
   {
+    "at": "2026-11-06",
+    "source": "Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
+    "title": "Documentation changed: Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
+    "why": "Date-stamp-only docs edit; no substantive crawler change.",
+    "url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+  },
+  {
+    "at": "2026-11-06",
+    "source": "Perplexity — Crawlers",
+    "title": "Documentation changed: Perplexity — Crawlers",
+    "why": "Layout-only docs edit; no crawler behaviour change.",
+    "url": "https://docs.perplexity.ai/guides/bots"
+  },
+  {
+    "at": "2026-11-06",
+    "source": "arXiv — AI search & citation research",
+    "title": "Beyond Risk Cues: A Mechanism-Level Benchmark and Verifiable Debate for Scam Video Detection on the Web",
+    "why": "Scam video detection benchmark; no search or citation surface.",
+    "url": "https://arxiv.org/abs/2611.06110"
+  },
+  {
+    "at": "2026-11-06",
+    "source": "OpenAI News",
+    "title": "Setting a new standard for responsible AI infrastructure",
+    "why": "Community and policy commitments; no search surface.",
+    "url": "https://openai.com/index/setting-new-standard-responsible-ai-infrastructure"
+  },
+  {
+    "at": "2026-11-06",
+    "source": "OpenAI News",
+    "title": "Franklin Templeton uses OpenAI to support investment research",
+    "why": "Enterprise customer story; no search surface.",
+    "url": "https://openai.com/index/franklin-templeton"
+  },
+  {
+    "at": "2026-11-06",
+    "source": "Google — The Keyword (AI)",
+    "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+    "why": "Video model release; no retrieval or citation change.",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/"
+  },
+  {
+    "at": "2026-11-06",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Gemini Omni 1.2 Flash: Fast and cost-effective with longer clips",
+    "why": "Duplicate of id 5, Gemini Omni video model release.",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/"
+  },
+  {
+    "at": "2026-11-06",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Transform a quick drawing into a live app with Gemini.",
+    "why": "Canvas sketch-to-app feature; no search surface.",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/turn-drawings-into-apps-gemini/"
+  },
+  {
+    "at": "2026-11-06",
+    "source": "Reddit Inc. Blog",
+    "title": "The People's Fashion Index",
+    "why": "Reddit fashion trends report; no AI visibility impact.",
+    "url": "https://redditinc.com/news/the-peoples-fashion-index"
+  },
+  {
+    "at": "2026-11-06",
+    "source": "Cloudflare Blog (AI)",
+    "title": "Agents aren’t humans (but they kinda are)",
+    "why": "Early proposal for agent identification; no shipped change.",
+    "url": "https://blog.cloudflare.com/trusted-agent-delegation/"
+  },
+  {
     "at": "2026-11-05",
     "source": "Google Search Central Blog",
     "title": "Search Central Live in Zurich is back!",
