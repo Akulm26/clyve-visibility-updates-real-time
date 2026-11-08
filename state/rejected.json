@@ -1,5 +1,19 @@
 [
   {
+    "at": "2026-11-08",
+    "source": "Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
+    "title": "Documentation changed: Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
+    "why": "Timestamp-only doc churn; no substantive crawler or robots.txt change described.",
+    "url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+  },
+  {
+    "at": "2026-11-08",
+    "source": "OpenAI — ChatGPT release notes",
+    "title": "GPT-6-Cyber for authorized vulnerability research",
+    "why": "Model capability news for vulnerability research; no search, crawl, or citation surface.",
+    "url": "https://openai.com/products/release-notes/"
+  },
+  {
     "at": "2026-11-06",
     "source": "Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
     "title": "Documentation changed: Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
