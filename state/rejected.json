@@ -1,5 +1,12 @@
 [
   {
+    "at": "2026-11-09",
+    "source": "arXiv — AI search & citation research",
+    "title": "FOSCAR: Accelerating Decode Attention over 2- and 4-Bit KV Caches through Affine Folding",
+    "why": "GPU kernel performance paper; no retrieval, crawling, citation, or search surface involved.",
+    "url": "https://arxiv.org/abs/2611.09722"
+  },
+  {
     "at": "2026-11-08",
     "source": "Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
     "title": "Documentation changed: Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
