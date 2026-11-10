@@ -1,6 +1,97 @@
 [
   {
     "at": "2026-11-10",
+    "source": "arXiv — AI search & citation research",
+    "title": "From User Behaviors to Satisfaction Judgments: Reasoning about User Satisfaction with AI Overviews",
+    "why": "Satisfaction-prediction method for search providers; no content-strategy change.",
+    "url": "https://arxiv.org/abs/2611.10715"
+  },
+  {
+    "at": "2026-11-10",
+    "source": "arXiv — AI search & citation research",
+    "title": "CRAFT-AI: Capability and Requirement Alignment for Flexible Manufacturing through Agentic AI",
+    "why": "Manufacturing agent paper; no search or citation relevance.",
+    "url": "https://arxiv.org/abs/2611.12092"
+  },
+  {
+    "at": "2026-11-10",
+    "source": "OpenAI News",
+    "title": "Closing the AI guidance gap in education",
+    "why": "Education partnership announcement; no search or content impact.",
+    "url": "https://openai.com/index/closing-ai-guidance-gap-education"
+  },
+  {
+    "at": "2026-11-10",
+    "source": "OpenAI News",
+    "title": "Work at the Frontier: AI’s effect on freelance work",
+    "why": "Freelance labour market report; no AI visibility relevance.",
+    "url": "https://openai.com/index/ai-effect-on-freelance-work"
+  },
+  {
+    "at": "2026-11-10",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Introducing the Multimodal Knowledge Agent benchmark",
+    "why": "Model benchmark announcement; no retrieval or citation surface.",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/multimodal-knowledge-agent-benchmark/"
+  },
+  {
+    "at": "2026-11-10",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Gemini 4 Carbon is now available",
+    "why": "Model availability news; no search, crawling, or citation change.",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/"
+  },
+  {
+    "at": "2026-11-10",
+    "source": "Reddit Inc. Blog",
+    "title": "Introducing Reddit Reviews",
+    "why": "Reddit shopping ad product; no crawling, search, or citation change.",
+    "url": "https://redditinc.com/news/introducing-reddit-reviews"
+  },
+  {
+    "at": "2026-11-10",
+    "source": "Google — The Keyword (AI)",
+    "title": "We’re bringing Adobe’s creative and productivity tools closer to your everyday Google apps.",
+    "why": "Google-Adobe tool integration; no search or content-surfacing change.",
+    "url": "https://blog.google/company-news/inside-google/company-announcements/adobe-google-partnership-integration/"
+  },
+  {
+    "at": "2026-11-10",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "We’re bringing Adobe’s creative and productivity tools closer to your everyday Google apps.",
+    "why": "Duplicate of Google-Adobe integration announcement.",
+    "url": "https://blog.google/company-news/inside-google/company-announcements/adobe-google-partnership-integration/"
+  },
+  {
+    "at": "2026-11-10",
+    "source": "Google — The Keyword (AI)",
+    "title": "Google Cloud launches Gemini for healthcare.",
+    "why": "Healthcare enterprise product launch; no search or citation surface.",
+    "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare/"
+  },
+  {
+    "at": "2026-11-10",
+    "source": "IETF — AI Preferences working group",
+    "title": "Documentation changed: IETF — AI Preferences working group",
+    "why": "Trivial status-label edit on draft listing; no operational change.",
+    "url": "https://datatracker.ietf.org/wg/aipref/documents/"
+  },
+  {
+    "at": "2026-11-10",
+    "source": "arXiv — AI search & citation research",
+    "title": "MUSES: A Benchmark for Prospective Intellectual-Roots Retrieval",
+    "why": "Scientific literature retrieval benchmark; not about AI visibility of brands.",
+    "url": "https://arxiv.org/abs/2609.00313"
+  },
+  {
+    "at": "2026-11-10",
+    "source": "arXiv — AI search & citation research",
+    "title": "TS-GEAR: Taobao Shangou GEnerative Ad Retrieval",
+    "why": "Food delivery ad retrieval model; no web search or citation relevance.",
+    "url": "https://arxiv.org/abs/2611.12180"
+  },
+  {
+    "at": "2026-11-10",
     "source": "OpenAI News",
     "title": "CodeRabbit scales agentic software development and ships 20x more",
     "why": "Customer case study about OpenAI's own product; no search, crawling, or citation surface.",

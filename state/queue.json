@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "source": "arxiv-geo",
+    "sourceName": "arXiv — AI search & citation research",
+    "authority": 6,
+    "url": "https://arxiv.org/abs/2602.13415",
+    "title": "The Rise of AI Search: Implications for Information Markets and Human Judgement at Scale",
+    "published": "2026-11-10T05:00:00.000Z",
+    "summary": "arXiv:2602.13415v3 Announce Type: replace Abstract: We analyzed global, longitudinal AI and traditional search data to spark a conversation about the growth and impact of AI search, and discuss its policy implications for platforms, regulators, scientists and citizens. We executed 24,000 search queries in 243 countries, generating 2.8 million AI and traditional search results in 2024 and 2025. We found a rapid global expansion of AI search and key trends that reflect important, previously hidden, policy decisions by AI companies that impact human exposure to AI search worldwide. From 2024 to 2025, overall exposure to Google AI Overviews (AIO) expanded from 7 to 229 countries, with surprising exclusions like France, Turkey, China and Cuba, which did not receive AI search results. While only 1% of Covid search queries were answered by AI in 2024, over 66% of Covid queries were answered by AI in 2025---a 5600% increase signaling a policy shift on this critical health topic. Our results also show AI search surfaces significantly fewer long tail information sources, lower response variety, and significantly more low credibility and right- and center-leaning information sources, compared to traditional search, impacting the economic incentives to produce new information, market concentration in information production, and human judgment and decision-making at scale. The social and economic implications of these rapid changes in our information ecosystem necessitate a global debate …",
+    "score": 3,
+    "category": "research",
+    "why": "Original measurements: AI search cites fewer long-tail and more low-credibility sources.",
+    "alsoSeenIn": []
+  },
+  {
+    "source": "arxiv-geo",
+    "sourceName": "arXiv — AI search & citation research",
+    "authority": 6,
+    "url": "https://arxiv.org/abs/2511.20867",
+    "title": "E-GEO: A Testbed for Generative Engine Optimization in E-Commerce",
+    "published": "2026-11-10T05:00:00.000Z",
+    "summary": "arXiv:2511.20867v3 Announce Type: replace Abstract: With the rise of large language models (LLMs), generative engines have become powerful alternatives to traditional search, creating the need for generative engine optimization (GEO)---improving content visibility and relevance for generative engines. Despite its growing importance, current GEO practices are largely ad hoc, and their impacts remain understudied. In e-commerce, for instance, conversational shopping agents now guide consumers to relevant products, yet it is unclear if GEO can affect how products surface to users. We address this gap by introducing E-GEO, which contains 13,746 realistic, multi-sentence consumer product queries, each paired with 10 retrieved Amazon listings, capturing rich intent, constraints, preferences, and shopping contexts that existing datasets miss. Using this dataset, we conduct a large-scale empirical study of e-commerce GEO across five representative generative engines, seven LLM rewriters, and fifteen rewriting heuristics. We further formulate GEO as an optimization problem and develop a prompt meta-optimization algorithm that significantly improves over heuristic baselines. Notably, prompts independently optimized from different heuristics converge to a stable pattern, suggesting a shared, transferable GEO strategy. Finally, we red-team the GEO system through both static and optimization-based attacks and show that, under a simple in-prompt defense in our setting, gains from GEO refle…",
+    "score": 3,
+    "category": "research",
+    "why": "Original GEO testbed: rewrites measurably change product visibility across five generative engines.",
+    "alsoSeenIn": []
+  }
+]
