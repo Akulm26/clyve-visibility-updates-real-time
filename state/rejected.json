@@ -1,5 +1,26 @@
 [
   {
+    "at": "2026-11-10",
+    "source": "OpenAI News",
+    "title": "CodeRabbit scales agentic software development and ships 20x more",
+    "why": "Customer case study about OpenAI's own product; no search, crawling, or citation surface.",
+    "url": "https://openai.com/index/coderabbit-codex-daybreak"
+  },
+  {
+    "at": "2026-11-10",
+    "source": "OpenAI News",
+    "title": "Control Room: A central system to track and stop model workloads across our research infrastructure",
+    "why": "Internal safety infrastructure for stopping research workloads; no content surfacing involved.",
+    "url": "https://openai.com/index/control-room"
+  },
+  {
+    "at": "2026-11-10",
+    "source": "OpenAI News",
+    "title": "Kuken Industries searches 70 years of drawings in minutes",
+    "why": "Customer case study on internal drawing search; not AI visibility.",
+    "url": "https://openai.com/index/kuken"
+  },
+  {
     "at": "2026-11-09",
     "source": "arXiv — AI search & citation research",
     "title": "FOSCAR: Accelerating Decode Attention over 2- and 4-Bit KV Caches through Affine Folding",
