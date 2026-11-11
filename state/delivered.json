@@ -53,7 +53,8 @@
     "99e9bd96643eba9c4909ec1be17edf0594f8c37e452e864af3fb33f5a971402e": 1793788261448,
     "a02c3f83c7389b5a925e944e93e41cf38e9cb2aa5b895d51b123947efb02d65a": 1793788261448,
     "736baf80208d9c842d3dc436f6b9f872e3ac0a29d6e9e249ccf8a167936035db": 1793840224270,
-    "4121fe0aaf72d3922bc0dd1c744019a6ae91a9660e45a7ebc3b93639d560b2fa": 1793840224270
+    "4121fe0aaf72d3922bc0dd1c744019a6ae91a9660e45a7ebc3b93639d560b2fa": 1793840224270,
+    "84b4b389a814f8ac42c9a7ee8474636dd22907e851ae6f49c8182b24583434fd": 1794360121573
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
@@ -101,15 +102,15 @@
     "arxiv.org/abs/2611.04225": 1793788261448,
     "arxiv.org/abs/2611.04005": 1793788261448,
     "docs.perplexity.ai/changelog": 1793788261448,
-    "blog.cloudflare.com/personal-agents-visibility-control": 1793840224270
+    "blog.cloudflare.com/personal-agents-visibility-control": 1793840224270,
+    "status.search.google.com/incidents/wlxcjyc6jmwmfryxskmc": 1794360121573
   },
   "last": {
-    "subject": "⚡ AEO radar · Breaking · 2 items · Nov 4, 4:56 PM",
-    "at": "2026-11-05T00:57:04.270Z",
+    "subject": "⚡ AEO radar · Breaking · 1 item · Nov 10, 5:21 PM",
+    "at": "2026-11-11T01:22:01.573Z",
     "kind": "breaking alert",
     "headlines": [
-      "Documentation changed: Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
-      "See the agents, set the terms: new visibility and control for personal agents"
+      "Google Search: November 2026 core update"
     ]
   }
 }

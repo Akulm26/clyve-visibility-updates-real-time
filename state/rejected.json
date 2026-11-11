@@ -1,5 +1,54 @@
 [
   {
+    "at": "2026-11-11",
+    "source": "Google — Ranking updates log",
+    "title": "Documentation changed: Google — Ranking updates log",
+    "why": "Duplicate of id 1: same November 2026 core update, from a changelog page.",
+    "url": "https://developers.google.com/search/updates/ranking?hl=en"
+  },
+  {
+    "at": "2026-11-11",
+    "source": "Google — The Keyword (AI)",
+    "title": "Gemini Intelligence: New features, on more devices",
+    "why": "Android Gemini device feature rollout; no search, citation, or crawl surface.",
+    "url": "https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/"
+  },
+  {
+    "at": "2026-11-11",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Gemini Intelligence: New features, on more devices",
+    "why": "Duplicate of id 2: same Gemini Intelligence device announcement.",
+    "url": "https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/"
+  },
+  {
+    "at": "2026-11-11",
+    "source": "Perplexity Changelog",
+    "title": "Gemini 4 Carbon",
+    "why": "Model addition and API pricing only; no retrieval or citation surface.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-11-11",
+    "source": "arXiv — AI search & citation research",
+    "title": "RoadState: A Domain-Prior-Enhanced Vision-Language System for Industrial-Grade Lane-Level Map Updating",
+    "why": "Lane-level map updating VLM paper; no AI search visibility relevance.",
+    "url": "https://arxiv.org/abs/2611.10746"
+  },
+  {
+    "at": "2026-11-11",
+    "source": "arXiv — AI search & citation research",
+    "title": "Unified Framework with Convex-Concave Decomposition and Sparse Topological Learning for Skeleton-Based Clinical Assessment",
+    "why": "Clinical skeleton-based assessment model; unrelated to AI search visibility.",
+    "url": "https://arxiv.org/abs/2611.10758"
+  },
+  {
+    "at": "2026-11-11",
+    "source": "arXiv — AI search & citation research",
+    "title": "Marginal utility, matrix factorization, and the Key-Value (KV) cache: a unified information-economic framework for sovereign geo-mining inference",
+    "why": "Economic theory of KV cache and geo-mining extraction; not about AI citation.",
+    "url": "https://arxiv.org/abs/2609.20068"
+  },
+  {
     "at": "2026-11-10",
     "source": "arXiv — AI search & citation research",
     "title": "From User Behaviors to Satisfaction Judgments: Reasoning about User Satisfaction with AI Overviews",

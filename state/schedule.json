@@ -1,9 +1,9 @@
 {
   "scan": {
     "since": "2026-10-04T02:58:13.528Z",
-    "lastAttempt": "2026-11-10T16:33:33.806Z",
-    "lastSuccess": "2026-11-10T16:49:04.400Z",
-    "lastProblem": "the Mac was asleep (background wake only)",
+    "lastAttempt": "2026-11-11T01:20:59.081Z",
+    "lastSuccess": "2026-11-11T01:22:01.592Z",
+    "lastProblem": null,
     "staleNotified": false
   },
   "digest": {
