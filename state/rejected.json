@@ -1,6 +1,48 @@
 [
   {
     "at": "2026-11-11",
+    "source": "OpenAI News",
+    "title": "Singapore Airlines elevates travel & work with OpenAI technology",
+    "why": "Customer case study; no retrieval, citation, or crawling surface involved",
+    "url": "https://openai.com/index/singapore-airlines-travel-work"
+  },
+  {
+    "at": "2026-11-11",
+    "source": "OpenAI News",
+    "title": "Cogent and OpenAI build cyber defense factories for enterprises",
+    "why": "Customer case study on security remediation; no search or citation surface",
+    "url": "https://openai.com/index/cogent-security"
+  },
+  {
+    "at": "2026-11-11",
+    "source": "arXiv — AI search & citation research",
+    "title": "Online-Adaptive Fuzzy Cognitive Maps for Neuro-symbolic Financial Forecasting",
+    "why": "Financial forecasting model paper; no AI search or citation relevance",
+    "url": "https://arxiv.org/abs/2611.13388"
+  },
+  {
+    "at": "2026-11-11",
+    "source": "arXiv — AI search & citation research",
+    "title": "Cold-Start Personalization via Bayesian Adaptive Questioning",
+    "why": "Preference elicitation method; no retrieval, citation, or search relevance",
+    "url": "https://arxiv.org/abs/2602.15012"
+  },
+  {
+    "at": "2026-11-11",
+    "source": "arXiv — AI search & citation research",
+    "title": "Can AI Agents Synthesize Scientific Conclusions in Health?",
+    "why": "Measures synthesis accuracy, not how AI systems choose or cite sources",
+    "url": "https://arxiv.org/abs/2606.11337"
+  },
+  {
+    "at": "2026-11-11",
+    "source": "Google — The Keyword (AI)",
+    "title": "Experience the art and legacy of Dr. Esther Mahlangu",
+    "why": "Arts archive announcement; no AI visibility relevance",
+    "url": "https://blog.google/company-news/outreach-and-initiatives/arts-culture/esther-mahlangu/"
+  },
+  {
+    "at": "2026-11-11",
     "source": "Google — Ranking updates log",
     "title": "Documentation changed: Google — Ranking updates log",
     "why": "Duplicate of id 1: same November 2026 core update, from a changelog page.",
