@@ -1,5 +1,47 @@
 [
   {
+    "at": "2026-11-12",
+    "source": "Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
+    "title": "Documentation changed: Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
+    "why": "Cosmetic doc edit; no crawler, robots, or opt-out change described.",
+    "url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+  },
+  {
+    "at": "2026-11-12",
+    "source": "Perplexity Changelog",
+    "title": "Older models removed; GPT-6 Astra and DeepSeek V4 Pro added",
+    "why": "API model list changes; no retrieval, citation, or crawling surface.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-11-12",
+    "source": "OpenAI News",
+    "title": "JioStar’s chief architect on AI discovery at 500M-user scale",
+    "why": "Customer story and executive interview; not a visibility change.",
+    "url": "https://openai.com/index/jiostar-vijay-seshadri"
+  },
+  {
+    "at": "2026-11-12",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Talk it through with Gemini, now on Apple CarPlay",
+    "why": "Gemini CarPlay launch; no web-search or citation surface change.",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-on-apple-carplay/"
+  },
+  {
+    "at": "2026-11-12",
+    "source": "Google — The Keyword (AI)",
+    "title": "Try Tabletop: Customizable, collaborative spaces for groups to plan, play and do more together.",
+    "why": "Labs collaboration experiment; no search or content-surfacing relevance.",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/"
+  },
+  {
+    "at": "2026-11-12",
+    "source": "Perplexity Changelog",
+    "title": "Automatic output-token limits",
+    "why": "Output-token API default change; no retrieval or citation surface.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
     "at": "2026-11-11",
     "source": "OpenAI News",
     "title": "Singapore Airlines elevates travel & work with OpenAI technology",
@@ -2056,40 +2098,5 @@
     "title": "Introducing Astra for Law",
     "why": "Product launch; no web search/crawling component",
     "url": "https://openai.com/index/astra-for-law"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Anthropic News",
-    "title": "Claude Discovers Novel Enzyme System",
-    "why": "Enzyme discovery; pure capability news, no web surface",
-    "url": "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Anthropic News",
-    "title": "Model Hardware Standard Research Preview",
-    "why": "Hardware standards; no web crawling/citation/discovery angle",
-    "url": "https://www.anthropic.com/news/model-hardware-standard-research-preview"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Anthropic News",
-    "title": "Wellbeing Research Grants",
-    "why": "Research grants; no visibility/crawling/citation angle",
-    "url": "https://www.anthropic.com/news/wellbeing-research-grants"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Google — The Keyword (AI)",
-    "title": "Watch the winning trailer from the Future Vision XPRIZE, The Gifted.",
-    "why": "Award/competition; no search behavior impact",
-    "url": "https://blog.google/innovation-and-ai/technology/ai/winner-future-vision-xprize/"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Google — The Keyword (Gemini)",
-    "title": "See what 4 builders are making with Gemini 3.8 Flash",
-    "why": "Developer showcase; no web search component",
-    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-flash-developers/"
   }
 ]

@@ -37,5 +37,18 @@
     "category": "ai-surface",
     "why": "Perplexity adds live web search and source output to its API; new retrieval surface",
     "alsoSeenIn": []
+  },
+  {
+    "source": "google-search-central",
+    "sourceName": "Google Search Central Blog",
+    "authority": 10,
+    "url": "https://developers.google.com/search/blog/2026/11/crawling-cdn",
+    "title": "Moving to a CDN without overwhelming your origin (or blocking Googlebot)",
+    "published": "2026-11-11T00:00:00.000Z",
+    "summary": "Deploying a Content Delivery Network (CDN) to distribute your site's assets across fast, globally distributed edge servers closer to users can be a major upgrade for any growing site: it lowers visitor latency and shields your origin server (the backend source of truth holding your original content) from heavy traffic.",
+    "score": 3,
+    "category": "crawling",
+    "why": "Google's own crawling guidance for CDNs; affects Googlebot access and site setup.",
+    "alsoSeenIn": []
   }
 ]
