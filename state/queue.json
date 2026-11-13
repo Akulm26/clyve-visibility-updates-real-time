@@ -78,5 +78,18 @@
     "category": "ai-surface",
     "why": "Gemini in Chrome answers questions and summarizes any web page; new browsing surface.",
     "alsoSeenIn": []
+  },
+  {
+    "source": "arxiv-geo",
+    "sourceName": "arXiv — AI search & citation research",
+    "authority": 6,
+    "url": "https://arxiv.org/abs/2607.07652",
+    "title": "AI Search as an Information Intermediary: Clickstream Evidence on Web Traffic",
+    "published": "2026-11-13T05:00:00.000Z",
+    "summary": "arXiv:2607.07652v2 Announce Type: replace Abstract: AI search retrieves web information to ground generated answers. We study this new information intermediary using U.S. desktop clickstream data observing use alongside referrals during ChatGPT Search's rollout. Referrals accompany 5.4% of ChatGPT sessions versus 31.1% of Google queries. Ad-supported sites receive a smaller share of ChatGPT than Google referrals, while reference and technical sites receive larger shares. Conventional searches (Google, Bing, Yahoo) decline after ChatGPT adoption, sooner when adoption follows ChatGPT Search's expansion to users without accounts. Among existing users, that expansion raises ChatGPT use; conventional searches show no detectable overall change but fall among households with lower prior search activity. These findings suggest AI search can reshape open-web traffic through its own referrals and changes in conventional search.",
+    "score": 3,
+    "category": "measurement",
+    "why": "Clickstream evidence that ChatGPT Search referrals and traffic shift sites",
+    "alsoSeenIn": []
   }
 ]

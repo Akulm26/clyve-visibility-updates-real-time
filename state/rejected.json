@@ -1,6 +1,41 @@
 [
   {
     "at": "2026-11-13",
+    "source": "arXiv — AI search & citation research",
+    "title": "AI has its own style in mathematical proving",
+    "why": "LLM proof citation style; no web search, retrieval, or citation surface",
+    "url": "https://arxiv.org/abs/2611.16527"
+  },
+  {
+    "at": "2026-11-13",
+    "source": "arXiv — AI search & citation research",
+    "title": "Do people apply different norms to humans and large language models acting on their behalf? Evidence from norm elicitations in two canonical economic games",
+    "why": "Human norms for LLM economic-game behavior; no AI search surface",
+    "url": "https://arxiv.org/abs/2601.15312"
+  },
+  {
+    "at": "2026-11-13",
+    "source": "Perplexity Changelog",
+    "title": "Decisions API: pplx-decider-v1.3, pplx-decider-flash-v1.3, and `locate` questions",
+    "why": "Decisions API model and pricing changes; no search or citation surface",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-11-13",
+    "source": "arXiv — AI search & citation research",
+    "title": "Provably Optimal HBT Legalization in Seconds: Certified Optima Reveal Where the Headroom Really Lies",
+    "why": "Chip placement legalization research; unrelated to AI visibility",
+    "url": "https://arxiv.org/abs/2611.14928"
+  },
+  {
+    "at": "2026-11-13",
+    "source": "arXiv — AI search & citation research",
+    "title": "MarsRetrieval: Benchmarking Vision-Language Models for Planetary-Scale Geospatial Retrieval on Mars",
+    "why": "Planetary image-text retrieval benchmark; no web search or citation relevance",
+    "url": "https://arxiv.org/abs/2602.13961"
+  },
+  {
+    "at": "2026-11-13",
     "source": "OpenAI News",
     "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
     "why": "Customer story on OpenAI product use; no AI visibility impact.",
@@ -2063,40 +2098,5 @@
     "title": "xhigh preset uses Claude Opus 5.5",
     "why": "LLM backend preset swap; no search or crawl behavior change.",
     "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Perplexity Changelog",
-    "title": "Low, medium, and high presets use GPT-6",
-    "why": "LLM backend preset swap; no search or crawl behavior change.",
-    "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Perplexity Changelog",
-    "title": "Fast preset uses Fast Search",
-    "why": "Preset configuration; no material visibility change.",
-    "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Perplexity Changelog",
-    "title": "Fast Search",
-    "why": "Preset configuration; no material visibility change.",
-    "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Cloudflare Blog (AI)",
-    "title": "Cloudflare’s 2026 Annual Founders’ Letter",
-    "why": "Strategic reflection; no actual behavior change announced.",
-    "url": "https://blog.cloudflare.com/cloudflares-2026-annual-founders-letter/"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Meta Newsroom",
-    "title": "Meta Takes Action on 3.7 Million Accounts, Pages and Content In Partnership With Singapore Police Force",
-    "why": "Content moderation partnership; not visibility strategy.",
-    "url": "https://about.fb.com/news/2026/09/meta-spf-scam-efforts/"
   }
 ]
