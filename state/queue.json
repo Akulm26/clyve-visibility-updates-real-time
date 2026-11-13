@@ -50,5 +50,33 @@
     "category": "crawling",
     "why": "Google's own crawling guidance for CDNs; affects Googlebot access and site setup.",
     "alsoSeenIn": []
+  },
+  {
+    "source": "openai-web-search",
+    "sourceName": "OpenAI — Web search & citation behaviour",
+    "authority": 8,
+    "url": "https://platform.openai.com/docs/guides/tools-web-search",
+    "title": "Documentation changed: OpenAI — Web search & citation behaviour",
+    "published": "2026-11-13T06:05:05.686Z",
+    "isDocChange": true,
+    "dedupeKey": "doc|openai-web-search|7e0370f86aa252f9d3bc96f8f3c504a3c08f68a0d40d6dfcf3e232aa0d9dbde9",
+    "summary": "This documentation page was edited with no announcement.\nADDED:\nWeb search tool example TypeScript 1 2 3 4 5 6 7 8 9 10 import OpenAI from \"openai\" ; const client = new OpenAI (); const response = await client.responses.\ngpt-5-search-api Web search parameter example TypeScript 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 import OpenAI from \"openai\" ; const client = new OpenAI (); const completion = await client.chat.completions.\nSet search context size TypeScript 1 2 3 4 5 6 7 8 9 10 11 12 13 14 import OpenAI from \"openai\" ; const openai = new OpenAI (); const response = await openai.responses.\nRun longer web searches curl 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 import OpenAI from \"openai\"; import { Agent } from \"undici\"; // Allow long research runs without automatic request retries.\nList sources curl 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 import OpenAI from \"openai\"; const client = new OpenAI(); const tools:\nOpenAI.Responses.Tool[] = [ { type:\n[ \"pubmed.ncbi.nlm.nih.gov\", \"clinicaltrials.gov\", \"www.who.int\", \"www.cdc.gov\", \"www.fda.gov\", ], // @ts-expect-error The published SDK omits this documented API filter.\n[\"reddit.com\", \"quora.com\", \"wikipedia.org\"], }, }, ]; const response = await client.responses.create({ model:\n\"low\" }, tools, tool_choice:\nSearch for images TypeScript 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 import OpenAI from \"openai\" ; const client = new OpenAI (); const tools :\n\"web_search\" , // @ts-expect-error The published SDK omits the documented image-search options.\ntrue , }, }, ]; const response = await client.responses.\nREMOVED:\nWeb search tool example JavaScript 1 2 3 4 5 6 7 8 9 10 import OpenAI from \"openai\" ; const client = new OpenAI (); const response = await client.responses.\ngpt-5-search-api Web search parameter example JavaScript 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 import OpenAI from \"openai\" ; const client = new OpenAI (); const completion = await client.chat.completions.\nSet search context size JavaScript 1 2 3 4 5 6 7 8 9 10 11 12 13 14 import OpenAI from \"openai\" ; const openai = new OpenAI (); const response = await openai.responses.\nRun longer web searches curl 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 import OpenAI from \"openai\"; import { Agent, fetch } from \"undici\"; // Allow long research runs without automatic request retries.\nList sources curl 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 import OpenAI from \"openai\"; const client = new OpenAI(); const response = await client.responses.create({ model:\n[ \"pubmed.ncbi.nlm.nih.gov\", \"clinicaltrials.gov\", \"www.who.int\", \"www.cdc.gov\", \"www.fda.gov\", ], blocked_domains:\n[\"reddit.com\", \"quora.com\", \"wikipedia.org\"], }, }, ], tool_choice:\nSearch for images JavaScript 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 import OpenAI from \"openai\" ; const client = new OpenAI (); const response = await client.responses.\n\"web_search\" , search_content_types:\nCustomizing user location JavaScript 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 import OpenAI from \"openai\" ; const openai = new OpenAI (); const response = await openai.responses.\n\"What are the best restaurants near me?\" }&#x27; Customizing user location JavaScript 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 import OpenAI from \"openai\" ; const client = new OpenAI (); const completion = await client.chat.completions.",
+    "score": 3,
+    "category": "citation",
+    "why": "OpenAI's own web search docs changed silently; shows domain filters and source listing.",
+    "alsoSeenIn": []
+  },
+  {
+    "source": "google-gemini",
+    "sourceName": "Google — The Keyword (Gemini)",
+    "authority": 8,
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/research-with-gemini-in-chrome/",
+    "title": "Get quick answers from Gemini on any website.",
+    "published": "2026-11-12T17:00:00.000Z",
+    "summary": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_in_Chrome_OZMdZhz.max-600x600.format-webp.webp\">Get quick answers with Gemini in Chrome. Summarize articles, compare products, and explain complex topics directly in your side panel. Try it now.",
+    "score": 3,
+    "category": "ai-surface",
+    "why": "Gemini in Chrome answers questions and summarizes any web page; new browsing surface.",
+    "alsoSeenIn": []
   }
 ]

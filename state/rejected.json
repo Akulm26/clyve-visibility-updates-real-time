@@ -1,5 +1,54 @@
 [
   {
+    "at": "2026-11-13",
+    "source": "OpenAI News",
+    "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
+    "why": "Customer story on OpenAI product use; no AI visibility impact.",
+    "url": "https://openai.com/business/customer-stories/amplitude"
+  },
+  {
+    "at": "2026-11-13",
+    "source": "OpenAI News",
+    "title": "Supporting research on AI and children’s safety",
+    "why": "Child-safety funding and research pledge; no search or content surface.",
+    "url": "https://openai.com/index/children-first-declaration"
+  },
+  {
+    "at": "2026-11-13",
+    "source": "Google — The Keyword (AI)",
+    "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
+    "why": "Duplicate of id 2.",
+    "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/"
+  },
+  {
+    "at": "2026-11-13",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Google Search gets a major upgrade with Gemini 4 Hydrogen",
+    "why": "Duplicate of id 2.",
+    "url": "https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/"
+  },
+  {
+    "at": "2026-11-13",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Gemini 4 Hydrogen: everyday coding and agentic workflows for developers",
+    "why": "Developer coding model launch; no retrieval or search surface.",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-hydrogen/"
+  },
+  {
+    "at": "2026-11-13",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Introducing Gemini 4 Hydrogen",
+    "why": "Model launch announcement; search rollout covered by id 2.",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/"
+  },
+  {
+    "at": "2026-11-13",
+    "source": "Anthropic Status",
+    "title": "Elevated errors affecting the Microsoft 365 connector",
+    "why": "Claude M365 connector outage; not a search or crawling surface change.",
+    "url": "https://status.claude.com/incidents/sqn3fg1l96dl"
+  },
+  {
     "at": "2026-11-12",
     "source": "Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
     "title": "Documentation changed: Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
@@ -2049,54 +2098,5 @@
     "title": "Meta Takes Action on 3.7 Million Accounts, Pages and Content In Partnership With Singapore Police Force",
     "why": "Content moderation partnership; not visibility strategy.",
     "url": "https://about.fb.com/news/2026/09/meta-spf-scam-efforts/"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Schema.org releases",
-    "title": "Release v30.1",
-    "why": "Schema.org release tag; summary lacks actual changelog details.",
-    "url": "https://github.com/schemaorg/schemaorg/releases/tag/v30.1"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Google — The Keyword (Search)",
-    "title": "3 new ways we're improving Search profiles for publishers",
-    "why": "Summary too vague to assess AI visibility impact",
-    "url": "https://blog.google/products-and-platforms/products/search/3-new-ways-were-improving-search-profiles-for-publishers/"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Perplexity Changelog",
-    "title": "Upcoming retirement of older OpenAI models",
-    "why": "Model sunset; not Perplexity's own crawling/citation behavior",
-    "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Google Search Central Blog",
-    "title": "Search Central Live Deep Dive Europe 2026: Meet the community speakers",
-    "why": "Event announcement; no search/crawling/citation behavior change",
-    "url": "https://developers.google.com/search/blog/2026/09/scl-dd-europe-2026-community-speakers"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "OpenAI News",
-    "title": "Are you a Codex Original?",
-    "why": "Community program; no crawling/citation/content discovery impact",
-    "url": "https://openai.com/form/codex-originals"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "OpenAI News",
-    "title": "Parallel cut research time and cost in half with GPT‑6 Astra",
-    "why": "Customer case study; not OpenAI's own change",
-    "url": "https://openai.com/index/parallel-cuts-time-and-cost-with-astra"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "OpenAI News",
-    "title": "Introducing Astra for Law",
-    "why": "Product launch; no web search/crawling component",
-    "url": "https://openai.com/index/astra-for-law"
   }
 ]

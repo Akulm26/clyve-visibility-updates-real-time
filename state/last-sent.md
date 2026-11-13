@@ -1,34 +1,34 @@
-<!-- breaking alert · 2026-11-11T01:22:01.569Z -->
+<!-- breaking alert · 2026-11-13T06:09:36.818Z -->
 
-*⚡ AEO radar · Breaking · 1 item · Nov 10, 5:21 PM*
+*⚡ AEO radar · Breaking · 1 item · Nov 12, 10:09 PM*
 
-🔴 Google has started a broad ranking change called a core update, and it applies worldwide.
+One item: Google has put a new AI model behind Search for everyone, and it changes how answers are built and which sites they link to.
 
 ———
 
-*🔴 Google launches November core update worldwide*
-_Google Search Status Dashboard · November 10, 2026_
+*🔴 Google Search now runs on Gemini 4 Hydrogen*
+_Google — The Keyword (Search) · November 12, 2026_
 
 *Synopsis*
-Google posted on its public status page that it released the November 2026 core update.
-· Released November 10, 2026 at 10:07 PST, and logged as an incident affecting Ranking.
-· It applies globally and to all languages, so no market or language is exempt.
-· The rollout may take up to 2 weeks to complete.
-· The page gives no details on what changed or who gains or loses.
+Google announced Gemini 4 Hydrogen, calling it the biggest model upgrade to Search yet. It is live globally for all users.
+· Hydrogen is available globally in Google Search for all users, not as a test.
+· Search is better at long, multi-part questions, typos and very specific requests. It tries to answer each part.
+· Google says improved query fan-out and linking connects people to a wider range of relevant websites and links.
+· Answers will show more visual content: structured responses, comparison tables and custom tools.
+· It works in all languages Google's AI models support today.
 
 *What the terms mean*
-Core update — a broad change to how Google decides which pages rank higher or lower in search
-Google Search Status Dashboard — Google's public page that logs updates and problems affecting Search
-Ranking — the order in which Google lists pages for a search
-Rollout — the gradual release of a change across Google's systems, rather than all at once
+Gemini 4 Hydrogen — Google's newest AI model, now the engine behind Search answers
+Query fan-out — Google secretly runs several related searches behind your one question, then combines the results
+Citations — the links an AI answer shows as its sources
 
 *Why it matters for your content*
-Core updates can shift which pages Google puts first, so your organic traffic and visibility can move up or down. Because the rollout takes up to 2 weeks, results may keep changing and may not settle until it ends. The source says nothing about what this update targets, so don't assume a cause for any swing yet.
+Buyers can now type long, specific questions and get one combined answer. Your page has to match one slice of that question to be picked. Google says the answers lean on tables and structured layouts, so content that is already organised that way is easier to lift into them. Google says more sites get linked, so there is room to earn citations, but only if your page answers a specific part well.
 
 *Example*
-Your "best running shoes for flat feet" guide sits at position 3 on November 9. On November 14 it shows at position 6. That could be the update still rolling out, so don't rewrite the page yet. Compare it again after the rollout ends.
+A shopper types: "lightweight running shoes for flat feet, under ₹8,000, good for marathon training." Google splits that into smaller searches: flat-feet support, price, marathon use. Before: your shoe page has one general paragraph and loses. After: your page has a clear table (model, price, arch support, weight) and a short section on marathon training. It now matches several pieces of that question.
 
 *Do this*
-Record November 10, 2026 as the start date in your traffic and ranking reports, and judge changes only after the rollout finishes.
+Take your 10 most valuable buyer questions, run them in Google Search this week, and note whether your pages are cited and whether the answer shows a table.
 
-https://status.search.google.com/incidents/WLxcJyC6jMWMfryxsKMc
+https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/
