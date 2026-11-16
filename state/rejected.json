@@ -1,6 +1,13 @@
 [
   {
     "at": "2026-11-16",
+    "source": "Google — Ranking updates log",
+    "title": "Documentation changed: Google — Ranking updates log",
+    "why": "Unannounced edit; visible content is only historical update listings, no new change described.",
+    "url": "https://developers.google.com/search/updates/ranking?hl=en"
+  },
+  {
+    "at": "2026-11-16",
     "source": "Perplexity — Crawlers",
     "title": "Documentation changed: Perplexity — Crawlers",
     "why": "Doc edit is cosmetic; WAF section text identical, only zero-width char changed.",
@@ -2091,12 +2098,5 @@
     "title": "A new wave of Connected Apps is rolling out to Gemini.",
     "why": "Local app integrations; no web content visibility impact.",
     "url": "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Google — The Keyword (Gemini)",
-    "title": "Gemini 3.8 text-to-speech says hello",
-    "why": "TTS model update; no crawler or citation change.",
-    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/"
   }
 ]
