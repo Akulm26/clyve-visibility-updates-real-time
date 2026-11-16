@@ -91,5 +91,20 @@
     "category": "measurement",
     "why": "Clickstream evidence that ChatGPT Search referrals and traffic shift sites",
     "alsoSeenIn": []
+  },
+  {
+    "source": "ietf-aipref",
+    "sourceName": "IETF — AI Preferences working group",
+    "authority": 7,
+    "url": "https://datatracker.ietf.org/wg/aipref/documents/",
+    "title": "Documentation changed: IETF — AI Preferences working group",
+    "published": "2026-11-16T03:21:35.325Z",
+    "isDocChange": true,
+    "dedupeKey": "doc|ietf-aipref|c95753660ebc91ea76b1e1c427d92ea4c7bb2c19a0d6a5a4d1d734e2d52f3744",
+    "summary": "This documentation page was edited with no announcement.\nADDED:\nEmbedded Attribution and Rights Marks for AI Usage Preferences 2026-08-12 I-D Exists 10 pages draft-kelley-aipref-training-preference-signal-00 Machine-Readable Training Preference Signal 2026-10-30 I-D Exists 19 pages draft-reilly-aipref-compliance-00 Verifiable Compliance Records for AI Usage Preferences 2026-08-01 I-D Exists 15 pages draft-wallace-aipref-grant-binding-03 A Verifiable-Credential Binding for AI Usage Preferences:\nREMOVED:\nEmbedded Attribution and Rights Marks for AI Usage Preferences 2026-08-12 I-D Exists 10 pages draft-kelley-aipref-training-preference-signal-00 Machine-Readable Training Preference Signal 2026-10-30 New I-D Exists 19 pages draft-reilly-aipref-compliance-00 Verifiable Compliance Records for AI Usage Preferences 2026-08-01 I-D Exists 15 pages draft-wallace-aipref-grant-binding-03 A Verifiable-Credential Binding for AI Usage Preferences:",
+    "score": 2,
+    "category": "policy",
+    "why": "IETF AI-preference drafts; non-binding, only status labels changed.",
+    "alsoSeenIn": []
   }
 ]

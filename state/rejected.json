@@ -1,5 +1,33 @@
 [
   {
+    "at": "2026-11-16",
+    "source": "Perplexity — Crawlers",
+    "title": "Documentation changed: Perplexity — Crawlers",
+    "why": "Doc edit is cosmetic; WAF section text identical, only zero-width char changed.",
+    "url": "https://docs.perplexity.ai/guides/bots"
+  },
+  {
+    "at": "2026-11-16",
+    "source": "OpenAI News",
+    "title": "Our new blog for science",
+    "why": "Science blog launch; no AI search, retrieval, or citation surface.",
+    "url": "https://openai.com/index/our-new-blog-for-science"
+  },
+  {
+    "at": "2026-11-16",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Connect Google Wallet to Gemini for personal finance insights",
+    "why": "Gemini personal finance feature; no web search or citation change.",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/google-wallet-gemini-app/"
+  },
+  {
+    "at": "2026-11-16",
+    "source": "Perplexity Changelog",
+    "title": "Gemini 4 Hydrogen; older Gemini Flash models removed from the model docs",
+    "why": "API model pricing and doc removals; no retrieval or citation surface.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
     "at": "2026-11-13",
     "source": "arXiv — AI search & citation research",
     "title": "AI has its own style in mathematical proving",
@@ -2070,33 +2098,5 @@
     "title": "Gemini 3.8 text-to-speech says hello",
     "why": "TTS model update; no crawler or citation change.",
     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Google — The Keyword (AI)",
-    "title": "New experts join Google’s AI & Economy team",
-    "why": "Team hiring announcement; not visibility related.",
-    "url": "https://blog.google/innovation-and-ai/technology/ai/expanding-ai-economy-research-bench/"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Google — The Keyword (AI)",
-    "title": "Co-creating the future of fashion with Google",
-    "why": "Partnership story; no visibility mechanism change.",
-    "url": "https://blog.google/innovation-and-ai/technology/ai/google-flow-fashion-week/"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Google — The Keyword (AI)",
-    "title": "Making global data easier to explore",
-    "why": "Data platform launch; not crawler or citation change.",
-    "url": "https://blog.google/innovation-and-ai/technology/ai/google-un-data-commons-platform/"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Perplexity Changelog",
-    "title": "xhigh preset uses Claude Opus 5.5",
-    "why": "LLM backend preset swap; no search or crawl behavior change.",
-    "url": "https://docs.perplexity.ai/changelog"
   }
 ]
