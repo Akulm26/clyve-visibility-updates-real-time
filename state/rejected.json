@@ -1,5 +1,75 @@
 [
   {
+    "at": "2026-11-17",
+    "source": "OpenAI News",
+    "title": "How Revolut raises ambition without lowering the bar",
+    "why": "Customer story; no AI visibility impact.",
+    "url": "https://openai.com/business/customer-stories/revolut"
+  },
+  {
+    "at": "2026-11-17",
+    "source": "arXiv — AI search & citation research",
+    "title": "Mapping the Afterlife of Future Work Statements in NLP Research",
+    "why": "NLP scholarship study; unrelated to search or citation surfaces.",
+    "url": "https://arxiv.org/abs/2611.18847"
+  },
+  {
+    "at": "2026-11-17",
+    "source": "OpenAI News",
+    "title": "Broadening access to AI for scientists",
+    "why": "Researcher access program; no search or citation change.",
+    "url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers"
+  },
+  {
+    "at": "2026-11-17",
+    "source": "Google — The Keyword (Search)",
+    "title": "4 ways Search can help with your holiday plans",
+    "why": "Holiday features in Google app; no content surfacing or crawling change.",
+    "url": "https://blog.google/products-and-platforms/products/search/holiday-prep-search-2026/"
+  },
+  {
+    "at": "2026-11-17",
+    "source": "OpenAI News",
+    "title": "Science at the Frontier: How scientists use ChatGPT",
+    "why": "Report on scientist ChatGPT usage; no visibility or citation change.",
+    "url": "https://openai.com/index/science-at-the-frontier"
+  },
+  {
+    "at": "2026-11-17",
+    "source": "OpenAI News",
+    "title": "Our first phase of embedded assessments",
+    "why": "Safety assessor agreements; no content surfacing relevance.",
+    "url": "https://openai.com/index/our-first-phase-of-embedded-assessments"
+  },
+  {
+    "at": "2026-11-17",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Regional voices are rolling out in the Gemini app.",
+    "why": "Gemini voice options; no search or citation surface.",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/regional-voices/"
+  },
+  {
+    "at": "2026-11-17",
+    "source": "Google — The Keyword (AI)",
+    "title": "New Ask Maps features to help with holiday travel and prep",
+    "why": "Maps travel features; no web content surfacing change.",
+    "url": "https://blog.google/products-and-platforms/products/maps/ask-maps-holiday-travel-features-2026/"
+  },
+  {
+    "at": "2026-11-17",
+    "source": "Meta Newsroom",
+    "title": "An Update on the Content We Recommend on Instagram in India",
+    "why": "Instagram feed recommendations in India; not AI visibility.",
+    "url": "https://about.fb.com/news/2026/11/an-update-on-the-content-we-recommend-on-instagram-in-india/"
+  },
+  {
+    "at": "2026-11-17",
+    "source": "Claude Release Notes",
+    "title": "Claude Platform release notes — November 16, 2026",
+    "why": "Watermark on generated text; no retrieval or citation surface.",
+    "url": "https://platform.claude.com/docs/en/release-notes/overview#text-watermark-claude-opus-4-6-and-4-5-models"
+  },
+  {
     "at": "2026-11-16",
     "source": "Google — Ranking updates log",
     "title": "Documentation changed: Google — Ranking updates log",
@@ -2028,75 +2098,5 @@
     "title": "New insights from Google’s AI & Economy ATLAS",
     "why": "Research data dashboard. No search or citation behavior change.",
     "url": "https://blog.google/innovation-and-ai/technology/ai/ai-economy-atlas-september-2026/"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Perplexity Changelog",
-    "title": "GPT-6 Sol, Luna, Claude Opus 5.5, and Grok 4.7 support",
-    "why": "API model updates. No search, crawl, or ranking impact.",
-    "url": "https://docs.perplexity.ai/changelog#september-2026"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Perplexity Changelog",
-    "title": "Custom connectors: Bring your own MCP server",
-    "why": "MCP integration feature. No search or content-surfacing change.",
-    "url": "https://docs.perplexity.ai/changelog#september-2026"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Perplexity Changelog",
-    "title": "Sign in with Perplexity for the remote MCP server",
-    "why": "MCP authentication feature. No crawl or visibility impact.",
-    "url": "https://docs.perplexity.ai/changelog#september-2026"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Perplexity Changelog",
-    "title": "Gemini 3.8 Flash support",
-    "why": "Model support in API. No search or crawl behavior change.",
-    "url": "https://docs.perplexity.ai/changelog#september-2026"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "OpenAI Status",
-    "title": "Mobile users unable to see Work Mode and the Model Picker",
-    "why": "Mobile UI incident resolved. No search or crawl surface affected.",
-    "url": "https://status.openai.com//incidents/01M389CDQ97B11QPMSRAAYSE5S"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Perplexity Changelog",
-    "title": "GLM 5.3 Flash model support",
-    "why": "API model support. No search, ranking, or crawl impact.",
-    "url": "https://docs.perplexity.ai/changelog#september-2026"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Google — The Keyword (Gemini)",
-    "title": "3 ways this grocer cooks for 200 guests with Gemini",
-    "why": "Customer use case story; no visibility or strategy impact.",
-    "url": "https://blog.google/products-and-platforms/products/gemini/edys-grocer-gemini/"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Google — The Keyword (Gemini)",
-    "title": "Introducing Gemini 3.8 Live with Live Avatar",
-    "why": "Model capability update; no retrieval or citation change.",
-    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-with-live-avatar/"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Google — The Keyword (AI)",
-    "title": "Google Beam expands with new regions, partners, and customers",
-    "why": "Service expansion; no visibility behavior change.",
-    "url": "https://blog.google/innovation-and-ai/technology/research/google-beam-expansion/"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Google — The Keyword (Gemini)",
-    "title": "A new wave of Connected Apps is rolling out to Gemini.",
-    "why": "Local app integrations; no web content visibility impact.",
-    "url": "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/"
   }
 ]

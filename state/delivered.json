@@ -63,7 +63,8 @@
     "6a71c005d9c569cb850ee2fdb2315ea19f7e50066cdb876f87ef2143891cd8f7": 1794884726100,
     "343970cfc4def9dc3714ea128eb5b38450b15b0392d0ddf995178fc095c6f199": 1794884726100,
     "40eccca120fd492c5d09e586e54e431e08e5582ca915592936663069aac29dab": 1794884726100,
-    "8899406325233a6804e95137195f610a57f1632833cfab835b9dc56243e35b8c": 1794884726100
+    "8899406325233a6804e95137195f610a57f1632833cfab835b9dc56243e35b8c": 1794884726100,
+    "6731a247ad8920c1bee80ae07bddf6f24cff89d2ddb2f15ae15e7f25d566709a": 1794907308761
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
@@ -119,21 +120,15 @@
     "blog.google/innovation-and-ai/products/gemini-app/research-with-gemini-in-chrome": 1794884726100,
     "arxiv.org/abs/2602.13415": 1794884726100,
     "arxiv.org/abs/2511.20867": 1794884726100,
-    "arxiv.org/abs/2607.07652": 1794884726100
+    "arxiv.org/abs/2607.07652": 1794884726100,
+    "developers.google.com/search/blog/2026/11/search-analytics-api-update": 1794907308761
   },
   "last": {
-    "subject": "AEO radar · Weekly digest · week of November 16, 2026",
-    "at": "2026-11-17T03:05:26.100Z",
-    "kind": "weekly digest",
+    "subject": "⚡ AEO radar · Breaking · 1 item · Nov 17, 1:21 AM",
+    "at": "2026-11-17T09:21:48.761Z",
+    "kind": "breaking alert",
     "headlines": [
-      "Moving to a CDN without overwhelming your origin (or blocking Googlebot)",
-      "Web grounding for the Decisions API",
-      "Documentation changed: OpenAI — Web search & citation behaviour",
-      "Get quick answers from Gemini on any website.",
-      "The Rise of AI Search: Implications for Information Markets and Human Judgement at Scale",
-      "E-GEO: A Testbed for Generative Engine Optimization in E-Commerce",
-      "AI Search as an Information Intermediary: Clickstream Evidence on Web Traffic",
-      "Documentation changed: IETF — AI Preferences working group"
+      "New filtering and reporting capabilities in the Search Analytics API"
     ]
   }
 }
