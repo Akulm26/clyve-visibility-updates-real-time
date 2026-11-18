@@ -52,5 +52,18 @@
     "category": "crawling",
     "why": "Draft IETF AI-preference opt-out signals; not adopted, direction-of-travel only.",
     "alsoSeenIn": []
+  },
+  {
+    "source": "google-search-product",
+    "sourceName": "Google — The Keyword (Search)",
+    "authority": 9,
+    "url": "https://blog.google/products-and-platforms/products/search/temporary-threads-ai-mode/",
+    "title": "Temporary threads are now available in AI Mode in Search.",
+    "published": "2026-11-17T17:00:00.000Z",
+    "summary": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/AIM_Temporary_Thread_Stills_278.max-600x600.format-webp.webp\">Google AI Mode now offers temporary threads for private searches. Keep your history clean and avoid personalization. Try this new feature today.",
+    "score": 2,
+    "category": "ai-surface",
+    "why": "Google AI Mode adds temporary threads that skip personalization; minor visibility effect.",
+    "alsoSeenIn": []
   }
 ]

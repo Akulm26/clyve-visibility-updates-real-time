@@ -1,5 +1,75 @@
 [
   {
+    "at": "2026-11-18",
+    "source": "Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
+    "title": "Documentation changed: Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
+    "why": "Crawler doc edit shows only timestamp churn; no substantive change.",
+    "url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+  },
+  {
+    "at": "2026-11-18",
+    "source": "OpenAI — Web search & citation behaviour",
+    "title": "Documentation changed: OpenAI — Web search & citation behaviour",
+    "why": "API developer docs on model choice for web search; no change affecting content visibility.",
+    "url": "https://platform.openai.com/docs/guides/tools-web-search"
+  },
+  {
+    "at": "2026-11-18",
+    "source": "OpenAI News",
+    "title": "Introducing ChatGPT for Sales",
+    "why": "Sales product launch; no search, crawling, or citation surface.",
+    "url": "https://openai.com/index/introducing-chatgpt-for-sales"
+  },
+  {
+    "at": "2026-11-18",
+    "source": "OpenAI News",
+    "title": "Astra for Law leads in legal intelligence",
+    "why": "Legal model benchmark and access program; not content visibility.",
+    "url": "https://openai.com/index/astra-law-6-2"
+  },
+  {
+    "at": "2026-11-18",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "See what 5 builders are making with Gemini 4 Carbon",
+    "why": "Developer showcase for a Gemini model; no search or citation surface.",
+    "url": "https://blog.google/products-and-platforms/products/gemini/gemini-4-carbon-builders/"
+  },
+  {
+    "at": "2026-11-18",
+    "source": "Google — The Keyword (AI)",
+    "title": "Put Gemini to work for you",
+    "why": "Gemini app tasks feature; no web search or citation change.",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
+  },
+  {
+    "at": "2026-11-18",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Put Gemini to work for you",
+    "why": "Duplicate of item 6; Gemini tasks feature, not search-related.",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/"
+  },
+  {
+    "at": "2026-11-18",
+    "source": "Meta Newsroom",
+    "title": "Muse Is Now Available in Australia: The World’s First Personal AI Agent Built for Everyone",
+    "why": "Meta personal agent regional launch; no search or citation surface.",
+    "url": "https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/"
+  },
+  {
+    "at": "2026-11-18",
+    "source": "arXiv — AI search & citation research",
+    "title": "Simulating access to alcohol screening, brief intervention, referral to and receipt of specialty treatment for alcohol use disorder in California and Texas: A study protocol for an agent-based modeling study (AUDTxSim)",
+    "why": "Alcohol treatment simulation study; unrelated to AI search or citation.",
+    "url": "https://arxiv.org/abs/2611.20326"
+  },
+  {
+    "at": "2026-11-18",
+    "source": "arXiv — AI search & citation research",
+    "title": "Well-Log Reconstruction with Pre-trained Geological Knowledge: A Knowledge-Conditioned Large-Language-Model Generative Agent",
+    "why": "Geological well-log reconstruction paper; unrelated to AI search or citation.",
+    "url": "https://arxiv.org/abs/2611.19624"
+  },
+  {
     "at": "2026-11-17",
     "source": "OpenAI News",
     "title": "How Revolut raises ambition without lowering the bar",
@@ -2028,75 +2098,5 @@
     "title": "GPT-6 Sol, GPT-6 Luna, Claude Opus 5.5, Grok 4.7",
     "why": "Model capability update; no crawling, ranking, or citation surface changes.",
     "url": "https://docs.perplexity.ai/changelog#changelog-september-2026"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Perplexity Changelog",
-    "title": "Sign in with Perplexity for remote MCP server",
-    "why": "MCP authentication feature; summary doesn't match title; unclear visibility impact.",
-    "url": "https://docs.perplexity.ai/changelog#changelog-september-2026"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Perplexity Changelog",
-    "title": "Gemini 3.8 Flash",
-    "why": "Model availability update; no AI visibility or content discovery implications.",
-    "url": "https://docs.perplexity.ai/changelog#changelog-september-2026"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Perplexity Changelog",
-    "title": "GLM 5.3 Flash",
-    "why": "Model capability addition; doesn't affect how content is found or surfaced.",
-    "url": "https://docs.perplexity.ai/changelog#changelog-september-2026"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Perplexity Changelog",
-    "title": "GPT-6 Sol, GPT-6 Luna, Claude Opus 5.5, and Grok 4.7 support",
-    "why": "API model swaps, no retrieval/citation/crawler changes.",
-    "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Google — The Keyword (Gemini)",
-    "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
-    "why": "Model capability release. No search, crawl, or content-strategy impact.",
-    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Google — The Keyword (AI)",
-    "title": "AI for Societal Impact",
-    "why": "Impact story collection. No search or crawl surface involved.",
-    "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-societal-impact/"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Google — The Keyword (AI)",
-    "title": "Building AI to accelerate science and improve lives",
-    "why": "AI application showcase. No visibility or content-strategy change.",
-    "url": "https://blog.google/innovation-and-ai/technology/ai/ai-applications-science-people/"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Google — The Keyword (AI)",
-    "title": "AI for everyone in every language",
-    "why": "Model language capability. No search, ranking, or crawl impact.",
-    "url": "https://blog.google/innovation-and-ai/technology/ai/ai-for-every-language/"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Google — The Keyword (Gemini)",
-    "title": "4 ways to tackle household chores with Gemini",
-    "why": "Product usage tips. No content-strategy or discovery impact.",
-    "url": "https://blog.google/innovation-and-ai/products/gemini-app/household-chores-tips/"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Google — The Keyword (AI)",
-    "title": "New insights from Google’s AI & Economy ATLAS",
-    "why": "Research data dashboard. No search or citation behavior change.",
-    "url": "https://blog.google/innovation-and-ai/technology/ai/ai-economy-atlas-september-2026/"
   }
 ]
