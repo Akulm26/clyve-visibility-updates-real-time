@@ -1,7 +1,7 @@
 {
   "scan": {
     "since": "2026-10-04T02:58:13.528Z",
-    "lastAttempt": "2026-11-19T11:56:25.041Z",
+    "lastAttempt": "2026-11-19T12:26:54.546Z",
     "lastSuccess": "2026-11-19T04:55:09.227Z",
     "lastProblem": "claude exited 1: Warning: this sign-in ends between 2026-11-21 and 2026-11-24 (in 2 days at the earliest). Renewing it does not move those dates. Run claude auth login before then, or use claude setup-token for unattended jobs.\n",
     "staleNotified": false
