@@ -1,5 +1,61 @@
 [
   {
+    "at": "2026-11-19",
+    "source": "OpenAI News",
+    "title": "Advancing chip design with OpenAI models",
+    "why": "Chip design model work; no retrieval, crawling, or search surface",
+    "url": "https://openai.com/index/advancing-chip-design-with-our-models"
+  },
+  {
+    "at": "2026-11-19",
+    "source": "OpenAI News",
+    "title": "Research acceleration: The jagged frontier",
+    "why": "AI research acceleration by coding agents; no content-visibility relevance",
+    "url": "https://openai.com/index/research-acceleration-jagged-frontier"
+  },
+  {
+    "at": "2026-11-19",
+    "source": "OpenAI News",
+    "title": "How Sumitomo Life’s leaders helped teams adopt ChatGPT Enterprise",
+    "why": "Enterprise customer story; no search or citation surface",
+    "url": "https://openai.com/business/customer-stories/sumitomo-life"
+  },
+  {
+    "at": "2026-11-19",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Introducing Gemini 4 Neon",
+    "why": "Model launch with no retrieval, citation, or search change",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/"
+  },
+  {
+    "at": "2026-11-19",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Genie 4 is now available",
+    "why": "World model availability for subscribers; no search or crawling impact",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/genie-4-now-available-project-genie/"
+  },
+  {
+    "at": "2026-11-19",
+    "source": "Google — The Keyword (AI)",
+    "title": "The Gemini app is now available on lower-memory Android devices.",
+    "why": "Gemini app device availability; no search or citation change",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/"
+  },
+  {
+    "at": "2026-11-19",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "The Gemini app is now available on lower-memory Android devices.",
+    "why": "Duplicate of id 6; rejected for same reason",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/"
+  },
+  {
+    "at": "2026-11-19",
+    "source": "Meta Newsroom",
+    "title": "Meta Welcomes Loblaw as First Canadian Retail Partner to Muse",
+    "why": "Consumer assistant retail partnership; no web search or crawling surface",
+    "url": "https://about.fb.com/news/2026/11/meta-welcomes-loblaw-as-first-canadian-retail-partner-to-muse/"
+  },
+  {
     "at": "2026-11-18",
     "source": "arXiv — AI search & citation research",
     "title": "Multi-Estimate Elicitation Does Not Uniformly Debias Language Model Judgments",
@@ -2042,61 +2098,5 @@
     "title": "Using AI to chart a course for our post-quantum migration",
     "why": "Internal crypto migration tool; no content discovery impact",
     "url": "https://blog.cloudflare.com/ai-driven-cryptography-discovery/"
-  },
-  {
-    "at": "2026-09-30",
-    "source": "OpenAI Status",
-    "title": "Elevated errors across ChatGPT, Codex, and the API including the Agents API",
-    "why": "Resolved incident; no ongoing content surfacing change",
-    "url": "https://status.openai.com//incidents/01M3Q4RK1SM4EMK445GGPG7C0N"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Perplexity Changelog",
-    "title": "Fast Search availability",
-    "why": "Perplexity API model updates; no search surface or visibility change",
-    "url": "https://docs.perplexity.ai/changelog#september-2026-fast-search-api"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Perplexity Changelog",
-    "title": "New model support: GPT-6, Claude Opus 5.5, Grok 4.7, Gemini 3.8 Flash",
-    "why": "Perplexity API model support updates; no impact on content discovery",
-    "url": "https://docs.perplexity.ai/changelog#september-2026-new-models"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Perplexity Changelog",
-    "title": "Fast Search introduced",
-    "why": "API model updates; no crawling, citation, or content-surfacing changes.",
-    "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Perplexity Changelog",
-    "title": "New model support: GPT-6, Claude Opus 5.5, Grok 4.7",
-    "why": "Pure model capability news; no retrieval or content-discovery mechanism change.",
-    "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Perplexity Changelog",
-    "title": "Remote MCP Server OAuth support",
-    "why": "Tool integration feature; no clarification on web crawling or citation impact.",
-    "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Google Search Central Blog",
-    "title": "Search Central Live Deep Dive Europe 2026: Meet the community speakers",
-    "why": "Event announcement; no content strategy impact",
-    "url": "https://developers.google.com/search/blog/2026/09/scl-dd-europe-2026-community-speakers"
-  },
-  {
-    "at": "2026-09-29",
-    "source": "Google Search Central Blog",
-    "title": "Search Central Live India 2026: Bengaluru, We're Coming (For Real This Time)",
-    "why": "Event announcement; no content strategy impact",
-    "url": "https://developers.google.com/search/blog/2026/09/search-central-live-india-2026"
   }
 ]
