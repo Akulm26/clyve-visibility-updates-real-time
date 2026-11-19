@@ -1,6 +1,20 @@
 [
   {
     "at": "2026-11-19",
+    "source": "Perplexity Changelog",
+    "title": "Embeddings API: pplx-embed-v2-context-9b and pplx-embed-v2-context-0.6b",
+    "why": "Developer embeddings API and pricing; no AI search, citation, or crawl surface.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-11-19",
+    "source": "Perplexity Changelog",
+    "title": "GPT-6.2 Sol and GPT-6.2 Astra",
+    "why": "Model availability and API pricing only; no retrieval or citation surface.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-11-19",
     "source": "OpenAI News",
     "title": "Advancing chip design with OpenAI models",
     "why": "Chip design model work; no retrieval, crawling, or search surface",
@@ -2084,19 +2098,5 @@
     "title": "Training-Free Global Geometric Association for 4D LiDAR Panoptic Segmentation",
     "why": "LiDAR segmentation; unrelated to AI content visibility",
     "url": "https://arxiv.org/abs/2512.18991"
-  },
-  {
-    "at": "2026-09-30",
-    "source": "Cloudflare Blog (AI)",
-    "title": "We tested our own WAF with frontier AI models. Here’s what we found",
-    "why": "Internal WAF testing; no AI visibility impact",
-    "url": "https://blog.cloudflare.com/adaptive-ai-waf-testing/"
-  },
-  {
-    "at": "2026-09-30",
-    "source": "Cloudflare Blog (AI)",
-    "title": "Using AI to chart a course for our post-quantum migration",
-    "why": "Internal crypto migration tool; no content discovery impact",
-    "url": "https://blog.cloudflare.com/ai-driven-cryptography-discovery/"
   }
 ]
