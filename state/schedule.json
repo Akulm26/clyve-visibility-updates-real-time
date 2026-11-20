@@ -3,7 +3,7 @@
     "since": "2026-10-04T02:58:13.528Z",
     "lastAttempt": "2026-11-20T02:15:15.302Z",
     "lastSuccess": "2026-11-20T02:16:50.338Z",
-    "lastProblem": null,
+    "lastProblem": "the Mac was asleep (background wake only)",
     "staleNotified": false
   },
   "digest": {
