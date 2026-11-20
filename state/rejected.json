@@ -1,5 +1,33 @@
 [
   {
+    "at": "2026-11-20",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "ICYMI: Transfer your history from other AI apps into Gemini.",
+    "why": "Chat-history import feature for Gemini app; no search, crawl, or citation surface.",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/switch-ai-assistants-transfer-history/"
+  },
+  {
+    "at": "2026-11-20",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Let Gemini tackle repetitive chores on your Mac",
+    "why": "Gemini Mac computer-use feature; desktop task automation, not web search or visibility.",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac/"
+  },
+  {
+    "at": "2026-11-20",
+    "source": "Perplexity Changelog",
+    "title": "xhigh now uses GPT-6.2 Sol",
+    "why": "Perplexity API model routing and embeddings update; developer tooling, no public search surface.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-11-20",
+    "source": "Perplexity Changelog",
+    "title": "Gemini 4 Hydrogen",
+    "why": "Title names Gemini 4 Hydrogen but body repeats the same unrelated API changelog; no substance.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
     "at": "2026-11-19",
     "source": "Perplexity Changelog",
     "title": "Embeddings API: pplx-embed-v2-context-9b and pplx-embed-v2-context-0.6b",
@@ -2070,33 +2098,5 @@
     "title": "Let skills in Gemini tackle your most repetitive tasks",
     "why": "Gemini automation feature, no discovery impact",
     "url": "https://blog.google/products-and-platforms/products/gemini/automate-tasks-with-skills/"
-  },
-  {
-    "at": "2026-10-03",
-    "source": "Cloudflare Blog (AI)",
-    "title": "AI Search is now generally available",
-    "why": "Document search API, not web discovery platform",
-    "url": "https://blog.cloudflare.com/ai-search-ga/"
-  },
-  {
-    "at": "2026-09-30",
-    "source": "arXiv — AI search & citation research",
-    "title": "The Rashomon Wikipedia: A Data-Perspectivist Analysis of Divergent Historical Narratives",
-    "why": "Wikipedia bias analysis; not actionable for content strategy",
-    "url": "https://arxiv.org/abs/2609.37498"
-  },
-  {
-    "at": "2026-09-30",
-    "source": "arXiv — AI search & citation research",
-    "title": "MAPLE: Medical Aspect-Based Summarization with Phrase-Level Evidence",
-    "why": "LLM citation capability study; no content strategy change",
-    "url": "https://arxiv.org/abs/2601.03418"
-  },
-  {
-    "at": "2026-09-30",
-    "source": "arXiv — AI search & citation research",
-    "title": "Training-Free Global Geometric Association for 4D LiDAR Panoptic Segmentation",
-    "why": "LiDAR segmentation; unrelated to AI content visibility",
-    "url": "https://arxiv.org/abs/2512.18991"
   }
 ]
