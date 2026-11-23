@@ -78,5 +78,20 @@
     "category": "research",
     "why": "Original measurements: LLMs hallucinate more on less-cited papers. Narrow relevance to attribution visibility.",
     "alsoSeenIn": []
+  },
+  {
+    "source": "google-search-product",
+    "sourceName": "Google — The Keyword (Search)",
+    "authority": 9,
+    "url": "https://blog.google/products-and-platforms/products/search/connected-apps-holiday-errands/",
+    "title": "Get your year-end tasks done with new Connected Apps.",
+    "published": "2026-11-20T18:00:00.000Z",
+    "summary": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Connected_apps_-_Social_share_a.max-600x600.format-webp.webp\">Google Connected Apps simplify your year-end tasks. Manage groceries, credit scores, and home services directly in Search. Get the details for November 2026.",
+    "score": 2,
+    "category": "ai-surface",
+    "why": "Google Search adds third-party connected services; indirect visibility relevance",
+    "alsoSeenIn": [
+      "Google — The Keyword (Gemini)"
+    ]
   }
 ]

@@ -1,5 +1,68 @@
 [
   {
+    "at": "2026-11-23",
+    "source": "OpenAI News",
+    "title": "Perplexity and Intelligence",
+    "why": "Pretraining perplexity metric essay; no retrieval, citation, or crawl surface",
+    "url": "https://openai.com/index/perplexity-and-intelligence"
+  },
+  {
+    "at": "2026-11-23",
+    "source": "OpenAI News",
+    "title": "Hebbia sees improvements in financial research with GPT-6 Astra",
+    "why": "Customer story on model quality; no search or citation policy change",
+    "url": "https://openai.com/business/customer-stories/hebbia"
+  },
+  {
+    "at": "2026-11-23",
+    "source": "OpenAI News",
+    "title": "Can AI help scientists identify promising drug candidates?",
+    "why": "Chemistry capability benchmark; no retrieval or citation surface",
+    "url": "https://openai.com/index/introducing-medchembench"
+  },
+  {
+    "at": "2026-11-23",
+    "source": "OpenAI — ChatGPT release notes",
+    "title": "ChatGPT Enterprise and Edu release notes: SSO exemption management for external members",
+    "why": "Enterprise SSO and data residency admin notes; no visibility impact",
+    "url": "https://help.openai.com/en/articles/10128477-chatgpt-enterprise-and-edu-release-notes"
+  },
+  {
+    "at": "2026-11-23",
+    "source": "OpenAI — ChatGPT release notes",
+    "title": "ChatGPT Business release notes: dots rollout for Business Standard members in the US",
+    "why": "Business plan SSO and personal agent rollout; no visibility impact",
+    "url": "https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes"
+  },
+  {
+    "at": "2026-11-23",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Get your year-end tasks done with new Connected Apps.",
+    "why": "Duplicate of id 3 Google Connected Apps announcement",
+    "url": "https://blog.google/products-and-platforms/products/search/connected-apps-holiday-errands/"
+  },
+  {
+    "at": "2026-11-23",
+    "source": "Google — The Keyword (AI)",
+    "title": "Introducing Tool Retrieval in the Gemini API",
+    "why": "Developer API tool-selection feature; no search or crawl surface",
+    "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/"
+  },
+  {
+    "at": "2026-11-23",
+    "source": "Google — The Keyword (AI)",
+    "title": "Walter Isaacson on curiosity and creativity in the AI age.",
+    "why": "Interview video on creativity; not AI visibility",
+    "url": "https://blog.google/innovation-and-ai/technology/ai/dialogues-walter-isaacson/"
+  },
+  {
+    "at": "2026-11-23",
+    "source": "Meta Newsroom",
+    "title": "Advancing Science Together: Highlights From the Open Source AI For Science Summit",
+    "why": "Event recap on open-source AI for science; not AI visibility",
+    "url": "https://about.fb.com/news/2026/11/advancing-science-together-highlights-from-the-open-source-ai-for-science-summit/"
+  },
+  {
     "at": "2026-11-20",
     "source": "Google — The Keyword (Gemini)",
     "title": "ICYMI: Transfer your history from other AI apps into Gemini.",
@@ -2035,68 +2098,5 @@
     "title": "Identify AI model overuse with User Insights",
     "why": "Developer tooling for model analytics",
     "url": "https://blog.cloudflare.com/ai-model-overuse-user-insights/"
-  },
-  {
-    "at": "2026-10-03",
-    "source": "OpenAI News",
-    "title": "How Albertsons Companies is reimagining retail from the inside out",
-    "why": "Albertsons case study, not visibility change announcement",
-    "url": "https://openai.com/index/albertsons-reimagining-retail"
-  },
-  {
-    "at": "2026-10-03",
-    "source": "Google — The Keyword (Search)",
-    "title": "5 ways Search can help you perfect your at-home coffee routine",
-    "why": "Search usage tips, not product behavior change",
-    "url": "https://blog.google/products-and-platforms/products/search/coffee-tips-google-search/"
-  },
-  {
-    "at": "2026-10-03",
-    "source": "OpenAI — ChatGPT release notes",
-    "title": "ChatGPT Shopping and Document Scanning Features",
-    "why": "ChatGPT shopping feature, indexing mechanism unclear",
-    "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
-  },
-  {
-    "at": "2026-10-03",
-    "source": "Google — The Keyword (Search)",
-    "title": "Celebrating International Translation Day: Meet 3 linguistic experts behind Google Translate",
-    "why": "Brand/cultural content, no behavioral change",
-    "url": "https://blog.google/products-and-platforms/products/translate/international-translation-day-2026/"
-  },
-  {
-    "at": "2026-10-03",
-    "source": "Google — The Keyword (AI)",
-    "title": "The latest AI news we announced in September 2026",
-    "why": "Roundup of announcements, secondary source",
-    "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/"
-  },
-  {
-    "at": "2026-10-03",
-    "source": "Google — The Keyword (Gemini)",
-    "title": "The latest AI news we announced in September 2026",
-    "why": "Duplicate recap, secondary source",
-    "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/"
-  },
-  {
-    "at": "2026-10-03",
-    "source": "Google — The Keyword (Gemini)",
-    "title": "Guided Vision in Gemini Live: built for accessibility",
-    "why": "Accessibility feature, no discovery impact",
-    "url": "https://blog.google/innovation-and-ai/products/gemini-app/guided-vision-gemini-live/"
-  },
-  {
-    "at": "2026-10-03",
-    "source": "Google — The Keyword (Gemini)",
-    "title": "Gemini 4 Argon: our next era of frontier intelligence",
-    "why": "Model capability, no retrieval/crawling component",
-    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
-  },
-  {
-    "at": "2026-10-03",
-    "source": "Google — The Keyword (Gemini)",
-    "title": "Let skills in Gemini tackle your most repetitive tasks",
-    "why": "Gemini automation feature, no discovery impact",
-    "url": "https://blog.google/products-and-platforms/products/gemini/automate-tasks-with-skills/"
   }
 ]
