@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "source": "arxiv-geo",
+    "sourceName": "arXiv — AI search & citation research",
+    "authority": 6,
+    "url": "https://arxiv.org/abs/2611.30819",
+    "title": "Ask Again: Answer-List Instability in Generative Engines",
+    "published": "2026-11-24T05:00:00.000Z",
+    "summary": "arXiv:2611.30819v1 Announce Type: new Abstract: Visibility in generative search engines is measured by which entities appear in responses, and in what order. Ask an engine the same question twice and the answer list can change: a different ordering, or different items altogether. Across 60,000 responses, we find that answers to the same prompt name a different first item 32% of the time, and even two answers with the same items disagree on which comes first. The first position is a measurement target of its own. A \"clear leader\" emerges after seven or eight runs, which are the budgets recommended for brand and source monitoring, but a \"close leader\" only about half the time. After 25 runs, a close leader is identified only 60% of the time. Variability between engines is larger than within the same engine. For open-ended prompts, the gap is more than double that for determinate ones. Search queries and cited sites observed leave most of the disagreement unexplained. Visibility measurement should report, for each engine, which items appear and how often each comes first, each with its own quantification of uncertainty.",
+    "score": 3,
+    "category": "measurement",
+    "why": "60k-response study: AI answer lists unstable; visibility tracking needs repeated sampling.",
+    "alsoSeenIn": []
+  },
+  {
+    "source": "arxiv-geo",
+    "sourceName": "arXiv — AI search & citation research",
+    "authority": 6,
+    "url": "https://arxiv.org/abs/2605.12887",
+    "title": "EcoGEO: Trajectory-Aware Evidence Ecosystems for Web-Enabled LLM Search Agents",
+    "published": "2026-11-24T05:00:00.000Z",
+    "summary": "arXiv:2605.12887v4 Announce Type: replace Abstract: Web-enabled LLM agents are changing how online information influences search outcomes. Existing Generative Engine Optimization (GEO) studies mainly focus on individual webpages. However, agentic web search is not a single-document setting: an agent may issue queries, crawl pages, follow links, reformulate searches, and synthesize evidence across multiple browsing steps. Influence therefore depends not only on page content, but also on how pages are organized, connected, and encountered along the agent's browsing trajectory. We study this shift through Ecosystem Generative Engine Optimization (EcoGEO), which treats GEO as an environment-level influence problem for web-enabled LLM agents. To instantiate this perspective, we propose TRACE, a Trajectory-Aware Coordinated Evidence Ecosystem. Given a recommendation query and a fictional target product, our method builds a controlled evidence environment that coordinates an agent-facing navigation entry page with heterogeneous support pages. These pages use shared terminology, internal links, and consistent product attributes to introduce, verify, and reinforce the target product. We evaluate our method on OPR-Bench, a benchmark for open-ended product recommendation. Experiments show that it consistently outperforms page-level GEO baselines in Recommendation. Trajectory-level metrics show improved initial target access and additional internal-link browsing, while follow-up-search e…",
+    "score": 2,
+    "category": "research",
+    "why": "Preprint on agent browsing trajectories; narrow benchmark with a fictional product.",
+    "alsoSeenIn": []
+  }
+]

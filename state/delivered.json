@@ -72,7 +72,8 @@
     "9d69c32dbb5e73a0c05696091443745b935fc14676bf98058c2360df99572dc0": 1795492787044,
     "fecb30cdff15cc4d26d4555fb9d0fcf007ec75b5677fb33286e9e152dfe3eb21": 1795492787044,
     "1fce32ecea5e537b4ac8fd2bc251909479ce88dfa60bdac74721599c58041677": 1795492787044,
-    "5c2c2b387ab46c938736ed5864d2328e40e4ee3e47e2443396289354923d2f8e": 1795492787044
+    "5c2c2b387ab46c938736ed5864d2328e40e4ee3e47e2443396289354923d2f8e": 1795492787044,
+    "3693f7821016a9cd9b760a07499d83f976d9ee1192ab4376b4b07500b72351dc": 1795518126468
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
@@ -136,20 +137,15 @@
     "blog.google/products-and-platforms/products/search/temporary-threads-ai-mode": 1795492787044,
     "blog.google/products-and-platforms/products/search/connected-apps-holiday-errands": 1795492787044,
     "arxiv.org/abs/2611.20045": 1795492787044,
-    "arxiv.org/abs/2611.23530": 1795492787044
+    "arxiv.org/abs/2611.23530": 1795492787044,
+    "arxiv.org/abs/2611.30546": 1795518126468
   },
   "last": {
-    "subject": "AEO radar · Weekly digest · week of November 23, 2026",
-    "at": "2026-11-24T03:59:47.044Z",
-    "kind": "weekly digest",
+    "subject": "⚡ AEO radar · Breaking · 1 item · Nov 24, 3:01 AM",
+    "at": "2026-11-24T11:02:06.468Z",
+    "kind": "breaking alert",
     "headlines": [
-      "Documentation changed: IETF — AI Preferences working group",
-      "User First Intelligence: Three Measurements of Search and AI-Answer Analytics (SEO and GEO/AEO), and a Knowledge-Graph Framework for Query Discovery Beyond Search Volume",
-      "Cited Web Sources in LLM Answers about Brands: A Multilingual Audit",
-      "Temporary threads are now available in AI Mode in Search.",
-      "Get your year-end tasks done with new Connected Apps.",
-      "Security of Deep Research Agents: Attack Surface, Defenses, Benchmarks, and Agenda Seeding against Research Planning",
-      "Dreaming Up Authors: Factual Prevalence and LLM Hallucinations in Academic Authorship Attribution"
+      "Fetch, Read, Reuse: How AI Search Agents Bend the Web's Rules"
     ]
   }
 }
