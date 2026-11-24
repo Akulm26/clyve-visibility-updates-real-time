@@ -1,5 +1,54 @@
 [
   {
+    "at": "2026-11-24",
+    "source": "Google — The Keyword (Search)",
+    "title": "A more tailored Google Search that’s uniquely yours",
+    "why": "Personal data connectors in AI Mode; no web retrieval, citation, or crawl change.",
+    "url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/"
+  },
+  {
+    "at": "2026-11-24",
+    "source": "Google — The Keyword (AI)",
+    "title": "A more tailored Google Search that’s uniquely yours",
+    "why": "Duplicate of Google Search personal intelligence post; not visibility-relevant.",
+    "url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/"
+  },
+  {
+    "at": "2026-11-24",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "A more tailored Google Search that’s uniquely yours",
+    "why": "Duplicate of Google Search personal intelligence post; not visibility-relevant.",
+    "url": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/"
+  },
+  {
+    "at": "2026-11-24",
+    "source": "Meta Newsroom",
+    "title": "Researchers Are Using Meta’s Open-Weight AI Models to Transform Medicine",
+    "why": "Event recap of open-weight model use in medicine; no search or content surface.",
+    "url": "https://about.fb.com/news/2026/11/researchers-using-meta-open-weight-ai-models-medical-breakthroughs/"
+  },
+  {
+    "at": "2026-11-24",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "See what 6 builders are making with Gemini 4 Hydrogen",
+    "why": "Developer showcase of Gemini model projects; no search or content surface.",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-hydrogen-builders/"
+  },
+  {
+    "at": "2026-11-24",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "Here are 4 things you didn’t know you could do with Gemini Canvas.",
+    "why": "Product tips for Gemini Canvas; no search or content surface.",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-canvas-tasks/"
+  },
+  {
+    "at": "2026-11-24",
+    "source": "Perplexity Changelog",
+    "title": "Gemini 4 Neon",
+    "why": "API model and pricing changelog; no retrieval, citation, or crawl surface change.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
     "at": "2026-11-23",
     "source": "OpenAI News",
     "title": "Perplexity and Intelligence",
@@ -2049,54 +2098,5 @@
     "title": "Accurate sandbox extraction usage and costs",
     "why": "Changelog summary duplicates specific announcements",
     "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-10-06",
-    "source": "Perplexity Changelog",
-    "title": "Low, medium, and high presets use Fast Search",
-    "why": "Search tool documentation, unclear feature announcement",
-    "url": "https://docs.perplexity.ai/docs/agent-api/tools/web-search#search-type"
-  },
-  {
-    "at": "2026-10-05",
-    "source": "arXiv — AI search & citation research",
-    "title": "DataWeave: Deploying Human-LLM Analytics for Exploratory Structured Data Analysis",
-    "why": "LLM tooling for data journalists; unrelated to content discovery or AI citation",
-    "url": "https://arxiv.org/abs/2610.02679"
-  },
-  {
-    "at": "2026-10-05",
-    "source": "OpenAI News",
-    "title": "Building advertising for the way people use AI",
-    "why": "Paid advertising product announcement; not organic content surfacing or citation",
-    "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement"
-  },
-  {
-    "at": "2026-10-04",
-    "source": "Cloudflare Blog (AI)",
-    "title": "Simplifying domains for people and agents",
-    "why": "Agent domain registration infrastructure; doesn't affect content visibility or AI access.",
-    "url": "https://blog.cloudflare.com/simplifying-domains/"
-  },
-  {
-    "at": "2026-10-03",
-    "source": "OpenAI — Crawlers (GPTBot, OAI-SearchBot, ChatGPT-User)",
-    "title": "Documentation changed: OpenAI — Crawlers (GPTBot, OAI-SearchBot, ChatGPT-User)",
-    "why": "Documentation styling update, no content change",
-    "url": "https://platform.openai.com/docs/bots"
-  },
-  {
-    "at": "2026-10-03",
-    "source": "OpenAI — Web search & citation behaviour",
-    "title": "Documentation changed: OpenAI — Web search & citation behaviour",
-    "why": "Documentation styling update, no content change",
-    "url": "https://platform.openai.com/docs/guides/tools-web-search"
-  },
-  {
-    "at": "2026-10-03",
-    "source": "Cloudflare Blog (AI)",
-    "title": "Identify AI model overuse with User Insights",
-    "why": "Developer tooling for model analytics",
-    "url": "https://blog.cloudflare.com/ai-model-overuse-user-insights/"
   }
 ]
