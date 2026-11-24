@@ -1,6 +1,20 @@
 [
   {
     "at": "2026-11-24",
+    "source": "Perplexity Changelog",
+    "title": "Decisions API: pplx-decider-v1.3 and pplx-decider-flash-v1.3, plus locate questions",
+    "why": "Model, pricing, and API release; no web search, citation, or crawl surface changes.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-11-24",
+    "source": "Perplexity Changelog",
+    "title": "Agent API: effort level updates and ultra-preview",
+    "why": "Agent API effort levels and step limits for developers; no site-visibility impact.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-11-24",
     "source": "arXiv — AI search & citation research",
     "title": "Structural Hallucination in Large Language Models: A Network-Based Evaluation of Knowledge Organization and Citation Integrity",
     "why": "LLM citation hallucination in scholarly knowledge; no search, retrieval, or crawling surface.",
@@ -2084,19 +2098,5 @@
     "title": "MCA: Modality Composition Awareness for Robust Composed Multimodal Retrieval",
     "why": "Multimodal retrieval robustness; ML research with no direct content strategy impact.",
     "url": "https://arxiv.org/abs/2510.15543"
-  },
-  {
-    "at": "2026-10-06",
-    "source": "OpenAI News",
-    "title": "Wayfair boosts catalog accuracy and support speed with OpenAI",
-    "why": "Case study of internal efficiency, not visibility change",
-    "url": "https://openai.com/index/wayfair"
-  },
-  {
-    "at": "2026-10-06",
-    "source": "OpenAI News",
-    "title": "Our approach to EU text provenance rules",
-    "why": "Compliance watermarking, not visibility or ranking change",
-    "url": "https://openai.com/index/eu-text-provenance"
   }
 ]
