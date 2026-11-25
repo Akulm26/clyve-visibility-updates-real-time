@@ -1,5 +1,89 @@
 [
   {
+    "at": "2026-11-25",
+    "source": "Google — Ranking updates log",
+    "title": "Documentation changed: Google — Ranking updates log",
+    "why": "Duplicate of item 4, the December 2026 core update.",
+    "url": "https://developers.google.com/search/updates/ranking?hl=en"
+  },
+  {
+    "at": "2026-11-25",
+    "source": "Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
+    "title": "Documentation changed: Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
+    "why": "ClaudeBot doc edit shows only a timestamp-level change; no substantive crawler change visible.",
+    "url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
+  },
+  {
+    "at": "2026-11-25",
+    "source": "OpenAI News",
+    "title": "Searching for distant planets with Astra",
+    "why": "Astronomy research story; no AI search or citation surface.",
+    "url": "https://openai.com/index/searching-for-distant-planets-with-astra"
+  },
+  {
+    "at": "2026-11-25",
+    "source": "OpenAI News",
+    "title": "How Intentful uses dots to make more time for growth",
+    "why": "Customer story about ChatGPT for a small business; no visibility change.",
+    "url": "https://openai.com/business/customer-stories/intentful-dots"
+  },
+  {
+    "at": "2026-11-25",
+    "source": "OpenAI News",
+    "title": "Clay helps sales teams win with Codex and ChatGPT",
+    "why": "Customer story about sales plugins; no search or citation change.",
+    "url": "https://openai.com/business/customer-stories/clay-plugins-openai"
+  },
+  {
+    "at": "2026-11-25",
+    "source": "Microsoft — Public websites in Copilot generative answers",
+    "title": "Documentation changed: Microsoft — Public websites in Copilot generative answers",
+    "why": "Copilot Studio public-website doc edit; the change is unclear and minor.",
+    "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/guidance/generative-ai-public-websites"
+  },
+  {
+    "at": "2026-11-25",
+    "source": "Google — The Keyword (AI)",
+    "title": "How Gemini is changing the game for Golden State's organization and fans.",
+    "why": "Sports partnership announcement; not about AI search visibility.",
+    "url": "https://blog.google/products-and-platforms/products/gemini/gemini-golden-state/"
+  },
+  {
+    "at": "2026-11-25",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "How Gemini is changing the game for Golden State's organization and fans.",
+    "why": "Duplicate of item 9; sports partnership, not relevant.",
+    "url": "https://blog.google/products-and-platforms/products/gemini/gemini-golden-state/"
+  },
+  {
+    "at": "2026-11-25",
+    "source": "Google — The Keyword (Gemini)",
+    "title": "See what 5 builders are making with Gemini 4 Neon",
+    "why": "Builder showcase for a model; no retrieval or citation surface.",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-neon-builders/"
+  },
+  {
+    "at": "2026-11-25",
+    "source": "Perplexity Changelog",
+    "title": "Gemini 4 Neon and Gemini 4 Hydrogen on the Orchestrator API",
+    "why": "API model and pricing addition; no search or citation surface.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-11-25",
+    "source": "Perplexity Changelog",
+    "title": "Perplexity Computer MCP Server: incognito conversations, answer tool changes, and usage_get",
+    "why": "MCP server changes for incognito and answer tools; no web visibility impact.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-11-25",
+    "source": "Perplexity Changelog",
+    "title": "Gemini 4 Neon (Agent API)",
+    "why": "Duplicate of item 12; API model and pricing news only.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
     "at": "2026-11-24",
     "source": "Perplexity Changelog",
     "title": "Decisions API: pplx-decider-v1.3 and pplx-decider-flash-v1.3, plus locate questions",
@@ -2014,89 +2098,5 @@
     "title": "The Failure Is in the Readout: Fine-Grained Emotion Recognition Benchmarks Measure Elicitation, Not Perception",
     "why": "Vision-language benchmark research; unrelated to web crawling or content surfacing.",
     "url": "https://arxiv.org/abs/2610.08162"
-  },
-  {
-    "at": "2026-10-07",
-    "source": "OpenAI News",
-    "title": "How Jump Trading is scaling quant research with ChatGPT",
-    "why": "Customer use case for ChatGPT; no search, citation, or crawler surface change.",
-    "url": "https://openai.com/index/jump-trading"
-  },
-  {
-    "at": "2026-10-07",
-    "source": "OpenAI News",
-    "title": "Sharing AI progress in mathematics",
-    "why": "Research publication methodology for math papers; not a web-search citation policy change.",
-    "url": "https://openai.com/index/sharing-ai-progress-in-mathematics"
-  },
-  {
-    "at": "2026-10-06",
-    "source": "Reddit Inc. Blog",
-    "title": "Reddit Launches Enhanced Capabilities for Lead Generation",
-    "why": "Reddit lead generation product news, not AI visibility impact.",
-    "url": "https://redditinc.com/news/reddit-launches-enhanced-capabilities-for-lead-generation"
-  },
-  {
-    "at": "2026-10-06",
-    "source": "Perplexity Changelog",
-    "title": "Decisions API",
-    "why": "API capability updates; no change to crawling, citation, or discovery.",
-    "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-10-06",
-    "source": "Perplexity Changelog",
-    "title": "Native document input for Agent API",
-    "why": "Duplicate of Perplexity changelog; document input API feature.",
-    "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-10-06",
-    "source": "Perplexity Changelog",
-    "title": "Image Search tool",
-    "why": "Duplicate of Perplexity changelog; image search tool capability.",
-    "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-10-06",
-    "source": "Perplexity Changelog",
-    "title": "Fast Search for multiple presets",
-    "why": "Duplicate of Perplexity changelog; preset/performance feature.",
-    "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-10-06",
-    "source": "Perplexity Changelog",
-    "title": "New: Decisions API",
-    "why": "Developer API feature; no impact on content discovery or surfacing.",
-    "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-10-06",
-    "source": "Perplexity Changelog",
-    "title": "Native document input",
-    "why": "Developer API feature; no impact on content discovery or surfacing.",
-    "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-10-06",
-    "source": "Perplexity Changelog",
-    "title": "Image Search",
-    "why": "Developer API feature; no impact on content discovery or surfacing.",
-    "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-10-06",
-    "source": "Perplexity Changelog",
-    "title": "Low, medium, and high presets use Fast Search",
-    "why": "Internal performance optimization; no change to visibility or search behavior.",
-    "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-10-06",
-    "source": "arXiv — AI search & citation research",
-    "title": "MCA: Modality Composition Awareness for Robust Composed Multimodal Retrieval",
-    "why": "Multimodal retrieval robustness; ML research with no direct content strategy impact.",
-    "url": "https://arxiv.org/abs/2510.15543"
   }
 ]

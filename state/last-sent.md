@@ -1,38 +1,67 @@
-<!-- breaking alert · 2026-11-24T11:02:06.465Z -->
+<!-- breaking alert · 2026-11-25T11:12:16.906Z -->
 
-*⚡ AEO radar · Breaking · 1 item · Nov 24, 3:01 AM*
+*⚡ AEO radar · Breaking · 2 items · Nov 25, 3:11 AM*
 
-New research finds AI search tools ignore several of the rules publishers use to control them, and the findings affect how your pages get read and reused.
+🚨 Google announced a December core update, and it quietly edited its AI crawler rules page.
 
 ———
 
-*🟠 AI search tools ignore publisher rules*
-_arXiv — AI search & citation research · November 24, 2026_
+*🟠 Google quietly rewrites its AI crawler rules page*
+_Google — Common crawlers (Google-Extended etc.) · November 25, 2026_
 
 *Synopsis*
-A black-box measurement study of how AI search agents from OpenAI, Anthropic, xAI and Google fetch, read and reuse web pages. It also covers the consumer apps of ten services.
-· OpenAI and xAI do not honor robots.txt. No service acts on Retry-After.
-· No service reads JavaScript-only content. xAI reads only the first 0.5 MB of a page. OpenAI drops some formats.
-· OpenAI, Anthropic and xAI share fetched pages across users and largely ignore Cache-Control.
-· Answers can reflect outdated pages for 30 minutes to a day or more.
-· The authors conclude publishers lack effective control. The code and data are released.
+Google edited its official crawler documentation page with no announcement. The page now says it was last updated November 24, 2026.
+· The page title and intro now cover "crawlers and user agents", not just crawlers.
+· The long Google-Extended explanation is gone from the main list. In its place is a "Learn more about Google-Extended" link.
+· The removed text said Google-Extended is separate from Google Search. It said it does not affect inclusion or ranking.
+· New text says Google intends to support a shared, machine-readable training preference signal. The source snippet cuts off, so the details are unclear.
+· The page also changed its wording on how to verify that a visitor really is from Google.
 
 *What the terms mean*
-AI search agents — AI tools that fetch web pages live to answer a user's question
-Black-box measurement study — researchers test a system from the outside, without seeing how it works inside
-robots.txt — a file on your site telling bots which pages they may not visit
-Retry-After — a signal telling a bot to wait before it asks again
-Cache-Control — a setting that says how long a saved copy of your page may be reused
-JavaScript-only content — text that appears only after a script runs, not in the page's basic HTML
-Search APIs — the paid feeds developers use to plug an AI vendor's search into their own products
+Crawler — a Google program that visits web pages and reads them
+User agent — the name tag a crawler shows when it visits your site
+Google-Extended — the switch that controls whether Google may use your pages to train and ground its AI
+Gemini — Google's family of AI models and its chatbot
+Grounding — feeding an AI real web pages at answer time, so it is less likely to make things up
+Training preference signal — a standard, machine-readable way for a site to say whether AI may learn from its content
+robots.txt — the file on your site that tells crawlers what they may read
 
 *Why it matters for your content*
-Blocking or throttling AI tools may not work, so you cannot assume robots.txt keeps your pages out of AI answers. Content that sits behind scripts, or deep in a very long page, may never be read, so it cannot be cited. Changes you make can take up to a day or more to show up in AI answers, because copies of your pages are shared across users.
+Google-Extended decides whether your pages can feed Gemini's training and its answers. Your brand's presence in those answers depends partly on this switch. A quiet edit means the rules may be changing, and the old explanation of what the switch does has been cut from the page.
 
 *Example*
-Your product page loads its price and feature table through a script. A buyer asks an AI tool, "How much does [your brand] cost for a team of 10?" Before: the tool cannot see the table, so it answers from a reseller's page or leaves you out. After: the price sits in plain page text near the top, so the tool can read and cite it. Later you cut the price. Shared copies mean some answers may still quote the old price for hours, or longer.
+Your blog has a "best running shoes for flat feet" guide. Your robots.txt blocks Google-Extended, which someone added in 2024. If you want Gemini to cite that guide, the block works against you. If you meant to block it, you should now confirm the new page still describes the switch the way you assumed.
 
 *Do this*
-Check that your pricing, product facts and key claims appear as plain text near the top of each page, not only behind scripts.
+Ask whoever runs your website to check whether your robots.txt blocks Google-Extended, and confirm that matches your AI policy.
 
-https://arxiv.org/abs/2611.30546
+https://developers.google.com/search/docs/crawling-indexing/google-common-crawlers?hl=en
+
+———
+
+*🔴 Google announces December 2026 core update*
+_Google Search Status Dashboard · November 24, 2026_
+
+*Synopsis*
+Google announced a core update in advance on its official Search Status Dashboard. Google's Ranking updates log also lists it.
+· It is scheduled to be released in December 2026. The source gives no exact date.
+· It aims to better understand and rank relevant content, including for longer and more complex questions.
+· It also aims to improve personalized results for people who have personalization turned on.
+· It applies to all locations and languages where Google Search is available.
+· Google says its existing guidance about general core updates applies.
+
+*What the terms mean*
+Core update — a broad change to how Google decides which pages rank, and in what order
+Ranking — the order in which Google lists pages for a search
+Personalized results — search results tailored to the person searching, so two people can see different lists
+
+*Why it matters for your content*
+Core updates can move traffic up or down across a whole site, not just on one page. This one stresses longer, more complex questions. Pages that answer those fully may gain, and thin pages may lose. Personalization also means one person's ranking check no longer tells you what everyone sees.
+
+*Example*
+Your page "How to choose a CRM for a 20-person sales team" gets 4,000 visits a month. Before the update, you note the traffic and the queries that drive it. After rollout, you compare. If a long, specific question like "CRM for a team with remote reps and Shopify" now sends less traffic, you know where to look first.
+
+*Do this*
+Record organic traffic and rankings for your top 20 pages now, so you have a baseline to compare against after December.
+
+https://status.search.google.com/incidents/AXrqxXXdtSjj3672ux7X

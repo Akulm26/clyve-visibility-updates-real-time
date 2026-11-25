@@ -73,7 +73,9 @@
     "fecb30cdff15cc4d26d4555fb9d0fcf007ec75b5677fb33286e9e152dfe3eb21": 1795492787044,
     "1fce32ecea5e537b4ac8fd2bc251909479ce88dfa60bdac74721599c58041677": 1795492787044,
     "5c2c2b387ab46c938736ed5864d2328e40e4ee3e47e2443396289354923d2f8e": 1795492787044,
-    "3693f7821016a9cd9b760a07499d83f976d9ee1192ab4376b4b07500b72351dc": 1795518126468
+    "3693f7821016a9cd9b760a07499d83f976d9ee1192ab4376b4b07500b72351dc": 1795518126468,
+    "c8d90179d9d469d0019b5a5f18b3d9f89095eb2074d1d607cc4f3bc6bf6ecd98": 1795605136909,
+    "b0e6adc55cd788aadc21b3c84ad6be8f91d4341fc2de45faf06537475df19aa6": 1795605136909
   },
   "urls": {
     "blog.cloudflare.com/accountable-mixed-use-ai-crawlers": 1790683636693,
@@ -138,14 +140,16 @@
     "blog.google/products-and-platforms/products/search/connected-apps-holiday-errands": 1795492787044,
     "arxiv.org/abs/2611.20045": 1795492787044,
     "arxiv.org/abs/2611.23530": 1795492787044,
-    "arxiv.org/abs/2611.30546": 1795518126468
+    "arxiv.org/abs/2611.30546": 1795518126468,
+    "status.search.google.com/incidents/axrqxxxdtsjj3672ux7x": 1795605136909
   },
   "last": {
-    "subject": "⚡ AEO radar · Breaking · 1 item · Nov 24, 3:01 AM",
-    "at": "2026-11-24T11:02:06.468Z",
+    "subject": "⚡ AEO radar · Breaking · 2 items · Nov 25, 3:11 AM",
+    "at": "2026-11-25T11:12:16.909Z",
     "kind": "breaking alert",
     "headlines": [
-      "Fetch, Read, Reuse: How AI Search Agents Bend the Web's Rules"
+      "Documentation changed: Google — Common crawlers (Google-Extended etc.)",
+      "Google Search: December 2026 core update"
     ]
   }
 }

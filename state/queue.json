@@ -24,5 +24,18 @@
     "category": "research",
     "why": "Preprint on agent browsing trajectories; narrow benchmark with a fictional product.",
     "alsoSeenIn": []
+  },
+  {
+    "source": "arxiv-geo",
+    "sourceName": "arXiv — AI search & citation research",
+    "authority": 6,
+    "url": "https://arxiv.org/abs/2603.09296",
+    "title": "Diagnosing and Repairing Citation Failures in Generative Engine Optimization",
+    "published": "2026-11-25T05:00:00.000Z",
+    "summary": "arXiv:2603.09296v2 Announce Type: replace Abstract: Generative Engine Optimization (GEO) aims to improve content visibility in AI-generated responses. However, existing methods measure contribution (how much a document influences a response) rather than citation, the mechanism that actually drives traffic back to creators. Also, these methods apply generic rewriting rules uniformly, failing to diagnose why individual documents are not cited. This paper introduces a diagnostic approach to GEO that asks why a document fails to be cited and intervenes accordingly. We develop a unified framework comprising: (1) the first taxonomy of citation failure modes spanning different stages of a citation pipeline; (2) AgentGEO, an agentic system that diagnoses failures using this taxonomy, selects targeted repairs from a corresponding tool library, and iterates until citation is achieved; and (3) a document-centric benchmark evaluating whether optimizations generalize across held-out queries. AgentGEO achieves 15-40% relative improvement in citation rates across engines and citation methods, while modifying only 5% of content, compared to 25% for baselines. Our analysis reveals that generic optimization can harm long-tail content and some documents face challenges that optimization alone cannot fully address, findings with implications for equitable visibility in AI-mediated information access.",
+    "score": 3,
+    "category": "research",
+    "why": "Preprint with original measurements on why GEO content fails to get cited.",
+    "alsoSeenIn": []
   }
 ]
