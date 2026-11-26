@@ -1,5 +1,68 @@
 [
   {
+    "at": "2026-11-26",
+    "source": "Perplexity Changelog",
+    "title": "Perplexity API MCP Server: `perplexity_context` tool",
+    "why": "Same Context API launch as item 11; merged into it.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-11-26",
+    "source": "Perplexity Changelog",
+    "title": "Monitor API: Agent monitors",
+    "why": "Excerpt shows only the generic changelog; no visibility impact visible.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-11-26",
+    "source": "Perplexity Changelog",
+    "title": "GPT-6.2 Sol and GPT-6.2 Astra on the Orchestrator API",
+    "why": "Model availability news with no search or retrieval surface.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-11-26",
+    "source": "arXiv — AI search & citation research",
+    "title": "AI Lifecycle-Aware Feasibility Framework for Split-RIC Orchestration in NTN O-RAN",
+    "why": "Satellite O-RAN network placement study; not about AI visibility.",
+    "url": "https://arxiv.org/abs/2603.23252"
+  },
+  {
+    "at": "2026-11-26",
+    "source": "Perplexity Changelog",
+    "title": "Orchestrator API: more models, the Responses format, and model routing",
+    "why": "Model routing and API formats; no retrieval or citation surface.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-11-26",
+    "source": "Perplexity Changelog",
+    "title": "Gemini 3.7 Flash and Gemini 3.8 Flash rates apply through December 31, 2026",
+    "why": "Pricing rates for models; no search or crawling change.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-11-26",
+    "source": "Perplexity Changelog",
+    "title": "Sign-up credits don't unlock the Agent API, the Orchestrator API, or batch creation",
+    "why": "API access and credit eligibility; no search or crawling change.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-11-26",
+    "source": "Perplexity Changelog",
+    "title": "GPT-6.2 Sol and GPT-6.2 Astra (Agent API)",
+    "why": "Model pricing entries; no retrieval or citation surface.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
+    "at": "2026-11-26",
+    "source": "Perplexity Changelog",
+    "title": "Agent API: prompt caching controls",
+    "why": "Prompt caching controls; no retrieval, citation, or crawling change.",
+    "url": "https://docs.perplexity.ai/changelog"
+  },
+  {
     "at": "2026-11-25",
     "source": "Google — Ranking updates log",
     "title": "Documentation changed: Google — Ranking updates log",
@@ -2035,68 +2098,5 @@
     "title": "Fast Search adoption across presets",
     "why": "API features; no documented crawling or attribution changes",
     "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-10-08",
-    "source": "arXiv — AI search & citation research",
-    "title": "PersonaMem-v3: Toward Omni-Platform Personal Intelligence for Holistic User Understanding, Recommendation, and Agentic Tasks",
-    "why": "Personalization benchmark; no crawling or surfacing changes",
-    "url": "https://arxiv.org/abs/2608.21381"
-  },
-  {
-    "at": "2026-10-08",
-    "source": "Perplexity Changelog",
-    "title": "Sandbox extraction usage and costs tracking",
-    "why": "API developer tooling and cost tracking, not content visibility",
-    "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-10-08",
-    "source": "Perplexity Changelog",
-    "title": "Fast Search for presets",
-    "why": "UI preset feature, unclear relevance to content surfacing",
-    "url": "https://docs.perplexity.ai/changelog"
-  },
-  {
-    "at": "2026-10-08",
-    "source": "Claude Release Notes",
-    "title": "Claude Platform release notes — October 8, 2026",
-    "why": "Compliance API internal tooling, not content visibility",
-    "url": "https://platform.claude.com/docs/en/release-notes/overview#october-8-2026"
-  },
-  {
-    "at": "2026-10-08",
-    "source": "Claude Release Notes",
-    "title": "Claude Platform release notes — October 6, 2026",
-    "why": "API capability reporting metadata, not content visibility",
-    "url": "https://platform.claude.com/docs/en/release-notes/overview#october-6-2026"
-  },
-  {
-    "at": "2026-10-07",
-    "source": "Google — The Keyword (AI)",
-    "title": "Introducing Playground: Create and play custom games",
-    "why": "Gaming platform launch; no search, citation, or content discovery surface",
-    "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/"
-  },
-  {
-    "at": "2026-10-07",
-    "source": "Google Search Central Blog",
-    "title": "New learning paths: curated YouTube playlists for Search fundamentals and Technical SEO",
-    "why": "Educational content about SEO learning; no visibility or crawler changes.",
-    "url": "https://developers.google.com/search/blog/2026/10/seo-learning-paths"
-  },
-  {
-    "at": "2026-10-07",
-    "source": "Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
-    "title": "Documentation changed: Anthropic — ClaudeBot, Claude-User & Claude-SearchBot",
-    "why": "Documentation edit shows link reorganization; no substantive policy change evident.",
-    "url": "https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler"
-  },
-  {
-    "at": "2026-10-07",
-    "source": "arXiv — AI search & citation research",
-    "title": "The Failure Is in the Readout: Fine-Grained Emotion Recognition Benchmarks Measure Elicitation, Not Perception",
-    "why": "Vision-language benchmark research; unrelated to web crawling or content surfacing.",
-    "url": "https://arxiv.org/abs/2610.08162"
   }
 ]

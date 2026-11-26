@@ -37,5 +37,31 @@
     "category": "research",
     "why": "Preprint with original measurements on why GEO content fails to get cited.",
     "alsoSeenIn": []
+  },
+  {
+    "source": "arxiv-geo",
+    "sourceName": "arXiv — AI search & citation research",
+    "authority": 6,
+    "url": "https://arxiv.org/abs/2611.33627",
+    "title": "Welfare-Enhancing Mechanism Design for Agent Ecosystems",
+    "published": "2026-11-26T05:00:00.000Z",
+    "summary": "arXiv:2611.33627v1 Announce Type: cross Abstract: The emerging Agentic Web forms a multi-agent ecosystem: a decentralized service market where the user agent selects which content agents to query from their submitted profiles, before seeing any documents. Profiles therefore become a new target of optimization. Existing Generative Engine Optimization studies how a single supplier rewrites documents the engine can already retrieve, to improve their citation. In the Agentic Web, multiple content agents optimize profiles to compete for limited opportunities to deliver documents. To study this repeated interaction, we build WildRegistry, a simulation framework and benchmark based on a real agentic-search request stream, and model it as a dynamic game under private monitoring. Long-horizon experiments show that this competition lowers website-selection quality and settles at a harmful stable point, which our empirical criterion identifies as an approximate rewriting equilibrium. We therefore design a welfare-enhancing mechanism, DEC (Delivery-Evidence Credit), a platform-side policy that uses recorded delivery outcomes to reallocate later opportunities and reduce information asymmetry. DEC improves this endpoint, raising website-selection quality while preserving most of providers' exposure gains, for a Welfare Gain of +2.01 points and a healthier long-horizon outcome. More broadly, our findings highlight the importance of mechanism design in agent ecosystems: turning recorded deli…",
+    "score": 2,
+    "category": "research",
+    "why": "Preprint on competing content agents optimizing profiles; simulation, not measured AI behaviour.",
+    "alsoSeenIn": []
+  },
+  {
+    "source": "cloudflare-ai",
+    "sourceName": "Cloudflare Blog (AI)",
+    "authority": 7,
+    "url": "https://blog.cloudflare.com/search-for-agents/",
+    "title": "Introducing Search for Agents",
+    "published": "2026-11-25T14:00:00.000Z",
+    "summary": "Blog Agents AI AI Search 3 Tags Show 3 tags Post Tags Agents AI AI Search All tags Matching tags No tags found 1.1.1.1 2FA Abuse Access Access Control Lists (ACLs) Accessibility Account Takeover Acquisitions Addressing Advanced Certificate Manager Advanced DDoS Advertising Aegis AEO Africa Afroflare Agent Cloud Agent Development Lifecycle Agent Readiness Agents Agents Week Agents Week 2026 AI AI Bots AI Gateway AI Search AI WAF AI Week AI-SPM Alertmanager Always Online AMD AMP Analytics Anonymous Anti Malware Anycast API API Gateway API Security API Shield APJC Apple Application Security Application Services Area 1 Security Argo Smart Routing ASCII Asia Athenian Project Atlassian Attacks Audit Logs Austin Australia Authentication Authy Auto Rag Automatic HTTPS Automatic Platform Optimization Automation AutoMinify Awards AWS Baidu Bandwidth Alliance Bandwidth Costs Best Practices Beta Better Internet BGP Billing Birthday Week Black Friday Blackbird Bot Fight Mode Bot Management Botnet Bots BPF Brand Brand Protection Brazil Browser Insights Browser Rendering Browser Run Bug Bounty Bugs BYOIP Cache Cache Purge Cache Reserve Cache Rules California Canada Cap'n Proto CAPTCHA Careers CASB Categories CDN CDNJS Certificate Authority Certificate Pinning Certificate Transparency Certification CFSSL Challenge Page ChatGPT China China Network Christmas Chrome CIO Week CISA Claire CLI ClickHouse Clientless Clientless Web Isolation Cloud Connector Cloud Email Security Cloudflare Access Clo…",
+    "score": 3,
+    "category": "ai-surface",
+    "why": "Cloudflare launches a search product for agents; new surface, details thin.",
+    "alsoSeenIn": []
   }
 ]
